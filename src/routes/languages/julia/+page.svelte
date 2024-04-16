@@ -6,12 +6,9 @@
 <ul>
 	{#each data.posts as post}
 		<li>
-			<h2>
-				<a href={post.path}>
-					{post.meta.title}
-				</a>
-			</h2>
-			Published {post.meta.date}
+			<a href={post.path}>{post.meta.title}</a>
+			<!-- <small>Published {post.meta.date}</small> -->
 		</li>
 	{/each}
 </ul>
+

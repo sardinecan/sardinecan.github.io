@@ -5,8 +5,6 @@ language: 'julia'
 keywords: ''
 ---
 
-[home](/)
-
 - [Affectation d'une variable](#Affectation-dune-variable)
 - [Constantes](#Constantes)
 - [Commentaires](#Commentaires)
