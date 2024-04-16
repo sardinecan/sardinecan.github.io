@@ -37,7 +37,7 @@
 		<ul>
 			<li><a href="/blog">Blog</a></li>
 			<li><a href="/reports">Comptes rendus</a></li>
-			<li><a href="/languages">Langages</a></li>
+			<li><a href="/cheatsheets">Antisèches</a></li>
 		</ul>
 	</nav>
 </header>

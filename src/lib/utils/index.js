@@ -1,5 +1,5 @@
 export const fetchJuliaFiles = async () => {
-	const allMarkdownFiles = import.meta.glob('/src/routes/languages/julia/*.md');
+	const allMarkdownFiles = import.meta.glob('/src/routes/cheatsheets/julia/*.md');
 	const iterableMarkdownFiles = Object.entries(allMarkdownFiles);
 
 	const allFiles = await Promise.all(
@@ -18,7 +18,7 @@ export const fetchJuliaFiles = async () => {
 };
 
 export const fetchHtmlFiles = async () => {
-	const allMarkdownFiles = import.meta.glob('/src/routes/languages/xhtml/*.md');
+	const allMarkdownFiles = import.meta.glob('/src/routes/cheatsheets/xhtml/*.md');
 	const iterableMarkdownFiles = Object.entries(allMarkdownFiles);
 
 	const allFiles = await Promise.all(
