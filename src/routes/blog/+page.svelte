@@ -4,9 +4,9 @@
 
 <h1>Comptes rendus</h1>
 <ul>
-	{#each data.reports as report}
+	{#each data.posts as post}
 		<li>
-			<a href={report.path}>{report.meta.title}</a>
+			<a href={post.path}>{post.meta.title}</a>
 			<!-- <small>Published {post.meta.date}</small> -->
 		</li>
 	{/each}
