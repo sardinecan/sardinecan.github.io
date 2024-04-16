@@ -2,7 +2,7 @@
 	export let data;
 
 	let publishedPosts = data.posts.filter(function (el) {
-	  return el.meta.status.startsWith('published');
+	  return el.meta.status.startsWith('unpublished');
 	});
 </script>
 
