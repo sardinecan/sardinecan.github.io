@@ -33,7 +33,7 @@
 		<h1>L·0·G</h1>
 	</div>
 	<nav>
-		<a href="/">home</a>
+		<a href="/">/</a>
 		<ul>
 			<li><a href="/blog">Blog</a></li>
 			<li><a href="/reports">Comptes rendus</a></li>
