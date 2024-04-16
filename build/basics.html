@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="modulepreload" href="./_app/immutable/entry/start.Bpx5PvPj.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.BkVBSzcJ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.BvLojk_z.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.Bp4XME8c.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.ug5HCMeF.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.C3ohyaks.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.CbBcGVlr.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <p data-svelte-h="svelte-1snkjzv"><a href="/">home</a></p> <ul data-svelte-h="svelte-1luw30c"><li><a href="#Affectation-dune-variable">Affectation d’une variable</a></li> <li><a href="#Constantes">Constantes</a></li> <li><a href="#Commentaires">Commentaires</a></li> <li><a href="#Chainage">Chainage</a></li> <li><a href="#declarer-une-fonction">Déclarer une fonction</a></li> <li><a href="#symboles-latex">Symboles LaTeX</a></li></ul> <h2 data-svelte-h="svelte-4zfv0n">Affectation d’une variable <a id="Affectation-dune-variable" href=""></a></h2> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">v <span class="token operator">=</span> <span class="token number">12</span>
+
+x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token comment">#=
+  x = 1
+  y = "A",
+  z = 3-element Vector&#123;Int64&#125;:
+    1
+    2
+    3
+=#</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-c87hm0">Constantes <a id="Constantes" href=""></a></h2> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token keyword">const</span> hello <span class="token operator">=</span> <span class="token string">"world"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1blvjn">Il existe cependant des constantes par defaut :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token constant">pi</span> <span class="token comment"># π = 3.1415926535897...</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-xbk9b4">Commentaires <a id="Commentaires" href=""></a></h2> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">v <span class="token operator">=</span> <span class="token number">12</span> <span class="token comment"># un commentaire de fin de ligne</span>
+<span class="token comment">#=
+    Un bloc de commentaire
+    qui peut s'etendre 
+    sur plusieurs
+    lignes
+=#</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-kh2qb0">Chainage <a id="Chainage" href=""></a></h2> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">x <span class="token operator">=</span> y <span class="token operator">=</span> z <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">#=
+  x = 1
+  y = 1
+  z = 1
+=#</span>
+
+<span class="token number">0</span><span class="token operator">&lt;</span>x<span class="token operator">&lt;</span><span class="token number">2</span> <span class="token comment"># true</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1ctd34u">Déclarer une fonction <a id="declarer-une-fonction" href=""></a></h2> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token keyword">function</span> myFunction<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> i<span class="token operator">+</span><span class="token number">2</span>
+<span class="token keyword">end</span>
+
+myFunction<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># 5</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1kpzxwx">Symboles LaTeX <a id="symboles-latex" href=""></a></h2> <p data-svelte-h="svelte-1594wbl">Il est possible d’utiliser les symboles LaTeX directement dans Julia.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token comment"># \beta [+ tabulation]</span>
+β <span class="token operator">=</span> <span class="token number">10</span> </code><!-- HTML_TAG_END --></pre> 
+			
+			<script>
+				{
+					__sveltekit_16f70he = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.Bpx5PvPj.js"),
+						import("./_app/immutable/entry/app.Bp4XME8c.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
