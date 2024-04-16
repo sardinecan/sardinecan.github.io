@@ -35,7 +35,7 @@
 	<nav>
 		<a href="/">home</a>
 		<ul>
-			<li>Basics</li>
+			<li><a href="/languages">Langages</a></li>
 			<!--<li><a href="{base}/blog">Blog</a></li>
 			<li><a href="{base}/languages">Langages</a></li>-->
 		</ul>
