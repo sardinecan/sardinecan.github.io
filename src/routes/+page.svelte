@@ -1,4 +1,19 @@
+<script>
+	export let data;
+</script>
+
+<h1>Blog</h1>
+
 <h1>Welcome to Julia Cheatsheet by Sardinecan</h1>
 <ul>
-  <li><a href="/basics">Basics</a></li>
+	{#each data.posts as post}
+		<li>
+			<h2>
+				<a href={post.path}>
+					{post.meta.title}
+				</a>
+			</h2>
+			Published {post.meta.date}
+		</li>
+	{/each}
 </ul>
