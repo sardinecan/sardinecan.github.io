@@ -2,6 +2,6 @@
 <nav>
   <ul>
     <li><a href="/languages/julia">Julia</a></li>
-    <li><a href="/languages/html">HTML</a></li>
+    <li><a href="/languages/xhtml">xHTML</a></li>
   </ul>
 </nav>
