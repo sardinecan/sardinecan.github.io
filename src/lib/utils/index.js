@@ -18,7 +18,7 @@ export const fetchJuliaFiles = async () => {
 };
 
 export const fetchHtmlFiles = async () => {
-	const allMarkdownFiles = import.meta.glob('/src/routes/languages/html/*.md');
+	const allMarkdownFiles = import.meta.glob('/src/routes/languages/xhtml/*.md');
 	const iterableMarkdownFiles = Object.entries(allMarkdownFiles);
 
 	const allFiles = await Promise.all(
