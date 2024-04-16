@@ -1,13 +1,22 @@
 <script>
 	export let data;
+
+	let publishedPosts = data.posts.filter(function (el) {
+	  return el.meta.status.startsWith('published');
+	});
 </script>
 
-<h1>Comptes rendus</h1>
+<h1>Blog</h1>
 <ul>
-	{#each data.posts as post}
-		<li>
-			<a href={post.path}>{post.meta.title}</a>
-		</li>
-	{/each}
+	{#if publishedPosts.length > 0}
+		{#each publishedPosts as post}
+			<li>
+				<a href={post.path}>{post.meta.title}</a>
+			</li>
+		{/each}
+	{:else}
+		<li>Aucun post pour le moment…  ¯\_(ツ)_/¯</li>
+	{/if}
+	
 </ul>
 
