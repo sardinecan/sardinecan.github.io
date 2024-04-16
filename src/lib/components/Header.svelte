@@ -1,9 +1,4 @@
-<!-- Header.svelte -->
-<script>
-	import { base } from '$app/paths';
-</script>
-	
-	
+<!-- Header.svelte -->	
 <header>
 	<div class="titlebar">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
@@ -38,9 +33,9 @@
 		<h1>L·0·G</h1>
 	</div>
 	<nav>
-		<a href="{base}">home</a>
+		<a href="/">home</a>
 		<ul>
-			<li><a href="{base}/basics">Basics</a></li>
+			<li><a href="/basics">Basics</a></li>
 			<!--<li><a href="{base}/blog">Blog</a></li>
 			<li><a href="{base}/languages">Langages</a></li>-->
 		</ul>
