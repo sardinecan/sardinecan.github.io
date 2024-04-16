@@ -5,17 +5,37 @@ export const fetchJuliaFiles = async () => {
 	const allFiles = await Promise.all(
 		iterableMarkdownFiles.map(async ([path, resolver]) => {
 			const { metadata } = await resolver();
-			const postPath = path.slice(11, -3);
+			const filePath = path.slice(11, -3);
 
 			return {
 				meta: metadata,
-				path: postPath
+				path: filePath
 			};
 		})
 	);
 
 	return allFiles;
 };
+
+export const fetchHtmlFiles = async () => {
+	const allMarkdownFiles = import.meta.glob('/src/routes/languages/html/*.md');
+	const iterableMarkdownFiles = Object.entries(allMarkdownFiles);
+
+	const allFiles = await Promise.all(
+		iterableMarkdownFiles.map(async ([path, resolver]) => {
+			const { metadata } = await resolver();
+			const filePath = path.slice(11, -3);
+
+			return {
+				meta: metadata,
+				path: filePath
+			};
+		})
+	);
+
+	return allFiles;
+};
+
 
 export const fetchReportsFiles = async () => {
 	const allMarkdownFiles = import.meta.glob('/src/routes/reports/*.md');
@@ -24,11 +44,11 @@ export const fetchReportsFiles = async () => {
 	const allFiles = await Promise.all(
 		iterableMarkdownFiles.map(async ([path, resolver]) => {
 			const { metadata } = await resolver();
-			const postPath = path.slice(11, -3);
+			const filePath = path.slice(11, -3);
 
 			return {
 				meta: metadata,
-				path: postPath
+				path: filePath
 			};
 		})
 	);

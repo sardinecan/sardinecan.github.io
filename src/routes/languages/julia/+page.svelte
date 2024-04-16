@@ -2,11 +2,11 @@
 	export let data;
 </script>
 
-<h1>Langage / Julia</h1>
+<h1>Langages / Julia</h1>
 <ul>
-	{#each data.posts as post}
+	{#each data.mdFiles as mdFile}
 		<li>
-			<a href={post.path}>{post.meta.title}</a>
+			<a href={mdFile.path}>{mdFile.meta.title}</a>
 			<!-- <small>Published {post.meta.date}</small> -->
 		</li>
 	{/each}
