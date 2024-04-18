@@ -198,6 +198,27 @@ Pour plus d'informations sur Homebrew et Python : [https://docs.brew.sh/Homebre
 
 ### Libraries
 #### NodeJS [https://nodejs.org/en/](https://nodejs.org/en/) (LTS preferred)
+Installer `n` avec `homebrew` avec la commande suivante : 
+```bash
+brew install n
+```
+
+[Configurer les variables d'environnement](https://github.com/tj/n?tab=readme-ov-file#optional-environment-variables) afin de définir le dossier d'installation de Node (il est possible d'ajouter ces deux lignes dans son `.zshrc`…) : 
+
+```bash
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+```
+
+Il est ensuite possible d'installer différentes versions de node :
+- `n stable` pour installer la version stable
+- `n <version>` pour installer une version spécifique, par exemple `n 16.15.0`
+- `n lts` pour installer la version de support à long terme
+- `n latest` pour installer la dernière version.
+
+Pour vérifier la version de node : `node -v`.
+
+Pour passer d'une version de Node à l'autre il suffit de taper `n` dans le terminal, de sélectionner la version désirée avec les `flèches` et d'appuyer sur `enter`.
 
 #### Apache Ant 
 [https://ant.apache.org/](https://ant.apache.org/)
