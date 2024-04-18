@@ -38,6 +38,7 @@
 			<li><a href="/blog">Blog</a></li>
 			<li><a href="/reports">Comptes rendus</a></li>
 			<li><a href="/cheatsheets">Antisèches</a></li>
+			<li><a href="/notes">Notes</a></li>
 		</ul>
 	</nav>
 </header>
