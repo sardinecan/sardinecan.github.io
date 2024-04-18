@@ -134,7 +134,7 @@ Pour synchroniser les balises ouvrantes et fermantes (html/xml) :
 - [XMl Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
 
 #### OxygenXML 
-[Oxygen XML](oxygenXML/oxygenXML.md)
+[Oxygen XML](https://www.oxygenxml.com/)
 
 Mes paramètres personnalisés sont stockés dans le fichier `globalSettings.xml` et les scénarios de transformation sont sauvegardés dans `transformation.scenarios` (repo [systemSetup](https://github.com/sardinecan/systemSetup/)).
 
