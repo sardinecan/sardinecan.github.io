@@ -1,5 +1,5 @@
 ---
-title: 'BaseX augmenter la durée des sessions'
+title: 'BaseX — augmenter la durée des sessions'
 date: '2024-04-18'
 author: 'jmorvan'
 keywords: 'basex ; xml ; config'

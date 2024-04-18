@@ -1,5 +1,5 @@
 ---
-title: 'XPath collection() et document-uri()'
+title: 'XPath — collection() et document-uri()'
 date: '2022-03-09'
 author: 'jmorvan'
 keywords: 'xpath ; xml'

@@ -1,5 +1,5 @@
 ---
-title: 'TEI Stylesheets'
+title: 'TEI — TEI Stylesheets'
 date: '2023-10-12'
 author: 'jmorvan'
 keywords: 'tei ; xml ; xslt ; stylesheets'

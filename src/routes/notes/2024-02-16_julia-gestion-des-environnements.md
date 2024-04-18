@@ -1,5 +1,5 @@
 ---
-title: 'Julia activer automatiquement des environnements'
+title: 'Julia — gestion des environnements'
 date: '2022-05-17'
 author: 'jmorvan'
 keywords: 'config ; dev ; installation'
@@ -18,3 +18,4 @@ else
     Pkg.activate("/pbs/home/j/jmorvan/juliaEnv")
 end
 ```
+Lors du lancement de Julia, active l'environnement par défaut si les fichiers Project.toml et Manifest.toml ne sont pas présents.
