@@ -26,6 +26,7 @@ body {
 	min-height: 100vh;
   display: flex;
   flex-direction: column;
+	font-weight: 200;
 	
 }
 
@@ -54,18 +55,22 @@ h6 {
 	font-family: var(--monospaceFont);
 	color: var(--headingColor);
 	line-height: 1em;
+	font-weight: 400;
 }
 
 h1 {
 	font-size: 2.5em;
+	margin-bottom: 4rem;
 }
 
 h2 {
 	font-size: 2em;
+	margin-top: 3.5rem;
 }
 
 h3 {
 	font-size: 1.5em;
+	margin-top: 3rem;
 }
 
 h4 {
@@ -80,6 +85,11 @@ main a:visited
 	text-decoration: underline dotted var(--headingColor) 0.1em;
 }
 
+main a.active,
+main a:visited.active {
+	color: var(--mainColor);
+	text-decoration: underline solid var(--headingColor) 0.5em;
+}
 
 
 small {

@@ -1,11 +1,16 @@
-<!-- Header.svelte -->	
+<!-- Header.svelte -->
+<script>
+  import svg_home from '$lib/assets/picol/home.svg';
+	import { page } from '$app/stores';  
+</script>
+
 <header>
 	<div class="titlebar">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
 			<defs>
 				<pattern id="waves" patternUnits="userSpaceOnUse" width="230.4" height="221.7" patternTransform="scale(.5)">
 				<defs>
-					<g id="wave" stroke="orangered" fill="none"><!-- <g id="wave" stroke="#000080" fill="none"> -->
+					<g id="wave" stroke="#272C4D" fill="none"><!-- <g id="wave" stroke="#000080" fill="none"> -->
 						<circle fill="white" stroke-width="8" r="106.7" />
 						<circle stroke-width="9" r="81" />
 						<circle stroke-width="8" r="55.3" />
@@ -30,25 +35,26 @@
 			</defs>
 		 <rect width="100%" height="100%" fill="url(#waves)" />
 		</svg>
-		<h1>L·0·G</h1>
+		<h1>/Log</h1>
 	</div>
-	<nav>
-		<a href="/">/</a>
-		<ul>
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="/reports">Comptes rendus</a></li>
-			<li><a href="/cheatsheets">Antisèches</a></li>
-			<li><a href="/notes">Notes</a></li>
-		</ul>
-	</nav>
 </header>
+<nav>
+	<a href="/" class="home"><img src="{svg_home}"/></a>
+	<ul>
+		<li><a href="/blog" class:active="{$page.url.pathname.includes("blog")}">Blog</a></li>
+		<li><a href="/reports" class:active="{$page.url.pathname.includes("reports")}">Comptes rendus</a></li>
+		<li><a href="/cheatsheets" class:active="{$page.url.pathname.includes("cheatsheets")}">Antisèches</a></li>
+		<li><a href="/notes" class:active="{$page.url.pathname.includes("notes")}">Notes</a></li>
+	</ul>
+</nav>
+<!--<p>Path : {$page.url.pathname}</p>-->
 
 <!-- ... The rest of the file's contents here -->
 <style>
 
 	div.titlebar {
 		position: relative;
-		min-height: 12em;
+		min-height: 8em;
 		display: flex;
 	}
 
@@ -63,29 +69,61 @@
 		padding: 0.1em;
 		font-size: 4em;
 		background: rgba(255, 255, 255, .7);
-		color: var(--subColor);
+		color: var(--mainColor);
+		display: flex;
+	  align-items: center;
+ 		gap: 0.1em;
 	}
 
-	header nav {
+
+@keyframes cursor-blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+div.titlebar > h1::after {
+  content: "";
+  width: 0.4em;
+  height: 1em;
+  background: orangered;
+  display: inline-block;
+	
+  animation: cursor-blink 1.5s steps(1) infinite;
+}
+
+	header + nav {
 		padding: 1rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		background-color: var(--subColor);
+  	position: sticky;
+  	top: 0;
+		
 	}
 
-	header ul {
+	header + nav ul {
 		margin: 0;
 		list-style-type: none;
 		display: flex;
 		gap: 1rem;
 	}
 
-	header a {
+	header + nav a {
 		padding: 0.1em;
 		text-decoration: none;
-		color: inherit;
 		color: white;
+	}
+
+	header + nav a.active {
+		text-decoration: underline solid var(--headingColor) 0.2rem;
+	}
+
+
+	header + nav .home img {
+		height: 1em;		
+		filter: invert(32%) sepia(82%) saturate(3323%) hue-rotate(3deg) brightness(102%) contrast(109%);
 	}
 	
 </style>
