@@ -1,10 +1,12 @@
 ---
-title: 'Colloque Experts'
+title: 'Les mécanismes de l’expertise et ses acteurs, XVIe – XIXe siècle'
 date: '2023-05-25'
 category: 'conference'
 place: 'Université Paris-Nanterre'
 keywords: ''
 ---
+
+# Les mécanismes de l’expertise et ses acteurs, XVIe – XIXe siècle
 
 ## Être « expert, cappable et souffisant » : recherche de compétences et collégialité de la prise de décision à Lyon durant les guerres de Religion. 
 Aurélien Roulet

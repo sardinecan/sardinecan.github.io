@@ -1,11 +1,6 @@
 <script>
 	export let data;
-
-	const dateOptions = {
-  	year: 'numeric',
-  	month: 'long',
-  	day: 'numeric',
-	};
+	import { dateToString } from '$lib/utils/dates.js'
 </script>
 
 <h1>Langages / Julia</h1>
@@ -16,7 +11,7 @@
 				<article>
 					<span class="category">{mdFile.meta.language}</span>
 					<span class="title">{mdFile.meta.title}</span>
-					<span class="date">{new Date(mdFile.meta.date).toLocaleDateString('fr-FR', dateOptions)}</span>
+					<span class="date">{dateToString(mdFile.meta.date)}</span>
 				</article>
 			</a>
 		</li>

@@ -5,6 +5,8 @@ category: 'julia'
 author: 'jmorvan'
 keywords: 'config ; dev ; installation'
 --- 
+
+# Gestion des environnements avec Julia
  
 Billet original _Activating project environment in Julia REPL automatically_ [voir https://bkamins.github.io/julialang/2020/05/10/julia-project-environments.html](https://bkamins.github.io/julialang/2020/05/10/julia-project-environments.html)
 

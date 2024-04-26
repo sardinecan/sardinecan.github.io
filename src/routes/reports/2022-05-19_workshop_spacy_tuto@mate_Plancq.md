@@ -6,6 +6,8 @@ category: 'workshop'
 keywords: ''
 ---
 
+# Tuto@mate - de l’utilisation de spaCy, comment parser un texte avec une bibliothèque Python
+
 ## Ressources
  - [Notebook du tuto@mate](https://github.com/clement-plancq/tuto-mate) pour tester le code sans installer Python et spaCy (cliquer sur launch binder dans le README.md)
  - [Cours par Ines Montani](https://course.spacy.io/fr/)

@@ -1,9 +1,9 @@
 <script>
 	export let data;
+	import { dateToString } from '$lib/utils/dates.js'
 </script>
 
 <article>
-	<h1>{data.title}</h1>
-	<p>Published: {data.date}</p>
+	<p class="date">{dateToString(data.date)}</p>
 	<svelte:component this={data.content} />
 </article>

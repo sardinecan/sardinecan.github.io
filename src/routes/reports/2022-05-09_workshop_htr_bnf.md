@@ -6,6 +6,8 @@ category: 'workshop'
 keywords: ''
 ---
 
+# Point HTR 2022 Transkribus / eScriptorium : Transcrire, annoter et éditer numériquement des documents d’archives
+
 ## [Transkribus](https://readcoop.eu/transkribus/)
 ### Écosystème
 S'inscrit dans un ensemble de procédés

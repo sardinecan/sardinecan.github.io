@@ -6,6 +6,8 @@ author: 'jmorvan'
 keywords: 'basex ; xml ; config'
 ---
 
+# Augmenter la durée des sessions BaseX
+
 Il est possible d'augmenter la durée des sessions en ajoutant la code suivant dans le fichier `basex/webapp/WEB-INF/web.xml` :
 
 ```xml

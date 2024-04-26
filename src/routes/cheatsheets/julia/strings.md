@@ -6,6 +6,8 @@ language: 'julia'
 keywords: ''
 ---
 
+# Chaines de caractères
+
 - [Caratères](#caracteres)
 - [Chaines de caractères](#strings)
 - [Itération sur une chaine de caractères](#iteration-sur-une-chaine-de-caracteres)

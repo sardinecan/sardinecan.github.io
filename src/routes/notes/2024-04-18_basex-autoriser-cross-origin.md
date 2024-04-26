@@ -6,6 +6,8 @@ author: 'jmorvan'
 keywords: 'basex ; xml ; cross-origin'
 ---
 
+# Autoriser cross-origin / cross-domain dans BaseX
+
 Pour autoriser [cross-origin et/ou cross-domain](https://developer.mozilla.org/fr/docs/Web/HTTP/CORS) dans BaseX, il suffit d'ajouter le code suivant à la fin du fichier `basex/webapp/WEB-INF/web.xml`.
 
 ```xml

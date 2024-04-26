@@ -1,11 +1,6 @@
 <script>
 	export let data;
-
-	const dateOptions = {
-  	year: 'numeric',
-  	month: 'long',
-  	day: 'numeric',
-	};
+	import { dateToString } from '$lib/utils/dates.js'
 </script>
 
 <h1>Notes</h1>
@@ -16,7 +11,7 @@
 				<article>
 					<span class="category">{note.meta.category}</span>
 					<span class="title">{note.meta.title}</span>
-					<span class="date">{new Date(note.meta.date).toLocaleDateString('fr-FR', dateOptions)}</span>
+					<span class="date">{dateToString(note.meta.date)}</span>
 				</article>
 			</a>
 		</li>

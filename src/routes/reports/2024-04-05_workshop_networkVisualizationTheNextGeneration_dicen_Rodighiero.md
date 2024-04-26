@@ -6,6 +6,8 @@ category: 'workshop'
 keyworkds: 'design ; dh ; dataviz ; networks ; python'
 ---
 
+# Network Visualization: The Next Generation
+
 On est a un moment où nous allons changer d'outils.
 DR travaille au début comme designer web (JS, HTML, CSS).
 Vers 2012, on commence à travailler sur la visualisation de données et DRd débute son travail sur la visualisation de réseaux.

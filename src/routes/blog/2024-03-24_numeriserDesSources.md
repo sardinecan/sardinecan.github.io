@@ -6,6 +6,8 @@ status: 'unpublished'
 tags: 'dh'
 ---
 
+# Numériser des sources : guide des bonnes pratiques
+
 Les campagnes de numérisation massives menées par les institutions patrimoniales depuis plusieurs décennies et la mise à disposition des ressources sous des licences ouvertes, à travers des bibliothèques numériques proposant le protocole d'échange IIIF (_International Image Interoperability Framework_), ont grandemment facilité l'accès aux sources pour les équipes de recherche. Pour autant, si les chercheur peuvent parfois bénéficier du concours de ces institutions pour numériser leurs corpus d'étude, il arrive, pour diverses raisons, que cette tâche leur incombe directement. Cette étape de numérisation, parfois longue et ardue, est pourtant essentielle pour la bonne tenue de l'étude. Les clichés produits permettront aux équipes de travailler dans de bonnes conditions, d'échanger sur leurs travaux, tout en rendant ces sources accessibles au plus grand nombre, dans un contexte de sciences ouvertes et de « FAIRisation » des données. Il est donc important de penser cette numérisation en amont afin qu'elle réponde à toutes les attentes des chercheurs, ainsi qu'un potentiel public.
 
 Ce billet ne propose pas à proprement parler un mode d'emploi, mais plutôt un ensemble de recommandations pour la numérisation de fonds documentaires selon deux axes, le premier relatif à la prise de vue, et le second concernant la gestion des fichiers produits. 

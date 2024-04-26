@@ -1,15 +1,10 @@
 <script>
 	export let data;
+	import { dateToString } from '$lib/utils/dates.js'
 
 	let publishedPosts = data.posts.filter(function (el) {
 	  return el.meta.status.startsWith('unpublished');
 	});
-
-	const dateOptions = {
-  	year: 'numeric',
-  	month: 'long',
-  	day: 'numeric',
-	};
 </script>
 
 <h1>Blog</h1>
@@ -20,9 +15,7 @@
 				<article>
 					<span class="category">{publishedPost.meta.category}</span>
 					<span class="title">{publishedPost.meta.title}</span>
-					<span class="date">
-						{new Date(publishedPost.meta.date).toLocaleDateString('fr-FR', dateOptions)}
-					</span>
+					<span class="date">{dateToString(publishedPost.meta.date)}</span>
 					{#if publishedPost.meta.author}
 						<span class="speaker">{publishedPost.meta.author}</span>
 					{/if}

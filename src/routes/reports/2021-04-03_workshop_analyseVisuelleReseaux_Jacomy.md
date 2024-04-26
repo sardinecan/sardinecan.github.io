@@ -6,6 +6,8 @@ category: 'workshop'
 keywords: ''
 ---
 
+# Situer l’Analyse Visuelle de Réseaux
+
 ## Liens utiles 
 
 Présentation de sa thèse : <https://reticular.hypotheses.org/1879>

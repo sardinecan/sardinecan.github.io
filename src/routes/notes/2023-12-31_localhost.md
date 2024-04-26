@@ -6,6 +6,8 @@ author: 'jmorvan'
 keywords: 'python ; julia ; localhost'
 ---
 
+# Localhost
+
 Several light solutions for running a local HTTP server.
 
 ## Python 

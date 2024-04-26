@@ -1,9 +1,12 @@
 <script>
 	export let data;
+	import { dateToString } from '$lib/utils/dates.js'
 </script>
 
 <article>
-	<p>date : {data.date}</p>
-	<h1>{data.title}</h1>
+	<p class="date">{ data.place ? dateToString(data.date) + ' | ' + data.place : dateToString(data.date) }</p>
+	{#if data.speaker}
+		<p>{ data.speaker }</p>
+	{/if}
 	<svelte:component this={data.content} />
 </article>

@@ -6,6 +6,8 @@ category: 'conference'
 keywords: ''
 ---
 
+# Les métadonnées archivistiques en transition : le nouveau cadre normatif, les enjeux et les premières réalisations
+
 ## Introduction
 
 Anthea Seles

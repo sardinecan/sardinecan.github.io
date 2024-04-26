@@ -6,6 +6,8 @@ language: 'html'
 keywords: ''
 ---
 
+# Fondamentaux
+
 ## Éléments et structure de base
 <dl>
   <dt><code>&lt;!DOCTYPE html&gt;</code></dt>

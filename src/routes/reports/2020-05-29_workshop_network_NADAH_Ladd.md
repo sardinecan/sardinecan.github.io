@@ -6,6 +6,8 @@ category: 'workshop'
 keywords: ''
 ---
 
+# Understanding and Interpreting Your Network
+
 Slides : https://jrladd.com/slides/networkbasics
 
 Glossaire : https://jrladd.com/network-glossary.html

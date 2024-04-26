@@ -5,6 +5,9 @@ author: 'Josselin Morvan'
 language: 'julia'
 keywords: ''
 ---
+
+# Manipuler des collections
+
 ## map()
 ```julia
 m = [1 2 3

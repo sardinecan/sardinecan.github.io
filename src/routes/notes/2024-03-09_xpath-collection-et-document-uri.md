@@ -6,6 +6,8 @@ author: 'jmorvan'
 keywords: 'xpath ; xml'
 ---
 
+# Les fonctions XPath collection() et document-uri()
+
 ## `collection()`
 Renvoie une séquence d'éléments identifiés par une URI, ou une collection par défaut si aucune URI n'est fournie.
 ```xml

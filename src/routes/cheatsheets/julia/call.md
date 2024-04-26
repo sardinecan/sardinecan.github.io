@@ -1,10 +1,12 @@
 ---
-title: 'Calling languages Python - R'
+title: 'Appels Python et R dans Julia'
 date: '2024-03-31'
 author: 'Josselin Morvan'
 language: 'julia'
 keywords: ''
 ---
+
+# Appels Python et R dans Julia
 
 ## PyCall
 

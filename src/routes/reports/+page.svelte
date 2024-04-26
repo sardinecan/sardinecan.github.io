@@ -1,5 +1,6 @@
 <script>
 	export let data;
+	import { dateToString } from '$lib/utils/dates.js'
 	
 	/* pour filtrer les comptes rendus*/
 	let workshopReports = data.reports.filter(function (el) {
@@ -9,12 +10,6 @@
 	let conferenceReports = data.reports.filter(function (el) {
 	  return el.meta.category.includes('conference');
 	});
-
-	const dateOptions = {
-  	year: 'numeric',
-  	month: 'long',
-  	day: 'numeric',
-	};
 </script>
 
 <h1>Comptes rendus</h1>
@@ -26,10 +21,7 @@
 					<span class="category">{report.meta.category}</span>
 					<span class="title">{report.meta.title}</span>
 					<span class="date">
-						{new Date(report.meta.date).toLocaleDateString('fr-FR', dateOptions)}
-						{#if report.meta.place}
-							{' | ' + report.meta.place}
-						{/if}
+						{report.meta.place ? dateToString(report.meta.date) + ' | ' + report.meta.place : dateToString(report.meta.date)}
 					</span>
 					{#if report.meta.speaker}
 						<span class="speaker">{report.meta.speaker}</span>

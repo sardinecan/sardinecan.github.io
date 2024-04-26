@@ -6,6 +6,8 @@ author: 'jmorvan'
 keywords: 'tei ; xml ; xslt ; stylesheets'
 ---
 
+# TEI Stylesheets
+
 [works also with Linux]
 
 This is a family of XSLT 2.0 stylesheets to transform TEI XML documents to various formats, including XHTML, LaTeX, XSL Formatting Objects, ePub, plain text, RDF, JSON; and to/from Word OOXML (docx) and OpenOffice (odt). They concentrate on the core TEI modules which are used for simple transcription and "born digital" writing.

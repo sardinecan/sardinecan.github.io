@@ -1,15 +1,9 @@
 <script>
 	export let data;
-
-	const dateOptions = {
-  	year: 'numeric',
-  	month: 'long',
-  	day: 'numeric',
-	};
+	import { dateToString } from '$lib/utils/dates.js'
 </script>
 
 <article>
-	<p class="date">{new Date(data.date).toLocaleDateString('fr-FR', dateOptions)}</p>
-	<h1>{data.title}</h1>
+	<p class="date">{dateToString(data.date)}</p>
 	<svelte:component this={data.content} />
 </article>

@@ -6,6 +6,8 @@ author: 'jmorvan'
 keywords: 'git ; github ; github pages'
 ---
 
+# Déploiement d’un sous dossier sur Github Pages
+
 Voici comment ajouter seulement un sous-dossier de la branche principale à la branche `gh-pages` (ou de toute autre branche).
 
 ```bash

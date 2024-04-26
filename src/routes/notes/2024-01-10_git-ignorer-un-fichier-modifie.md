@@ -6,6 +6,8 @@ author: 'jmorvan'
 keywords: 'git'
 ---
 
+# Ignorer un fichier modifié (mais non commité) avec Git
+
 Pour ignorer les fichiers modifiés (mais non commités) avec git :
 
 ```bash

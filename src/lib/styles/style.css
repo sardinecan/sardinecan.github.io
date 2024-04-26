@@ -12,6 +12,8 @@
 	--altColor: #0006;
 	/*--subColor: rgb(0, 0, 128);*/
 	/*--subColor: #404880;*/
+
+	--maxWidth: 40em
 	
 }
 
@@ -39,10 +41,14 @@ footer {
 body main {
 	padding: 1rem;
 	margin: 2rem auto;
-	max-width: 40em;
+	max-width: var(--maxWidth);
 	width: 100%;
 	line-height: 1.6em;
 	font-size: 1.2em;
+}
+
+img {
+	max-width: var(--maxWidth);
 }
 
 pre > code {
@@ -206,6 +212,11 @@ p.date {
 	display: block;
 }
 
+.title + .date {
+	padding-top: 1em;
+	line-height: 0.5em;
+}
+
 ul.cards li:hover .date {
 	color: white;	
 }
@@ -213,7 +224,7 @@ ul.cards li:hover .date {
 ul.cards li .speaker {
 	font-weight: 300;
 	font-size: 0.7em;
-	color: var(--altColor);
+	color: var(--headingColor);
 }
 
 ul.cards li:hover .speaker {
@@ -232,7 +243,7 @@ ul.cards li:hover .speaker {
               0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
               0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }*/
-pre {
+pre,
+img {
 	box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
 }
-
