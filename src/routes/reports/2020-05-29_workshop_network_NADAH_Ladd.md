@@ -1,8 +1,8 @@
 ---
 title: 'Understanding and Interpreting Your Network'
 date: '2020-05-29'
-author: 'John R. Ladd'
-event: 'workshop'
+speaker: 'John R. Ladd'
+category: 'workshop'
 keywords: ''
 ---
 

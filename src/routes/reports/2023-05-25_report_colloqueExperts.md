@@ -1,7 +1,8 @@
 ---
 title: 'Colloque Experts'
 date: '2023-05-25'
-event: 'conference'
+category: 'conference'
+place: 'Université Paris-Nanterre'
 keywords: ''
 ---
 

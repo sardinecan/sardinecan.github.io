@@ -1,6 +1,7 @@
 ---
-title: 'XPath — collection() et document-uri()'
+title: 'Les fonctions collection() et document-uri()'
 date: '2022-03-09'
+category: 'xpath'
 author: 'jmorvan'
 keywords: 'xpath ; xml'
 ---

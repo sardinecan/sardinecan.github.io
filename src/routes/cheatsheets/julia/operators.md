@@ -1,6 +1,7 @@
 ---
-title: 'Julia | Opérateurs'
+title: 'Opérateurs'
 date: '2024-03-21'
+author: 'Josselin Morvan'
 language: 'julia'
 keywords: ''
 ---

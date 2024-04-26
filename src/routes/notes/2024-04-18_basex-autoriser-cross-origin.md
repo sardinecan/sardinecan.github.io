@@ -1,6 +1,7 @@
 ---
-title: 'BaseX — autoriser cross-origin / cross-domain'
+title: 'Autoriser cross-origin / cross-domain'
 date: '2024-04-18'
+category: 'basex'
 author: 'jmorvan'
 keywords: 'basex ; xml ; cross-origin'
 ---

@@ -1,6 +1,7 @@
 ---
-title: 'Julia — gestion des environnements'
+title: 'Gestion des environnements'
 date: '2022-05-17'
+category: 'julia'
 author: 'jmorvan'
 keywords: 'config ; dev ; installation'
 --- 

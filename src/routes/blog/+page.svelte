@@ -4,19 +4,31 @@
 	let publishedPosts = data.posts.filter(function (el) {
 	  return el.meta.status.startsWith('unpublished');
 	});
+
+	const dateOptions = {
+  	year: 'numeric',
+  	month: 'long',
+  	day: 'numeric',
+	};
 </script>
 
 <h1>Blog</h1>
-<ul>
-	{#if publishedPosts.length > 0}
-		{#each publishedPosts as post}
-			<li>
-				<a href={post.path}>{post.meta.title}</a>
-			</li>
-		{/each}
-	{:else}
-		<li>Aucun post pour le moment…  ¯\_(ツ)_/¯</li>
-	{/if}
-	
+<ul class="cards">
+	{#each publishedPosts as publishedPost}
+		<li>
+			<a href="{publishedPost.path}">
+				<article>
+					<span class="category">{publishedPost.meta.category}</span>
+					<span class="title">{publishedPost.meta.title}</span>
+					<span class="date">
+						{new Date(publishedPost.meta.date).toLocaleDateString('fr-FR', dateOptions)}
+					</span>
+					{#if publishedPost.meta.author}
+						<span class="speaker">{publishedPost.meta.author}</span>
+					{/if}
+				</article>
+			</a>
+		</li>
+	{/each}
 </ul>
 

@@ -1,8 +1,8 @@
 ---
 title: 'Network Visualization: The Next Generation'
 date: '2024-04-05'
-author: 'Dario Rodighiero'
-event: 'workshop'
+speaker: 'Dario Rodighiero'
+category: 'workshop'
 keyworkds: 'design ; dh ; dataviz ; networks ; python'
 ---
 

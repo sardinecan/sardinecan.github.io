@@ -1,6 +1,7 @@
 ---
 title: 'System Setup'
 date: '2022-05-17'
+category: 'setup'
 author: 'jmorvan'
 keywords: 'config ; dev ; installation'
 ---

@@ -1,6 +1,7 @@
 ---
-title: 'Git — ignorer un fichier modifié (mais non commité)'
+title: 'Ignorer un fichier modifié (mais non commité) avec Git'
 date: '2024-01-10'
+category: 'git'
 author: 'jmorvan'
 keywords: 'git'
 ---

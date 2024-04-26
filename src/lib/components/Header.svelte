@@ -11,11 +11,11 @@
 				<pattern id="waves" patternUnits="userSpaceOnUse" width="230.4" height="221.7" patternTransform="scale(.5)">
 				<defs>
 					<g id="wave" stroke="#272C4D" fill="none"><!-- <g id="wave" stroke="#000080" fill="none"> -->
-						<circle fill="white" stroke-width="8" r="106.7" />
-						<circle stroke-width="9" r="81" />
-						<circle stroke-width="8" r="55.3" />
-						<circle stroke-width="7" r="32.5" />
-						<circle stroke-width="7" r="13.2" />
+						<circle fill="white" stroke-width="5" r="106.7" />
+						<circle stroke-width="4" r="81" />
+						<circle stroke-width="4" r="55.3" />
+						<circle stroke-width="4" r="32.5" />
+						<circle stroke-width="4" r="13.2" />
 					</g>
 				</defs>
 				<use x="229.9" y="0.7" xlink:href="#wave" />
@@ -35,11 +35,12 @@
 			</defs>
 		 <rect width="100%" height="100%" fill="url(#waves)" />
 		</svg>
-		<h1>/Log</h1>
+		<h1>❯/log</h1>
 	</div>
 </header>
 <nav>
-	<a href="/" class="home"><img src="{svg_home}"/></a>
+	<!--<a href="/" class="home"><img src="{svg_home}"/></a>-->
+	<a href="/"><span class="headingColor">~</span>/home</a>
 	<ul>
 		<li><a href="/blog" class:active="{$page.url.pathname.includes("blog")}">Blog</a></li>
 		<li><a href="/reports" class:active="{$page.url.pathname.includes("reports")}">Comptes rendus</a></li>
@@ -54,7 +55,7 @@
 
 	div.titlebar {
 		position: relative;
-		min-height: 8em;
+		height: 7em;
 		display: flex;
 	}
 
@@ -67,13 +68,20 @@
 		margin: 0 0 0 0.5em;
 		align-self: center;
 		padding: 0.1em;
-		font-size: 4em;
+		font-family: var(--monospaceFont);
+		font-size: 3.5em;
 		background: rgba(255, 255, 255, .7);
 		color: var(--mainColor);
 		display: flex;
-	  align-items: center;
+	  align-items:baseline;
  		gap: 0.1em;
 	}
+
+	/*header + nav > a {
+		display: flex;
+	  align-items: center;
+ 		gap: 0.1em;
+	}*/
 
 
 @keyframes cursor-blink {
@@ -82,13 +90,13 @@
   100% { opacity: 1.0; }
 }
 
-div.titlebar > h1::after {
+div.titlebar > h1::after/*,
+header + nav > a::after*/ {
   content: "";
-  width: 0.4em;
-  height: 1em;
-  background: orangered;
+  width: 0.5em;
+  height: 0.1em;
+  background: var(--headingColor);
   display: inline-block;
-	
   animation: cursor-blink 1.5s steps(1) infinite;
 }
 
@@ -124,6 +132,10 @@ div.titlebar > h1::after {
 	header + nav .home img {
 		height: 1em;		
 		filter: invert(32%) sepia(82%) saturate(3323%) hue-rotate(3deg) brightness(102%) contrast(109%);
+	}
+
+	.headingColor {
+		color: var(--headingColor);
 	}
 	
 </style>

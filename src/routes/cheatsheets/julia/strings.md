@@ -1,6 +1,7 @@
 ---
-title: 'Julia | Chaines de caractères'
+title: 'Chaines de caractères'
 date: '2024-03-22'
+author: 'Josselin Morvan'
 language: 'julia'
 keywords: ''
 ---

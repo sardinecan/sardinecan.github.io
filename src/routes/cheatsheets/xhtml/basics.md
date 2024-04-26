@@ -1,6 +1,7 @@
 ---
-title: 'HTML | Fondamentaux'
+title: 'Fondamentaux'
 date: '2024-03-20'
+author: 'Josselin Morvan'
 language: 'html'
 keywords: ''
 ---

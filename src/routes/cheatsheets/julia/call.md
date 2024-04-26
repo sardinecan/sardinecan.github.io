@@ -1,6 +1,7 @@
 ---
-title: 'Julia | Calling languages Python - R'
+title: 'Calling languages Python - R'
 date: '2024-03-31'
+author: 'Josselin Morvan'
 language: 'julia'
 keywords: ''
 ---

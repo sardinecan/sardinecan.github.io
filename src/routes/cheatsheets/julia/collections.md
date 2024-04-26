@@ -1,6 +1,7 @@
 ---
-title: 'Julia | Manipuler des collections'
+title: 'Manipuler des collections'
 date: '2024-03-23'
+author: 'Josselin Morvan'
 language: 'julia'
 keywords: ''
 ---

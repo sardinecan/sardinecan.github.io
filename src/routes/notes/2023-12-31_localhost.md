@@ -1,6 +1,7 @@
 ---
 title: 'Localhost'
 date: '2023-12-31'
+category: 'setup'
 author: 'jmorvan'
 keywords: 'python ; julia ; localhost'
 ---

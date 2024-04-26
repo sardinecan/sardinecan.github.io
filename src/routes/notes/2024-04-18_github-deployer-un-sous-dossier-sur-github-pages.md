@@ -1,6 +1,7 @@
 ---
-title: 'Github — déploiement d’un sous dossier sur Github Pages'
+title: 'Déploiement d’un sous dossier sur Github Pages'
 date: '2024-04-18'
+category: 'github'
 author: 'jmorvan'
 keywords: 'git ; github ; github pages'
 ---

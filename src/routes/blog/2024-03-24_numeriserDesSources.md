@@ -1,7 +1,7 @@
 ---
 title: 'Numériser des sources : guide des bonnes pratiques'
 date: '2024-03-24'
-author: 'jmorvan'
+author: 'Josselin Morvan'
 status: 'unpublished'
 tags: 'dh'
 ---

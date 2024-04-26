@@ -1,6 +1,7 @@
 ---
-title: 'TEI — Édition critique de formules mathématiques'
+title: 'Édition critique de formules mathématiques'
 date: '2023-12-31'
+category: 'tei'
 author: 'jmorvan'
 keywords: 'xml ; tei ; mathml ; latex'
 ---

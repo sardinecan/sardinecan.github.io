@@ -1,9 +1,8 @@
 ---
 title: 'Situer l’Analyse Visuelle de Réseaux'
 date: '2021-04-03'
-author: 'Mathieu Jacomy'
-place: 'Médialab'
-event: 'workshop'
+speaker: 'Mathieu Jacomy'
+category: 'workshop'
 keywords: ''
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: 'Tuto@mate - de l’utilisation de spaCy, comment parser un texte avec une bibliothèque Python'
 date: '2022-05-19'
-author: 'Clément Plancq'
-event: 'workshop'
+speaker: 'Clément Plancq'
+category: 'workshop'
 keywords: ''
 ---
 

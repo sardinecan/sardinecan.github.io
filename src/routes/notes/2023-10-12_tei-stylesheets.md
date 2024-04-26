@@ -1,6 +1,7 @@
 ---
-title: 'TEI — TEI Stylesheets'
+title: 'TEI Stylesheets'
 date: '2023-10-12'
+category: 'tei'
 author: 'jmorvan'
 keywords: 'tei ; xml ; xslt ; stylesheets'
 ---
