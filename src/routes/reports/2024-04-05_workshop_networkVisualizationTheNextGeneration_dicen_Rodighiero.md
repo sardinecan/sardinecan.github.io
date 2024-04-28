@@ -39,7 +39,7 @@ Il effectue ensuite une identification des clusters.
 
 Il utilise ensuite un Word cloud : il prend les clusters pour les décrires avec des mots.
 
-Le fichier `ìndex.js`
+Le fichier `index.js`
 
 cloner le repos `cd repo` puis `npm run start` => got localhost::8080
 La différence avec Gephy qui fonctione selon une attraction/répulsion, ici on a une représentation de vecteur.
