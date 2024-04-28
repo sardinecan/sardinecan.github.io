@@ -5,7 +5,6 @@
 			<li><a href="https://github.com/sardinecan/antiseches">Github</a></li>
 			<!--<li><a href="/contact">Contact</a></li>-->
 		</ul>
-    
   </nav>
 </footer>
 

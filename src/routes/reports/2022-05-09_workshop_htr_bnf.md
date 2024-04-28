@@ -2,6 +2,7 @@
 title: 'Point HTR 2022 Transkribus / eScriptorium : Transcrire, annoter et éditer numériquement des documents d’archives'
 date: '2022-05-09'
 place: 'BnF'
+speaker: ''
 category: 'workshop'
 keywords: ''
 ---

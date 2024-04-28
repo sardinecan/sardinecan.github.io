@@ -129,10 +129,11 @@ header + nav > a::after*/ {
 	}
 
 
-	header + nav .home img {
+	/* for filter to change SVG color https://codepen.io/sosuke/pen/Pjoqqp */
+	/*header + nav .home img {
 		height: 1em;		
 		filter: invert(32%) sepia(82%) saturate(3323%) hue-rotate(3deg) brightness(102%) contrast(109%);
-	}
+	}*/
 
 	.headingColor {
 		color: var(--headingColor);

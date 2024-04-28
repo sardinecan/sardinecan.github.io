@@ -3,6 +3,7 @@ title: 'Les mécanismes de l’expertise et ses acteurs, XVIe – XIXe siècle'
 date: '2023-05-25'
 category: 'conference'
 place: 'Université Paris-Nanterre'
+speaker: ''
 keywords: ''
 ---
 

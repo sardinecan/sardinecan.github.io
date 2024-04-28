@@ -3,18 +3,30 @@
 	import { dateToString } from '$lib/utils/dates.js'
 	
 	/* pour filtrer les comptes rendus*/
-	let workshopReports = data.reports.filter(function (el) {
+	/*let workshopReports = data.reports.filter(function (el) {
 	  return el.meta.category.includes('workshop');
 	});
 
 	let conferenceReports = data.reports.filter(function (el) {
 	  return el.meta.category.includes('conference');
-	});
+	});*/
+
+	let search = undefined;
+	
+	$: visibleReports = search ?
+		data.reports.filter(report => {
+			return (
+				report.meta.title.toLowerCase().match(`${search}.*`) 
+				|| report.meta.category.toLowerCase().match(`${search}.*`) 
+				|| report.meta.speaker.toLowerCase().match(`${search}.*`)
+			)
+		}) : data.reports;
 </script>
 
 <h1>Comptes rendus</h1>
+<input type="text" bind:value={search} placeholder="rechercher" />
 <ul class="cards">
-	{#each data.reports as report}
+	{#each visibleReports as report}
 		<li>
 			<a href="{report.path}">
 				<article>

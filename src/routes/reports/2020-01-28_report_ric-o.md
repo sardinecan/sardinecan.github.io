@@ -2,6 +2,7 @@
 title: 'Les métadonnées archivistiques en transition : le nouveau cadre normatif, les enjeux et les premières réalisations'
 date: '2020-01-28'
 place: 'Archives nationales'
+speaker: ''
 category: 'conference'
 keywords: ''
 ---
