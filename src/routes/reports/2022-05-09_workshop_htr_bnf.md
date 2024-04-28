@@ -9,7 +9,9 @@ keywords: ''
 
 # Point HTR 2022 Transkribus / eScriptorium : Transcrire, annoter et éditer numériquement des documents d’archives
 
-## [Transkribus](https://readcoop.eu/transkribus/)
+## Transkribus
+[Transkribus](https://readcoop.eu/transkribus/)
+
 ### Écosystème
 S'inscrit dans un ensemble de procédés
 - traitement de l'image
@@ -48,7 +50,9 @@ Coopérative à charte européenne, évolution d'un grand projet débuté en 201
 - sert la communauté ;
 - dirigée par un conseil d'administration élu ;
 
-### Cas pratiques : projet [Nouvelle-France numérique](http://nouvellefrancenumerique.info/)
+### Cas pratiques : projet Nouvelle-France numérique
+[Nouvelle-France numérique](http://nouvellefrancenumerique.info/)
+
 Utilisation de Transkribus depuis 2017, quasiment depuis le début. L'objectif était de rassembler et transcrire l'ensemble des archives de la Nouvelle-France (16e-18e siècles). Grâce au HTR, le projet à pris une ampleur qui n'était pas envisagée au début (plutôt modeste), c'est aussi un projet participatif. 
 Depuis le début c'est plus de 100 K pages qui ont été transcrites. Deux modèles sont publics pour le français entre le 16e et le 18e siècle, mais d'autres ne sont pas publiés. Ils peuvent toutefois être partagés, mais ils ne sont pas encore finalisés (+100). Beaucoup de types de documents (archives judiciaires, correspondances, cahiers d'ordonnances, greffes de notaires, etc.)
 Très bonne intégration pour le travail en équipe, facilite le balisage des métadonnées (intégration XML), suivi des statut, etc. Outils de recherche très performants également (Solr), plein texte, par balises (mais pas Xpath), et également _keywork spotting_. 
@@ -58,7 +62,9 @@ Documentation sur une chaîne Youtube.
 Pourquoi ne pas faire un seul gros modèle générique ? 
     > Ce n'est pas une question de performance mais de précision du modèle : si on a une seule main, avec un vocabulaire réduit, on préférera un modèle plus petit et propre, proposant de meilleurs résultats, à contrario, si on a plusieurs mains, etc. on se tournera vers un modèle plus généraliste.
 
-## [eScriptorium](https://escriptorium.fr/)
+## eScriptorium
+[eScriptorium](https://escriptorium.fr/)
+
 C'est une autre système de HTR. Derrière il y a le logiciel [Kraken](https://kraken.re/master/index.html), qui existe depuis quelques années et développé par _Kiessling_. Il permet la segmentation automatique, la transcription automatique, et est optimisé pour les écritures historiques et non latines. Ce système est libre, gratuit et ouvert (le logiciel et les modèles). Mais _Kraken_ s'exécute en ligne de commande. 
 
 eScriptorium est une interface web pour _Kraken_ :
@@ -145,7 +151,9 @@ Apprentissage à partir de documents d'une seule main. Dans ce temps il y a eu d
 Le second défi est de connaître l'efficacité d'un modèle, ils ont alors appliqué le premier modèle, mais le taux d'erreur n'était pas bon car l'entraînement avait été fait sur peu de documents et écrits par une seule main, avant de reprendre un modèle générique et de l'appliquer à un échantillon de test représentatif des documents à traiter.
 Concernant les abréviations, il est possible de traiter pendant l'HTR.
 
-### [PENSE](https://numrha.hypotheses.org/1107) - Plateforme d'Édition Numérique de Source Enrichies - J.-C. Carius (INHA)
+### PENSE - Plateforme d'Édition Numérique de Source Enrichies - J.-C. Carius (INHA)
+[PENSE](https://numrha.hypotheses.org/1107)
+
 Le projet est développé sous forme AGILE, c'est à dire qu'il a été lancé très tôt, il est toujours en cours, mais déjà accessible à tous. Plusieurs projets participe de cette initiative :
  - Projet pilote : les papiers d'Antoine-Louis Barye :
      - Transkribus n'a pas été utilisé pour la transcription, mais pour la segmentation, projet classique d'édition de documents,
@@ -156,20 +164,25 @@ Pour utiliser Transkribus, il fallait faire quelque part de la rétro-ingénieri
 
 ## eScriptorium 
 
-### [Sofer mahier](https://sofermahir.hypotheses.org/) - Daniel Stökl Ben Ezra
+### Sofer mahier - Daniel Stökl Ben Ezra
+[Sofer mahier](https://sofermahir.hypotheses.org/)
 
 Projet lancé avant même _Transcriptorium_, pour l'édition de 16 mss hébraïques très importants car antérieurs au Talmud (ce dernier est un commentaire de ces textes). L'objectif c'est la précision. Dans un premier temps il y a eu un test de _crowdsourcing_, mais malgré la transcription de plusieurs milliers de lignes, la précision n'était pas satisfaisante. 
 Finalement ils ont opté pour l'utilisation de _Kraken_, avec apprentissage d'un modèle, et utilisation d'éditions vulgates pour l'apprentissage du modèle.
 Il y a une hiérarchie de document (page, colonne, ligne), mais pour l'édition il fallait une autre hiérarchie (livre, chapitre, etc.), le modèle a été entrainé pour cela également.
 Finalement le modèle entraîné permet d'obtenir un taux d'erreurs situé entre 3% et 0.9% !
 
-### [LectAuRep](https://lectaurep.hypotheses.org/) - Hugo Scheithauer
+### LectAuRep - Hugo Scheithauer
+[LectAuRep](https://lectaurep.hypotheses.org/)
+
 C'est une projet qui est finalisé aujourd'hui. L'objectif était de faciliter la consultation des répertoires des notaires conservés au Minutier central.
 Difficultés : beaucoup de mains présentes dans les répertoires (différences des graphies, différences dans les densités, etc.). L'idée c'était de faire deux modèles génériques à partir d'une dizaine de mains afin d'obtenir un taux d'erreur inf. à 10% ; puis de passer à des modèles plus poussés (pour un notaire qui a beaucoup produit par exemple) permettant de passer à un taux d'erreur de l'ordre de 5%.
 
 Il y a eu un gros travail sur la segmentation, afin de rendre compte des tableaux dans lesquels sont saisis les actes des notaires (à l'origine les transcriptions sortaient à plat, non structurées donc et il était impossible de rendre compte de ces tableaux).
 
-### [ANR e-Notre-Dame-Paris](https://lamop.hypotheses.org/6870) - Sergio Torres
+### ANR e-Notre-Dame-Paris - Sergio Torres
+[ANR e-Notre-Dame-Paris](https://lamop.hypotheses.org/6870)
+
 Édition des registres du chapitre de Notre-Dame. L'idée c'est de développer un traitement HTR afin de traiter rapidement les 14 000 pages du corpus, avec si possible un taux d'erreur inf. à 10%.
 Il y a un format pour les pages qui est à peu près suivi et le système commence à réussir à repérer ces zones : 
 - date

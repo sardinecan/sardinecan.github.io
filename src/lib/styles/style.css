@@ -112,14 +112,15 @@ main > article > h4 + * {
 main a,
 main a:visited
 {
-	color: var(--mainColor);
-	text-decoration: underline dotted var(--headingColor) 0.1em;
+	color: var(--subColor);
+	font-weight: 400;
+	text-decoration: none;
+	/*text-decoration: underline dotted var(--headingColor) 0.1em;*/
 }
 
-.cards a,
-.cards a:visited
+main a:hover
 {
-	text-decoration: none;
+	text-decoration: underline dotted var(--headingColor) 0.1em;
 }
 
 
@@ -246,4 +247,12 @@ ul.cards li:hover .speaker {
 pre,
 img {
 	box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+}
+
+:not(pre) > code {
+	background-color: var(--subColor);
+	color: white;
+  border-radius: 0.3em;
+  padding: 4px 5px 6px;
+  white-space: nowrap;    
 }
