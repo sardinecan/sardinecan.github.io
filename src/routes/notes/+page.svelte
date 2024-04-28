@@ -18,7 +18,7 @@
 </script>
 
 <h1>Notes</h1>
-<input type="text" bind:value={search} placeholder="rechercher" />
+<input type="text" bind:value={search} placeholder="filtrer" />
 
 <ul class="cards">
 	{#each visibleNotes as note}

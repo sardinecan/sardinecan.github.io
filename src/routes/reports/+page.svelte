@@ -24,7 +24,7 @@
 </script>
 
 <h1>Comptes rendus</h1>
-<input type="text" bind:value={search} placeholder="rechercher" />
+<input type="text" bind:value={search} placeholder="filtrer" />
 <ul class="cards">
 	{#each visibleReports as report}
 		<li>
