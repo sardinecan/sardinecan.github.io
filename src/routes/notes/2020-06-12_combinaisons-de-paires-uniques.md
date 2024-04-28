@@ -18,7 +18,7 @@ result =
 .    .    .    .
 ```
 
-- voir aussi [How do I get the total number of unique pairs of a set in the database?](https://stackoverflow.com/questions/18859430/how-do-i-get-the-total-number-of-unique-pairs-of-a-set-in-the-database)
+- voir aussi [*How do I get the total number of unique pairs of a set in the database?*](https://stackoverflow.com/questions/18859430/how-do-i-get-the-total-number-of-unique-pairs-of-a-set-in-the-database)
 
 ## XQuery
 
