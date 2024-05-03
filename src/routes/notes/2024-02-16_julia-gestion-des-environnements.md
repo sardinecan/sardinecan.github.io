@@ -14,7 +14,7 @@ Créer un fichier `~/.julia/config/startup.jl` avec le contenu suivant :
 
 ```julia
 println("Salutations !")
-en utilisant Pkg
+using Pkg
 if isfile("Project.toml") && isfile("Manifest.toml")
     Pkg.activate(".")
 else
