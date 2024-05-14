@@ -16,6 +16,7 @@
 	--maxWidth: 40em
 }
 
+
 body {
 	margin: 0;
 	background: white;
@@ -48,6 +49,10 @@ body main {
 
 img {
 	max-width: var(--maxWidth);
+}
+
+p {
+	text-align: justify;
 }
 
 pre > code {
