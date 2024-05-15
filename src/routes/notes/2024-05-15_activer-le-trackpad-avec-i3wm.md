@@ -1,8 +1,8 @@
-
 ---
 title: "Toucher pour cliquer avec i3wm"
 date: 2024-05-15
 author: "jmorvan"
+category: 'setup'
 keywords: "setup ; i3 ; linux ; mac"
 ---
 

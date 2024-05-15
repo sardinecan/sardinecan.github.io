@@ -1,8 +1,8 @@
-
 ---
 title: "CLI connexion Wifi"
 date: 2024-05-15
 author: "jmorvan"
+category: 'setup'
 keywords: "CLI ; wifi ; setup"
 ---
 
