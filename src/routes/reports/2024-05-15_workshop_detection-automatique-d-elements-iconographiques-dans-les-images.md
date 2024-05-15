@@ -39,10 +39,11 @@ avec la programmation
 le programme est écrit par un dev, l'expert doit pouvoir explicité les règles, il faut un programme par tâche, en cas d'erreur il faut modifier le programme
 Avec l'apprentissage automatique, le programme est écrit par la machine, l'expert doit annoter des exemple, un seul programme d'apprentissage pour plusieurs tâche et si on a des erreurs, il suffit de donner de nouveaux exemples.
 le pipeline est le suivant :
-| :--- 			| :----			| :---		| :---		| :---		|
-| Exemples annotés ->	| apprentissage ->	| modèle ↓	|		|		|
-| 			|Exemples à traiter ->	| programme ->	| exécution ->	| prédiction 	|
-
+```
+Exemples annotés ->     apprentissage ->     modèle
+                                                ↓
+                   Exemples à traiter ->     programme ->     exécution ->     prédiction
+```
 Les exemples définissent le programme : l'annotation est la phse la plus importante.
 Comment bien choisir les exemple : il faut constituer un échantillonage aléatoire et représentatif. Il faut également annoter come ce que l'on souhaite obtenir en prédiction. 
 
