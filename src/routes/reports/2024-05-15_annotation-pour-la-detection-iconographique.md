@@ -265,7 +265,7 @@ Une campagne peut être exportée sans être terminée à 100%, elle peut égale
 
 #### L'export vers Arkindex
 
-- Lorsque cette option est sélectionnée, ce formulaire s'ouvre:  ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/0d97be3a-ac1e-4906-8a41-bd38c3d9fb09.png)
+- Lorsque cette option est sélectionnée, ce formulaire s'ouvre:  
 
 Le nom du processus permet de le retrouver, mais n'est pas très important. Ici, il s'agit de l'export de la campagne de délimitation.
 
@@ -275,7 +275,6 @@ On trouve ensuite deux options ( "forcer la republication des annotations" et "p
 
 - On peut alors commencer l'export. La page de process s'ouvre, on peut réguliérement rafraichir pour voir l'avancée des tâches. A la fin du process, on peut repasser sur Arkindex, pour vérifier que les annotations sont importées.
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/595d07e6-aec0-41c3-89ab-6dd9d458edb0.png)
 
 Ici, on peut voir l'annotation de l'illustration. Les annotations permettront par la suite de réaliser l'entraînement d'un modèle de détection de zones.
 
@@ -289,14 +288,3 @@ Callico et Arkindex sont des outils open-source en construction, et des dévelop
 Vous êtes vivement invités à manipuler l'outil et à nous faire des retours !
 
 Merci pour votre attention !
-
-
-
-
-
-
-
-
-
-
-
