@@ -5,6 +5,7 @@ speaker: 'Christopher Kermorvant ; Marion Charpier'
 category: 'workshop'
 keyworkds: 'IA ; annotation ; modèle ; détection'
 ---
+
 # Détection automatique d’éléments iconographiques dans les images : principes et mise en œuvre
 
 3 types de modèle
