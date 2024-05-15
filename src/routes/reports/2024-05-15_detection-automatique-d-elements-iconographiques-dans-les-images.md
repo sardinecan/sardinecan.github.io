@@ -68,7 +68,7 @@ Ces 3 ensembles doivent être repésentatifs, aléatoires et disjoints.
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/caf6c560-0e42-4867-ae8b-f811a3b0c083.png)
 
 #### En vidéo :
-{%youtube S_7N3jYALtc %}
+youtube S_7N3jYALtc
 
 
 ### 2. Répartir les exemples aléatoirement dans les répertoires train/dev/test
@@ -87,7 +87,7 @@ Ces 3 ensembles doivent être repésentatifs, aléatoires et disjoints.
 
 
 #### En vidéo :
-{%youtube XOP27j-4ee4 %}
+youtube XOP27j-4ee4
 
 ### 3. Créer un dataset avec des sous-ensembles Train/Val/Test
 
@@ -97,7 +97,7 @@ Ces 3 ensembles doivent être repésentatifs, aléatoires et disjoints.
 
 
 #### En vidéo :
-{%youtube wkxgt9NSMXc %}
+youtube wkxgt9NSMXc
 
 #### 4. Générer l'export complet du projet
 
@@ -111,7 +111,7 @@ L’export et la génération de l’archive d’entrainement permettent la dist
 :::
 
 #### En vidéo :
-{%youtube w082mRvSqEI %}
+youtube w082mRvSqEI
 
 ### 5. Générer l'archive d'entrainement à partir du projet
 
@@ -129,7 +129,7 @@ L’export et la génération de l’archive d’entrainement permettent la dist
 
 
 #### En vidéo :
-{%youtube GLOY-Q9ekpc  %}
+youtube GLOY-Q9ekpc
 
 ### 6. Créer un modèle
 
@@ -143,7 +143,7 @@ L’export et la génération de l’archive d’entrainement permettent la dist
 
 
 #### En vidéo :
-{%youtube _0B2ARsnbqo  %}
+youtube _0B2ARsnbqo
 
 ### 7. Lancer l'entrainement du modèle YOLO
 
@@ -174,4 +174,4 @@ L’export et la génération de l’archive d’entrainement permettent la dist
 
 
 #### En vidéo :
-{%youtube 9XiL9FxD31M   %}
+youtube 9XiL9FxD31M
