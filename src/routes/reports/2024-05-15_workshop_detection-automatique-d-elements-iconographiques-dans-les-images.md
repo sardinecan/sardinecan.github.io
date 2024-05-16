@@ -53,6 +53,9 @@ L'objectif est d'apprendre à généraliser pour prédire sur des exemples nons 
 - un échantillon pour évaluer le modèle (test set)
 Ces 3 ensembles doivent être repésentatifs, aléatoires et disjoints.
 
+NB : avec YOLO assez peu de données sont nécessaires pour obtenir de bon résultat. 
++NB 2 : possibilité d'augmenter artificiellement les données avec les changements de perspectives par exemple, ou modification des images. mais plus efficace lorsque c'est intégrer dans un script d'apprentissage.
+
 ## Entrainement d'un modèle de détection avec Arkindex
 - [Documentation Arkindex](https://doc.arkindex.org/tutorial/segmentation-training/)
 - [notes Teklia](https://notes.teklia.com/s/P6wnIUYqQ#)
