@@ -1,14 +1,14 @@
 ---
-title: "Code-OSS : erreur lors de l'activation de l'extension Jupyter"
-date: 2024-05-15
+title: "Code-OSS : configuration de Julia et des Jupyter Notebooks"
+date: 2024-05-27
 author: "jmorvan"
 category: 'setup'
 keywords: "arch ; linux ; setup ; jupyter ; notebook ; visual studio code ; vscode ; code ; code-oss ; julia"
 ---
 
-# Code-OSS : Julia et erreur lors de l'activation de l'extension Jupyter
+# Code-OSS : configuration de Julia et des Jupyter Notebooks
 
-De multiples erreurs peuvent survenir suite à l'installation des extensions Jupyter dans Code-oss.
+De multiples erreurs peuvent survenir lors de la configuration de Julia et des Jupyter Notebooks dans Code-oss.
 
 ## *Could not start the Julia language server*
 
