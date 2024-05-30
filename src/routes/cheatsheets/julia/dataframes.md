@@ -80,7 +80,7 @@ df = DataFrame(CSV.File("data.csv"))
 =#
 ```
 
-## Les noms colonnes
+## Les noms de colonnes
 ```julia
 names(df) # liste les colonnes et retourne un vecteur
 #=
