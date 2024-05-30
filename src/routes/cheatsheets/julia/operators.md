@@ -7,6 +7,7 @@ keywords: ''
 ---
 
 # Opérateurs
+[Documentation Julia](https://docs.julialang.org/en/v1/manual/mathematical-operations/)
 
 - [Opérateurs arithmétiques](#operateurs-arithmetiques)
 - [Opérateurs de mise à jour](#operateurs-de-mise-a-jour)
