@@ -153,3 +153,9 @@ df
    2 │     2  Dark Vador
 =#
 ```
+
+## Subsets
+[Documentation Dataframes](https://dataframes.juliadata.org/stable/man/working_with_dataframes/)
+
+## Trier
+[Documentation](https://dataframes.juliadata.org/stable/man/sorting/)
