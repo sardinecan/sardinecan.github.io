@@ -6,7 +6,7 @@
 <article>
 	<p class="date">{ data.place ? dateToString(data.date) + ' | ' + data.place : dateToString(data.date) }</p>
 	{#if data.speaker}
-		<p>{ data.speaker }</p>
+		<p class="speaker">{ data.speaker }</p>
 	{/if}
 	<svelte:component this={data.content} />
 </article>

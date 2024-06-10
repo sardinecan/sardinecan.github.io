@@ -2,7 +2,7 @@
 title: 'Les métadonnées archivistiques en transition : le nouveau cadre normatif, les enjeux et les premières réalisations'
 date: '2020-01-28'
 place: 'Archives nationales'
-speaker: ''
+speaker: 'Florence Clavaud ; Thomas Francart ; Pauline Charbonnier ; Nicolas Orsini ; Camille Monnier ; Manonmani Restif ; Tiphaine-Cécile Foucher ; Anila Angjeli'
 category: 'conference'
 keywords: ''
 ---

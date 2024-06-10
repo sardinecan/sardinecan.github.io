@@ -1,1 +1,1 @@
-<h1>Bienvenue sur Log !</h1>
+<h1>Hello World!</h1>

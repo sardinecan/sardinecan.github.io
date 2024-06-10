@@ -24,10 +24,10 @@
 		margin: 0 0 0 0.5em;
 		align-self: center;
 		padding: 0.1em;
-		font-family: var(--monospaceFont);
+		font-family: var(--mainFont);
 		font-size: 1.2em;
-		background: rgba(255, 255, 255, .7);
-		color: var(--mainColor);
+		/*background: var(--color-white);*/
+		color: var(--color-pink-1);
 		display: flex;
 	  align-items:baseline;
  		gap: 0.1em;
@@ -45,9 +45,15 @@ header + nav > a::after*/ {
   content: "";
   width: 0.5em;
   height: 0.1em;
-  background: var(--headingColor);
+  background: var(--color-white);
   display: inline-block;
   animation: cursor-blink 1.5s steps(1) infinite;
+}
+
+nav h1::before/*,
+header + nav > a::after*/ {
+  content: "❯ ";
+	color: var(--color-green);
 }
 
 nav {
@@ -55,7 +61,7 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	background-color: var(--subColor);
+	background-color: var(--color-dark-2);
 	position: sticky;
 	top: 0;		
 }
@@ -70,11 +76,12 @@ nav ul {
 nav a {
 	padding: 0.1em;
 	text-decoration: none;
-	color: white;
+	color: var(--color-pink-1);
 }
 
 nav a.active {
-	text-decoration: underline solid var(--headingColor) 0.2rem;
+	/*text-decoration: underline solid var(--color-green) 0.2rem;*/
+	color: var(--color-green);
 }
 
 

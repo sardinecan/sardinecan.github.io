@@ -3,7 +3,7 @@ title: 'Les mécanismes de l’expertise et ses acteurs, XVIe – XIXe siècle'
 date: '2023-05-25'
 category: 'conference'
 place: 'Université Paris-Nanterre'
-speaker: ''
+speaker: "Robert Carvais ; Valérie Nègre ; Michela Barbot ; Emmanuel Château-Dutier ; Josselin Morvan ; Gilles Bienvenu ; Pierre Mounier-Khun ; Daniel Velinov ; Aurélien Roulet ; Antonio Iodice ; Jean-Louis Halpérin ; Antoine Ropion ; Corentin Gruffat ; Jean-François Chauvard ; Nicolas Moucheront ; Bastien Tourenc ; Rika Devos ; Sarah Blouin ; Sacha Tomic ; Maxime Bray ; Nicholas O'neill ; Dominique Massounie ; Yvon Plouzennec ; Gérard Meyer ; Luisa Brunori ; Joseph Gauthier ; Benoit Saint-Cast ; Vincent Demont ; Agnès Hirsh"
 keywords: ''
 ---
 

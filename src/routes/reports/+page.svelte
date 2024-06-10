@@ -21,6 +21,22 @@
 				|| report.meta.speaker.toLowerCase().match(`${search}.*`)
 			)
 		}) : data.reports;
+
+	function getSpeakers(speaker) {
+		var speakers = speaker.split(";")
+		var speakers = speakers.map(speaker => normalizeSpace(speaker));
+		if(speakers.length > 3){
+			return speakers[0] + ", " + speakers[1] + ", " + speakers[2] + " et al."
+		} else {
+			return speakers.join(', ')
+		}
+	};
+
+	function normalizeSpace(str) {
+	// Strip leading and trailing white-space
+	return str.replace(/^\s*|\s*$/g, "");
+	};
+
 </script>
 
 <h1>Comptes rendus</h1>
@@ -36,7 +52,7 @@
 						{report.meta.place ? dateToString(report.meta.date) + ' | ' + report.meta.place : dateToString(report.meta.date)}
 					</span>
 					{#if report.meta.speaker}
-						<span class="speaker">{report.meta.speaker}</span>
+						<span class="speaker">{getSpeakers(report.meta.speaker)}</span>
 					{/if}
 				</article>
 			</a>

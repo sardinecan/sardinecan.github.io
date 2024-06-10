@@ -2,7 +2,7 @@
 title: 'Point HTR 2022 Transkribus / eScriptorium : Transcrire, annoter et éditer numériquement des documents d’archives'
 date: '2022-05-09'
 place: 'BnF'
-speaker: ''
+speaker: 'Laurence Tarin ; Günter Mühlberger ; Maxime Gohier ; Peter Stokes ; Marc Bui ; Jean-Philippe Moreux ; Aurélia Rostaing ; Annemieke Romein ; Vivien Popken ; Tobias Hodel ; Jean-Christophe Carius ; Daniel Stökl ; Hugo Scheithauer ; Sergio Torres'
 category: 'workshop'
 keywords: ''
 ---

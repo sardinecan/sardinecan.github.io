@@ -96,6 +96,7 @@ Le lien pour créer un compte ici : https://demo.arkindex.org/user/register?next
 Création d'un nouveau projet (bouton new project en haut à droite de l'écran)
 Le nommage du projet permet de le retrouver facilement, la description n'est pas facultative, on peut cependant mettre la même dénomination que dans le titre.
 Pour ajouter des images, il faut aller chercher le bouton action dans le coin en haut à droite, et choisir *import files*
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/9059c3b9-4e06-4cfb-bb4d-4a24aea6d28d.png)
 
 #### Les modes d'import d'images :
@@ -107,18 +108,24 @@ Ici, nous allons essayer trois méthodes différentes d'imports, en fonction du 
 Ce corpus étant composé d'un nombre raisonnable d'images, on peut les importer directement, néanmoins, pour des corpus plus conséquents, il y a aussi la possibilité d'importer depuis un serveur S3.
 
 Une fois les fichiers sélectionnés sur l'ordinateur, on se retrouve face à cette page, où on peut vérifier les images avec le lien iiif, et les supprimer de la sélection avec la poubelle.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/212d5049-3c26-40a0-80da-f161a1ee66c7.png)
+
 Une fois cette vérification effectuée, cliquer sur *import*.
 
-La page suivante s'ouvre, qui permet de suivre le processus d'import des images. Il est conseillé de nommer le process, afin de le retrouver en cas d'erreur.  ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/b3d733ce-cadd-4691-83d5-38031f4ff0a6.png)
+La page suivante s'ouvre, qui permet de suivre le processus d'import des images. Il est conseillé de nommer le process, afin de le retrouver en cas d'erreur.  
+
+![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/b3d733ce-cadd-4691-83d5-38031f4ff0a6.png)
 
 Le process pouvant être long, Arkindex envoie automatiquement un courriel lorsque l'opération est terminée, ou lorsqu'elle a échouée.
 
 Lorsque l'import est terminé, nous pouvons revenir au projet en cliquant sur le lien attaché au "project" .
 Lors de l'annotation des images, il faudra être en mesure de délimiter des illustrations. Pour ce faire, il faut retourner dans l'onglet "actions", puis sélectionner "Project information".
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/bf67fbca-872a-4597-8ea1-75444c115a0d.png =250x)
 
 Puis dans les types, ajouter une catégorie "Illustration", et valider.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/003f4320-9481-4dc0-a77b-0629c970378b.png)
 
 
@@ -138,6 +145,7 @@ Vous pouvez donc d'ores et déjà créer ces deux comptes.
 **Connexion au compte administrateur**
 
 Il faut alors se connecter à callico, et ajouter un nouveau projet (le bouton en haut à droite de l'écran). S'ouvre alors une page de création de projet
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/eb65ac32-2339-4a58-812e-9eaa94e6cf25.png)
 
 
@@ -148,6 +156,7 @@ Pour le fournisseur, il s'agit de la version démo d'Arkindex. Pour trouver l'id
 
 ### Trouver l'identifiant de l'objet sur Arkindex
 Sur Arkindex, il est possible de retrouver les informations du projet en cliquant sur "Actions" dans le coin droite de l'écran.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/27c0ba3f-374d-496e-b0ae-927aec35c633.png)
 
 En cliquant sur project information, nous allons pouvoir retrouver l'identifiant sous le titre du projet. Il suffit de cliquer sur cet *id* pour qu'il se retrouve dans le presse-papier.
@@ -157,6 +166,7 @@ En cliquant sur project information, nous allons pouvoir retrouver l'identifiant
 Il est alors possible de le coller dans callico et de valider.
 
 Le projet est alors créé sur Callico. On se retrouve devant cette page
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/3fc5cb4c-67d2-4132-9b54-17e4b2158053.png)
 
 Le bouton Editer permet de revenir au formulaire précédent.
@@ -164,14 +174,18 @@ Le bouton Editer permet de revenir au formulaire précédent.
 Le bouton "gérer les membres" permet d'ajouter des personnes au projet, que ce soit des contributeurs (pour l'annotation), des modérateurs pour contrôler les annotations ou d'autres administrateurs de campagne. Pour assigner quelqu'un sur un projet, il faut qu'il aie au préalable un compte sur callico.
 
 C'est à cette étape que vous pouvez ajouter l'adresse de votre second compte annotateur.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/d3d2281e-1bf3-4886-ba5e-f23551e17480.png)
+
 Sur la page "gérer les membres de ce projet", cliquez sur "ajouter un nouveau membre". De là on renseigne l'adresse mail du second compte déjà créé et on désigne le membre comme contributeur.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/41b13134-f0cb-4b8f-9231-e04a922d613a.png)
 
 La fonction "inviter des utilisateurs" permet de générer un lien pour partager la campagne à des contributeurs.
 
 ## 4. Importer des images dans Callico
 - Il n'y a pour l'instant pas d'images à annoter présentes sur Callico, il convient donc d'aller les chercher, en les important depuis Arkindex en cliquant sur la case "importer depuis Arkindex".
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/94f440fd-e44f-43ec-8585-ce48219fbd3f.png)
 
 
@@ -181,10 +195,12 @@ Ici, nous n'aborderons pas l'utilité des *datasets* sur Arkindex et Callico. Au
 
 **Retrouver le nom du folder dans Arkindex**
 Les images étant dans un dossier, il faut retrouver l'ID du dossier, pour ne pas importer l'intégralité des images. L'*id* se trouve sous le nom du folder dans Arkindex.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/3bc95ff6-7dd8-44d9-b00e-80bdf48ec6b1.png)
 
 **Retour à Callico**
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/78433c0d-7bdc-453b-b937-fa5f48ab1681.png)
+
 Ici, les éléments qui nous interessent pour l'annotation sont des pages, donc on le sélectionne dans la liste déroulante.
 Les autres champs ne sont pas interessants ici, ils concernent des projets plus complexes, lorsque les images ont déjà été annotées ou traités par un modèle. Le corpus ne contient pas non plus de métadonnées.
 Nous pouvons alors commencer l'import.
@@ -194,20 +210,25 @@ Une fois l'import terminé, nous pouvons revenir à la page "Projet" pour créer
 ## 5. Création et configuration de la campagne
 Le nom de la campagne permet de la distinguer parmi d'autres. Il est alors important de lui donner un nom correspondant à sa finalité. Ici, elle est nommée délimitation des illustrations.
 On va ensuite sélectionner "Eléments".
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/8d4b3436-990d-4e6d-911c-b1647238c0fb.png)
+
 La description est facultative.
 
 De nouveaux champs apparaissent par la suite :
 * Le nombre de tâches à assigner par volontaires permet de donner un nombre de tâches déterminé à chaque annotateur. Il est par défaut à 50 tâches par annotateur. Il peut être utile de fragmenter les corpus dans le cas de grosses campagnes d'annotation. Il peut aussi être utile de fragmenter pour que des personnes ne prennent pas de grands nombres d'annotations si ils ne terminent pas leurs tâches assignées.  Néanmoins, si l'on indique 0 (zéro) tâches attribuées, les tâches ne sont pas automatiquement attribuées. Ici, on veut annoter quelques images, donc dans ce champs, on renseignera 20 images à assigner par annotateurs.
 
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/672ee92f-8de2-4898-8db3-0d5770408a4c.png)
+
 Le type d'éléments à utiliser pour annoter sont ici "illustration"
 On valide ensuite en cliquant sur configurer.
 
 De là il faut créer des tâches pour la campagne.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/9848b345-5e19-42ee-ba58-cbf75ac809ba.png)
 
 Le type d'élément à annoter est variable selon les campagnes, il s'agit de l'image totale qui va s'afficher et sur laquelle seront faite les délimitations des zones (illustrations et textes). Ici, on coche la page.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/7edec08f-4d61-420a-bee2-b087fdb765ef.png)
 
 L'algorithme d'attribution permet de choisir l'ordre des images, que ce soit séquentiel (les images se suivent) ou aléatoire (les images sont prises au hasard dans le corpus). Le choix dépend des finalités des besoins de la campagne et de la disparité des fonds.
@@ -229,7 +250,9 @@ Il faut changer de compte pour se connecter à l'annotateur. De là, on sélecti
 L'interface de Callico est simple d'utilisation. On sélectionne le type d'élément à annoter, ici il n'y en a qu'un "Illustration". Néanmoins on peut créer autant de zones que necessaire.
 
 Les zones à délimiter peuvent se superposer.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/99f95f95-78a2-4a52-9b7e-c192fc186573.png)
+
 Sur cette image,on retrouve deux zones d'illustrations
 
 
@@ -255,6 +278,7 @@ Il est possible de revenir sur son annotation pour la corriger.
 
 L'export vers Arkindex permet de retrouver ces annotations et d'entraîner un modèle. Il est donc necessaire.
 L'export des résultats se retrouve sur la page de la campagne.
+
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/397e95d2-0884-43e1-ae68-f81b74e38cec.png)
 
 
@@ -264,7 +288,9 @@ Une campagne peut être exportée sans être terminée à 100%, elle peut égale
 
 #### L'export vers Arkindex
 
-- Lorsque cette option est sélectionnée, ce formulaire s'ouvre:  ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/0d97be3a-ac1e-4906-8a41-bd38c3d9fb09.png)
+- Lorsque cette option est sélectionnée, ce formulaire s'ouvre:  
+
+![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/0d97be3a-ac1e-4906-8a41-bd38c3d9fb09.png)
 
 Le nom du processus permet de le retrouver, mais n'est pas très important. Ici, il s'agit de l'export de la campagne de délimitation.
 
