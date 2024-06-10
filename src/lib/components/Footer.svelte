@@ -2,7 +2,7 @@
 <footer>
   <nav>
 		<ul>
-			<li><a href="https://github.com/sardinecan/antiseches">Github</a></li>
+			<li><a href="https://github.com/sardinecan/log">Github</a></li>
 			<!--<li><a href="/contact">Contact</a></li>-->
 		</ul>
   </nav>
@@ -24,6 +24,6 @@
 		padding: 0.1em;
 		text-decoration: none;
 		color: inherit;
-		color: var(--headingColor);
+		color: var(--color-pink-1);
 	}
 </style>
