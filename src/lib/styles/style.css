@@ -47,11 +47,6 @@
 	--transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-color {
-	color: rgb(158, 206, 106);
-	color: rgb(255, 158, 100);
-}
-
 body {
 	margin: 0;
 	background: var(--color-dark-1);
@@ -335,4 +330,9 @@ table {
 th,
 td {
   padding: 0 0.5em;
+}
+
+table img {
+	max-width: 1em;
+	filter: invert(74%) sepia(39%) saturate(4899%) hue-rotate(306deg) brightness(102%) contrast(94%);
 }
