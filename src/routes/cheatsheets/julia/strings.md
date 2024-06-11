@@ -7,7 +7,7 @@ keywords: ''
 ---
 
 # Chaines de caractères
-[Documentation Julia](https://docs.julialang.org/en/v1/manual/strings/))
+[Documentation Julia](https://docs.julialang.org/en/v1/manual/strings/)
 
 - [Caratères](#caracteres)
 - [Chaines de caractères](#strings)
