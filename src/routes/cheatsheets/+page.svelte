@@ -15,5 +15,12 @@
         </article>
       </a>
     </li>
+    <li>
+      <a href="/cheatsheets/css">
+        <article>
+          <span class="title">CSS</span>
+        </article>
+      </a>
+    </li>
   </ul>
 </nav>
