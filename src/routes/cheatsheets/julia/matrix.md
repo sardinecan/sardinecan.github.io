@@ -1,5 +1,5 @@
 ---
-title: 'Les matrice'
+title: 'Les matrices'
 date: '2024-03-23'
 author: 'Josselin Morvan'
 language: 'julia'
