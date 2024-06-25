@@ -1,6 +1,15 @@
-# Cheatsheet sur les Fondamentaux de JavaScript
+---
+title: 'Fondamentaux'
+date: '2024-06-25'
+author: 'Josselin Morvan'
+language: 'javascript'
+keywords: ''
+---
+
+# les Fondamentaux de JavaScript
 ## Syntaxe de Base
-### Variables:
+
+Variables :
 
 ```javascript
 var nom = "Alice";     // Variable globale ou locale
@@ -8,7 +17,7 @@ let age = 25;          // Variable locale (bloc-scope)
 const PI = 3.14159;    // Constante
 ```
 
-###Types de données:
+Types de données :
 
 ```javascript
 let chaine = "Bonjour"; // String
@@ -20,32 +29,30 @@ let symbol = Symbol();  // Symbol
 let objet = { nom: "Alice", age: 25 }; // Object
 ```
 
-### Opérateurs:
+Opérateurs :
 
 ```javascript
+// Arithmétiques
++, -, *, /, %
 
-    // Arithmétiques
-    +, -, *, /, %
+// Comparaison
+==, ===, !=, !==, >, <, >=, <=
 
-    // Comparaison
-    ==, ===, !=, !==, >, <, >=, <=
+// Logiques
+&&, ||, !
 
-    // Logiques
-    &&, ||, !
+// Affectation
+=, +=, -=, *=, /=
 
-    // Affectation
-    =, +=, -=, *=, /=
-
-    // Autres
-    typeof, instanceof
+// Autres
+typeof, instanceof
 ```
 
 ## Structures de Contrôle
 
-### Conditions:
+Conditions :
 
 ```javascript
-
 if (condition) {
   // code
 } else if (autreCondition) {
@@ -58,39 +65,36 @@ if (condition) {
 let result = condition ? valeurSiVrai : valeurSiFaux;
 ```
 
-### Boucles:
+Boucles :
 
 ```javascript
+for (let i = 0; i < 10; i++) {
+  // code
+}
 
-    for (let i = 0; i < 10; i++) {
-      // code
-    }
+while (condition) {
+  // code
+}
 
-    while (condition) {
-      // code
-    }
+do {
+  // code
+} while (condition);
 
-    do {
-      // code
-    } while (condition);
+// Boucle sur les propriétés d'un objet
+for (let key in objet) {
+  // code
+}
 
-    // Boucle sur les propriétés d'un objet
-    for (let key in objet) {
-      // code
-    }
-
-    // Boucle sur les valeurs d'un tableau
-    for (let value of tableau) {
-      // code
-    }
+// Boucle sur les valeurs d'un tableau
+for (let value of tableau) {
+  // code
+}
 ```
 
 ## Fonctions
-
-### Déclaration:
+Déclaration :
 
 ```javascript
-
 function nomFonction(param1, param2) {
   // code
 }
@@ -106,22 +110,20 @@ let maFonction = (param1, param2) => {
 };
 ```
 
-### Fonctions Callback:
+Fonctions Callback :
 
 ```javascript
+function operation(a, b, callback) {
+  return callback(a, b);
+}
 
-    function operation(a, b, callback) {
-      return callback(a, b);
-    }
-
-    operation(5, 3, (x, y) => x + y); // Utilisation de la fonction
+operation(5, 3, (x, y) => x + y); // Utilisation de la fonction
 ```
 
 ## Objets et Tableaux
-### Objets:
+Objets :
 
 ```javascript
-
 let personne = {
   nom: "Alice",
   age: 25,
@@ -138,30 +140,28 @@ personne["age"];       // 25
 personne.salut();      // "Bonjour, je suis Alice"
 ```
 
-### Tableaux:
+Tableaux :
 
 ```javascript
+let fruits = ["Pomme", "Banane", "Cerise"];
 
-    let fruits = ["Pomme", "Banane", "Cerise"];
+// Accès aux éléments
+fruits[0];             // "Pomme"
+fruits.length;         // 3
 
-    // Accès aux éléments
-    fruits[0];             // "Pomme"
-    fruits.length;         // 3
-
-    // Méthodes de tableau
-    fruits.push("Orange"); // Ajoute un élément à la fin
-    fruits.pop();          // Retire le dernier élément
-    fruits.shift();        // Retire le premier élément
-    fruits.unshift("Kiwi");// Ajoute un élément au début
-    fruits.sort();         // Trie le tableau
-    fruits.reverse();      // Inverse l'ordre du tableau
+// Méthodes de tableau
+fruits.push("Orange"); // Ajoute un élément à la fin
+fruits.pop();          // Retire le dernier élément
+fruits.shift();        // Retire le premier élément
+fruits.unshift("Kiwi");// Ajoute un élément au début
+fruits.sort();         // Trie le tableau
+fruits.reverse();      // Inverse l'ordre du tableau
 ```
 
 ## Manipulation du DOM
-### Sélection d'éléments:
+Sélection d'éléments :
 
 ```javascript
-
 let element = document.getElementById("id");
 let elements = document.getElementsByClassName("classe");
 let elements = document.getElementsByTagName("tag");
@@ -169,10 +169,9 @@ let element = document.querySelector(".classe"); // Premier élément correspond
 let elements = document.querySelectorAll(".classe"); // Tous les éléments correspondants
 ```
 
-### Modification d'éléments:
+Modification d'éléments :
 
 ```javascript
-
 element.innerHTML = "Nouveau contenu";  // Modifie le HTML interne
 element.style.color = "red";            // Modifie le style
 
@@ -181,25 +180,23 @@ element.setAttribute("data-test", "valeur");
 let valeur = element.getAttribute("data-test");
 ```
 
-### Gestion des événements:
+Gestion des événements :
 
 ```javascript
+element.addEventListener("click", function() {
+  // code
+});
 
-    element.addEventListener("click", function() {
-      // code
-    });
-
-    function maFonction(event) {
-      // code
-    }
-    element.addEventListener("click", maFonction);
+function maFonction(event) {
+  // code
+}
+element.addEventListener("click", maFonction);
 ```
 
 ## Programmation Asynchrone
-### Callbacks:
+Callbacks :
 
 ```javascript
-
 function loadData(callback) {
   setTimeout(() => {
     callback("Données chargées");
@@ -211,7 +208,7 @@ loadData((data) => {
 });
 ```
 
-### Promises:
+Promises :
 
 ```javascript
 let maPromesse = new Promise((resolve, reject) => {
@@ -227,28 +224,26 @@ maPromesse
   .catch((erreur) => console.log(erreur));
 ```
 
-### Async/Await:
+Async/Await :
 
 ```javascript
+async function fetchData() {
+  try {
+    let data = await fetch("https://api.exemple.com/data");
+    let result = await data.json();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-    async function fetchData() {
-      try {
-        let data = await fetch("https://api.exemple.com/data");
-        let result = await data.json();
-        console.log(result);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchData();
+fetchData();
 ```
 
 ## ES Modules
-### Exportation:
+Exportation :
 
 ```javascript
-
 // fichier.js
 export const PI = 3.14159;
 export function ajouter(a, b) {
@@ -261,26 +256,26 @@ export default class MaClasse {
 }
 ```
 
-### Importation:
+Importation :
 
 ```javascript
-
-    import { PI, ajouter } from './fichier.js';
-    import MaClasse from './fichier.js';
+import { PI, ajouter } from './fichier.js';
+import MaClasse from './fichier.js';
 ```
 
 ## Manipulation du JSON
-### Conversion JSON:
+Conversion JSON :
+
 ```javascript
+let objet = { nom: "Alice", age: 25 };
+let jsonString = JSON.stringify(objet); // Objet vers JSON
 
-    let objet = { nom: "Alice", age: 25 };
-    let jsonString = JSON.stringify(objet); // Objet vers JSON
-
-    let nouveauObjet = JSON.parse(jsonString); // JSON vers Objet
+let nouveauObjet = JSON.parse(jsonString); // JSON vers Objet
 ```
 
 ## Erreurs et Débogage
-### Gestion des erreurs:
+Gestion des erreurs :
+
 ```javascript
 try {
   // code
@@ -290,12 +285,12 @@ try {
   // code
 }
 ```
-### Débogage:
-```javascript
 
-    console.log("Message de débogage");
-    console.warn("Avertissement");
-    console.error("Erreur");
+Débogage:
+```javascript
+console.log("Message de débogage");
+console.warn("Avertissement");
+console.error("Erreur");
 ```
 
 ## Bonnes Pratiques
