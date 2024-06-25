@@ -7,8 +7,8 @@ keywords: "symbolic ; symlink ; setup ; error"
 ---
 
 # *Too many levels of symbolic links Error*
-## Le problème 
-Imaginons la structure de dossiers suivante :
+
+Imaginons la structure suivante :
 ```bash
 $ tree
 .
@@ -17,7 +17,7 @@ $ tree
     └──output
 ```
 
-Maitenant ajoutons un lien symbolique du dossier `source`dans `output`.
+Ajoutons ensuite un lien symbolique du dossier `source` dans le dossier `output`.
 
 ```bash
 $ cd monDossier
@@ -32,10 +32,10 @@ $ tree
 Malheureusement le lien symbolique est cassé :
 
 ```bash
-find -L -xtype l
+find -L -xtype l # pour identifier les symlinks cassés
 find: ‘./output/source’: Too many levels of symbolic links
 ```
 
-La raison de cette erreur est que les liens symboliques réalisés avec des chemins relatifs sont toujours relatifs au répertoire du lien symbolique, et non au répertoire d'origine. Le lien symbolique `/monDossier/output/source` que nous venons de créer pointe donc vers `/monDossier/output/source` au lieu de `/monDossier/source`. 
+La raison de cette erreur est  simple : les liens symboliques réalisés avec des chemins relatifs sont toujours relatifs au répertoire du lien symbolique, et non au répertoire d'origine. Le lien symbolique `/monDossier/output/source` que nous venons de créer pointe donc vers `/monDossier/output/source` au lieu de `/monDossier/source`. 
 
-Pour régler le problème, il faut utiliser des chemins absolus !
+Pour régler le problème, il suffit d'utiliser des chemins absolus !
