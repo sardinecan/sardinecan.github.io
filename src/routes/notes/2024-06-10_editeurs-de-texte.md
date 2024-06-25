@@ -42,6 +42,7 @@ keywords: 'editeur de texte ; logiciel ; terminal ; gui'
 | [Caret](https://caret.io/) | Editor | Proprietary            | Caret Team             | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [Dillinger](https://dillinger.io/) | Editor | MIT                    | Joe McCann             | Online                    |
 | [Haroopad](http://pad.haroopress.com/) | Editor | MIT                    | Haroopress Team        | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
+| [MacDown](https://macdown.uranusjr.com/) | Editor | MIT                | MacDown Community       | ![apple](/logos/apple.svg)     |
 | [Mark Text](https://marktext.app/) | Editor | MIT                    | Mark Text Contributors | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [Obsidian](https://obsidian.md/) | Note-taking | Freemium                | Dynalist Inc.          | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [StackEdit](https://stackedit.io/) | Editor | MIT                    | Benjamin Pannell       | Online                    |
