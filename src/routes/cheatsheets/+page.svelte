@@ -22,5 +22,12 @@
         </article>
       </a>
     </li>
+    <li>
+      <a href="/cheatsheets/javascript">
+        <article>
+          <span class="title">JavaScript</span>
+        </article>
+      </a>
+    </li>
   </ul>
 </nav>
