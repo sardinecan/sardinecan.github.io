@@ -9,10 +9,9 @@ keywords: ''
 # Cheatsheet sur les Dictionnaires en JavaScript (Objets)
 ## Création et Déclaration de Dictionnaires
 
-    Déclaration littérale:
+Déclaration littérale:
 
 ```javascript
-
 let personne = {
   nom: "Alice",
   age: 30,
@@ -20,14 +19,13 @@ let personne = {
 };
 ```
 Utilisation de new Object():
-
 ```javascript
 
     let voiture = new Object();
     voiture.marque = "Toyota";
     voiture.modele = "Corolla";
 ```
-2. Accès aux Propriétés
+## Accès aux Propriétés
 
     Accès par notation pointée:
 
@@ -44,27 +42,25 @@ Accès par notation entre crochets:
     let propriete = "nom";
     let valeur = personne[propriete]; // "Alice"
 ```
-3. Modification des Propriétés
+## Modification des Propriétés
 
-    Ajouter ou modifier une propriété:
+Ajouter ou modifier une propriété:
 
 ```javascript
-
 personne.age = 31; // Modifie "age" à 31
 personne.adresse = "123 Rue Principale"; // Ajoute "adresse"
 ```
+
 Supprimer une propriété:
 
 ```javascript
-
-    delete personne.adresse;
+delete personne.adresse;
 ```
-4. Méthodes et Fonctions dans les Dictionnaires
+## Méthodes et Fonctions dans les Dictionnaires
 
-    Déclaration de méthodes:
+Déclaration de méthodes:
 
 ```javascript
-
 let animal = {
   espece: "Chat",
   parler: function() {
@@ -78,20 +74,19 @@ console.log(animal.parler()); // "Miaou!"
 Méthodes avec syntaxe raccourcie:
 
 ```javascript
-
-    let animal = {
-      espece: "Chat",
-      parler() {
-        return "Miaou!";
-      }
-    };
+let animal = {
+  espece: "Chat",
+  parler() {
+    return "Miaou!";
+  }
+};
 ```
-5. Parcours des Propriétés
 
-    Boucle for...in:
+## Parcours des Propriétés
+
+Boucle for...in:
 
 ```javascript
-
 for (let propriete in personne) {
   console.log(propriete, personne[propriete]);
 }
@@ -99,74 +94,63 @@ for (let propriete in personne) {
 
 Object.keys (clés):
 
-
 ```javascript
-
 let cles = Object.keys(personne); // ["nom", "age", "emploi"]
 ```
 
 Object.values (valeurs):
 
 ```javascript
-
 let valeurs = Object.values(personne); // ["Alice", 31, "Développeuse"]
 ```
 
 Object.entries (paires clé-valeur):
 
 ```javascript
-
-    let entrees = Object.entries(personne);
-    // [["nom", "Alice"], ["age", 31], ["emploi", "Développeuse"]]
+let entrees = Object.entries(personne);
+// [["nom", "Alice"], ["age", 31], ["emploi", "Développeuse"]]
 ```
 
-6. Copies et Assignation
+## Copies et Assignation
 
-    Assignation avec Object.assign:
+Assignation avec Object.assign:
 
 ```javascript
-
 let copiePersonne = Object.assign({}, personne);
 ```
 
 Fusion de plusieurs objets:
 
 ```javascript
-
 let details = { ville: "Paris", pays: "France" };
 let personneComplete = Object.assign({}, personne, details);
 ```
 
 Copie par décomposition (spread operator):
-
 ```javascript
-
-    let copiePersonne = { ...personne };
+let copiePersonne = { ...personne };
 ```
 
-7. Comparaison et Tests
+## Comparaison et Tests
 
-    Comparaison de propriétés:
+Comparaison de propriétés:
 
 ```javascript
-
 let aComparaison = personne.age === 31; // true
 ```
 
 Vérification de l'existence d'une propriété:
 
 ```javascript
-
-    "nom" in personne; // true
-    personne.hasOwnProperty("emploi"); // true
+"nom" in personne; // true
+personne.hasOwnProperty("emploi"); // true
 ```
 
-8. Méthodes Utiles de Object
+## Méthodes Utiles de Object
 
 Object.freeze (immuabilité):
 
 ```javascript
-
 Object.freeze(personne);
 personne.age = 32; // Ne changera pas
 ```
@@ -174,7 +158,6 @@ personne.age = 32; // Ne changera pas
 Object.seal (empêche l'ajout/suppression de propriétés):
 
 ```javascript
-
 Object.seal(personne);
 personne.nom = "Bob"; // Fonctionne
 delete personne.nom; // Ne fonctionne pas
@@ -183,23 +166,20 @@ delete personne.nom; // Ne fonctionne pas
 Object.isFrozen:
 
 ```javascript
-
 Object.isFrozen(personne); // true ou false
 ```
 
 Object.isSealed:
 
 ```javascript
-
-    Object.isSealed(personne); // true ou false
+Object.isSealed(personne); // true ou false
 ```
 
-9. Manipulation Avancée
+## Manipulation Avancée
 
-    Créer des objets avec un prototype:
+Créer des objets avec un prototype:
 
 ```javascript
-
 let prototypeVehicule = {
   demarrer() {
     console.log("Véhicule démarré");
@@ -211,11 +191,9 @@ voiture.marque = "Toyota";
 voiture.demarrer(); // "Véhicule démarré"
 ```
 
-
 Définir des propriétés avec des descripteurs:
 
 ```javascript
-
 let utilisateur = {};
 Object.defineProperty(utilisateur, "nom", {
   value: "Alice",
@@ -228,29 +206,27 @@ Object.defineProperty(utilisateur, "nom", {
 Accesseurs (get et set):
 
 ```javascript
+let compteur = {
+  _valeur: 0,
+  get valeur() {
+    return this._valeur;
+  },
+  set valeur(valeur) {
+    if (valeur > 0) {
+      this._valeur = valeur;
+    }
+  }
+};
 
-    let compteur = {
-      _valeur: 0,
-      get valeur() {
-        return this._valeur;
-      },
-      set valeur(valeur) {
-        if (valeur > 0) {
-          this._valeur = valeur;
-        }
-      }
-    };
-
-    compteur.valeur = 5;
-    console.log(compteur.valeur); // 5
+compteur.valeur = 5;
+console.log(compteur.valeur); // 5
 ```
 
-10. Structures de Données Alternatives
+## Structures de Données Alternatives
 
-    Utilisation de Map:
+Utilisation de Map:
 
 ```javascript
-
 let map = new Map();
 map.set("nom", "Alice");
 map.set("age", 31);
@@ -260,8 +236,7 @@ console.log(map.get("nom")); // "Alice"
 Utilisation de WeakMap:
 
 ```javascript
-
-    let weakMap = new WeakMap();
-    let obj = {};
-    weakMap.set(obj, "Some value");
+let weakMap = new WeakMap();
+let obj = {};
+weakMap.set(obj, "Some value");
 ```
