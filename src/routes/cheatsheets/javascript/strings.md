@@ -6,256 +6,255 @@ language: 'javascript'
 keywords: ''
 ---
 
-Cheatsheet sur les Chaînes de Caractères en JavaScript
-1. Création et Déclaration
+# Cheatsheet sur les Chaînes de Caractères en JavaScript
+## Création et Déclaration
 
-    Déclaration littérale:
+Déclaration littérale:
 
-    javascript
-
+```javascript
 let texte = "Bonjour";
+```
 
 Utilisation du constructeur String:
 
-javascript
-
+```javascript
 let texte = new String("Bonjour");
+```
 
 Chaînes multi-lignes:
 
-javascript
+```javascript
+let multiLignes = `Première ligne
+Deuxième ligne`;
+```
 
-    let multiLignes = `Première ligne
-    Deuxième ligne`;
+## Accès aux Caractères
 
-2. Accès aux Caractères
+Accès par index:
 
-    Accès par index:
-
-    javascript
-
+```javascript
 let lettre = texte[0]; // "B"
 let lettre = texte.charAt(1); // "o"
+```
 
 Code Unicode:
 
-javascript
+```javascript
+let code = texte.charCodeAt(0); // 66 pour "B"
+let code = texte.codePointAt(0); // 66 pour "B"
+```
 
-    let code = texte.charCodeAt(0); // 66 pour "B"
-    let code = texte.codePointAt(0); // 66 pour "B"
+## Modification des Chaînes
 
-3. Modification des Chaînes
+Concatenation:
 
-    Concatenation:
-
-    javascript
-
+```javascript
 let salut = "Bonjour";
 let monde = "Monde";
 let phrase = salut + " " + monde; // "Bonjour Monde"
 let phrase = `${salut} ${monde}`; // "Bonjour Monde"
+```
 
 Substitution (replace):
 
-javascript
+```javascript
+let nouvellePhrase = phrase.replace("Monde", "Tout le monde"); // "Bonjour Tout le monde"
+```
 
-    let nouvellePhrase = phrase.replace("Monde", "Tout le monde"); // "Bonjour Tout le monde"
+## Méthodes de Recherche
 
-4. Méthodes de Recherche
+Recherche (indexOf et lastIndexOf):
 
-    Recherche (indexOf et lastIndexOf):
-
-    javascript
-
+```javascript
 let position = phrase.indexOf("Monde"); // 8
 let dernierePosition = phrase.lastIndexOf("o"); // 9
+```
 
 Correspondance (match et matchAll):
 
-javascript
-
+```javascript
 let correspondances = phrase.match(/o/g); // ["o", "o"]
 let toutesLesCorrespondances = [...phrase.matchAll(/o/g)];
+```
 
 Recherche (search):
 
-javascript
-
+```javascript
 let position = phrase.search("Monde"); // 8
+```
 
 Commence par (startsWith):
 
-javascript
-
+```javascript
 let commence = phrase.startsWith("Bonjour"); // true
+```
 
 Termine par (endsWith):
 
-javascript
-
+```javascript
 let termine = phrase.endsWith("Monde"); // true
+```
 
 Comprend (includes):
 
-javascript
+```javascript
+let inclus = phrase.includes("Monde"); // true
+```
 
-    let inclus = phrase.includes("Monde"); // true
+## Extraction et Subdivision
 
-5. Extraction et Subdivision
+Extraction (slice, substring, substr):
 
-    Extraction (slice, substring, substr):
-
-    javascript
-
+```javascript
 let sousChaine = phrase.slice(0, 7); // "Bonjour"
 let sousChaine = phrase.substring(0, 7); // "Bonjour"
 let sousChaine = phrase.substr(0, 7); // "Bonjour"
+```
 
 Subdivision (split):
 
-javascript
+```javascript
+let mots = phrase.split(" "); // ["Bonjour", "Monde"]
+```
 
-    let mots = phrase.split(" "); // ["Bonjour", "Monde"]
+## Transformations
 
-6. Transformations
+Majuscules et minuscules:
 
-    Majuscules et minuscules:
-
-    javascript
-
+```javascript
 let majuscules = phrase.toUpperCase(); // "BONJOUR MONDE"
 let minuscules = phrase.toLowerCase(); // "bonjour monde"
+```
 
 Trim (suppression des espaces):
 
-javascript
+```javascript
+let avecEspaces = "  Bonjour  ";
+let sansEspaces = avecEspaces.trim(); // "Bonjour"
+let sansEspacesDebut = avecEspaces.trimStart(); // "Bonjour  "
+let sansEspacesFin = avecEspaces.trimEnd(); // "  Bonjour"
+```
 
-    let avecEspaces = "  Bonjour  ";
-    let sansEspaces = avecEspaces.trim(); // "Bonjour"
-    let sansEspacesDebut = avecEspaces.trimStart(); // "Bonjour  "
-    let sansEspacesFin = avecEspaces.trimEnd(); // "  Bonjour"
+## Comparaison
 
-7. Comparaison
+Comparaison (localeCompare):
 
-    Comparaison (localeCompare):
+```javascript
+let comparaison = "a".localeCompare("b"); // -1 (a est avant b)
+```
 
-    javascript
+## Utilitaires Avancés
 
-    let comparaison = "a".localeCompare("b"); // -1 (a est avant b)
+Remplacement avancé (replaceAll):
 
-8. Utilitaires Avancés
-
-    Remplacement avancé (replaceAll):
-
-    javascript
-
+```javascript
 let texte = "Bonjour tout le monde, tout va bien.";
 let nouveauTexte = texte.replaceAll("tout", "chaque"); // "Bonjour chaque le monde, chaque va bien."
+```
 
 Extraction de code Unicode:
 
-javascript
+```javascript
+let codeUnicode = "𠮷".codePointAt(0); // 134071
+```
 
-    let codeUnicode = "𠮷".codePointAt(0); // 134071
+## Interpolation de Chaînes
 
-9. Interpolation de Chaînes
+Utilisation des backticks (`):
 
-    Utilisation des backticks (`):
+```javascript
+let nom = "Alice";
+let age = 25;
+let message = `Bonjour, je suis ${nom} et j'ai ${age} ans.`;
+```
 
-    javascript
+## Spécificités de l'Unicode
 
-    let nom = "Alice";
-    let age = 25;
-    let message = `Bonjour, je suis ${nom} et j'ai ${age} ans.`;
+Gestion des caractères Unicode:
 
-10. Spécificités de l'Unicode
+```javascript
+let texte = "𠮷";
+texte.length; // 2 (en raison de la représentation UTF-16)
+[...texte].length; // 1 (en raison de la décomposition en caractères)
+```
 
-    Gestion des caractères Unicode:
+## Échappement et Séquences d'Échappement
 
-    javascript
+Échappement:
 
-    let texte = "𠮷";
-    texte.length; // 2 (en raison de la représentation UTF-16)
-    [...texte].length; // 1 (en raison de la décomposition en caractères)
-
-11. Échappement et Séquences d'Échappement
-
-    Échappement:
-
-    javascript
-
+```javascript
 let citation = "Elle a dit : \"Bonjour\"";
 let retourChariot = "Première ligne\nDeuxième ligne";
+```
 
 Caractères spéciaux:
 
-javascript
+```javascript
+let tabulation = "Bonjour\tMonde"; // "Bonjour    Monde"
+let backslash = "Un \\ backslash";
+```
 
-    let tabulation = "Bonjour\tMonde"; // "Bonjour    Monde"
-    let backslash = "Un \\ backslash";
+## Conversion et Casting
 
-12. Conversion et Casting
+Conversion en chaîne:
 
-    Conversion en chaîne:
-
-    javascript
-
+```javascript
 let nombre = 42;
 let texteNombre = nombre.toString(); // "42"
 let texteNombre = String(nombre); // "42"
+```
 
 Conversion en nombre:
 
-javascript
+```javascript
+let texte = "42";
+let nombre = Number(texte); // 42
+let nombreEntier = parseInt(texte); // 42
+let nombreFlottant = parseFloat(texte); // 42.0
+```
 
-    let texte = "42";
-    let nombre = Number(texte); // 42
-    let nombreEntier = parseInt(texte); // 42
-    let nombreFlottant = parseFloat(texte); // 42.0
+## Modèles et Expression Régulière
 
-13. Modèles et Expression Régulière
+Modèles simples:
 
-    Modèles simples:
-
-    javascript
-
+```javascript
 let regex = /mot/;
 let texte = "Un mot dans une phrase.";
 let trouve = regex.test(texte); // true
+```
 
 Modèles complexes:
 
-javascript
+```javascript
+let regex = /\b\w+\b/g; // Correspond à chaque mot
+let mots = texte.match(regex); // ["Un", "mot", "dans", "une", "phrase"]
+```
 
-    let regex = /\b\w+\b/g; // Correspond à chaque mot
-    let mots = texte.match(regex); // ["Un", "mot", "dans", "une", "phrase"]
+## String vs Template Literal
 
-14. String vs Template Literal
+Template Literal:
 
-    Template Literal:
-
-    javascript
-
+```javascript
 let nom = "Alice";
 let salutation = `Bonjour ${nom}, comment vas-tu ?`;
+```
 
 String:
 
-javascript
+```javascript
+let salutation = "Bonjour " + nom + ", comment vas-tu ?";
+```
 
-    let salutation = "Bonjour " + nom + ", comment vas-tu ?";
+## Propriétés et Méthodes Utiles
+Longueur de la chaîne (length):
 
-15. Propriétés et Méthodes Utiles
-
-    Longueur de la chaîne (length):
-
-    javascript
-
+```javascript
 let taille = texte.length; // 7 pour "Bonjour"
+```
 
 Construction avec .fromCharCode et .fromCodePoint:
 
-javascript
-
+```javascript
 let lettre = String.fromCharCode(65); // "A"
 let unicode = String.fromCodePoint(0x1F600); // "😀"
+```
