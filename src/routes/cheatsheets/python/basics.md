@@ -6,7 +6,7 @@ language: 'Python'
 keywords: ''
 ---
 
-# 🐍 Python Cheat Sheet
+# 🐍 les fondamentaux du langage Python
 
 ## Syntaxe de Base
 

@@ -6,7 +6,7 @@ language: 'javascript'
 keywords: ''
 ---
 
-# Cheatsheet sur les Chaînes de Caractères en JavaScript
+# Les chaînes de caractères avec JavaScript
 ## Création et Déclaration
 
 Déclaration littérale:

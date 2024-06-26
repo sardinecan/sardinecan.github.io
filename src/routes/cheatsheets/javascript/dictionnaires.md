@@ -6,8 +6,8 @@ language: 'javascript'
 keywords: ''
 ---
 
-# Cheatsheet sur les Dictionnaires en JavaScript (Objets)
-## Création et Déclaration de Dictionnaires
+# Les dictionnaires avec JavaScript (Objets)
+## Création et déclaration de dictionnaires
 
 Déclaration littérale:
 

@@ -6,7 +6,7 @@ language: 'css'
 keywords: ''
 ---
 
-# Cheatsheet CSS
+# 📝 Les fondamentaux de CSS
 ## Sélecteurs CSS
 ### Sélecteur par élément, Classe et ID
 ```css

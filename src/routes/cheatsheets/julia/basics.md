@@ -6,7 +6,7 @@ language: 'julia'
 keywords: ''
 ---
 
-# Fondamentaux
+# 📝 Les fondamentaux de Julia
 [Documentation Julia](https://docs.julialang.org/en/v1/manual/getting-started/)
 
 - [Affectation d'une variable](#Affectation-dune-variable)

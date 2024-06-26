@@ -6,7 +6,7 @@ language: 'javascript'
 keywords: ''
 ---
 
-# les Fondamentaux de JavaScript
+# 📝 les fondamentaux de JavaScript
 ## Syntaxe de Base
 
 Variables :

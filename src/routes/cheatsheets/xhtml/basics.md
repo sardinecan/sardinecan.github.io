@@ -6,7 +6,7 @@ language: 'html'
 keywords: ''
 ---
 
-# Fondamentaux
+# 📝 Les fondamentaux HTML
 
 ## Éléments et structure de base
 <dl>
