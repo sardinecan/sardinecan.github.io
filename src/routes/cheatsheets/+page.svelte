@@ -1,40 +1,21 @@
+<script>
+	export let data;
+  // récupération des valeurs uniques des catégories pour récupérer les dossiers.
+  const folders = [...new Set(data.cheatsheets.map(item => item.category))];
+  console.log(folders);
+</script>
+
 <h1>Antisèches</h1>
 <nav>
   <ul class="cards">
+    {#each folders.sort() as folder}  
     <li>
-      <a href="/cheatsheets/julia">
+      <a href="/cheatsheets/{folder}">
         <article>
-          <span class="title">Julia</span>
+          <span class="title">{ folder }</span>
         </article>
       </a>
     </li>
-    <li>
-      <a href="/cheatsheets/xhtml">
-        <article>
-          <span class="title">xHTML</span>
-        </article>
-      </a>
-    </li>
-    <li>
-      <a href="/cheatsheets/css">
-        <article>
-          <span class="title">CSS</span>
-        </article>
-      </a>
-    </li>
-    <li>
-      <a href="/cheatsheets/javascript">
-        <article>
-          <span class="title">JavaScript</span>
-        </article>
-      </a>
-    </li>
-    <li>
-      <a href="/cheatsheets/python">
-        <article>
-          <span class="title">Python</span>
-        </article>
-      </a>
-    </li>
+    {/each}
   </ul>
 </nav>

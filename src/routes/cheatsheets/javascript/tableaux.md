@@ -6,9 +6,9 @@ language: 'javascript'
 keywords: ''
 ---
 
-# Cheatsheet sur les Tableaux en JavaScript
+# Les tableaux avec JavaScript
 
-## Création et Déclaration de Tableaux
+## Création et déclaration de tableaux
 
 Déclaration de tableau:
 
