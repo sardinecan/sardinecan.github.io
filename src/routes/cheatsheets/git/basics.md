@@ -9,16 +9,20 @@ keywords: ''
 # 📚 Les fondamentaux Git
 
 ## 📅 Index
-- [🔧 Configuration](#-configuration)
-- [📁 Initialisation et Clonage](#-initialisation-et-clonage)
-- [🌲 Gestion des Branches](#-gestion-des-branches)
-- [📑 Gestion des Fichiers](#-gestion-des-fichiers)
-- [💾 Gestion des Commits](#-gestion-des-commits)
-- [🌐 Gestion des Remote](#-gestion-des-remote)
-- [🔄 Rebaser et Merge](#-rebaser-et-merge)
-- [📋 Divers](#-divers)
+- [🔧 Configuration](#configuration)
+- [📁 Initialisation et Clonage](#initialisation-et-clonage)
+- [🌲 Gestion des Branches](#gestion-des-branches)
+- [📑 Gestion des Fichiers](#gestion-des-fichiers)
+- [💾 Gestion des Commits](#gestion-des-commits)
+- [🌐 Gestion des Remote](#gestion-des-remote)
+- [🔄 Rebaser et Merge](#rebaser-et-merge)
+- [📋 Divers](#divers)
+- [🔒 Gestion des Tags](#gestion-des-tags)
+- [🚑 Gestion des Conflits](#gestion-des-conflits)
+- [⏳ Historique et Annulation](#historique-et-annulation)
+- [🛠️ Dépannage](#depannage)
 
-## 🔧 Configuration
+## 🔧 Configuration <span id="configuration"/>
 
 ```bash
 # Configurer le nom d'utilisateur
@@ -34,7 +38,7 @@ git config --global core.editor "nom-editeur"
 git config --list
 ```
 
-## 📁 Initialisation et Clonage
+## 📁 Initialisation et Clonage <span id="initialisation-et-clonage"/>
 
 ```bash
 # Initialiser un nouveau dépôt Git
@@ -44,7 +48,7 @@ git init
 git clone <url-du-repo>
 ```
 
-## 🌲 Gestion des Branches
+## 🌲 Gestion des Branches <span id="gestion-des-branches"/>
 
 ```bash
 # Lister toutes les branches
@@ -66,7 +70,7 @@ git merge <nom-de-branche>
 git branch -d <nom-de-branche>
 ```
 
-## 📑 Gestion des Fichiers
+## 📑 Gestion des Fichiers <span id="gestion-des-fichiers"/>
 
 ```bash
 # Voir le statut des fichiers
@@ -85,7 +89,7 @@ git rm <nom-de-fichier>
 git mv <ancien-nom> <nouveau-nom>
 ```
 
-## 💾 Gestion des Commits
+## 💾 Gestion des Commits <span id="gestion-des-commits"/>
 
 ```bash
 # Commiter les changements
@@ -101,7 +105,7 @@ git log
 git log --oneline --graph --decorate --all
 ```
 
-## 🌐 Gestion des Remote
+## 🌐 Gestion des Remote <span id="gestion-des-remote"/>
 
 ```bash
 # Ajouter un remote
@@ -120,7 +124,7 @@ git pull
 git remote remove <nom-du-remote>
 ```
 
-## 🔄 Rebaser et Merge
+## 🔄 Rebaser et Merge <span id="rebaser-et-merge"/>
 
 ```bash
 # Rebaser la branche courante sur une autre
@@ -136,7 +140,7 @@ git rebase --continue
 git rebase --abort
 ```
 
-## 📋 Divers
+## 📋 Divers <span id="divers"/>
 
 ```bash
 # Afficher les différences entre fichiers
@@ -164,7 +168,7 @@ git reset HEAD <nom-de-fichier>
 git clean -f
 ```
 
-## 🔒 Gestion des Tags
+## 🔒 Gestion des Tags <span id="gestion-des-tags"/>
 
 ```bash
 # Créer un tag
@@ -180,7 +184,7 @@ git push origin <nom-du-tag>
 git tag
 ```
 
-## 🚑 Gestion des Conflits
+## 🚑 Gestion des Conflits <span id="gestion-des-conflits"/>
 
 ```bash
 # Lister les conflits
@@ -193,7 +197,7 @@ git add <nom-de-fichier-conflit>
 git commit
 ```
 
-## ⏳ Historique et Annulation
+## ⏳ Historique et Annulation <span id="historique-et-annulation"/>
 
 ```bash
 # Voir les logs avec graph
@@ -212,7 +216,7 @@ git checkout -b <nouvelle-branche> <commit-id>
 git revert <commit-id>
 ```
 
-## 🛠️ Dépannage
+## 🛠️ Dépannage <span id="depannage"/>
 
 ```bash
 # Annuler le dernier commit mais garder les changements dans la staging area
