@@ -29,5 +29,12 @@
         </article>
       </a>
     </li>
+    <li>
+      <a href="/cheatsheets/python">
+        <article>
+          <span class="title">Python</span>
+        </article>
+      </a>
+    </li>
   </ul>
 </nav>

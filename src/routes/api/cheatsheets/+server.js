@@ -1,8 +1,8 @@
-import { fetchJuliaFiles } from '$lib/utils';
+import { fetchCheatsheetFiles } from '$lib/utils';
 import { json } from '@sveltejs/kit';
 
 export const GET = async () => {
-	const allPosts = await fetchJuliaFiles();
+	const allPosts = await fetchCheatsheetFiles();
 
 	const sortedPosts = allPosts.sort((a, b) => {
 		return new Date(a.meta.date) - new Date(b.meta.date);
