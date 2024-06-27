@@ -25,7 +25,7 @@ keywords: ''
 
 SQL (Structured Query Language) est le langage standard pour gérer et manipuler des bases de données relationnelles. Cette cheatsheet couvre les commandes essentielles pour l'interaction avec les bases de données SQL.
 
-## 🔍 Commandes de Base <span id="commandes-de-bases"/>
+## 🔍 Commandes de Base <span id="commandes-de-base"/>
 
 | Commande            | Description                              |
 |---------------------|------------------------------------------|
