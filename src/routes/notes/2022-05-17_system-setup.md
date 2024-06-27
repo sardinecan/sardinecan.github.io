@@ -8,6 +8,26 @@ keywords: 'config ; dev ; installation'
 
 # System Setup
 
+## Mise à jour du 2024-06-27
+Pour la gestion des dotfiles (`.gitconfig`, `.gitignore`, `.zshrc`, etc.) j'utilise désormais [Chezmoi](https://www.chezmoi.io/).
+
+```bash
+# pour installer chezmoi
+#macos
+brew install chezmoi
+#arch
+sudo pacman -S chezmoi
+```
+
+Pour configurer une nouvelle machine, exécuter simplement la ligne suivante :
+
+```bash
+# si le repo github est nommé 'dotefiles'
+chezmoi init --apply $GITHUB_USERNAME
+# autrement
+chezmoi init --apply https://github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
+```
+
 ## Gestionnaires de paquets
 Installer Homebrew [https://brew.sh/index_fr](https://brew.sh/index_fr) (macOS et Linux).
 
