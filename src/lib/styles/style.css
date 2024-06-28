@@ -325,11 +325,23 @@ blockquote {
 
 table {
 	font-size: 0.8em;
+	border-collapse: collapse;
+}
+
+thead {
+	color: var(--color-pink-1);
+	text-align: left;
 }
 
 th,
 td {
   padding: 0 0.5em;
+}
+
+tr:nth-child(even)
+{
+	background-color: var(--color-purple-1);
+	color: var(--color-dark-1);
 }
 
 table img {
