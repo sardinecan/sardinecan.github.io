@@ -237,7 +237,7 @@ div.cards .category {
 div.cards .title {
 	font-weight: 300;
 	/*font-family: var(--condensedFont);*/
-	font-size: 0.9em;
+	font-size: 0.8em;
 	color: var(--color-purple-2);	
 	display: block;
 }
