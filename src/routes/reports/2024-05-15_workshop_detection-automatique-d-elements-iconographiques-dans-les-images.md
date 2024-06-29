@@ -79,15 +79,15 @@ youtube S_7N3jYALtc
 
 2.1 Utiliser la présentation Random
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/21161b4f-8ae3-4fd4-a2ad-27d91b0e3d01.png =200x)
+![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/21161b4f-8ae3-4fd4-a2ad-27d91b0e3d01.png)
 
 2.2 Utiliser la pagination à 100
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/c4600678-8f4d-45ea-add1-c0eb84c35bf2.png =200x)
+![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/c4600678-8f4d-45ea-add1-c0eb84c35bf2.png)
 
 2.3 Utiliser la sélection
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/a2e9731c-8aac-40fd-bb58-73bd32ad2af8.png =200x)
+![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/a2e9731c-8aac-40fd-bb58-73bd32ad2af8.png)
 
 
 #### En vidéo :
@@ -106,7 +106,7 @@ youtube wkxgt9NSMXc
 #### 4. Générer l'export complet du projet
 
 - Menu Actions -> Manage Export -> Start Export
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/adf1b4cf-527e-4a3e-8f83-6076d429adbd.png =300x)
+![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/adf1b4cf-527e-4a3e-8f83-6076d429adbd.png)
 
 :::info
 Pourquoi cette étape ?
