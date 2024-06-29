@@ -40,25 +40,23 @@
 </script>
 
 <h1>Comptes rendus</h1>
-<input type="text" bind:value={search} placeholder="filtrer" />
-<ul class="cards">
+<input class="filter" type="text" bind:value={search} placeholder="filtrer" />
+<div class="cards">
 	{#each visibleReports as report}
-		<li>
-			<a href="{report.path}">
-				<article>
-					<span class="category">{report.meta.category}</span>
-					<span class="title">{report.meta.title}</span>
-					<span class="date">
-						{report.meta.place ? dateToString(report.meta.date) + ' | ' + report.meta.place : dateToString(report.meta.date)}
-					</span>
-					{#if report.meta.speaker}
-						<span class="speaker">{getSpeakers(report.meta.speaker)}</span>
-					{/if}
-				</article>
-			</a>
-		</li>
+		<a class="card" href="{report.path}">
+			<article>
+				<span class="category">{report.meta.category}</span>
+				<span class="title">{report.meta.title}</span>
+				<span class="date">
+					{report.meta.place ? dateToString(report.meta.date) + ' | ' + report.meta.place : dateToString(report.meta.date)}
+				</span>
+				{#if report.meta.speaker}
+				<span class="speaker">{getSpeakers(report.meta.speaker)}</span>
+				{/if}
+			</article>
+		</a>
 	{/each}
-</ul>
+	</div>
 <!--<h2>Ateliers</h2>
 <ul>
 	{#each workshopReports as report}

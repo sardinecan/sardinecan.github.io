@@ -8,20 +8,18 @@
 </script>
 
 <h1>Blog</h1>
-<ul class="cards">
+<div class="cards">
 	{#each publishedPosts as publishedPost}
-		<li>
-			<a href="{publishedPost.path}">
-				<article>
-					<span class="category">{publishedPost.meta.category}</span>
-					<span class="title">{publishedPost.meta.title}</span>
-					<span class="date">{dateToString(publishedPost.meta.date)}</span>
-					{#if publishedPost.meta.author}
-						<span class="speaker">{publishedPost.meta.author}</span>
-					{/if}
-				</article>
-			</a>
-		</li>
+		<a class="card" href="{publishedPost.path}">
+			<article>
+				<span class="category">{publishedPost.meta.category}</span>
+				<span class="title">{publishedPost.meta.title}</span>
+				<span class="date">{dateToString(publishedPost.meta.date)}</span>
+				{#if publishedPost.meta.author}
+					<span class="speaker">{publishedPost.meta.author}</span>
+				{/if}
+			</article>
+	</a>
 	{/each}
-</ul>
+</div>
 

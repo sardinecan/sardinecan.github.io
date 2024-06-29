@@ -6,16 +6,14 @@
 </script>
 
 <h1>Antisèches</h1>
-<nav>
-  <ul class="cards">
-    {#each folders.sort() as folder}  
-    <li>
-      <a href="/cheatsheets/{folder}">
-        <article>
-          <span class="title">{ folder }</span>
-        </article>
-      </a>
-    </li>
-    {/each}
-  </ul>
-</nav>
+<div class="cards">
+  {#each folders.sort() as folder}
+  <a class="card" href="/cheatsheets/{folder}">
+    <article>
+      <span class="title">{ folder }</span>
+    </article>
+  </a>
+  {/each}
+</div>
+
+

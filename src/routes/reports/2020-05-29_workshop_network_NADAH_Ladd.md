@@ -30,7 +30,7 @@ Edges can have attributes too (directed or not, weighted, or not, edge type)
 
 **Bridge** : nodes with less degrees than hubs but still a great betweenness.
 
-## **Centrality**
+## Centrality
 
 **Degree** : number of edges for a node.
 
