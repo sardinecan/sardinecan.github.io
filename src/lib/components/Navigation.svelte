@@ -1,7 +1,6 @@
 <!-- Header.svelte -->
 <script>
-  import svg_home from '$lib/assets/picol/home.svg';
-	import { page } from '$app/stores';  
+  import { page } from '$app/stores';  
 </script>
 
 <nav>
@@ -50,8 +49,7 @@ header + nav > a::after*/ {
   animation: cursor-blink 1.5s steps(1) infinite;
 }
 
-nav h1::before/*,
-header + nav > a::after*/ {
+nav h1::before {
   content: "❯ ";
 	color: var(--color-green);
 }
@@ -80,7 +78,6 @@ nav a {
 }
 
 nav a.active {
-	/*text-decoration: underline solid var(--color-green) 0.2rem;*/
 	color: var(--color-green);
 }
 
@@ -90,9 +87,5 @@ nav a.active {
 		height: 1em;		
 		filter: invert(32%) sepia(82%) saturate(3323%) hue-rotate(3deg) brightness(102%) contrast(109%);
 	}*/
-
-.headingColor {
-	color: var(--headingColor);
-}
 	
 </style>
