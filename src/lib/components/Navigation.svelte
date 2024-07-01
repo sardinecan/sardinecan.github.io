@@ -17,13 +17,49 @@
 		<li><a href="/reports" class:active="{$page.url.pathname.includes("reports")}">Comptes rendus</a></li>
 		<li><a href="/cheatsheets" class:active="{$page.url.pathname.includes("cheatsheets")}">Antisèches</a></li>
 		<li><a href="/notes" class:active="{$page.url.pathname.includes("notes")}">Notes</a></li>
-		<li><button on:click={toogleTheme}>{ $theme? "☼" : "☾" }</button></li>
+		<!-- <li><button on:click={toogleTheme}>{ $theme? "☼" : "☾" }</button></li> -->
+		<li><button class="switch" role="switch" aria-checked={$theme} on:click={toogleTheme}/></li>
 	</ul>
 </nav>
 <!--<p>Path : {$page.url.pathname}</p>-->
 
 <!-- ... The rest of the file's contents here -->
 <style>
+
+	.switch {
+		vertical-align: bottom;
+    width: 3em;
+    height: 1.6em;
+    position: relative;
+    margin: 0 0 0 0.5em;
+    background: var(--color-light-red);
+    border: none;
+		border-radius: 25px;
+  }
+
+	.switch::before {
+  	content: '☀';
+		vertical-align: baseline;
+    position: absolute;
+    width: 1.3em;
+    height: 1.3em;
+    background: var(--color-white);
+    top: 0.13em;
+    right: 1.5em;
+		border-radius: 25px;
+    transition: transform 0.3s;
+  }
+
+	.switch[aria-checked='true']{
+    background-color: var(--color-purple-1);
+  }
+
+	.switch[aria-checked='true']::before{
+		content: '☾';
+		color: var(--color-purple-1);
+    transform: translateX(1.3em);
+    transition: transform 0.3s;
+  }
 
 	nav h1 {
 		position: relative;
