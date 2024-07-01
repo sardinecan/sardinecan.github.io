@@ -1,10 +1,6 @@
 <!-- Footer.svelte -->
 <script>
-  import { theme } from '../../store';
-  function toogleTheme(){
-	console.log($theme);
-	theme.set(!$theme);
-  }
+  
 </script>
 
 <footer>
@@ -12,7 +8,6 @@
 		<ul>
 			<li><a href="https://github.com/sardinecan/log">Github</a></li>
 			<!--<li><a href="/contact">Contact</a></li>-->
-			<li><button on:click={toogleTheme}>{ $theme? "Light" : "Dark" }</button></li>
 		</ul>
   </nav>
 </footer>
@@ -33,6 +28,6 @@
 		padding: 0.1em;
 		text-decoration: none;
 		color: inherit;
-		color: var(--color-pink-1);
+		color: light-dark(var(--color-light-red), var(--color-pink-1));
 	}
 </style>

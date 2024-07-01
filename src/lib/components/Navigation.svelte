@@ -1,6 +1,12 @@
 <!-- Header.svelte -->
 <script>
   import { page } from '$app/stores';  
+
+	import { theme } from '../../store';
+  function toogleTheme(){
+	console.log($theme);
+	theme.set(!$theme);
+  }
 </script>
 
 <nav>
@@ -11,6 +17,7 @@
 		<li><a href="/reports" class:active="{$page.url.pathname.includes("reports")}">Comptes rendus</a></li>
 		<li><a href="/cheatsheets" class:active="{$page.url.pathname.includes("cheatsheets")}">Antisèches</a></li>
 		<li><a href="/notes" class:active="{$page.url.pathname.includes("notes")}">Notes</a></li>
+		<li><button on:click={toogleTheme}>{ $theme? "☼" : "☾" }</button></li>
 	</ul>
 </nav>
 <!--<p>Path : {$page.url.pathname}</p>-->
@@ -25,8 +32,7 @@
 		padding: 0.1em;
 		font-family: var(--mainFont);
 		font-size: 1.2em;
-		/*background: var(--color-white);*/
-		color: var(--color-pink-1);
+		color: light-dark(var(--color-light-white), var(--color-pink-1));
 		display: flex;
 	  align-items:baseline;
  		gap: 0.1em;
@@ -44,14 +50,14 @@ header + nav > a::after*/ {
   content: "";
   width: 0.5em;
   height: 0.1em;
-  background: var(--color-white);
+  background: light-dark(var(--color-light-white), var(--color-white));
   display: inline-block;
   animation: cursor-blink 1.5s steps(1) infinite;
 }
 
 nav h1::before {
   content: "❯ ";
-	color: var(--color-green);
+	color: light-dark(var(--color-light-red), var(--color-green));
 }
 
 nav {
@@ -59,9 +65,10 @@ nav {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	background-color: var(--color-dark-2);
+	background-color: light-dark(var(--color-light-grey), var(--color-dark-2));
 	position: sticky;
 	top: 0;		
+	z-index: 2;
 }
 
 nav ul {
@@ -74,11 +81,11 @@ nav ul {
 nav a {
 	padding: 0.1em;
 	text-decoration: none;
-	color: var(--color-pink-1);
+	color: light-dark(var(--color-light-white), var(--color-pink-1));
 }
 
 nav a.active {
-	color: var(--color-green);
+	color: light-dark(var(--color-light-red), var(--color-green));
 }
 
 
