@@ -1,12 +1,14 @@
 ---
-title: 'Terminaux'
+title: 'Émulateurs et multiplexeurs de terminaux'
 date: '2024-06-18'
 category: 'Setup'
 author: 'jmorvan'
-keywords: 'dev ; terminal'
+keywords: 'dev ; terminal ; émulateur : emulator ; multiplexeur : multiplexer'
 ---
 
-# Terminaux
+# Émulateurs et multiplexeurs de terminaux
+
+## Émulateurs
 
 | Nom                             | Type                  | Licence                | Éditeur        | Plateformes   |
 |:---------------------------------------------|-----------------------:|------------------------:|--------------------------:|---------------------------:|
@@ -38,10 +40,23 @@ keywords: 'dev ; terminal'
 | [Termux](https://termux.com/)               | Terminal              | GPL-3.0                | Fredrik Fornwall         | ![Android](/logos/android.svg)                   |
 | [Tilda](https://github.com/lanoxx/tilda)    | Terminal              | GPL-2.0                | Tristan Schmelcher       | ![linux](/logos/linux.svg)                     |
 | [Tilix](https://gnunn1.github.io/tilix-web/) | Terminal              | GPL-3.0                | Gerald Nunn              | ![linux](/logos/linux.svg)                     |
-| [Tmux](https://github.com/tmux/tmux)   | Terminal multiplexer  | BSD                    | Tmux Contributors        | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [Upterm](https://github.com/railsware/upterm) | Terminal              | MIT                    | Railsware                | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [WezTerm](https://wezfurlong.org/wezterm/)  | Terminal              | MIT                    | Wez Furlong              | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [Windows Terminal](https://aka.ms/terminal) | Terminal              | MIT                    | Microsoft                | ![windows](/logos/windows.svg)                   |
 | [Xfce Terminal](https://docs.xfce.org/apps/terminal/start) | Terminal              | GPL-2.0                | XFCE Project             | ![linux](/logos/linux.svg)                     |
 | [Yakuake](https://github.com/KDE/yakuake)         | Terminal              | GPL-2.0                | KDE Community            | ![linux](/logos/linux.svg)                     |
 | [Zsh](https://www.zsh.org/)                 | Shell                 | MIT                    | Zsh Contributors         | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
+
+
+## Multiplexeurs
+
+| Nom                                            | Licence   | Statut   | Plateformes                   |
+|:-----------------------------------------------|:----------|:---------|------------------------------:|
+| [Abduco](https://github.com/martanne/abduco)   | MIT       | Maintenu | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) |
+| [Byobu](https://byobu.org/)                    | GNU GPLv3 | Maintenu | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg) |
+| [Dvtm](https://github.com/martanne/dvtm)       | MIT       | Maintenu | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) |
+| [Mtm](https://github.com/deadpixi/mtm)         | ISC       | Maintenu | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) |
+| [Screen](https://www.gnu.org/software/screen/) | GNU GPLv3 | Maintenu | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg) |
+| [Tmux](https://github.com/tmux/tmux)           | BSD       | Maintenu | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg) |
+| [Twin](https://sourceforge.net/projects/twin/) | GNU GPLv2 | Archivé  | ![linux](/logos/linux.svg)|
+| [Zellij](https://zellij.dev/)                  | MIT       | Maintenu | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg) |

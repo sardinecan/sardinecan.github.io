@@ -310,6 +310,10 @@ table img {
 	filter: invert(74%) sepia(39%) saturate(4899%) hue-rotate(306deg) brightness(102%) contrast(94%);
 }
 
+.light table img {
+	filter: invert(54%) sepia(36%) saturate(739%) hue-rotate(313deg) brightness(97%) contrast(85%);
+}
+
 dl {
 	display: grid;
 	grid-template-columns: 2fr 5fr;
