@@ -48,3 +48,9 @@ keywords: 'editeur de texte ; logiciel ; terminal ; gui'
 | [StackEdit](https://stackedit.io/) | Editor | MIT                    | Benjamin Pannell       | Online                    |
 | [Typora](https://typora.io/) | Editor | Proprietary            | Abner Lee               | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [Zettlr](https://www.zettlr.com/) | Editor | GPL-3.0                | Zettlr Community       | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
+
+## Autres éditeurs
+
+| Nom                                       | Description                                                     | Licence     |
+|:------------------------------------------|----------------------------------------------------------------:|------------:|
+| [Writebook](https://once.com/writebook)   | webapp pour éditer et, surtout, publier des fichiers markdown   | Freemium    | 
