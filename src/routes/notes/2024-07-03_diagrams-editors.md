@@ -1,9 +1,9 @@
 ---
-title: "SQL SGBD"
-date: 2024-06-28
+title: "Éditeurs de digrammes"
+date: 2024-07-03
 author: "jmorvan"
-category: 'database'
-keywords: "database ; sql ; nosql ; sgbd"
+category: 'software'
+keywords: "diagramme ; editeur ; éditeur ; editor"
 ---
 
 # Éditeurs de diagrammes
