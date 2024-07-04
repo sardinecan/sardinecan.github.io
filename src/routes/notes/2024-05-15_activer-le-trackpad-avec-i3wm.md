@@ -6,6 +6,8 @@ category: 'setup'
 keywords: "setup ; i3 ; linux ; mac"
 ---
 
+# Toucher pour cliquer avec i3wm
+
 Utiliser la commande `xinput` pour lister les devices :
 ```shell
 xinput           
