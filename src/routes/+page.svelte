@@ -1,3 +1,4 @@
+<!-- src/routes/+page.svelte -->
 <h1>Hello World!</h1>
 <style>
 h1 {

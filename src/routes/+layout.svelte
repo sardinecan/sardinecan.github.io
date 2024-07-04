@@ -1,4 +1,4 @@
-<!-- +layout.svelte -->
+<!-- src/routes/+layout.svelte -->
 <script>
 	import Navigation from '$lib/components/Navigation.svelte';
 	import Footer from '$lib/components/Footer.svelte';

@@ -1,3 +1,4 @@
+<!-- src/routes/cheatsheets/css/[slug]/+page.svelte -->
 <script>
 	export let data;
 	import { dateToString } from '$lib/utils/dates.js'

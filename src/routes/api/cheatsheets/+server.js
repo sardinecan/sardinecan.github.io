@@ -1,3 +1,4 @@
+// src/routes/api/cheatsheets/+server.js
 import { fetchCheatsheetFiles } from '$lib/utils';
 import { json } from '@sveltejs/kit';
 

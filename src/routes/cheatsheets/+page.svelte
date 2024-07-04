@@ -1,3 +1,4 @@
+<!-- src/routes/cheatsheets/+page.svelte -->
 <script>
 	export let data;
   // récupération des valeurs uniques des catégories pour récupérer les dossiers.

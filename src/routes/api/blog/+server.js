@@ -1,3 +1,4 @@
+// src/routes/api/blog/+server.js
 import { fetchBlogFiles } from '$lib/utils';
 import { json } from '@sveltejs/kit';
 

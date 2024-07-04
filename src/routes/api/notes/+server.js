@@ -1,3 +1,4 @@
+// src/routes/api/notes/+server.js
 import { fetchNotesFiles } from '$lib/utils';
 import { json } from '@sveltejs/kit';
 

@@ -1,3 +1,4 @@
+// src/routes/api/reports/+server.js
 import { fetchReportsFiles } from '$lib/utils';
 import { json } from '@sveltejs/kit';
 
