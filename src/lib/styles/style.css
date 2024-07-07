@@ -266,12 +266,13 @@ pre[class*="language-"] {
 }
 
 input[type="text"] {
-	background: var(--color-white);
+	background: light-dark(var(--color-light-soft-grey), var(--color-white));
+	color: light-dark(var(--color-light-grey), var(--color-dark-3));
 	text-decoration: none;
 	border: 0;
 	border-radius: var(--radius);
 	height: 2em;
-	margin: 0 0 1em 0;
+	margin: 0 0 2em 0;
 }
 
 blockquote {
