@@ -56,6 +56,6 @@ keywords: 'editeur de texte ; logiciel ; terminal ; gui'
 
 | Nom                                       | Description | Hébergement  | Licence     |
 |:------------------------------------------|----------------------------------------------------------------:|------------:|-------:|
-| [Writebook](https://once.com/writebook)   | plateforme d'édition collaborative pour créer, gérer et publier des livres numériques.  | cloud / auto-hébergement  | freemium    |
-| [Gitbook](https://www.gitbook.com/)       | outil collaboratif pour la création de documentation à partir d’un repo Github  | cloud  | open source (gratuit pour les repo publics) | 
-| [Pubpub](https://www.pubpub.org/)   | plateforme de publication ouverte.  | cloud / auto-hébergement  | MIT    |
+| [Writebook](https://once.com/writebook)   | plateforme d'édition collaborative pour créer, gérer et publier des livres numériques.  | Cloud / auto-hébergement  | Freemium    |
+| [Gitbook](https://www.gitbook.com/)       | outil collaboratif pour la création de documentation à partir d’un repo Github  | Cloud  | Open source (gratuit pour les repo publics) | 
+| [Pubpub](https://www.pubpub.org/)   | plateforme de publication ouverte.  | Cloud / auto-hébergement  | MIT    |
