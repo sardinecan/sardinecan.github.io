@@ -20,17 +20,11 @@ Installer Homebrew [https://brew.sh/index_fr](https://brew.sh/index_fr) (macOS e
 - `which git` # Pour connaître quelle version est utilisé (la version de macOs par defaut)
 - `sudo mv /usr/bin/git /usr/bin/git-apple` | ou | `brew link --overwrite git` # pour switcher sur la version de homebrew si nécessaire
 
-### Configuration du `.gitignore` global : 
-Voir gestion des `dotefiles` avec `chezmoi`.
+## Chezmoi
 
+J'utilise [chezmoi](https://www.chezmoi.io/) pour la gestion de mes dotfiles (`.gitconfig`, `.gitignore`, `.zshrc`, etc.).
 
-
-## chezmoi
-[Documentation](https://www.chezmoi.io/)
-
-Pour la gestion des dotfiles (`.gitconfig`, `.gitignore`, `.zshrc`, etc.) j'utilise désormais [Chezmoi](https://www.chezmoi.io/).
-
-Pour installer chezmoi :
+Installation :
 ```bash
 #macos
 brew install chezmoi
@@ -38,8 +32,7 @@ brew install chezmoi
 sudo pacman -S chezmoi
 ```
 
-Pour configurer une nouvelle machine, exécuter simplement la ligne suivante :
-
+Récupération des fichiers sur une nouvelle machine :
 ```bash
 # si le repo github est nommé 'dotefiles'
 chezmoi init --apply $GITHUB_USERNAME
@@ -48,7 +41,6 @@ chezmoi init --apply https://github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
 ```
 
 ## Terminal/shell
-
 ### Fonts
 Voir [fonts](/notes/2024-02-13_fonts)
 
@@ -62,41 +54,30 @@ Autres thèmes :
 ### Changer le shell pour `zsh`
 Depuis macOS Catalina, `zsh` est le shell par défaut sur macOS. Pour les versions antérieurs ou sur d'autres systèmes, il peut être nécessaire d'installer `zsh` ou de l'activer. Pour l'installation et l'activation, voir [Installing-ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
 
-Une fois le z shell installé et activé, nous avons accès au fichier `~/.zshrc`.
-
 ### Oh My Zsh
-[`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh/wiki)
+[`Oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh/wiki) - [Oh-my-zsh Wiki](https://github.com/ohmyzsh/wiki/tree/main)
 
-Wiki: [Oh-my-zsh Wiki](https://github.com/ohmyzsh/wiki/tree/main)
-
-#### Installation
-Entrer simplement la commande suivante dans le terminal :
+Installation :
 ```shell
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 
-#### Personnalisation du `.zshrc`
-Mon `.zshrc` est sauvegardé avec `chezmoi` (voir plus bas).
-
-Pour une configuration manuelle, suivre les étapes suivantes : 
-
-Activer les plugins: `web-search` et `aliases` dans `~/.zshrc` (`git` est activé par défaut) :
+Pour une configuration manuelle du `.zshrc` (sans `chezmoi`), suivre les étapes suivantes : 
+- plugins
 ```bash
 plugins=(git web-search aliases)
 ```
 
-Installer le thème [typewritten](https://typewritten.dev/) | [Github](https://github.com/reobin/typewritten)
+- thème ([typewritten](https://typewritten.dev/) | [Github](https://github.com/reobin/typewritten))
 ```shell
 git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten
 # NB $ZSH_CUSTOM est une variable par defaut de oh-my-zsh)
 ```
 
-Dans `~/.zshrc`, modifier la ligne :
 ```bash
+#.zshrc
 ZSH_THEME="typewritten/typewritten"
-```
-et ajouter les lignes suivante : 
-```shell
+
 TYPEWRITTEN_RELATIVE_PATH="adaptive"
 TYPEWRITTEN_PROMPT_LAYOUT="pure"
 TYPEWRITTEN_ARROW_SYMBOL="|"
@@ -160,25 +141,24 @@ Vim est installé par défaut sur macOs mais pas sur toutes les distributions Li
 brew install vim
 ```
 
-Le fichier de configuration `.vimrc` géré avec `chezmoi`, mais pour une configuration manuelle, voici son [contenu](https://github.com/sardinecan/dotfiles/blob/main/dot_vimrc).
+[`.vimrc`](https://github.com/sardinecan/dotfiles/blob/main/dot_vimrc) est géré avec `chezmoi`.
 
 #### Neovim
-
 Pour installer [Neovim](https://neovim.io/) : 
 ```shell
 # macos
 brew install neovim
-
 #arch
 pacman -S neovim
 ```
 
-Les fichiers de configuration sont gérés avec `chezmoi`et sont accessibles sur [github](https://github.com/sardinecan/dotfiles/tree/main/private_dot_config/nvim).
+[.config/nvim](https://github.com/sardinecan/dotfiles/tree/main/private_dot_config/nvim) est géré avec `chezmoi`.
 
-##### LSP et Julia
-La configuration de [JuliaLS](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/lua/mason-lspconfig/server_configurations/julials/README.md) nécessite une étape manuelle pour la création d'un environnement julia `nvim-lspconfig` ([voir ce post pour plus de détail](https://discourse.julialang.org/t/neovim-languageserver-jl/37286/83), une copie est présente dans mon zotero pour la configuration complète. Voir aussi le repos de [fredrikekre/.dotfiles](https://github.com/fredrikekre/.dotfiles/tree/master/.julia/environments/nvim-lspconfig).) 
+La configuration de [JuliaLS](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/lua/mason-lspconfig/server_configurations/julials/README.md) nécessite une étape manuelle pour la création d'un environnement julia `nvim-lspconfig` ([voir ce post pour plus de détail](https://discourse.julialang.org/t/neovim-languageserver-jl/37286/83), une copie est présente dans mon zotero pour la procédure complète. Voir aussi le repos [fredrikekre/.dotfiles](https://github.com/fredrikekre/.dotfiles/tree/master/.julia/environments/nvim-lspconfig)). 
 
-Lancer la commande `julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'` dans le terminale, puis `cd ~.julia/environment/nvim-lspconfig` et lancer la commande `make`.
+- lancer la commande `julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'` pour créer l'environnement ;
+- changer de répertoire : `cd ~.julia/environment/nvim-lspconfig` ;
+- lancer la commande `make`.
 
 NB : le fichier `makefile` et le dossier `.julia/environments/nvim-lspconfig` sont gérés par `chezmoi`.
 NB2 : Pour une raison que j'ignore, sous macos Sonoma 14.5, le fichier `languageserver.dylib` créé avec la commande `make` cause une erreur à l'ouverture d'un fichier julia avec neovim. Le supprimer règle toutefois le problème (julia 1.10+). Le problème n'a cependant pas été constatée sous macos Catalina et Archlinux. 
@@ -186,7 +166,8 @@ NB2 : Pour une raison que j'ignore, sous macos Sonoma 14.5, le fichier `language
 Commandes utiles pour le deboggage : 
 ```vim
 :TSUpdate ---mise à jour des parsers
-:LspInfo --- statuts et serveurs de langages actifs et configurés.
+:LspInfo --- statuts et serveurs de langages actifs et configurés
+--- ouvrir un fichier julia puis lancer la cmd :LspInfo, puis tab pour accéder à plus d'informations sur la configuration requise)
 :LspUpdate --- mettre à jour les serveurs de langages
 :LspLog --- logs des serveurs de langages
 :checkhealth --- diagnostics de la configuration neovim
@@ -205,10 +186,10 @@ Le changement de font s'effectue dans `Webstorm/settings/Editor/Font`.
 ##### Intégration BaseX
 Voir la [documentation BaseX](https://docs.basex.org/wiki/Integrating_IntelliJ_IDEA).
 
-#### Visual Studio Code
+#### Visual Studio Code / Code OSS
 [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
-VS Code permet également la synchronisation des réglages depuis un compte Github. Voir la documentation pour l'activer : [https://code.visualstudio.com/docs/editor/settings-sync](https://code.visualstudio.com/docs/editor/settings-sync)
+VS Code permet également la synchronisation des réglages depuis un compte Github. Voir la documentation pour l'activer : [https://code.visualstudio.com/docs/editor/settings-sync](https://code.visualstudio.com/docs/editor/settings-sync). Code OSS ne le permet vraisemblablement pas et nécessite une configuration manuelle.
 <!--
 La configuration de VS Code est synchronisée sur github, pour l'activer 
 - cliquer sur la roue dentée en bas à gauche de la fenêtre VS Code puis sur activier la synchronisation des paramètres
