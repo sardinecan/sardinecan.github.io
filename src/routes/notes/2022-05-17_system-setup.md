@@ -8,11 +8,30 @@ keywords: 'config ; dev ; installation'
 
 # System Setup
 
-## Mise à jour du 2024-06-27
+## Gestionnaires de paquets
+Installer Homebrew [https://brew.sh/index_fr](https://brew.sh/index_fr) (macOS et Linux).
+
+## Git 
+[https://git-scm.com/](https://git-scm.com/)
+
+### Installation avec Homebrew
+- `brew install git`
+- `git --version` #git est livré avec macOS
+- `which git` # Pour connaître quelle version est utilisé (la version de macOs par defaut)
+- `sudo mv /usr/bin/git /usr/bin/git-apple` | ou | `brew link --overwrite git` # pour switcher sur la version de homebrew si nécessaire
+
+### Configuration du `.gitignore` global : 
+Voir gestion des `dotefiles` avec `chezmoi`.
+
+
+
+## chezmoi
+[Documentation](https://www.chezmoi.io/)
+
 Pour la gestion des dotfiles (`.gitconfig`, `.gitignore`, `.zshrc`, etc.) j'utilise désormais [Chezmoi](https://www.chezmoi.io/).
 
+Pour installer chezmoi :
 ```bash
-# pour installer chezmoi
 #macos
 brew install chezmoi
 #arch
@@ -28,30 +47,11 @@ chezmoi init --apply $GITHUB_USERNAME
 chezmoi init --apply https://github.com/$GITHUB_USERNAME/$GITHUB_REPO.git
 ```
 
-## Gestionnaires de paquets
-Installer Homebrew [https://brew.sh/index_fr](https://brew.sh/index_fr) (macOS et Linux).
+## Terminal/shell
 
-## Github
-Configuration des clés SSH : [https://docs.github.com/en/authentication/connecting-to-github-with-ssh](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-
-## Git 
-[https://git-scm.com/](https://git-scm.com/)
-### Installation avec Homebrew
-- `brew install git`
-- `git --version` #git est livré avec macOS
-- `which git` # Pour connaître quelle version est utilisé (la version de macOs par defaut)
-- `sudo mv /usr/bin/git /usr/bin/git-apple` | ou | `brew link --overwrite git` # pour switcher sur la version de homebrew si nécessaire
-
-### Configuration du `.gitignore` global : 
-Cloner le repo [systemSetup](https://github.com/sardinecan/systemSetup/), puis entrer la commande suivante dans le terminal :
-```shell
-git config --global core.excludesfile $HOME/files/dh/systemSetup/git/.gitignore
-```
-
-## Fonts
+### Fonts
 Voir [fonts](/notes/2024-02-13_fonts)
 
-## Terminal/shell
 ### Personnalisation du terminal
 Ajouter le thème Hyper snazzy color scheme [https://github.com/sindresorhus/hyper-snazzy](https://github.com/sindresorhus/hyper-snazzy) et l'activer par défaut.
 
@@ -64,13 +64,21 @@ Depuis macOS Catalina, `zsh` est le shell par défaut sur macOS. Pour les versio
 
 Une fois le z shell installé et activé, nous avons accès au fichier `~/.zshrc`.
 
-### Installation de [`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh/wiki) et personnalisation
+### Oh My Zsh
+[`oh-my-zsh`](https://github.com/ohmyzsh/ohmyzsh/wiki)
+
 Wiki: [Oh-my-zsh Wiki](https://github.com/ohmyzsh/wiki/tree/main)
 
-Installation :
+#### Installation
+Entrer simplement la commande suivante dans le terminal :
 ```shell
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
+
+#### Personnalisation du `.zshrc`
+Mon `.zshrc` est sauvegardé avec `chezmoi` (voir plus bas).
+
+Pour une configuration manuelle, suivre les étapes suivantes : 
 
 Activer les plugins: `web-search` et `aliases` dans `~/.zshrc` (`git` est activé par défaut) :
 ```bash
@@ -95,13 +103,6 @@ TYPEWRITTEN_ARROW_SYMBOL="|"
 TYPEWRITTEN_COLOR_MAPPINGS="primary:red"
 ```
 
-Si ce n'est pas déjà fait, cloner le repo [systemSetup](https://github.com/sardinecan/systemSetup/) et insérer les lignes : 
-
-- `source $HOME/files/dh/systemSetup/zsh/.zsh_bin`;
-- `source $HOME/files/dh/systemSetup/zsh/.zsh_sc`
-
-dans `~/.zshrc` afin d'ajouter les _aliases_ et _custom path_ personnels.
-	    
 <!--Bat [https://github.com/sharkdp/bat/](https://github.com/sharkdp/bat/): A cat cmd clone with syntax highlighting and Git integration. release : [https://github.com/sharkdp/bat/releases](https://github.com/sharkdp/bat/releases)-->
 
 ## Programmes
@@ -109,7 +110,89 @@ dans `~/.zshrc` afin d'ajouter les _aliases_ et _custom path_ personnels.
 - Firefox [https://www.mozilla.org/fr/firefox/new/](https://www.mozilla.org/fr/firefox/new/)
 - Chrome [https://www.google.com/chrome/](https://www.google.com/chrome/)
 
+### Langages de programmation
+#### [Julia](https://julialang.org/)
+Pour l'installation, voir [https://julialang.org/downloads/](https://julialang.org/downloads/).
+
+#### [Python](https://www.python.org/)
+Installation
+```shell
+brew install python
+```
+Pour plus d'informations sur Homebrew et Python : [https://docs.brew.sh/Homebrew-and-Python](https://docs.brew.sh/Homebrew-and-Python).
+
+### Librairies
+#### NodeJS [https://nodejs.org/en/](https://nodejs.org/en/) (LTS preferred)
+Installer `n` avec `homebrew` avec la commande suivante : 
+```bash
+brew install n
+```
+[Configurer les variables d'environnement](https://github.com/tj/n?tab=readme-ov-file#optional-environment-variables) afin de définir le dossier d'installation de Node (il est possible d'ajouter ces deux lignes dans son `.zshrc`…) : 
+
+```bash
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+```
+
+Il est ensuite possible d'installer différentes versions de node :
+- `n stable` pour installer la version stable
+- `n <version>` pour installer une version spécifique, par exemple `n 16.15.0`
+- `n lts` pour installer la version de support à long terme
+- `n latest` pour installer la dernière version.
+
+Pour vérifier la version de node : `node -v`.
+
+Pour passer d'une version de Node à l'autre il suffit de taper `n` dans le terminal, de sélectionner la version désirée avec les `flèches` et d'appuyer sur `enter`.
+
+#### Apache Ant 
+[https://ant.apache.org/](https://ant.apache.org/)
+¨Penser à ajouter `Ant` dans le `$Path`
+
+#### TEI Stylesheets 
+[https://github.com/TEIC/Stylesheets](https://github.com/TEIC/Stylesheets)
+
+Pour une installation avec macOS, voir : [tei Stylesheets](/notes/2023-10-12_tei-stylesheets)
+
 ### Éditeurs de texte
+#### Vim
+Vim est installé par défaut sur macOs mais pas sur toutes les distributions Linux. Pour l'installer s'il est manquant :
+```shell
+brew install vim
+```
+
+Le fichier de configuration `.vimrc` géré avec `chezmoi`, mais pour une configuration manuelle, voici son [contenu](https://github.com/sardinecan/dotfiles/blob/main/dot_vimrc).
+
+#### Neovim
+
+Pour installer [Neovim](https://neovim.io/) : 
+```shell
+# macos
+brew install neovim
+
+#arch
+pacman -S neovim
+```
+
+Les fichiers de configuration sont gérés avec `chezmoi`et sont accessibles sur [github](https://github.com/sardinecan/dotfiles/tree/main/private_dot_config/nvim).
+
+##### LSP et Julia
+La configuration de [JuliaLS](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/lua/mason-lspconfig/server_configurations/julials/README.md) nécessite une étape manuelle pour la création d'un environnement julia `nvim-lspconfig` ([voir ce post pour plus de détail](https://discourse.julialang.org/t/neovim-languageserver-jl/37286/83), une copie est présente dans mon zotero pour la configuration complète. Voir aussi le repos de [fredrikekre/.dotfiles](https://github.com/fredrikekre/.dotfiles/tree/master/.julia/environments/nvim-lspconfig).) 
+
+Lancer la commande `julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'` dans le terminale, puis `cd ~.julia/environment/nvim-lspconfig` et lancer la commande `make`.
+
+NB : le fichier `makefile` et le dossier `.julia/environments/nvim-lspconfig` sont gérés par `chezmoi`.
+NB2 : Pour une raison que j'ignore, sous macos Sonoma 14.5, le fichier `languageserver.dylib` créé avec la commande `make` cause une erreur à l'ouverture d'un fichier julia avec neovim. Le supprimer règle toutefois le problème (julia 1.10+). Le problème n'a cependant pas été constatée sous macos Catalina et Archlinux. 
+
+Commandes utiles pour le deboggage : 
+```vim
+:TSUpdate ---mise à jour des parsers
+:LspInfo --- statuts et serveurs de langages actifs et configurés.
+:LspUpdate --- mettre à jour les serveurs de langages
+:LspLog --- logs des serveurs de langages
+:checkhealth --- diagnostics de la configuration neovim
+:Lazy --- pour la gestion des plugins
+```
+
 #### Webstorm
 Webstorm permet la synchronisation de paramètres (depuis un compte Jetbrains). Pour l'activer : `Webstorm/Settings/Settings Sync/Enable Settings Sync`, puis dans la popup `Get Settings from Account`.
 
@@ -175,79 +258,6 @@ Pour une configuration manuelle :
     - `Préférences/XML/XSLT/FO/XQuery/XSLT/Saxon/Saxon HE/PE/EE`
 	    - désélectionner `Étendre les attributs par défaut ("-expand")`
 
-#### Vim
-Vim est installé par défaut sur macOs mais pas sur Ubuntu. Pour l'installation :
-```shell
-brew install vim
-```
-
-Pour la configuration de vim, créer un fichier `.vimrc` dans le dossier `home` : 
-```shell
-mkdir ~/.vimrc`
-```
-puis ajouter le contenu suivant pour la personnalisation :
-```shell
-"default vim
-source $VIMRUNTIME/defaults.vim
-    
-"Enable line number
-set number
-
-"Enable syntax highlight
-syntax on
-filetype on
-colorscheme default
-
-"To scroll horizontally one character at a time to reveal more text as needed.
-set sidescroll=1
-
-"Enable autoindent
-set autoindent
-```
 ### Image/video editing
 - Suite Affinity [https://affinity.serif.com/fr/](https://affinity.serif.com/fr/)
 - Final Cut pro
-
-### Programming languages
-#### [Julia](https://julialang.org/)
-Pour l'installation, voir [https://julialang.org/downloads/](https://julialang.org/downloads/).
-
-#### [Python](https://www.python.org/)
-Installation
-```shell
-brew install python
-```
-Pour plus d'informations sur Homebrew et Python : [https://docs.brew.sh/Homebrew-and-Python](https://docs.brew.sh/Homebrew-and-Python).
-
-### Libraries
-#### NodeJS [https://nodejs.org/en/](https://nodejs.org/en/) (LTS preferred)
-Installer `n` avec `homebrew` avec la commande suivante : 
-```bash
-brew install n
-```
-
-[Configurer les variables d'environnement](https://github.com/tj/n?tab=readme-ov-file#optional-environment-variables) afin de définir le dossier d'installation de Node (il est possible d'ajouter ces deux lignes dans son `.zshrc`…) : 
-
-```bash
-export N_PREFIX=$HOME/.n
-export PATH=$N_PREFIX/bin:$PATH
-```
-
-Il est ensuite possible d'installer différentes versions de node :
-- `n stable` pour installer la version stable
-- `n <version>` pour installer une version spécifique, par exemple `n 16.15.0`
-- `n lts` pour installer la version de support à long terme
-- `n latest` pour installer la dernière version.
-
-Pour vérifier la version de node : `node -v`.
-
-Pour passer d'une version de Node à l'autre il suffit de taper `n` dans le terminal, de sélectionner la version désirée avec les `flèches` et d'appuyer sur `enter`.
-
-#### Apache Ant 
-[https://ant.apache.org/](https://ant.apache.org/)
-¨Penser à ajouter `Ant` dans le `$Path`
-
-#### TEI Stylesheets 
-[https://github.com/TEIC/Stylesheets](https://github.com/TEIC/Stylesheets)
-
-Pour une installation avec macOS, voir : [tei Stylesheets](/notes/2023-10-12_tei-stylesheets)
