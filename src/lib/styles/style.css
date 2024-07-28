@@ -14,6 +14,7 @@
 	--sansFont: 'IBM Plex Sans', sans-serif;
 	--serifFont: 'IBM Plex Serif', serif;
 	--condensedFont: 'IBM Plex Sans Condensed';
+  --codeFont: "JetBrains Mono", monospace;
 
 	--maxWidth: 40em;
 
@@ -44,7 +45,7 @@
   --color-dark-2: rgb(var(--rgb-dark-2));
   --color-dark-3: rgb(var(--rgb-dark-3));
   --color-green: rgb(var(--rgb-green));
-	--color-green-2: rgb(var(var(--rgb-green-2)));
+	--color-green-2: rgb(var(--rgb-green-2));
   --color-purple-1: rgb(var(--rgb-purple-1));
 	--color-pink-1: rgb(var(--rgb-pink-1));
 
@@ -249,8 +250,13 @@ pre > code {
 }
 
 :not(pre) > code {
-	background-color: light-dark(var(--color-light-grey), var(--color-purple-1));
-	color: light-dark(var(--color-light-white), var(--color-dark-1));
+	/*background-color: light-dark(var(--color-light-grey), var(--color-purple-1));*/
+  font-family: var(--codeFont);
+  font-size: .8em;
+  font-weight: 300;
+  border: solid  1px ;
+	border-color:  light-dark(rgba(var(--rgb-light-grey), 0.7), rgba(var(--rgb-teal), 0.7));
+	color: light-dark(var(--color-light-grey), var(--color-purple-1));
   border-radius: var(--radius);
   padding: .3em;
 	vertical-align:baseline;

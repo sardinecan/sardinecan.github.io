@@ -1,5 +1,5 @@
 ---
-title: "Éditeurs de digrammes"
+title: "Éditeurs de diagrammes"
 date: 2024-07-03
 author: "jmorvan"
 category: 'software'

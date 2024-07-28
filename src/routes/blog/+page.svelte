@@ -4,7 +4,7 @@
 	import { dateToString } from '$lib/utils/dates.js'
 
 	let publishedPosts = data.posts.filter(function (el) {
-	  return el.meta.status.startsWith('unpublished');
+	  return el.meta.status.startsWith('published');
 	});
 </script>
 
