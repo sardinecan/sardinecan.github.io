@@ -21,7 +21,7 @@ keywords: 'dev ; terminal ; émulateur : emulator ; multiplexeur : multiplexer'
 | [DomTerm](https://domterm.org/)             | Terminal              | MIT                    | Per Bothner              | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [eDEX-UI](https://github.com/GitSquared/edex-ui) | Terminal            | GPL-3.0                | GitSquared               | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [GNOME Terminal](https://wiki.gnome.org/Apps/Terminal) | Terminal              | GPL-3.0                | GNOME Project            | ![linux](/logos/linux.svg)                     |
-| [Ghostty](https://github.com/ghostty-org)             | Terminal              | Private                   | Mitchell Hashimoto    | ![apple](/logos/apple.svg) ![linus](/logos/linusx.svg)    | 
+| [Ghostty](https://github.com/ghostty-org)             | Terminal              | Private                   | Mitchell Hashimoto    | ![apple](/logos/apple.svg) ![linus](/logos/linux.svg)    | 
 | [Guake](https://guake.github.io/)          | Terminal              | GPL-2.0                | Guake Contributors       | ![linux](/logos/linux.svg)                     |
 | [Hyper](https://hyper.is/)                  | Terminal              | MIT                    | Vercel, Inc.             | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)     |
 | [iTerm2](https://iterm2.com/)               | Terminal              | GPL-2.0                | George Nachman           | ![apple](/logos/apple.svg)                     |
