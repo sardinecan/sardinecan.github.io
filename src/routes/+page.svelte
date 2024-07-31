@@ -121,12 +121,6 @@ img.note {
   filter: invert(59%) sepia(44%) saturate(645%) hue-rotate(302deg) brightness(94%) contrast(107%);
 }
 
-.light img.note {
-  filter: invert(85%) sepia(23%) saturate(890%) hue-rotate(75deg) brightness(95%) contrast(89%);
-}
-
-
-
 img.post {
   filter: invert(63%) sepia(39%) saturate(819%) hue-rotate(211deg) brightness(102%) contrast(94%);
 }
