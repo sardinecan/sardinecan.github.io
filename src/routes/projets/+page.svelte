@@ -2,18 +2,18 @@
 <h1>Projets</h1>
 
 <h2>BiographiX</h2>
-<p>BiographiX est une application web pour les données prosopographiques et biographiques réalisée avec BaseX et fondée sur la format XML EAC-CPF.</p>
+<p>BiographiX est une application web pour les données prosopographiques et biographiques réalisée avec BaseX et fondée sur le format XML EAC-CPF.</p>
 <p>BiographiX is a web app for prosopographical and biographical data made with BaseX and based on XML EAC-CPF format.</p>
 <p><a href="https://github.com/sardinecan/biographiX">sardinecan/biographiX</a></p>
 
 <h2>Pic'N'Crop</h2>
-<p>Pic'n'crop est un outil interractif de recadrage réalisé avec Julia</p>
+<p>Pic'n'crop est un outil interractif de recadrage réalisé avec Julia.</p>
 <p>Pic'n'crop is an interactive cropper made with Julia.</p>
 <p><a href="https://github.com/sardinecan/picncrop">sardinecan/picncrop</a></p>
 
 <h2>Nakalia</h2>
-<p>Nakalia est un bibliothèque de fonctions julia pour interagir avec l'API Nakala</p>
-<p>Nakalia is a library of documented functions to query the Nakala's API</p>
+<p>Nakalia est un bibliothèque de fonctions julia pour interagir avec l'API Nakala.</p>
+<p>Nakalia is a library of documented functions to query the Nakala's API.</p>
 <p><a href="https://github.com/sardinecan/nakalia">sardinecan/nakalia</a></p>
 
 
