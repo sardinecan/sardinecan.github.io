@@ -1,6 +1,9 @@
 <!-- src/routes/+page.svelte -->
 <script>
 	export let data;
+  import postIcon from '$lib/assets/material/post.svg'
+  import noteIcon from '$lib/assets/material/note.svg'
+  import reportIcon from '$lib/assets/material/report.svg'
 	import { dateToString } from '$lib/utils/dates.js'
 
   console.log(data)
@@ -11,22 +14,33 @@
   const reports = data.reports.slice(0, 3)
 
   /* concat notes-blog-report => note used for now */
-	let content = notes.concat(blog).concat(reports)
+	let content = data.notes.concat(data.blog).concat(data.reports)
   const sortedContent = content.sort((a, b) => {
 		return new Date(b.meta.date) - new Date(a.meta.date);
 	});
+
+  var recent = sortedContent.slice(0, 10)
+
+  function getDocumentType(path) {
+    let src;
+    if(path.startsWith('/notes')) { src = ["note", noteIcon]; }
+    else if(path.startsWith('/reports')) { src = ["report", reportIcon]; }
+    else { src = ["post", postIcon]; }
+    return src
+  };
+
 	
 </script>
 
 <h1>Hello World!</h1>
-<h2>Recent</h2>
+<!--
 <p>~/log/blog</p>
 <ul>
   {#each blog as post, i}
     {#if i==blog.length-1 }
-      <li>└── <a href="{post.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{post.meta.title}</span></a></li>
+      <li>└── <a href="{post.path}"><!-/-<span class="date">{dateToString(note.meta.date)}</span>-/-><span class="title">{post.meta.title}</span></a></li>
     {:else}
-      <li>├── <a href="{post.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{post.meta.title}</span></a></li>
+      <li>├── <a href="{post.path}"><span class="title">{post.meta.title}</span></a></li>
     {/if}
   {/each}
 </ul>
@@ -34,9 +48,9 @@
 <ul>
   {#each notes as note, i}
     {#if i==notes.length-1 }
-      <li>└── <a href="{note.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{note.meta.title}</span></a></li>
+      <li>└── <a href="{note.path}"><span class="title">{note.meta.title}</span></a></li>
     {:else}
-      <li>├── <a href="{note.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{note.meta.title}</span></a></li>
+      <li>├── <a href="{note.path}"><span class="title">{note.meta.title}</span></a></li>
     {/if}
   {/each}
 </ul>
@@ -44,9 +58,25 @@
 <ul>
   {#each reports as report, i}
     {#if i==reports.length-1 }
-      <li>└── <a href="{report.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{report.meta.title}</span></a></li>
+      <li>└── <a href="{report.path}"><span class="title">{report.meta.title}</span></a></li>
     {:else}
-      <li>├── <a href="{report.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{report.meta.title}</span></a></li>
+      <li>├── <a href="{report.path}"><span class="title">{report.meta.title}</span></a></li>
+    {/if}
+  {/each}
+</ul>
+-->
+<p>~/log/recent</p>
+<ul class="desc">
+  <li><img alt="report" class="report" src="{ reportIcon }"/>c.r.</li>
+  <li><img alt="note" class="note" src="{ noteIcon }"/>note</li>
+  <li><img alt="post" class="post" src="{ postIcon }"/>billet</li>
+</ul>
+<ul>
+  {#each recent as report, i}
+    {#if i==recent.length-1 }
+      <li>└──<img alt="{ getDocumentType(report.path)[0] }" class="{ getDocumentType(report.path)[0] }" src="{ getDocumentType(report.path)[1] }"/><a href="{report.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{report.meta.title}</span></a></li>
+    {:else}
+      <li>├──<img alt="{ getDocumentType(report.path)[0] }" class="{ getDocumentType(report.path)[0] }" src="{ getDocumentType(report.path)[1] }"/><a href="{report.path}"><!--<span class="date">{dateToString(note.meta.date)}</span>--><span class="title">{report.meta.title}</span></a></li>
     {/if}
   {/each}
 </ul>
@@ -69,4 +99,37 @@ to { width: 100% }
 li {
   list-style: none;
 }
+
+ul.desc {
+  margin: 0;
+  font-size: .8em;
+  display :flex;
+  gap: 1em;
+}
+
+img {
+  width: 1em;
+  vertical-align:sub;
+  margin: 0 2px 0;
+}
+
+img.report {
+  filter: invert(84%) sepia(10%) saturate(6331%) hue-rotate(315deg) brightness(101%) contrast(101%);
+}
+
+img.note {
+  filter: invert(59%) sepia(44%) saturate(645%) hue-rotate(302deg) brightness(94%) contrast(107%);
+}
+
+.light img.note {
+  filter: invert(85%) sepia(23%) saturate(890%) hue-rotate(75deg) brightness(95%) contrast(89%);
+}
+
+
+
+img.post {
+  filter: invert(63%) sepia(39%) saturate(819%) hue-rotate(211deg) brightness(102%) contrast(94%);
+}
+
+
 </style>

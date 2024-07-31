@@ -29,15 +29,15 @@
 	--color-white: rgb(var(--rgb-white));
 
 	/* dark tokyo night theme */
-  --rgb-blue: 125, 207, 255;
-	--rgb-teal: 115, 218, 202;
+  --rgb-blue: 125, 207, 255; /*#7dcfff*/
+	--rgb-teal: 115, 218, 202; /*#73daca*/
   --rgb-dark-1: 26, 27, 38;
   --rgb-dark-2: 31, 35, 53;
   --rgb-dark-3: 59, 66, 97;
   --rgb-green: 185, 242, 124;
 	--rgb-green-2: 158, 206, 106;
   --rgb-purple-1: 122, 162, 247;
-	--rgb-pink-1: 247, 118, 142;
+	--rgb-pink-1: 247, 118, 142; /*#f7768e*/
 
   --color-blue: rgb(var(--rgb-blue));
 	--color-teal: rgb(var(--rgb-teal));
@@ -345,3 +345,17 @@ dt:nth-of-type(odd),
 dd:nth-of-type(odd) {
 	background-color: light-dark(var(--color-light-soft-grey), rgba(var(--rgb-purple-1), .1));
 }
+
+.light img.note {
+  filter: invert(79%) sepia(45%) saturate(4217%) hue-rotate(309deg) brightness(91%) contrast(99%);
+}
+
+.light img.report {
+  filter: invert(55%) sepia(9%) saturate(3295%) hue-rotate(198deg) brightness(93%) contrast(94%);
+}
+
+.light img.post {
+  filter: invert(58%) sepia(12%) saturate(511%) hue-rotate(84deg) brightness(93%) contrast(85%);
+}
+
+
