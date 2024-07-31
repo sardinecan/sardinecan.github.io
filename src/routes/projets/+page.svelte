@@ -7,7 +7,7 @@
 <p><a href="https://github.com/sardinecan/biographiX">sardinecan/biographiX</a></p>
 
 <h2>Pic'N'Crop</h2>
-<p>Pic'n'crop est un outil interractif de recadrage réalisé avec Julia.</p>
+<p>Pic'n'crop est un outil de recadrage interactif réalisé avec Julia.</p>
 <p>Pic'n'crop is an interactive cropper made with Julia.</p>
 <p><a href="https://github.com/sardinecan/picncrop">sardinecan/picncrop</a></p>
 
