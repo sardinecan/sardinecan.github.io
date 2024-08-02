@@ -51,3 +51,4 @@ See also :
 - [Neovim Diagnostic documentation](https://neovim.io/doc/user/diagnostic.html)
 - [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [LazyVim Telescope documentation](http://www.lazyvim.org/extras/editor/telescope)
+- [Neo-tree package](https://github.com/nvim-neo-tree/neo-tree.nvim)
