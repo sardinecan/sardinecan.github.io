@@ -8,10 +8,30 @@ keywords: "editeur ; éditeur ; editor ; vim ; nvim ; neovim ; shortcuts"
 
 # Nvim shortcuts
 
-Here are my shortcuts for my [Neovim config](https://github.com/sardinecan/dotfiles/tree/main/private_dot_config/nvim).
+Here are the shortcuts I use with my [Neovim config](https://github.com/sardinecan/dotfiles/tree/main/private_dot_config/nvim).
 
 | label					| mode  		| shortcut  | command   | 
 | :-------			| -------:	| -------:  | -------:  |
+| Search    | n | `/`   |   |
+| Reach previous / next paragraph (or function/bloc)    | n | `{` / `}` |   |
+| Insert before cursor / line   | n | `ì` / `I` |   |
+| Insert (add) before cursor / line | n | `a` / `A` |   |
+| Insert (open) new line after / before | n | `o` / `O` |   |
+| Insert (add) at end of word  | n | `ea` |   |
+| Left  | n, v   | `h`   |   |
+| Down  | n, v   | `j`   |   |
+| Up  | n, v   | `k`   |   |
+| Down (multilines)  | n  | `gj`   |   |
+| Up (multilines) | n   | `gk`   |   |
+| Right  | n, v   | `l`   |   |
+| Backspace | i   | `&lt;C&gt;-h`   |   |
+| Backspace word | i   | `&lt;C&gt;-w`   |   |
+| Left pane | n, v   | `&lt;C&gt;-h`   |   |
+| Down pane | n, v   | `&lt;C&gt;-j`   |   |
+| Up pane | n, v   | `&lt;C&gt;-k`   |   |
+| Right pane | n, v   | `&lt;C&gt;-l`   |   |
+| Go to associate char | n | `%`   |    |
+| Go to first/last line | n | `gg` / `G`    |   |
 | copy to clipboard			| v			| `&lt;leader&gt; y`		|  |
 | scroll down					| n			| `&lt;crtl&gt; b`			|   | 
 | scroll up					| n			| `&lt;crtl&gt; f`			|   |
@@ -42,7 +62,15 @@ Here are my shortcuts for my [Neovim config](https://github.com/sardinecan/dotfi
 | Close Neotree  | n | `&lt;leader&gt;q`   | `:Neotree close&lt;CR&gt;`  |
 | Show open buffers on a float  | n | `&lt;leader&gt;bf`  | `:Neotree buffers reveal float&lt;CR&gt;` |
 | Show Git status  | n | `&lt;leader&gt;gst`   | `:Neotree git_status reveal float&lt;CR&gt;` |
+| Git add all (gst reveal) | n | `A`   | `git_add_all` |
+| Git unstage (gst reveal)  | n | `gu`  | `git_unstage_file`
+| Git add file (gst reveal) | n | `ga`  | `git_add_file`
+| git revert file (gst reveal) | n | `gr`  | `git_revert_file`
+| Git commit (gst reveal) | n | `gc`  | `git_commit`
+| Git push (gst reveal) | n | `gp`  | `git_push`
+| Git commit and push (gst reveal)  | n | `gg`  | `git_commit_and_push`
 | Find files  | n | `&lt;leader&gt;p` | `builtin.find_files`  |
+| Search (in Neotree pane)  | n | `fg` |   |
 | Live Grep  | n | `&lt;leader&gt;fg`  | `builtin.live_grep` |
 
 
