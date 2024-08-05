@@ -358,4 +358,6 @@ dd:nth-of-type(odd) {
   filter: invert(58%) sepia(12%) saturate(511%) hue-rotate(84deg) brightness(93%) contrast(85%);
 }
 
-
+.hidden {
+  display: none;
+}

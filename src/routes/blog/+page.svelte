@@ -11,7 +11,7 @@
 <h1>Blog</h1>
 <div class="cards">
 	{#each publishedPosts as publishedPost}
-		<a class="card" href="{publishedPost.path}">
+		<a class="card { publishedPost.meta.status.startsWith('unpublished') ? 'hidden' : '' }" href="{publishedPost.path}">
 			<article>
 				<span class="category">{publishedPost.meta.category}</span>
 				<span class="title">{publishedPost.meta.title}</span>
