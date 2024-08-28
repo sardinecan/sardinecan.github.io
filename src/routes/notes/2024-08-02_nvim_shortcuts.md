@@ -72,6 +72,8 @@ Here are the shortcuts I use with my [Neovim config](https://github.com/sardinec
 | Find files  | n | `&lt;leader&gt;p` | `builtin.find_files`  |
 | Search (in Neotree pane)  | n | `fg` |   |
 | Live Grep  | n | `&lt;leader&gt;fg`  | `builtin.live_grep` |
+| Autoindent | n | `=`  |   |
+| Show hidden files (neotree) | n | `H` |   | 
 
 
 See also :
