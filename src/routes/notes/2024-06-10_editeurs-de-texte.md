@@ -51,6 +51,12 @@ keywords: 'editeur de texte ; logiciel ; terminal ; gui'
 | [Typora](https://typora.io/)  | Editor  | Proprietary | Abner Lee | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
 | [Zettlr](https://www.zettlr.com/) | Editor  | GPL-3.0 | Zettlr Community  | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
 
+### Visualisation / publication Markdown
+| Nom       | type      | Licence       |
+| :------   | -------:  | -------:      |
+| [Glow](https://github.com/charmbracelet/glow)  | Render markdown on the CLI, with pizzazz! | MIT   |
+| [Quartz 4](https://quartz.jzhao.xyz/) | Static-site generator     | MIT      |
+| [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)  | Plugin to improve viewing Markdown files in Neovim    | MIT   |
 
 ## Solutions de publication
 
