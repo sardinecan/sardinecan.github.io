@@ -15,6 +15,7 @@ keywords: 'editeur de texte ; logiciel ; terminal ; gui'
 | [Atom](https://atom.io/)  | IDE | MIT | GitHub  | Maintenu  | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
 | [Brackets](http://brackets.io/) | IDE | MIT | Adobe | Archivé | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
 | [Code OSS](https://github.com/microsoft/vscode) | IDE | MIT | Microsoft | Maintenu  | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
+| [Cursor](https://www.cursor.com/features) | IDE | Proprietary | Anysphere | Maintenu  | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
 | [Eclipse](https://www.eclipse.org/) | IDE | EPL-2.0 | Eclipse Foundation  | Maintenu  | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
 | [Emacs](https://www.gnu.org/software/emacs/)  | CLI/IDE | GPL | Free Software Foundation  | Maintenu  | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) ![windows](/logos/windows.svg)  |
 | [GNU nano](https://www.nano-editor.org/)  | CLI | GPL | Free Software Foundation  | Maintenu  | ![apple](/logos/apple.svg) ![linux](/logos/linux.svg) |
