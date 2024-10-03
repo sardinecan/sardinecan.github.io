@@ -727,7 +727,7 @@ julia> collect(values(d))
  "Amigos"
 ```
 
-- récupérer la valeur d'une clé avec `get` ou en appelant la `key` comme prédicat.
+- récupérer la valeur d'une clé avec `get` ou en appelant la `key` dans l'opérateur `[]`.
 ```julia-repl
 julia> get(d, :hello, "pas de clé :hello")
 "world"
@@ -801,82 +801,379 @@ julia> d = Dict{Symbol, Any}(
   :date => "2024-01-01"
 )
 ```
+### Les tableaux
+[Documentation Julia](https://docs.julialang.org/en/v1/manual/arrays/)
 
-## *Vectorized dot (`.`) operator*
- 
-```julia
-[1, 2, 3] .+ [4, 5, 6] # [1+4, 2+5, 3+6]
-#=  
-  3-element Vector{Int64}:
-   5
-   7
-   9
-=#
+Un tableau, ou **array**, est une séquence d'objets ou de valeurs. Généralement un *array* contient un type de données, mais ce n'est pas une obligation.
+```julia-repl
+julia> a = [1, 2, 3]
+3-element Vector{Int64}:
+ 1
+ 2
+ 3
+
+julia> b = [1, 'a', ['α', 'β']]
+3-element Vector{Any}:
+ 1
+  'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
+  ['α', 'β']
+
+julia> [1 2 # une matrice
+        3 4]
+2×2 Matrix{Int64}:
+ 1  2
+ 3  4
 ```
 
-```julia
-extentions = ["jpg", "JPG", "jpeg", "png", "PNG", "tif", "tiff"]
-file = "picture.jpg"
-endswith.(file, extentions) # retourne un vecteur de booléens
+Il existe deux types d'*array* :
+- les vecteurs, `Vector{T}`, (une dimension) ;
+- les matrices, `Matrix{T}` (deux dimensions).
+
+Il existe plusieurs méthodes pour créer des tableaux. La première méthode est d'utiliser les constructeurs par défaut `Vector{T}(undef, n)` (construit un `Vector{T}` non initialisé de longueur `n`.) ou `Matrix{T}(undef, m, n)` (matrice non initialisée de taille `m` x `n`)  
+```julia-repl
+julia> a = Vector{Float64}(undef, 3)
+3-element Vector{Float64}:
+ 2.03e-322
+ 6.5e-322
+ 2.2062283473e-314
+
+julia> a = Matrix{Float64}(undef, 3, 2)
+3×2 Matrix{Float64}:
+ 2.20472e-314  2.20472e-314
+ 2.20472e-314  2.20472e-314
+ 2.20472e-314  2.20472e-314
+```
+
+Julia dispose également d'alias syntaxiques pour les éléments les plus courants dans la construction de tableaux :
+```julia-repl
+julia> v = zeros(5) # initialise avec des O on peut aussi passer un type zeros(Float64, 5)
+5-element Vector{Float64}:
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+
+
+julia> m = ones(5, 3) # initialise avec des 1
+5×3 Matrix{Float64}:
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+ 1.0  1.0  1.0
+```
+
+Il est aussi possible d'instancier un *array* vide puis de la remplir avec `fill!()`.
+```julia-repl
+julia> m = Matrix{Float64}(undef, 2, 2)
+2×2 Matrix{Float64}:
+ 1.6e-322    2.20881e-314
+ 2.351e-314  1.0e-323
+
+julia> fill!(m, π)
+2×2 Matrix{Float64}:
+ 3.14159  3.14159
+ 3.14159  3.14159
+```
+
+Ou simplement en utilisant des crochets `[]`
+```julia-repl
+julia> [1, 2, 3]
+3-element Vector{Int64}:
+ 1
+ 2
+ 3
+
+julia> [x*2 for x in 1:4]
+4-element Vector{Int64}:
+ 2
+ 4
+ 6
+ 8
+
+julia> [zeros(3) ones(3)]
+3×2 Matrix{Float64}:
+ 0.0  1.0
+ 0.0  1.0
+ 0.0  1.0
+```
+
+La concaténation peut aussi être utilisée pour créer un nouvel array (`cat()`).
+```julia-repl
+julia> cat(ones(3), ones(3), dims=2) # voir aussi hcat() (cat(…; dims=2)) et vcat() (cat(…; dims=1))
+3×2 Matrix{Float64}:
+ 1.0  1.0
+ 1.0  1.0
+ 1.0  1.0
+
+julia> arrA = [1, 2, 3]
+julia> arrB = [4, 5, 6]
+
+julia> append!(arrA, arrB) # concat arrB à la suite de arrA
+6-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+```
+
+Une fois la tableaux établit, il est possible de le parcourir. Mais préalablement, il est souvent nécessaire de connaître les caractéristiques du tableau : taille (`size()`), longueur (`length()`), dimensions (`ndims()`), type des éléments (`eltype()`)
+```julia-repl
+julia> v = [1, 2, 3]
+3-element Vector{Int64}:
+ 1
+ 2
+ 3
+
+julia> m = [1 2 3
+            4 5 6]
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> size(m)
+(2, 3)
+
+julia> ndims(v)
+1
+```
+
+Ensuite il est possible de récupérer une valeur ou un segment du tableau.
+```julia-repl
+julia> v[2]
+2
+
+julia> v[2:end]
+2-element Vector{Int64}:
+ 2
+ 3
+
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> m[2, 2]
+5
+
+julia> m[2, :]
+3-element Vector{Int64}:
+ 4
+ 5
+ 6
+
+julia> m[:, 1]
+2-element Vector{Int64}:
+ 1
+ 4
+```
+
+Les tableaux sont mutables, il est donc possible de réassigner une valeur ou un segment très simplement en utilisant le signe `=`, mais aussi d'ajouter des valeurs (`push!()`, `pushfirst!()`), d'en supprimer (`pop!()`, `popfirst!()` et `deleteat!()`), de le trier (`sort!()`).
+```julia-repl
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> m[2, 2] = 50
+50
+
+julia> m
+2×3 Matrix{Int64}:
+ 1   2  3
+ 4  50  6
+
+julia> arr = Integer[1, 2, 3]
+3-element Vector{Integer}:
+ 1
+ 2
+ 3
+
+julia> pop!(arr) # suppression d'un élément en fin de tableau
+3
+
+julia> popfirst!(arr) # suppression d'un élément en debut tableau
+1
+
+julia> arr
+1-element Vector{Integer}:
+ 2
+
+julia> pushfirst!(arr, 1)
+2-element Vector{Integer}:
+ 1
+ 2
+
+
+julia> push!(arr, 3)
+3-element Vector{Integer}:
+ 1
+ 2
+ 3
+
+julia> deleteat!(arr, 2)
+2-element Vector{Integer}:
+ 1
+ 3
+
+julia> sort!(['c', 'b', 'a'])
+3-element Vector{Char}:
+ 'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
+ 'b': ASCII/Unicode U+0062 (category Ll: Letter, lowercase)
+ 'c': ASCII/Unicode U+0063 (category Ll: Letter, lowercase)
+```
+
+Il est également possible de modifier la forme d'un tableau, comme par exemple passer d'un vecteur à un matrice, à l'aide de la fonction `reshape()`
+
+```julia-repl
+julia> v = [1, 2, 3, 4]
+4-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+
+julia> v2m = reshape(v, (2, 2)) # création d'une matrice 2x2
+2×2 Matrix{Int64}:
+ 1  3
+ 2  4
+
+julia> m = reshape(v2m, (4,)) # création d'un vecteur à partir d'une matrice.
+4-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+```
+
+Des fonctions peuvent être appliquées à chaque élément d'un array. On utilise généralement l'opérateur `dot` (*broadcasting*).
+
+```julia-repl
+julia> [1, 2, 3] .+ [4, 5, 6] # [1+4, 2+5, 3+6]  
+3-element Vector{Int64}:
+ 5
+ 7
+ 9
+
+julia> [1, 2, 3] .-1
+3-element Vector{Int64}:
+ 0
+ 1
+ 2
+
+julia> extentions = ["jpg", "JPG", "jpeg", "png", "PNG", "tif", "tiff"]
+julia> file = "picture.jpg"
+julia> endswith.(file, extentions) # retourne un vecteur de booléens
+7-element BitVector:
+ 1
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
 # voir d'autres exemple dans les opérateurs de collection (in)   
-#=
-  7-element BitVector:
-   1
-   0
-   0
-   0
-   0
-   0
-   0
-=#
 ```
 
-Attention avec la vectorisation avec l'opérateur `in`. Si les deux arguments sont des vecteurs de même longueur (retourne un erreur si les dimension ne correspondent pas), `in.(items, collection)` retourne un vecteur indiquant si chaque valeur de items est dans la valeur à la position correspondante dans collection.
-
-```julia
-in.([1,2], [2,3])
-#=     
-  2-element BitVector:
-   0
-   0
-=#
+Attention a la vectorisation avec l'opérateur `in`. Si les deux arguments sont des vecteurs de même longueur (retourne un erreur si les dimension ne correspondent pas), `in.(items, collection)` retourne un vecteur indiquant si chaque valeur de `items` est dans la valeur à la position correspondante dans `collection`.
+```julia-repl
+julia> in.([1,2], [2,3])
+2-element BitVector:
+ 0
+ 0
 ```
 
 Pour obtenir un vecteur indiquant si chaque item est dans la collection, il faut envelopper la collection dans un `tuple` ou un `Ref()`
 
-```julia
-in.([1,2], ([2,3],)) # ne pas oublier la virgule
+```julia-repl
+julia> in.([1,2], ([2,3],)) # ne pas oublier la virgule
+2-element BitVector:
+ 0
+ 1
 # ou in.([1,2], Ref([2,3]))
-#=     
-  2-element BitVector:
-   0
-   1
-=#
 ```
 
-## Opérateurs sur les collections <a id="operateurs-sur-les-collections" href=""/>
+Produit scalaire
+```julia-repl
+julia> a = [1, 2, 3]
+julia> b = [2, 3, 4]
+julia> sum(a .* b) # (1*2 + 2*3 + 3*4)
+20
+
+```
+
+Une autre possibilité est d'utiliser la fonction `map()`.
+```julia-repl
+julia> map(x -> x+1, [1, 2, 3])
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+```
+
+De nombreuses autres opérations sont applicables aux tableaux : jointure, appartenance, contient, sous-ensemble, etc.
+```julia-repl
+julia> arr = [1, 2, 3]
+julia> join(arr, ",")
+"1,2,3"
+```
+Opérateurs :
 - `in` | `∈` : appartient
 - `∉` : n'appartient pas
-- `contains` | `occursin` : contient
 - `issubset` : sous-ensemble
 
-Pour une utilisation conjointe avec l'opérateur `.`, voir plus haut.
-
-```julia
-a = 1:5
-
-3 in a # true
-# autres notations 
-in(3, 1:5)
-3 ∈ 1:5
+```julia-repl
+julia> a = 1:5
+julia> 3 in a # autres notations : in(3, 1:5) ou 3 ∈ 1:5
+true
 ```
 
 Attention avec la valeur missing…
-```julia
-1 in [1, missing] # true
-missing in [1, missing] # missing
+```julia-repl
+julia> 1 in [1, missing]
+true
+
+julia> missing in [1, missing]
+missing
 ```
 
+```julia-repl
+julia> issubset([1, 2], [1, 2, 3])
+true
+```
+
+
+# Copie
+```julia
+a = [[1,2,3], [4,5,6]]
+b = copy(a)
+c = deepcopy(a) #recursif
+a[1][1] = 11
+a
+#=
+2-element Vector{Vector{Int64}}:
+ [11, 2, 3]
+ [4, 5, 6]
+=#
+
+b
+#=
+2-element Vector{Vector{Int64}}:
+ [11, 2, 3]
+ [4, 5, 6]
+=#
+c
+#=
+2-element Vector{Vector{Int64}}:
+ [1, 2, 3]
+ [4, 5, 6]
+=#
+```
+
+## autre 
 `contains()` et `occursin()` sont les mêmes fonctions, mais les arguments sont inversés. `contains()` est alignée avec `startswith()` et `endswith()`.
 ```julia
 contains("Hello World!", "Hello") # true
