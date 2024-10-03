@@ -6,18 +6,7 @@ language: 'julia'
 keywords: ''
 ---
 
-# 📝 Les fondamentaux de Julia
-[Documentation Julia](https://docs.julialang.org/en/v1/manual/getting-started/)
-
-- [Affectation d'une variable](#Affectation-dune-variable)
-- [Constantes](#Constantes)
-- [Commentaires](#Commentaires)
-- [Chainage](#Chainage)
-- [Déclarer une fonction](#declarer-une-fonction)
-- [Symboles LaTeX](#symboles-latex)
-
-# Julia
-
+# 📝 Julia
 ## Syntaxe
 ### Variables et types
 Une variable est un espace mémoire où une valeur est stockée. Julia est un langage dynamique : il n'est donc pas nécessaire de déclarer le type d'une variable lors de sa création, il est déduit automatiquement par Julia au moment de son affectation.
@@ -738,7 +727,7 @@ julia> collect(values(d))
  "Amigos"
 ```
 
-- récupérer la valeur d'une clé avec `get` ou en appelant la `key` comme argument.
+- récupérer la valeur d'une clé avec `get` ou en appelant la `key` comme prédicat.
 ```julia-repl
 julia> get(d, :hello, "pas de clé :hello")
 "world"
