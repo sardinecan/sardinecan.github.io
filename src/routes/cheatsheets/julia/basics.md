@@ -360,7 +360,6 @@ julia> 1 |> add_two |> div_by_two
 1.5
 ```
 
-
 ### Les conditions
 Julia utilise les mots-clés `if`, `elseif` et `else` pour afin d'évaluer des expressions et exécuter une portion de code particulière.
 ```julia
@@ -389,8 +388,6 @@ julia> x < y ? "x < y" : "x > y"
 "x < y"
 ```
 
-
-
 ### Les boucles
 #### For
 Les boucles `for` permettent d'itérer des opérations pour chaque élément d'une séquence.
@@ -418,7 +415,8 @@ julia> while x < 6
 4
 ```
 
-## Les chaînes de caractères
+## Les types simples
+### Les chaînes de caractères
 Les caractères sont placés entre guillemets simples et il est possible de coder un caractère sous la forme d'un entier
 ```julia
 julia> c = 'a'
@@ -454,7 +452,7 @@ julia> typeof(str)
 String
 ```
 
-### Opérations sur les `Strings`
+#### Opérations sur les `Strings`
 Il est possible d'itérer sur une chaine de caractères.
 ```julia
 julia> for c in "Hello"
@@ -659,6 +657,50 @@ julia> parse(Int64, "123") # ou de string vers nombre
 123
 ```
 
+### Range
+Le type `UnitRange` correspond à un intervalle.
+```julia
+julia> r = 1:10
+1:10
+
+julia> typeof(r)
+UnitRange{Int64}
+```
+
+Pour récupérer les valeurs de cet intervalle on peut utiliser une boucle, ou la fonction `collect()`
+```julia
+julia> collect(r)
+10-element Vector{Int64}:
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+```
+
+Il est aussi possible de modifier le pas d'un intervalle avec la syntaxe `start:step:stop`.
+```julia
+ulia> r = 1:0.5:3
+1.0:0.5:3.0
+
+julia> collect(r)
+5-element Vector{Float64}:
+ 1.0
+ 1.5
+ 2.0
+ 2.5
+ 3.0
+```
+
+### Symbols
+@todo
+
+
 ## Data structures
 ### Paires et dictionnaires
 [Documentation Julia](https://docs.julialang.org/en/v1/base/collections/#Dictionaries)
@@ -801,6 +843,7 @@ julia> d = Dict{Symbol, Any}(
   :date => "2024-01-01"
 )
 ```
+
 ### Les tableaux
 [Documentation Julia](https://docs.julialang.org/en/v1/manual/arrays/)
 
@@ -1215,50 +1258,6 @@ julia> t = (; a, b)
 ```
 
 Voir aussi les utilisations de `collect()` et `zip()` avec les tuples.
-
-### Range
-Le type `UnitRange` correspond à un intervalle.
-```julia
-julia> r = 1:10
-1:10
-
-julia> typeof(r)
-UnitRange{Int64}
-```
-
-Pour récupérer les valeurs de cet intervalle on peut utiliser une boucle, ou la fonction `collect()`
-```julia
-julia> collect(r)
-10-element Vector{Int64}:
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
-```
-
-Il est aussi possible de modifier le pas d'un intervalle avec la syntaxe `start:step:stop`.
-```julia
-ulia> r = 1:0.5:3
-1.0:0.5:3.0
-
-julia> collect(r)
-5-element Vector{Float64}:
- 1.0
- 1.5
- 2.0
- 2.5
- 3.0
-```
-
-### Symbols
-@todo
-
 
 ### DataFrames
 [Documentation DataFrames.jl](https://dataframes.juliadata.org/stable/)
