@@ -1396,9 +1396,7 @@ julia> df # utilisation de bang, la valeur est modifiée.
    2 │     2  Dark Vador
 ```
 
-Voir la [Documentation Dataframes](https://dataframes.juliadata.org/stable/man/working_with_dataframes/) pour travailler avec les *subsets*.
-
-## Trier
+Voir la documentation pour travailler avec les [*subsets*](https://dataframes.juliadata.org/stable/man/working_with_dataframes/) et pour les nombreuses options de [tri](https://dataframes.juliadata.org/stable/man/sorting/).
 
 # Copie
 ```julia
