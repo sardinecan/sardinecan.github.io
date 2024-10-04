@@ -12,7 +12,7 @@ keywords: ''
 Une variable est un espace mémoire où une valeur est stockée. Julia est un langage dynamique : il n'est donc pas nécessaire de déclarer le type d'une variable lors de sa création, il est déduit automatiquement par Julia au moment de son affectation.
 
 Les variables sont créées en leur affectant une valeur à l'aide de l'opérateur `=`.
-```julia-repl
+```julia
 julia> x = 1
 1
 
@@ -29,7 +29,7 @@ julia>
 ```
 
 Si Julia est en mesure de déduire le type de la variable, il est aussi possible de la spécifier :
-```julia-repl
+```julia
 julia> a::Float64 = 3.0
 3.0
 
@@ -38,7 +38,7 @@ Float64
 ```
 
 Les types de données "simples" (*chaînes*, *nombres*, *booléens*) sont **immuables** : leur contenu ne peut être modifié après leur création. Si on affecte une nouvelle valeur, on crée en réalité une nouvelle instance de cette variable :
-```julia-repl
+```julia
 julia> x = 1
 1
 
@@ -47,7 +47,7 @@ julia> x = x + 1 # une nouvelle variable est créée avec la valeur 2
 ```
 
 Les types de données plus complexes comme les *tableaux* ou les *dictionnaires* sont **mutables**, c'est-à-dire qu'il est possible de modifier leur contenu :
-```julia-repl
+```julia
 julia> arr = [1, 2, 3]
 3-element Vector{Int64}:
  1
@@ -67,14 +67,14 @@ julia> arr
 Les variables définies à l'extérieur de toute fonction ou bloc dispose d'une **portée globale**. Les variables définies dans un bloc (boucle ou fonction par exemple) ont une **portée locale**.
 
 Il est possible de définir des **constantes** avec le mot-clé `const`. Un foie définie, une constante ne peut plus être modifiée.
-```julia-repl
+```julia
 julia> const π = 3.14
 3.14
 ```
 
 ### Les types composites
 Les **types composites** sont des collections champs nommés spécifiques, dont une instance peut être traitée comme une valeur unique. Ces objets sont utiles pour modéliser des structures de données complexes, que l'on souhaite hiérarchiser ou lier, plutôt que d'avoir plusieurs variables indépendantes par exemple.
-```julia-repl
+```julia
 julia> struct Person
            name 
            age::Int # comme pour les variables il est possible de préciser le type de chaque champ
@@ -91,7 +91,7 @@ julia> fieldnames(Person) # pour connaitre les champs
 ```
 
 Par défaut, une instance est immuable :
-```julia-repl
+```julia
 julia> sara.name = "Sarah"
 ERROR: setfield!: immutable struct of type Person cannot be changed
 Stacktrace:
@@ -103,7 +103,7 @@ Stacktrace:
 
 Si l'on souhaite rendre un objet **mutable**, il faut le préciser avec le mot-clé `mutable`.
 
-```julia-repl
+```julia
 julia> mutable struct Car
            model::String
            brand::String
@@ -120,7 +120,7 @@ Car("Dino", "FIAT")
 ```
 
 Une fois un type défini, il devient possible de lui associer des méthodes, ce qui permet de créer des fonctions spécifiques :
-```julia-repl
+```julia
 julia> struct Rectangle
            width::Int
            height::Int
@@ -158,7 +158,7 @@ Les opérateurs arithmétiques permettent d'effectuer les opérations mathémati
 
 Avec Julia, l'ordre d'évaluation des opérateurs suit les conventions mathématiques (*PEMDAS*).
 
-```julia-repl
+```julia
 julia> 2*2+2^3-2/2
 11.0
 
@@ -175,7 +175,7 @@ Quant aux *Shorthand operators*, ils combinent une opération et une affectation
 - `\=` : division inverse
 - `%=` : modulo
 
-```julia-repl
+```julia
 julia> x = 1
 1
 
@@ -184,7 +184,7 @@ julia> x += 2  # correspond à x = x + 2
 ```
 
 Julia permet enfin de comparer des valeurs. Ces opérations retournent toujours un booléen. 
-```julia-repl
+```julia
 julia>x, y, z = 1, 2, 3
 (1, 2, 3)
 ```
@@ -193,7 +193,7 @@ julia>x, y, z = 1, 2, 3
 - `==` : égalité
 - `===` : égalité stricte
 - `!=` : inégalité
-```julia-repl
+```julia
 # égalité
 julia> x == 1
 true
@@ -230,7 +230,7 @@ ERROR: MethodError: no method matching isnan(::Char)
 **Plus petit que**
 - `<` : plus petit
 - `<=` : plus petit ou égal
-```julia-repl
+```julia
 julia> x <= y <= z
 true
 
@@ -238,7 +238,7 @@ true
 
 ### Les fonctions
 Une fonction associe la valeur d'un ou plusieurs arguments à une ou plusieurs valeurs de sortie. Une fonction Julia est déclarée ainsi :
-```julia-repl
+```julia
 julia> function my_function()
            return println("Hello World!")
        end
@@ -249,7 +249,7 @@ Hello World!
 ```
 
 Il existe également une syntaxe compacte : 
-```julia-repl
+```julia
 julia> greetings(name) = println("Greetings ", name)
 greetings (generic function with 1 method)
 
@@ -258,7 +258,7 @@ Greetings Space Captain
 ```
 
 Bien évidemment, il est possible de préciser les types :
-```julia-repl
+```julia
 julia> function multiply_numbers(x::Int64, y::Int64)
            return x*y
        end
@@ -269,7 +269,7 @@ julia> multiply_numbers(2, 4)
 ```
 
 Les types permettent de définir différentes méthodes, et donc d'induire des comportements différents au regard de la nature des arguments :
-```julia-repl
+```julia
 julia> function multiply_numbers(x::Float64, y::Float64)
            return x*y
        end
@@ -279,7 +279,7 @@ multiply_numbers (generic function with 2 methods)
 Une fonction peut également retourner plusieurs valeurs. Dans ce cas, pour accéder aux différentes valeurs, plusieurs options s'offrent à nous, soit :
 - associer une variable à chaque valeur ;
 - associer une unique variable au résultat de la fonction et accéder aux valeurs avec `[]`, `first()` et `last()` par exemple.
-```julia-repl
+```julia
 julia> function my_math(x, y)
            add = x + y
            sub = x - y
@@ -307,7 +307,7 @@ julia> last(output)
 ```
 
 Les fonctions Julia acceptent également des mots-clés comme arguments, ils sont séparés des arguments par un point-virgule (`;`). Notons qu'arguments et mots-clés peuvent disposer de valeurs par défaut :
-```julia-repl
+```julia
 julia> function logarithm(x; base=2.718281828459045)
            return log(base, x)
        end
@@ -324,7 +324,7 @@ julia>
 
 #### Les fonctions anonymes
 Pour des besoins plus spécifiques, il peut être nécessaire de créer rapidement des petites instructions, par exemple pour filtrer des résultats. On utilise alors généralement des **fonctions anonymes**. Ces fonctions s'utilisent alors comme arguments d'autres fonctions, comme `map()` par exemple. Elles reposent sur l'opérateur `->`. À la gauche de cet opérateur, on définit les paramètres, et à droite on définit les opérations que l'on souhaite effectuer.
-```julia-repl
+```julia
 julia> arr = [1, 2, 3]
 3-element Vector{Int64}:
  1
@@ -345,7 +345,7 @@ L'opérateur bang `!` est une convention Julia pour indiquer qu'une fonction mod
 
 #### Chaînage
 L'opérateur `|>` permet de chaîner des opérations :
-```julia-repl
+```julia
 julia> function add_two(i)
            return i + 2
        end
@@ -363,7 +363,7 @@ julia> 1 |> add_two |> div_by_two
 
 ### Les conditions
 Julia utilise les mots-clés `if`, `elseif` et `else` pour afin d'évaluer des expressions et exécuter une portion de code particulière.
-```julia-repl
+```julia
 julia> a, b = 1, 2
 (1, 2)
 
@@ -378,7 +378,7 @@ julia> if a > b
 ```
 
 Il est aussi possible d'utiliser une syntaxe simplifiée pour les évaluations simples avec l'opérateur ternaire `?`
-```julia-repl
+```julia
 julia> x, y = 1, 2
 (1, 2)
 
@@ -394,7 +394,7 @@ julia> x < y ? "x < y" : "x > y"
 ### Les boucles
 #### For
 Les boucles `for` permettent d'itérer des opérations pour chaque élément d'une séquence.
-```julia-repl
+```julia
 julia> for i in 1:3
            println(i)
        end
@@ -405,7 +405,7 @@ julia> for i in 1:3
 
 #### While
 La boucle `while` est un peu à mi-chemin entre les conditions `if` et la boucle `for`. Tant qu'une condition n'est pas remplie, la boucle `while` continue ses itérations.
-```julia-repl
+```julia
 julia> x = 0
 0
 
@@ -420,7 +420,7 @@ julia> while x < 6
 
 ## Les chaînes de caractères
 Les caractères sont placés entre guillemets simples et il est possible de coder un caractère sous la forme d'un entier
-```julia-repl
+```julia
 julia> c = 'a'
 'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
 
@@ -432,7 +432,7 @@ julia> Char(97)
 ```
 
 Il est donc possible d'effectuer des comparaisons ou des opérations arithmétiques.
-```julia-repl
+```julia
 julia> 'A' < 'a' 
 true
 
@@ -441,7 +441,7 @@ julia> 'A' + 1
 ```
 
 Les chaînes de caractères sont placées entre guillemets doubles, ou triple s'il y a des guillemets doubles dedans.
-```julia-repl
+```julia
 julia> str = "Hello World!"
 "Hello World!"
 
@@ -456,7 +456,7 @@ String
 
 ### Opérations sur les `Strings`
 Il est possible d'itérer sur une chaine de caractères.
-```julia-repl
+```julia
 julia> for c in "Hello"
            println(c)
        end
@@ -468,7 +468,7 @@ o
 ```
 
 De la même manière, il est possible de mesurer la longueur d'une chaîne avec les fonctions `length()` et `lastindex()`.  
-```julia-repl
+```julia
 julia> str = "Bodø est une ville norvégienne située dans le comté de Nordland"
 "Bodø est une ville norvégienne située dans le comté de Nordland"
 
@@ -477,13 +477,13 @@ julia> length(str)
 ```
 
 Attention cependant à l'encodage des caractères, `length()` et `lastindex()` ne retournent pas toujours le même résultat.
-```julia-repl
+```julia
 julia> lastindex(str)
 67
 ```
 
 La concaténation s'effectue avec l'opérateur `*` ou la fonction `join()`, et l'interpolation avec `$`
-```julia-repl
+```julia
 julia> "Hello"*" "*"World"*"!"
 "Hello World!"
 
@@ -509,7 +509,7 @@ julia> fullname = "$forename $surname"
 ```
 
 Les **occurrences** de caractères ou de chaîne de caractères peuvent être recherchées.
-```julia-repl
+```julia
 julia> findfirst('l', "Hello World")
 3
 
@@ -536,7 +536,7 @@ false
 ```
 
 Julia prend aussi en charge les **expressions régulières** (*RegEx*) 
-```julia-repl
+```julia
 julia> str = "Hello World!"
 "Hello World!"
 
@@ -599,7 +599,7 @@ julia> [m.match for m = eachmatch(r, str)]
 
 Enfin, toutes les opérations classiques sur les *substrings* sont possibles.
 - pour les extraire 
-```julia-repl
+```julia
 julia> str = "Hello World!"
 "Hello World!"
 
@@ -623,7 +623,7 @@ julia> SubString(str, 1, 5)
 ```
 
 - pour savoir si une chaîne contient (`contains()`), commence (`startswith()`) ou se termine (`endswith()`) par telle expression.
-```julia-repl
+```julia
 julia> str = "Hello World"
 "Hello World"
 
@@ -632,13 +632,13 @@ true
 ```
 
 - pour remplacer un segment
-```julia-repl
+```julia
 julia> replace(str, "Hello" => "Goodbye")
 "Goodbye World!"
 ```
 
 - pour les tokeniser (`split()`)
-```julia-repl
+```julia
 julia> split(str, " ")
 2-element Vector{SubString{String}}:
  "Goodbye"
@@ -648,7 +648,7 @@ julia> split(str, " ")
 - pour les transformer `lowercase()`, `uppercase()`, `titlecase()`, `lowercasefirst()`, etc.
 
 - ou encore pour les convertir
-```julia-repl
+```julia
 julia> n = 123
 123
 
@@ -664,7 +664,7 @@ julia> parse(Int64, "123") # ou de string vers nombre
 [Documentation Julia](https://docs.julialang.org/en/v1/base/collections/#Dictionaries)
 
 Une paire est constituée de deux objets : une clé sa une valeur.
-```julia-repl
+```julia
 julia> p = "key" => "value" # ou symbole pour la clé  :key => "value"
 "key" => "value"
 
@@ -678,7 +678,7 @@ julia> p.first
 Un dictionnaire est constitué d'une ou plusieurs paires, ils sont très commodes pour retrouver la valeur attachée à une clé.
 
 Ils peuvent être déclaré soit à partir d'un vecteur `tuple`s  soit directement à partir de paires
-```julia-repl
+```julia
 julia> Dict( [("A", 1), ("B", 2)] )
 Dict{String, Int64} with 2 entries:
   "B" => 2
@@ -720,7 +720,7 @@ false
 ```
 
 - créer un tableau à partir de la liste des clés / valeurs avec `collect()`
-```julia-repl
+```julia
 julia> collect(values(d))
 2-element Vector{Any}:
  "world"
@@ -728,7 +728,7 @@ julia> collect(values(d))
 ```
 
 - récupérer la valeur d'une clé avec `get` ou en appelant la `key` dans l'opérateur `[]`.
-```julia-repl
+```julia
 julia> get(d, :hello, "pas de clé :hello")
 "world"
 
@@ -740,7 +740,7 @@ julia> d[:hello]
 ```
 
 - amender un dictionnaire avec `delete!()` ou `pop!()`
-```julia-repl
+```julia
 julia> delete!(d, :adios)
 Dict{Symbol, Any} with 1 entry:
   :hello => "world"
@@ -805,7 +805,7 @@ julia> d = Dict{Symbol, Any}(
 [Documentation Julia](https://docs.julialang.org/en/v1/manual/arrays/)
 
 Un tableau, ou **array**, est une séquence d'objets ou de valeurs. Généralement un *array* contient un type de données, mais ce n'est pas une obligation.
-```julia-repl
+```julia
 julia> a = [1, 2, 3]
 3-element Vector{Int64}:
  1
@@ -830,7 +830,7 @@ Il existe deux types d'*array* :
 - les matrices, `Matrix{T}` (deux dimensions).
 
 Il existe plusieurs méthodes pour créer des tableaux. La première méthode est d'utiliser les constructeurs par défaut `Vector{T}(undef, n)` (construit un `Vector{T}` non initialisé de longueur `n`.) ou `Matrix{T}(undef, m, n)` (matrice non initialisée de taille `m` x `n`)  
-```julia-repl
+```julia
 julia> a = Vector{Float64}(undef, 3)
 3-element Vector{Float64}:
  2.03e-322
@@ -845,7 +845,7 @@ julia> a = Matrix{Float64}(undef, 3, 2)
 ```
 
 Julia dispose également d'alias syntaxiques pour les éléments les plus courants dans la construction de tableaux :
-```julia-repl
+```julia
 julia> v = zeros(5) # initialise avec des O on peut aussi passer un type zeros(Float64, 5)
 5-element Vector{Float64}:
  0.0
@@ -865,7 +865,7 @@ julia> m = ones(5, 3) # initialise avec des 1
 ```
 
 Il est aussi possible d'instancier un *array* vide puis de la remplir avec `fill!()`.
-```julia-repl
+```julia
 julia> m = Matrix{Float64}(undef, 2, 2)
 2×2 Matrix{Float64}:
  1.6e-322    2.20881e-314
@@ -878,7 +878,7 @@ julia> fill!(m, π)
 ```
 
 Ou simplement en utilisant des crochets `[]`
-```julia-repl
+```julia
 julia> [1, 2, 3]
 3-element Vector{Int64}:
  1
@@ -900,7 +900,7 @@ julia> [zeros(3) ones(3)]
 ```
 
 La concaténation peut aussi être utilisée pour créer un nouvel array (`cat()`).
-```julia-repl
+```julia
 julia> cat(ones(3), ones(3), dims=2) # voir aussi hcat() (cat(…; dims=2)) et vcat() (cat(…; dims=1))
 3×2 Matrix{Float64}:
  1.0  1.0
@@ -921,7 +921,7 @@ julia> append!(arrA, arrB) # concat arrB à la suite de arrA
 ```
 
 Une fois la tableaux établit, il est possible de le parcourir. Mais préalablement, il est souvent nécessaire de connaître les caractéristiques du tableau : taille (`size()`), longueur (`length()`), dimensions (`ndims()`), type des éléments (`eltype()`)
-```julia-repl
+```julia
 julia> v = [1, 2, 3]
 3-element Vector{Int64}:
  1
@@ -942,7 +942,7 @@ julia> ndims(v)
 ```
 
 Les valeurs dans un tableau sont indexées par des des entiers, il est donc très facile de récupérer une valeur ou un segment.
-```julia-repl
+```julia
 julia> v[2]
 2
 
@@ -972,7 +972,7 @@ julia> m[:, 1]
 ```
 
 Les tableaux sont mutables, il est donc possible de réassigner une valeur ou un segment très simplement en utilisant le signe `=`, mais aussi d'ajouter des valeurs (`push!()`, `pushfirst!()`), d'en supprimer (`pop!()`, `popfirst!()` et `deleteat!()`), de le trier (`sort!()`).
-```julia-repl
+```julia
 julia> m
 2×3 Matrix{Int64}:
  1  2  3
@@ -1028,7 +1028,7 @@ julia> sort!(['c', 'b', 'a'])
 
 Il est également possible de modifier la forme d'un tableau, comme par exemple passer d'un vecteur à un matrice, à l'aide de la fonction `reshape()`
 
-```julia-repl
+```julia
 julia> v = [1, 2, 3, 4]
 4-element Vector{Int64}:
  1
@@ -1051,7 +1051,7 @@ julia> m = reshape(v2m, (4,)) # création d'un vecteur à partir d'une matrice.
 
 Des fonctions peuvent être appliquées à chaque élément d'un array. On utilise généralement l'opérateur `dot` (*broadcasting*).
 
-```julia-repl
+```julia
 julia> [1, 2, 3] .+ [4, 5, 6] # [1+4, 2+5, 3+6]  
 3-element Vector{Int64}:
  5
@@ -1079,7 +1079,7 @@ julia> endswith.(file, extentions) # retourne un vecteur de booléens
 ```
 
 Attention a la vectorisation avec l'opérateur `in`. Si les deux arguments sont des vecteurs de même longueur (retourne un erreur si les dimension ne correspondent pas), `in.(items, collection)` retourne un vecteur indiquant si chaque valeur de `items` est dans la valeur à la position correspondante dans `collection`.
-```julia-repl
+```julia
 julia> in.([1,2], [2,3])
 2-element BitVector:
  0
@@ -1088,7 +1088,7 @@ julia> in.([1,2], [2,3])
 
 Pour obtenir un vecteur indiquant si chaque item est dans la collection, il faut envelopper la collection dans un `tuple` ou un `Ref()`
 
-```julia-repl
+```julia
 julia> in.([1,2], ([2,3],)) # ne pas oublier la virgule
 2-element BitVector:
  0
@@ -1097,7 +1097,7 @@ julia> in.([1,2], ([2,3],)) # ne pas oublier la virgule
 ```
 
 Produit scalaire
-```julia-repl
+```julia
 julia> a = [1, 2, 3]
 julia> b = [2, 3, 4]
 julia> sum(a .* b) # (1*2 + 2*3 + 3*4)
@@ -1106,7 +1106,7 @@ julia> sum(a .* b) # (1*2 + 2*3 + 3*4)
 ```
 
 Une autre possibilité est d'utiliser la fonction `map()`.
-```julia-repl
+```julia
 julia> map(x -> x+1, [1, 2, 3])
 3-element Vector{Int64}:
  2
@@ -1115,7 +1115,7 @@ julia> map(x -> x+1, [1, 2, 3])
 ```
 
 De nombreuses autres opérations sont applicables aux tableaux : jointure, appartenance, contient, sous-ensemble, etc.
-```julia-repl
+```julia
 julia> arr = [1, 2, 3]
 julia> join(arr, ",")
 "1,2,3"
@@ -1125,14 +1125,14 @@ Opérateurs :
 - `∉` : n'appartient pas
 - `issubset` : sous-ensemble
 
-```julia-repl
+```julia
 julia> a = 1:5
 julia> 3 in a # autres notations : in(3, 1:5) ou 3 ∈ 1:5
 true
 ```
 
 Attention avec la valeur missing…
-```julia-repl
+```julia
 julia> 1 in [1, missing]
 true
 
@@ -1140,14 +1140,14 @@ julia> missing in [1, missing]
 missing
 ```
 
-```julia-repl
+```julia
 julia> issubset([1, 2], [1, 2, 3])
 true
 ```
 
 ### Tuples
 Un `tuple` est assez proche d'un tableau, il correspond à une séquence de valeurs indexées par des entiers. Les valeurs sont séparées par une virgule et chacune peut disposer de son propre type. On les place généralement entre parenthèses mais ces dernières ne sont pas obligatoires. Ils se distinguent des tableaux par leur caractère **immuable**. 
-```julia-repl
+```julia
 julia> t = 1, 2, 3
 (1, 2, 3)
 
@@ -1169,7 +1169,7 @@ julia> t[1] # comme pour les tableaux, les valeurs sont indexées.
 
 Les tuples sont très utilisés pour l'affectation (ou réaffectation) de variables.
 
-```julia-repl
+```julia
 julia> a, b = 1, 2
 (1, 2)
 
@@ -1183,7 +1183,7 @@ julia> (a, b) = split(str, " ")
 ```
 
 Certaines fonctions peuvent prendre un nombre variable d'arguments, reconnaissables par les `...` qui suivent le nom du paramètre. Dans ce cas, les différents arguments sont agrégés dans un tuple.
-```julia-repl
+```julia
 julia> function add(args...)
            sum(args)
        end
@@ -1194,19 +1194,19 @@ julia> add(1, 2, 3, 4, 5)
 ```
 
 On peut avoir recours au tuples lorsque l'on souhaite passer plusieurs arguments dans une fonction anonyme.
-```julia-repl
+```julia
 julia> map((x, y, z) -> x*y^z, 4, 9, 2)
 324
 ```
 
 Un nom peut être associé a chaque valeur d'un tuple.
-```julia-repl
+```julia
 julia> (a='a', b='c', c='c')
 (a = 'a', b = 'c', c = 'c')
 ```
 
 Une syntaxe existe également pour créer un tuple nommé à partir de variables préexistantes. Elle reprend le principe des arguments mots-clés avec les fonctions et l'emploi d'un point-virgule `;`.
-```julia-repl
+```julia
 julia> a, b = 'a', 'b'
 ('a', 'b')
 
@@ -1218,7 +1218,7 @@ Voir aussi les utilisations de `collect()` et `zip()` avec les tuples.
 
 ### Range
 Le type `UnitRange` correspond à un intervalle.
-```julia-repl
+```julia
 julia> r = 1:10
 1:10
 
@@ -1227,7 +1227,7 @@ UnitRange{Int64}
 ```
 
 Pour récupérer les valeurs de cet intervalle on peut utiliser une boucle, ou la fonction `collect()`
-```julia-repl
+```julia
 julia> collect(r)
 10-element Vector{Int64}:
   1
@@ -1243,7 +1243,7 @@ julia> collect(r)
 ```
 
 Il est aussi possible de modifier le pas d'un intervalle avec la syntaxe `start:step:stop`.
-```julia-repl
+```julia
 ulia> r = 1:0.5:3
 1.0:0.5:3.0
 
@@ -1264,7 +1264,7 @@ julia> collect(r)
 [Documentation DataFrames.jl](https://dataframes.juliadata.org/stable/)
 
 Il existe de nombreuses méthodes pour créer un *DataFrames*, à partir de vecteurs, de paires, de vecteurs de paires, de dictionnaires, avec des tuples de vecteurs nommés, colonne par colonne, ligne à ligne, etc.
-```julia-repl
+```julia
 julia> using DataFrames
 julia>  DataFrame(
             a=1:4,
@@ -1318,7 +1318,7 @@ a,b
 1,"Yoda"
 2,"Han Solo"
 ```
-```julia-repl
+```julia
 julia> using CSV
 julia> df = DataFrame(CSV.File("data.csv"))
 2×2 DataFrame
@@ -1330,7 +1330,7 @@ julia> df = DataFrame(CSV.File("data.csv"))
 ```
 
 Les noms des colonnes peuvent être récupérés sous la forme d'un vecteur avec la fonction `names()`
-```julia-repl
+```julia
 julia> names(df)
 2-element Vector{String}:
  "a"
@@ -1343,14 +1343,14 @@ julia> propertynames(df) # retourne les noms de colonne sous forme de symboles
 ```
 
 Cette même fonction permet de faire des recherches dans le noms de colonnes.
-```julia-repl
+```julia
 julia> names(df, r"a") # liste les colonnes avec RegEx
 julia> names(df, Not(:b)) # tous les noms de colonnes sauf :b
 julia> names(df, Int) # liste les colonnes en fonction du type de données
 ```
 
 On peut récupérer un vecteur des valeurs d'une colonne de différentes manières
-```julia-repl
+```julia
 julia> df.b
 julia> df."b"
 julia> df[!, :b]
@@ -1366,7 +1366,7 @@ Il existe cependant une différente entre `df[!, :b]` et `df[:, :b]` : le *bang 
 
  > Columns can be directly (i.e. without copying) accessed via df.col or df[!, :col]. [...] Since df[!, :col] does not make a copy, changing the elements of the column vector returned by this syntax will affect the values stored in the original df. To get a copy of the column use df[:, :col]: changing the vector returned by this syntax does not change df.
 
-```julia-repl 
+```julia 
 julia> df = DataFrame(["a" => 1:2, "b" => ["Yoda", "Han Solo"]])
 julia> v = df[:, :b] # pas de bang, la valeur ne sera pas modifiée
 2-element Vector{String}:
