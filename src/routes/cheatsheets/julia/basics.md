@@ -941,7 +941,7 @@ julia> ndims(v)
 1
 ```
 
-Ensuite il est possible de récupérer une valeur ou un segment du tableau.
+Les valeurs dans un tableau sont indexées par des des entiers, il est donc très facile de récupérer une valeur ou un segment.
 ```julia-repl
 julia> v[2]
 2
@@ -1145,6 +1145,260 @@ julia> issubset([1, 2], [1, 2, 3])
 true
 ```
 
+### Tuples
+Un `tuple` est assez proche d'un tableau, il correspond à une séquence de valeurs indexées par des entiers. Les valeurs sont séparées par une virgule et chacune peut disposer de son propre type. On les place généralement entre parenthèses mais ces dernières ne sont pas obligatoires. Ils se distinguent des tableaux par leur caractère **immuable**. 
+```julia-repl
+julia> t = 1, 2, 3
+(1, 2, 3)
+
+julia> t = (1, 2, 3)
+(1, 2, 3)
+
+julia> t = (1,)
+(1,)
+
+julia> typeof(t)
+Tuple{Int64}
+
+julia> tuple(1, 2) # on peut également utiliser la fonction tuple()
+(1, 2)
+
+julia> t[1] # comme pour les tableaux, les valeurs sont indexées.
+1
+```
+
+Les tuples sont très utilisés pour l'affectation (ou réaffectation) de variables.
+
+```julia-repl
+julia> a, b = 1, 2
+(1, 2)
+
+julia> str = "Hello World"
+"Hello World"
+
+julia> (a, b) = split(str, " ")
+2-element Vector{SubString{String}}:
+ "Hello"
+ "World"
+```
+
+Certaines fonctions peuvent prendre un nombre variable d'arguments, reconnaissables par les `...` qui suivent le nom du paramètre. Dans ce cas, les différents arguments sont agrégés dans un tuple.
+```julia-repl
+julia> function add(args...)
+           sum(args)
+       end
+add (generic function with 1 method)
+
+julia> add(1, 2, 3, 4, 5)
+15
+```
+
+On peut avoir recours au tuples lorsque l'on souhaite passer plusieurs arguments dans une fonction anonyme.
+```julia-repl
+julia> map((x, y, z) -> x*y^z, 4, 9, 2)
+324
+```
+
+Un nom peut être associé a chaque valeur d'un tuple.
+```julia-repl
+julia> (a='a', b='c', c='c')
+(a = 'a', b = 'c', c = 'c')
+```
+
+Une syntaxe existe également pour créer un tuple nommé à partir de variables préexistantes. Elle reprend le principe des arguments mots-clés avec les fonctions et l'emploi d'un point-virgule `;`.
+```julia-repl
+julia> a, b = 'a', 'b'
+('a', 'b')
+
+julia> t = (; a, b)
+(a = 'a', b = 'b')
+```
+
+Voir aussi les utilisations de `collect()` et `zip()` avec les tuples.
+
+### Range
+Le type `UnitRange` correspond à un intervalle.
+```julia-repl
+julia> r = 1:10
+1:10
+
+julia> typeof(r)
+UnitRange{Int64}
+```
+
+Pour récupérer les valeurs de cet intervalle on peut utiliser une boucle, ou la fonction `collect()`
+```julia-repl
+julia> collect(r)
+10-element Vector{Int64}:
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+```
+
+Il est aussi possible de modifier le pas d'un intervalle avec la syntaxe `start:step:stop`.
+```julia-repl
+ulia> r = 1:0.5:3
+1.0:0.5:3.0
+
+julia> collect(r)
+5-element Vector{Float64}:
+ 1.0
+ 1.5
+ 2.0
+ 2.5
+ 3.0
+```
+
+### Symbols
+@todo
+
+
+### DataFrames
+[Documentation DataFrames.jl](https://dataframes.juliadata.org/stable/)
+
+Il existe de nombreuses méthodes pour créer un *DataFrames*, à partir de vecteurs, de paires, de vecteurs de paires, de dictionnaires, avec des tuples de vecteurs nommés, colonne par colonne, ligne à ligne, etc.
+```julia-repl
+julia> using DataFrames
+julia>  DataFrame(
+            a=1:4,
+            b=["Yoda", "Han Solo", "Luke", "Dark Vador"]
+        )
+4×2 DataFrame
+ Row │ a      b          
+     │ Int64  String     
+─────┼───────────────────
+   1 │     1  Yoda
+   2 │     2  Han Solo
+   3 │     3  Luke
+   4 │     4  Dark Vador
+
+# avec des paires
+julia> DataFrame("a" => 1:2, "b" => ["Yoda", "Han Solo"])
+
+# avec un vecteur de paires
+julia> DataFrame(["a" => 1:2, "b" => ["Yoda", "Han Solo"]])
+
+# avec un dictionnaire
+julia> DataFrame(Dict(
+  "a" => 1:2, 
+  "b" => ["Yoda", "Han Solo"]
+))
+
+# un tuple de vecteurs identifiés...
+julia> DataFrame((a=[1, 2], b=["Yoda", "Han Solo"]))
+
+# ... ou un vecteur de tuples
+julia> DataFrame([(a=1, b="Yoda"), (a=2, b="Han Solo")])
+
+# construction colonne par colonne
+julia> df = DataFrame()
+julia> df.a = 1:2 # ajout de la colonne a
+julia> df[!, :b] = ["Yoda", "Han Solo"] #ajout de la colonne b (autre syntaxe)
+
+# construction ligne à ligne
+julia> df = DataFrame(a=Int[], b=String[])
+julia> push!(df, (1, "Yoda"))
+julia> push!(df, (2, "Han Solo"))
+# Il est possible d'utiliser pushfirst!() pour ajouter une ligne au début
+# insert!() pour ajouter une ligne à un index donné
+# append!() ou prepend!() pour ajouter des tables entières 
+```
+
+Et même à partir de données tabulaires
+```csv
+#data.csv
+a,b
+1,"Yoda"
+2,"Han Solo"
+```
+```julia-repl
+julia> using CSV
+julia> df = DataFrame(CSV.File("data.csv"))
+2×2 DataFrame
+ Row │ a      b        
+     │ Int64  String   
+─────┼─────────────────
+   1 │     1  Yoda
+   2 │     2  Han Solo
+```
+
+Les noms des colonnes peuvent être récupérés sous la forme d'un vecteur avec la fonction `names()`
+```julia-repl
+julia> names(df)
+2-element Vector{String}:
+ "a"
+ "b"
+
+julia> propertynames(df) # retourne les noms de colonne sous forme de symboles
+2-element Vector{Symbol}:
+ :a
+ :b
+```
+
+Cette même fonction permet de faire des recherches dans le noms de colonnes.
+```julia-repl
+julia> names(df, r"a") # liste les colonnes avec RegEx
+julia> names(df, Not(:b)) # tous les noms de colonnes sauf :b
+julia> names(df, Int) # liste les colonnes en fonction du type de données
+```
+
+On peut récupérer un vecteur des valeurs d'une colonne de différentes manières
+```julia-repl
+julia> df.b
+julia> df."b"
+julia> df[!, :b]
+julia> df[!, "b"]
+julia> df[:, :b]
+julia> df[:, "b"]
+2-element Vector{String}:
+ "Yoda"
+ "Han Solo"
+```
+
+Il existe cependant une différente entre `df[!, :b]` et `df[:, :b]` : le *bang operator* `!` indique qu'une copie n'est pas réalisée. Si on change un élément du vecteur alors il sera propagé au Dataframe.
+
+ > Columns can be directly (i.e. without copying) accessed via df.col or df[!, :col]. [...] Since df[!, :col] does not make a copy, changing the elements of the column vector returned by this syntax will affect the values stored in the original df. To get a copy of the column use df[:, :col]: changing the vector returned by this syntax does not change df.
+
+```julia-repl 
+julia> df = DataFrame(["a" => 1:2, "b" => ["Yoda", "Han Solo"]])
+julia> v = df[:, :b] # pas de bang, la valeur ne sera pas modifiée
+2-element Vector{String}:
+ "Yoda"
+ "Han Solo"
+
+julia> v[2] = "Dark Vador"
+"Dark Vador"
+
+julia> df
+2×2 DataFrame
+ Row │ a      b        
+     │ Int64  String   
+─────┼─────────────────
+   1 │     1  Yoda
+   2 │     2  Han Solo
+
+
+julia> v = df[!, :b] # bang opérateur
+julia> v[2] = "Dark Vador"
+julia> df # utilisation de bang, la valeur est modifiée.
+2×2 DataFrame
+ Row │ a      b          
+     │ Int64  String     
+─────┼───────────────────
+   1 │     1  Yoda
+   2 │     2  Dark Vador
+```
+
+Voir la [Documentation Dataframes](https://dataframes.juliadata.org/stable/man/working_with_dataframes/) pour travailler avec les *subsets*.
+
+## Trier
 
 # Copie
 ```julia
