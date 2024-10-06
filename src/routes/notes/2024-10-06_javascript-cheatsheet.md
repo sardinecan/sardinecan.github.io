@@ -153,7 +153,7 @@ if (age &gt;= 18) {
 ```
 Pour les évaluations simple JavaScript dispose d'une autre syntaxe reposant sur l'utilisation de l'opérateur ternaire `?`
 ```javascript
-let message = (age &gt;= 18) ? "Majeur" : "Mineur";
+let message = (age >= 18) ? "Majeur" : "Mineur";
 ```
 
 ### Boucles
@@ -312,32 +312,6 @@ L'idée derrière ces deux attributs était d'assouplir la pratique de placer le
 Deux évènements permettent également de gérer le chargement et l'exécution des scripts
 - `window.onload` : se déclenche après que tout le contenu de la page a été entièrement chargé (ressources externes comprises (images, scripts, CSS)).
 - `DOMContentLoaded` : se déclenche dès que le DOM est complètement chargé, mais avant les ressources externes. À utiliser plutôt que `window.onload`.
-
-```html
-&lt;html lang="fr"&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;title&gt;Exécuter JavaScript&lt;/title&gt;
-        &lt;!-- Le script est chargé dans le head, mais le code ne sera exécuter qu'après que la page soit soit chargé. --&gt;
-        &lt;script&gt;
-            window.onload = function() {
-                function warning(){
-                    alert("Survol du titre !")
-                };
-                const el = document.getElementById("myTitle");
-                el.addEventListener("mouseover", warning);
-            };
-            /* ou
-            document.addEventListener('DOMContentLoaded', function() {
-                ...
-            });*/
-        &lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1 id="myTitle"&gt;Page HTML avec JavaScript&lt;/h1&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-```
 
 #### Gestion des évènements
 
