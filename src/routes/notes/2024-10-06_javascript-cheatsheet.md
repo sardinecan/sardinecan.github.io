@@ -112,7 +112,7 @@ Opérateurs logiques :
 - `||` : OU logique
 - `!` : Négation
 ```javascript
-let result = (5 > 3) && (10 < 20); // true
+let result = (5 &gt; 3) && (10 &lt; 20); // true
 ```
 
 ### Fonctions
@@ -129,7 +129,7 @@ let result = somme(5, 3); // 8
 
 Il est aussi possible de rédiger des `fonctions fléchées` (ES6+). La syntaxe est plus concise et ces fonctions ne lient pas leur propre contexte `this`.
 ```javascript
-const addition = (a, b) => a + b;
+const addition = (a, b) =&gt; a + b;
 ```
 Chaque argument peut disposer d'une valeur par défaut;
 ```javascript
@@ -145,7 +145,7 @@ Les structures conditionnelles permettent d'exécuter du code spécifique si un 
 ```javascript
 let age = 18;
 
-if (age >= 18) {
+if (age &gt;= 18) {
     console.log("Vous êtes majeur.");
 } else {
     console.log("Vous êtes mineur.");
@@ -153,7 +153,7 @@ if (age >= 18) {
 ```
 Pour les évaluations simple JavaScript dispose d'une autre syntaxe reposant sur l'utilisation de l'opérateur ternaire `?`
 ```javascript
-let message = (age >= 18) ? "Majeur" : "Mineur";
+let message = (age &gt;= 18) ? "Majeur" : "Mineur";
 ```
 
 ### Boucles
@@ -161,7 +161,7 @@ Les boucles permettent de répéter un bloc de code pour chaque élément d'une 
 
 #### Boucle `for`
 ```javascript
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i &lt; 5; i++) {
     console.log(i); // Affiche 0, 1, 2, 3, 4
 }
 ```
@@ -169,7 +169,7 @@ for (let i = 0; i < 5; i++) {
 #### Boucle `while`
 ```javascript
 let count = 0;
-while (count < 5) {
+while (count &lt; 5) {
     console.log(count);
     count++;
 }
@@ -263,7 +263,7 @@ let elements = document.querySelectorAll("p"); // Tous les paragraphes
 
 La fonction `element.innerHTML` permet de modifier ou récupérer le contenu HTML d'un élément.
 ```javascript
-element.innerHTML = "<p>Nouveau contenu</p>";
+element.innerHTML = "&lt;p&gt;Nouveau contenu&lt;/p&gt;";
 ```
 
 `element.textContent` modifie ou récupère uniquement le texte.
@@ -301,13 +301,13 @@ element.classList.toggle("active");
 L'emplacement d'un script dans une page HTML et la manière dont on configure son exécution peuvent avoir des impacts sur les performances et l'interaction avec le DOM.
 
 ### Placement des scripts dans la page HTML
-le code JavaScript est généralement inclus dans une balise `<script/>` que l'on place soit dans le `<head/>` (exécute immédiatement le code, avant le chargement de la page) soit à la toute fin du `<body/>` (le code est exécuté après que tout le code HTML soit chargé). L'emplacement des éléments `<script/>` a donc une importante, surtout lorsque l'on souhaite intéragir avec le `DOM`.
+le code JavaScript est généralement inclus dans une balise `&lt;script/&gt;` que l'on place soit dans le `&lt;head/&gt;` (exécute immédiatement le code, avant le chargement de la page) soit à la toute fin du `&lt;body/&gt;` (le code est exécuté après que tout le code HTML soit chargé). L'emplacement des éléments `&lt;script/&gt;` a donc une importante, surtout lorsque l'on souhaite intéragir avec le `DOM`.
 
-Lorsque placé dans le `<head>`, et sous réserve d'utiliser l'attribut `@src`, deux attributs peuvent être utilisés pour contrôler quand et comment le script doit s'exécuter. 
-- `async` : charge en parallele et exécute le script de façon asynchrone, dés qu'il est disponible, sans suivre d'ordre particulier si plusieurs `<script/>` sont présents ;
+Lorsque placé dans le `&lt;head&gt;`, et sous réserve d'utiliser l'attribut `@src`, deux attributs peuvent être utilisés pour contrôler quand et comment le script doit s'exécuter. 
+- `async` : charge en parallele et exécute le script de façon asynchrone, dés qu'il est disponible, sans suivre d'ordre particulier si plusieurs `&lt;script/&gt;` sont présents ;
 - `defer` : diffère l'exécution à la fin du chargement du document, juste avant `DOMContentLoaded`, mais l'ordre d'exécution entre les scripts est maintenu.
 
-L'idée derrière ces deux attributs était d'assouplir la pratique de placer les `<script/>` à la fin du `<body/>`.
+L'idée derrière ces deux attributs était d'assouplir la pratique de placer les `&lt;script/&gt;` à la fin du `&lt;body/&gt;`.
 
 Deux évènements permettent également de gérer le chargement et l'exécution des scripts
 - `window.onload` : se déclenche après que tout le contenu de la page a été entièrement chargé (ressources externes comprises (images, scripts, CSS)).
@@ -315,11 +315,11 @@ Deux évènements permettent également de gérer le chargement et l'exécution 
 
 ```html
 &lt;html lang="fr"&gt;
-    <head>
-        <meta charset="UTF-8">
-        <title>Exécuter JavaScript</title>
-        <!-- Le script est chargé dans le head, mais le code ne sera exécuter qu'après que la page soit soit chargé. -->
-        <script>
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Exécuter JavaScript&lt;/title&gt;
+        &lt;!-- Le script est chargé dans le head, mais le code ne sera exécuter qu'après que la page soit soit chargé. --&gt;
+        &lt;script&gt;
             window.onload = function() {
                 function warning(){
                     alert("Survol du titre !")
@@ -331,11 +331,11 @@ Deux évènements permettent également de gérer le chargement et l'exécution 
             document.addEventListener('DOMContentLoaded', function() {
                 ...
             });*/
-        </script>
-    </head>
-    <body>
-        <h1 id="myTitle">Page HTML avec JavaScript</h1>
-    </body>
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1 id="myTitle"&gt;Page HTML avec JavaScript&lt;/h1&gt;
+    &lt;/body&gt;
 &lt;/html&gt;
 ```
 
