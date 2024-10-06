@@ -64,8 +64,8 @@ Types de données JavaScript :
 - `Number` : entiers ou nombres à virgule flottante (42, 3.14)
 - `String` : chaîne de caractères ("Hello World")
 - `Boolean` : `true` ou `false`
-- `Array` : tableau ([1, 2, 3])
-- `Object` : objet clé-valeur ({name: "John", age: 30})
+- `Array` : tableau (`[1, 2, 3]`)
+- `Object` : objet clé-valeur (`{name: "John", age: 30}`)
 - `Undefined` : valeur d'une variable non définie
 - `Null` : valeur nulle explicitement assignée
 - `Symbol` : unique et immuable (ES6)
@@ -105,7 +105,7 @@ let result = (5 &gt; 3) && (10 &lt; 20); // true
 ```
 
 ### Fonctions
-Les fonctions sont des blocs de code réutilisables. Ils associents généralement 0, une ou plusieurs valeurs d'entrée à une valeur de sortie.
+Les fonctions sont des blocs de code réutilisables. Ils associent généralement 0, une ou plusieurs valeurs d'entrée à une valeur de sortie.
 
 Pour déclarer une fonction on utilise le mot-clé `function` :
 ```javascript
