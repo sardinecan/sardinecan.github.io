@@ -58,6 +58,18 @@ idem lorsque plusieurs instructions sont sur la même ligne
 ```javascript
 let x = 5; let y = 10; console.log(x + y); // Affiche 15
 ```
+
+Il peut être omis sans provoquer d'erreurs avec les blocs conditionnels, les boucles, et les déclarations de fonctions
+```javascript
+if (true) {
+    console.log("Condition vraie");
+}
+
+function hello() {
+    console.log("Bonjour !");
+}
+```
+
 Une bonne pratique est de l'utiliser systématiquement et d'être cohérent si on ne l'utilise pas partout.
 
 Types de données JavaScript :
