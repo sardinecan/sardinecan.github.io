@@ -2,7 +2,7 @@
 title: 'SQL - Cheatsheet'
 date: '2024-06-27'
 author: 'Josselin Morvan'
-language: 'sql'
+category: 'sql'
 keywords: 'cheatsheet ; sql'
 ---
 

@@ -2,7 +2,7 @@
 title: 'Python - Cheatsheet'
 date: '2024-06-25'
 author: 'Josselin Morvan'
-language: 'Python'
+category: 'Python'
 keywords: 'cheatsheet ; python'
 ---
 

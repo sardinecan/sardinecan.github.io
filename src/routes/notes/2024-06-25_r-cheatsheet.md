@@ -2,7 +2,7 @@
 title: 'R - Cheatsheet'
 date: '2024-06-25'
 author: 'Josselin Morvan'
-language: 'r'
+category: 'r'
 keywords: 'cheatsheet ; r'
 ---
 

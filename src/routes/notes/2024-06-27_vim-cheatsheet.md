@@ -2,7 +2,7 @@
 title: 'Vim - Cheatsheet'
 date: '2024-06-27'
 author: 'Josselin Morvan'
-language: 'vim'
+category: 'vim'
 keywords: 'cheatsheet ; vim'
 ---
 
