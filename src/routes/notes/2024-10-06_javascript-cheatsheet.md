@@ -58,3 +58,60 @@ idem lorsque plusieurs instructions sont sur la même ligne
 ```javascript
 let x = 5; let y = 10; console.log(x + y); // Affiche 15
 ```
+
+Il peut être omis sans provoquer d'erreurs avec les blocs conditionnels, les boucless, et les déclarations de fonctions
+```javascript
+if (true) {
+    console.log("Condition vraie");
+}
+
+function hello() {
+    console.log("Bonjour !");
+}
+```
+Une bonne pratique est de l'utiliser systématiquement et d'être cohérent si on ne l'utilise pas partout.
+
+Types de données JavaScript :
+- `Number` : entiers ou nombres à virgule flottante (42, 3.14)
+- `String` : chaîne de caractères ("Hello World")
+- `Boolean` : `true` ou `false`
+- `Array` : tableau ([1, 2, 3])
+- `Object` : objet clé-valeur ({name: "John", age: 30})
+- `Undefined` : valeur d'une variable non définie
+- `Null` : valeur nulle explicitement assignée
+- `Symbol` : unique et immuable (ES6)
+- `BigInt` : entiers plus grands que `Number.MAX_SAFE_INTEGER` (ES2020)
+
+### Opérateurs Booléens et Opérations Mathématiques
+Opérateurs arithmétiques permettent d'effectuer les opérations mathématiques de base.
+- `+` : addition
+- `-` : soustraction
+- `*` : multiplication
+- `/` : division
+- `%` : modulo
+```javascript
+let a = 5 + 2; // 7
+let b = 5 % 2; // 1
+```
+
+Opérateurs de comparaison :
+- `==` : Égalité en valeur
+- `===` : Égalité stricte (en valeur et en type)
+- `!=` : Différent en valeur
+- `!==` : Différent strict (en valeur et en type)
+- `>` , `<` : Supérieur, inférieur
+- `>=` , `<=` : Supérieur ou égal, inférieur ou égal
+
+```javascript
+console.log(5 == "5");  // true (égalité en valeur)
+console.log(5 === "5"); // false (égalité stricte)
+```
+
+Opérateurs logiques :
+- `&&` : ET logique
+- `||` : OU logique
+- `!` : Négation
+```javascript
+let result = (5 &gt; 3) && (10 &lt; 20); // true
+```
+
