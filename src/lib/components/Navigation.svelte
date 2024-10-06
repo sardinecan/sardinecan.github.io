@@ -15,7 +15,7 @@
 	<ul>
 		<li><a href="/blog" class:active="{$page.url.pathname.includes("blog")}">Blog</a></li>
 		<li><a href="/reports" class:active="{$page.url.pathname.includes("reports")}">Comptes rendus</a></li>
-		<li><a href="/cheatsheets" class:active="{$page.url.pathname.includes("cheatsheets")}">Antisèches</a></li>
+		<!--<li><a href="/cheatsheets" class:active="{$page.url.pathname.includes("cheatsheets")}">Antisèches</a></li>-->
 		<li><a href="/notes" class:active="{$page.url.pathname.includes("notes")}">Notes</a></li>
 		<li><a href="/projets" class:active="{$page.url.pathname.includes("projets")}">Projets</a></li>
 		<!-- <li><button on:click={toogleTheme}>{ $theme? "☼" : "☾" }</button></li> -->

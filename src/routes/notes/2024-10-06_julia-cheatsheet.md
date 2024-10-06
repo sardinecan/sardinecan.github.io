@@ -1,9 +1,9 @@
 ---
-title: 'Julia'
+title: 'Julia - Cheatsheet'
 date: '2024-03-20'
 author: 'Josselin Morvan'
 language: 'julia'
-keywords: ''
+keywords: 'cheatsheet ; julia'
 ---
 
 # 📝 Julia

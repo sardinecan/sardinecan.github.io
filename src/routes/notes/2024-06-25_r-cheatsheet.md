@@ -1,9 +1,9 @@
 ---
-title: 'Fondamentaux'
+title: 'R - Cheatsheet'
 date: '2024-06-25'
 author: 'Josselin Morvan'
 language: 'r'
-keywords: ''
+keywords: 'cheatsheet ; r'
 ---
 
 # 📝 Les fondamentaux du langage R

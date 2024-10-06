@@ -1,9 +1,9 @@
 ---
-title: 'Fondamentaux'
+title: 'CSS - Cheatsheet'
 date: '2024-06-18'
 author: 'Josselin Morvan'
 language: 'css'
-keywords: ''
+keywords: 'cheatsheet ; css'
 ---
 
 # 📝 Les fondamentaux de CSS

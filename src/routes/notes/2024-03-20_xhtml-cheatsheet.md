@@ -1,9 +1,9 @@
 ---
-title: 'Fondamentaux'
+title: 'XHTML - Cheatsheet'
 date: '2024-03-20'
 author: 'Josselin Morvan'
 language: 'html'
-keywords: ''
+keywords: 'cheatsheet ; html ; xhtml'
 ---
 
 # 📝 Les fondamentaux HTML

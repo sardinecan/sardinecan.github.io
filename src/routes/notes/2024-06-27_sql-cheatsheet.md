@@ -1,9 +1,9 @@
 ---
-title: 'Fondamentaux'
+title: 'SQL - Cheatsheet'
 date: '2024-06-27'
 author: 'Josselin Morvan'
 language: 'sql'
-keywords: ''
+keywords: 'cheatsheet ; sql'
 ---
 
 # 📄 **Cheatsheet SQL**
