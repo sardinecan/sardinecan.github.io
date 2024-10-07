@@ -73,8 +73,8 @@ function hello() {
 Une bonne pratique est de l'utiliser systématiquement et d'être cohérent si on ne l'utilise pas partout.
 
 Types de données JavaScript :
-- `Number` : entiers ou nombres à virgule flottante (42, 3.14)
-- `String` : chaîne de caractères ("Hello World")
+- `Number` : entiers ou nombres à virgule flottante (`42`, `3.14`)
+- `String` : chaîne de caractères (`"Hello World"`)
 - `Boolean` : `true` ou `false`
 - `Array` : tableau (`[1, 2, 3]`)
 - `Object` : objet clé-valeur (`{name: "John", age: 30}`)
