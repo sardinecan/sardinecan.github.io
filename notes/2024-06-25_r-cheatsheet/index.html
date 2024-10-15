@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">25 juin 2024</p> <h1 data-svelte-h="svelte-xl9za2">📝 Les fondamentaux du langage R</h1> <h2 data-svelte-h="svelte-f7ckzj">📚 Introduction à R</h2> <p data-svelte-h="svelte-10yr8h">R est un langage de programmation et un environnement logiciel pour le calcul statistique et la création de graphiques.</p> <h2 data-svelte-h="svelte-vi3mgq">📌 Table des matières</h2> <ul data-svelte-h="svelte-h6c5ln"><li>Installation</li> <li>Environnement de base</li> <li>Variables</li> <li>Types de données</li> <li>Opérateurs</li> <li>Fonctions de base</li> <li>Contrôle de flux</li> <li>Gestion des données</li> <li>Graphiques de base</li> <li>Ressources</li></ul> <h2 data-svelte-h="svelte-f127iv">🚀 Installation</h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Pour installer R sur Linux</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> r-base
+
+<span class="token comment"># Pour installer R sur Mac</span>
+brew <span class="token function">install</span> r
+
+<span class="token comment"># Pour installer R sur Windows</span>
+Téléchargez le programme d'installation depuis https://cran.r-project.org/</code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-pr9vb">🖥️ Environnement de base</h2> <pre class="language-r"><!-- HTML_TAG_START --><code class="language-r"><span class="token comment"># Ouvrir l'interface graphique</span>
+R
+<span class="token comment"># Ou avec RStudio pour une interface plus conviviale</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-ceevly">🔤 Variables</h2> <pre class="language-r"><!-- HTML_TAG_START --><code class="language-r"><span class="token comment"># Affectation de variable</span>
+x <span class="token operator">&lt;-</span> <span class="token number">10</span>
+y <span class="token operator">=</span> <span class="token number">20</span> <span class="token comment"># Peut aussi être utilisé mais &lt;- est préféré</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1vdake8">🧬 Types de données</h2> <table data-svelte-h="svelte-k49wzz"><thead><tr><th align="left">Type</th> <th align="left">Exemple</th></tr></thead> <tbody><tr><td align="left">Numérique</td> <td align="left"><code>x &lt;- 10.5</code></td></tr> <tr><td align="left">Entier</td> <td align="left"><code>x &lt;- as.integer(5)</code></td></tr> <tr><td align="left">Logique</td> <td align="left"><code>x &lt;- TRUE</code></td></tr> <tr><td align="left">Caractère</td> <td align="left"><code>x &lt;- &quot;Bonjour&quot;</code></td></tr> <tr><td align="left">Facteur</td> <td align="left"><code>x &lt;- factor(&quot;Homme&quot;)</code></td></tr></tbody></table> <h2 data-svelte-h="svelte-1tgdls5">➗ Opérateurs</h2> <table data-svelte-h="svelte-qot5j0"><thead><tr><th align="left"></th> <th align="left"></th></tr></thead> <tbody><tr><td align="left">Arithmétiques</td> <td align="left"><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>^</code>, <code>%%</code>, <code>%/%</code></td></tr> <tr><td align="left">Comparaison</td> <td align="left"><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td></tr> <tr><td align="left">Logiques</td> <td align="left"><code>&amp;</code>, <code>|</code>, <code>!</code></td></tr> <tr><td align="left">Affectation</td> <td align="left"><code>&lt;-</code>, <code>=</code></td></tr></tbody></table> <h2 data-svelte-h="svelte-qehdct">🛠️ Fonctions de base</h2> <pre class="language-r"><!-- HTML_TAG_START --><code class="language-r"><span class="token comment"># Création d'une séquence</span>
+seq<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> by <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Répétition d'éléments</span>
+rep<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span> times <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Somme, moyenne, etc.</span>
+sum<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+mean<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Structure d'un objet</span>
+str<span class="token punctuation">(</span>object<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-vqejjq">🔄 Contrôle de flux</h2> <pre class="language-r"><!-- HTML_TAG_START --><code class="language-r"><span class="token comment"># Conditionnel</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  print<span class="token punctuation">(</span><span class="token string">"x est grand"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+  print<span class="token punctuation">(</span><span class="token string">"x est petit"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment"># Boucles</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  print<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  x <span class="token operator">&lt;-</span> x <span class="token operator">+</span> <span class="token number">1</span>
+  print<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1wufq5i">📊 Gestion des données</h2> <pre class="language-r"><!-- HTML_TAG_START --><code class="language-r"><span class="token comment"># Data frames</span>
+df <span class="token operator">&lt;-</span> data.frame<span class="token punctuation">(</span>nom <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"Jean"</span><span class="token punctuation">,</span> <span class="token string">"Marie"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> age <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Accès aux données</span>
+df<span class="token operator">$</span>nom       <span class="token comment"># Accès à une colonne</span>
+df<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">]</span>       <span class="token comment"># Accès à une ligne</span>
+df<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"nom"</span><span class="token punctuation">]</span> <span class="token comment"># Accès à une cellule</span>
+
+<span class="token comment"># Importation de données</span>
+data <span class="token operator">&lt;-</span> read.csv<span class="token punctuation">(</span><span class="token string">"chemin/fichier.csv"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Exportation de données</span>
+write.csv<span class="token punctuation">(</span>df<span class="token punctuation">,</span> <span class="token string">"chemin/sortie.csv"</span><span class="token punctuation">,</span> row.names <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-t8inbs">📈 Graphiques de base</h2> <pre class="language-r"><!-- HTML_TAG_START --><code class="language-r"><span class="token comment"># Graphique simple</span>
+plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+
+<span class="token comment"># Histogramme</span>
+hist<span class="token punctuation">(</span>data<span class="token operator">$</span>colonne<span class="token punctuation">)</span>
+
+<span class="token comment"># Boîte à moustaches</span>
+boxplot<span class="token punctuation">(</span>data<span class="token operator">$</span>colonne<span class="token punctuation">)</span>
+
+<span class="token comment"># Diagramme de dispersion</span>
+plot<span class="token punctuation">(</span>data<span class="token operator">$</span>x<span class="token punctuation">,</span> data<span class="token operator">$</span>y<span class="token punctuation">)</span>
+&#96;&#96;&#96;<span class="token operator">@</span>
+</code><!-- HTML_TAG_END --></pre></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

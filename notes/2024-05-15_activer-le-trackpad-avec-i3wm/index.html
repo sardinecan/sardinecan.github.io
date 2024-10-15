@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">15 mai 2024</p> <h1 data-svelte-h="svelte-im8on8">Toucher pour cliquer avec i3wm</h1> <p data-svelte-h="svelte-1hokj19">Utiliser la commande <code>xinput</code> pour lister les devices :</p> <pre class="language-shell"><!-- HTML_TAG_START --><code class="language-shell">xinput           
+⎡ Virtual core pointer                    	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">2</span>	<span class="token punctuation">[</span>master pointer  <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+⎜   ↳ Virtual core XTEST pointer              	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">4</span>	<span class="token punctuation">[</span>slave  pointer  <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+⎜   ↳ bcm5974                                 	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">12</span>	<span class="token punctuation">[</span>slave  pointer  <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+⎣ Virtual core keyboard                   	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">3</span>	<span class="token punctuation">[</span>master keyboard <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ↳ Virtual core XTEST keyboard             	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">5</span>	<span class="token punctuation">[</span>slave  keyboard <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ↳ Power Button                            	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">6</span>	<span class="token punctuation">[</span>slave  keyboard <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ↳ Video Bus                               	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">7</span>	<span class="token punctuation">[</span>slave  keyboard <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ↳ Power Button                            	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">8</span>	<span class="token punctuation">[</span>slave  keyboard <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ↳ Sleep Button                            	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">9</span>	<span class="token punctuation">[</span>slave  keyboard <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ↳ Apple Computer, Inc. IR Receiver        	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">10</span>	<span class="token punctuation">[</span>slave  keyboard <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    ↳ Apple Inc. Apple Internal Keyboard / Trackpad	<span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">11</span>	<span class="token punctuation">[</span>slave  keyboard <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-cnk3a0">Puis la commande <code>xinput list-props &lt;device&gt;</code> d’afficher les propriétés d’un matériel.</p> <pre class="language-shell"><!-- HTML_TAG_START --><code class="language-shell">xinput list-props <span class="token number">12</span>
+Device <span class="token string">'bcm5974'</span><span class="token builtin class-name">:</span>
+	Device Enabled <span class="token punctuation">(</span><span class="token number">176</span><span class="token punctuation">)</span>:	<span class="token number">1</span>
+	Coordinate Transformation Matrix <span class="token punctuation">(</span><span class="token number">178</span><span class="token punctuation">)</span>:	<span class="token number">1.000000</span>, <span class="token number">0.000000</span>, <span class="token number">0.000000</span>, <span class="token number">0.000000</span>, <span class="token number">1.000000</span>, <span class="token number">0.000000</span>, <span class="token number">0.000000</span>, <span class="token number">0.000000</span>, <span class="token number">1.000000</span>
+	libinput Tapping Enabled <span class="token punctuation">(</span><span class="token number">315</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Tapping Enabled Default <span class="token punctuation">(</span><span class="token number">316</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Tapping Drag Enabled <span class="token punctuation">(</span><span class="token number">317</span><span class="token punctuation">)</span>:	<span class="token number">1</span>
+	libinput Tapping Drag Enabled Default <span class="token punctuation">(</span><span class="token number">318</span><span class="token punctuation">)</span>:	<span class="token number">1</span>
+	libinput Tapping Drag Lock Enabled <span class="token punctuation">(</span><span class="token number">319</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Tapping Drag Lock Enabled Default <span class="token punctuation">(</span><span class="token number">320</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Tapping Button Mapping Enabled <span class="token punctuation">(</span><span class="token number">321</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">0</span>
+	libinput Tapping Button Mapping Default <span class="token punctuation">(</span><span class="token number">322</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">0</span>
+	libinput Natural Scrolling Enabled <span class="token punctuation">(</span><span class="token number">323</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Natural Scrolling Enabled Default <span class="token punctuation">(</span><span class="token number">324</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Disable While Typing Enabled <span class="token punctuation">(</span><span class="token number">325</span><span class="token punctuation">)</span>:	<span class="token number">1</span>
+	libinput Disable While Typing Enabled Default <span class="token punctuation">(</span><span class="token number">326</span><span class="token punctuation">)</span>:	<span class="token number">1</span>
+	libinput Scroll Methods Available <span class="token punctuation">(</span><span class="token number">327</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">1</span>, <span class="token number">0</span>
+	libinput Scroll Method Enabled <span class="token punctuation">(</span><span class="token number">328</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">0</span>, <span class="token number">0</span>
+	libinput Scroll Method Enabled Default <span class="token punctuation">(</span><span class="token number">329</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">0</span>, <span class="token number">0</span>
+	libinput Click Methods Available <span class="token punctuation">(</span><span class="token number">330</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">1</span>
+	libinput Click Method Enabled <span class="token punctuation">(</span><span class="token number">331</span><span class="token punctuation">)</span>:	<span class="token number">0</span>, <span class="token number">1</span>
+	libinput Click Method Enabled Default <span class="token punctuation">(</span><span class="token number">332</span><span class="token punctuation">)</span>:	<span class="token number">0</span>, <span class="token number">1</span>
+	libinput Middle Emulation Enabled <span class="token punctuation">(</span><span class="token number">333</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Middle Emulation Enabled Default <span class="token punctuation">(</span><span class="token number">334</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Accel Speed <span class="token punctuation">(</span><span class="token number">335</span><span class="token punctuation">)</span>:	<span class="token number">0.000000</span>
+	libinput Accel Speed Default <span class="token punctuation">(</span><span class="token number">336</span><span class="token punctuation">)</span>:	<span class="token number">0.000000</span>
+	libinput Accel Profiles Available <span class="token punctuation">(</span><span class="token number">337</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">1</span>
+	libinput Accel Profile Enabled <span class="token punctuation">(</span><span class="token number">338</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">0</span>
+	libinput Accel Profile Enabled Default <span class="token punctuation">(</span><span class="token number">339</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">0</span>
+	libinput Left Handed Enabled <span class="token punctuation">(</span><span class="token number">340</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Left Handed Enabled Default <span class="token punctuation">(</span><span class="token number">341</span><span class="token punctuation">)</span>:	<span class="token number">0</span>
+	libinput Send Events Modes Available <span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span>:	<span class="token number">1</span>, <span class="token number">1</span>
+	libinput Send Events Mode Enabled <span class="token punctuation">(</span><span class="token number">301</span><span class="token punctuation">)</span>:	<span class="token number">0</span>, <span class="token number">0</span>
+	libinput Send Events Mode Enabled Default <span class="token punctuation">(</span><span class="token number">302</span><span class="token punctuation">)</span>:	<span class="token number">0</span>, <span class="token number">0</span>
+	Device Node <span class="token punctuation">(</span><span class="token number">303</span><span class="token punctuation">)</span>:	<span class="token string">"/dev/input/event8"</span>
+	Device Product ID <span class="token punctuation">(</span><span class="token number">304</span><span class="token punctuation">)</span>:	<span class="token number">1452</span>, <span class="token number">595</span>
+	libinput Drag Lock Buttons <span class="token punctuation">(</span><span class="token number">342</span><span class="token punctuation">)</span>:	<span class="token operator">&lt;</span>no items<span class="token operator">></span>
+	libinput Horizontal Scroll Enabled <span class="token punctuation">(</span><span class="token number">343</span><span class="token punctuation">)</span>:	<span class="token number">1</span>
+	libinput Scrolling Pixel Distance <span class="token punctuation">(</span><span class="token number">344</span><span class="token punctuation">)</span>:	<span class="token number">15</span>
+	libinput Scrolling Pixel Distance Default <span class="token punctuation">(</span><span class="token number">345</span><span class="token punctuation">)</span>:	<span class="token number">15</span>
+	libinput High Resolution Wheel Scroll Enabled <span class="token punctuation">(</span><span class="token number">346</span><span class="token punctuation">)</span>:	<span class="token number">1</span>
+</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-jr8tb3">La propriété qui nous intéresse est indiquer à la ligne <code>libinput Tapping Enabled (315): 0</code>. Pour activer “toucher pour cliquer”, il suffit simplement de changer la valeur <code>0</code> par <code>1</code> avec la commande :
+<code>xinput set-prop 12 315 1</code>. Et voilà !</p></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

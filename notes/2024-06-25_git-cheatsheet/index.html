@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">25 juin 2024</p> <h1 data-svelte-h="svelte-faa8iv">📚 Les fondamentaux Git</h1> <h2 data-svelte-h="svelte-wq2d58">📅 Index</h2> <ul data-svelte-h="svelte-1rkbcle"><li><a href="#configuration">🔧 Configuration</a></li> <li><a href="#initialisation-et-clonage">📁 Initialisation et Clonage</a></li> <li><a href="#gestion-des-branches">🌲 Gestion des Branches</a></li> <li><a href="#gestion-des-fichiers">📑 Gestion des Fichiers</a></li> <li><a href="#gestion-des-commits">💾 Gestion des Commits</a></li> <li><a href="#gestion-des-remote">🌐 Gestion des Remote</a></li> <li><a href="#rebaser-et-merge">🔄 Rebaser et Merge</a></li> <li><a href="#divers">📋 Divers</a></li> <li><a href="#gestion-des-tags">🔒 Gestion des Tags</a></li> <li><a href="#gestion-des-conflits">🚑 Gestion des Conflits</a></li> <li><a href="#historique-et-annulation">⏳ Historique et Annulation</a></li> <li><a href="#depannage">🛠️ Dépannage</a></li></ul> <h2 data-svelte-h="svelte-j87qxt">🔧 Configuration <span id="configuration"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Configurer le nom d'utilisateur</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Votre Nom"</span>
+
+<span class="token comment"># Configurer l'email</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"votre-email@example.com"</span>
+
+<span class="token comment"># Configurer l'éditeur par défaut</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.editor <span class="token string">"nom-editeur"</span>
+
+<span class="token comment"># Voir la configuration</span>
+<span class="token function">git</span> config <span class="token parameter variable">--list</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-b9geyl">📁 Initialisation et Clonage <span id="initialisation-et-clonage"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Initialiser un nouveau dépôt Git</span>
+<span class="token function">git</span> init
+
+<span class="token comment"># Cloner un dépôt existant</span>
+<span class="token function">git</span> clone <span class="token operator">&lt;</span>url-du-repo<span class="token operator">></span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-igkbcd">🌲 Gestion des Branches <span id="gestion-des-branches"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Lister toutes les branches</span>
+<span class="token function">git</span> branch
+
+<span class="token comment"># Créer une nouvelle branche</span>
+<span class="token function">git</span> branch <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span>
+
+<span class="token comment"># Changer de branche</span>
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span>
+
+<span class="token comment"># Créer et changer de branche en une commande</span>
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span>
+
+<span class="token comment"># Fusionner une branche dans la branche courante</span>
+<span class="token function">git</span> merge <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span>
+
+<span class="token comment"># Supprimer une branche</span>
+<span class="token function">git</span> branch <span class="token parameter variable">-d</span> <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1fw0nfn">📑 Gestion des Fichiers <span id="gestion-des-fichiers"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Voir le statut des fichiers</span>
+<span class="token function">git</span> status
+
+<span class="token comment"># Ajouter un fichier au suivi</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token operator">&lt;</span>nom-de-fichier<span class="token operator">></span>
+
+<span class="token comment"># Ajouter tous les fichiers au suivi</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+
+<span class="token comment"># Retirer un fichier du suivi</span>
+<span class="token function">git</span> <span class="token function">rm</span> <span class="token operator">&lt;</span>nom-de-fichier<span class="token operator">></span>
+
+<span class="token comment"># Renommer un fichier</span>
+<span class="token function">git</span> <span class="token function">mv</span> <span class="token operator">&lt;</span>ancien-nom<span class="token operator">></span> <span class="token operator">&lt;</span>nouveau-nom<span class="token operator">></span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1xg2b2">💾 Gestion des Commits <span id="gestion-des-commits"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Commiter les changements</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Message du commit"</span>
+
+<span class="token comment"># Modifier le dernier commit</span>
+<span class="token function">git</span> commit <span class="token parameter variable">--amend</span>
+
+<span class="token comment"># Voir l'historique des commits</span>
+<span class="token function">git</span> log
+
+<span class="token comment"># Voir un log simplifié</span>
+<span class="token function">git</span> log <span class="token parameter variable">--oneline</span> <span class="token parameter variable">--graph</span> <span class="token parameter variable">--decorate</span> <span class="token parameter variable">--all</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1sjjoc3">🌐 Gestion des Remote <span id="gestion-des-remote"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Ajouter un remote</span>
+<span class="token function">git</span> remote <span class="token function">add</span> origin <span class="token operator">&lt;</span>url-du-remote<span class="token operator">></span>
+
+<span class="token comment"># Voir les remotes</span>
+<span class="token function">git</span> remote <span class="token parameter variable">-v</span>
+
+<span class="token comment"># Pousser les commits vers le remote</span>
+<span class="token function">git</span> push origin <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span>
+
+<span class="token comment"># Récupérer les changements depuis le remote</span>
+<span class="token function">git</span> pull
+
+<span class="token comment"># Supprimer un remote</span>
+<span class="token function">git</span> remote remove <span class="token operator">&lt;</span>nom-du-remote<span class="token operator">></span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-sxx22w">🔄 Rebaser et Merge <span id="rebaser-et-merge"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Rebaser la branche courante sur une autre</span>
+<span class="token function">git</span> rebase <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span>
+
+<span class="token comment"># Fusionner une branche</span>
+<span class="token function">git</span> merge <span class="token operator">&lt;</span>nom-de-branche<span class="token operator">></span>
+
+<span class="token comment"># Continuer un rebase en cours après avoir résolu les conflits</span>
+<span class="token function">git</span> rebase <span class="token parameter variable">--continue</span>
+
+<span class="token comment"># Annuler un rebase</span>
+<span class="token function">git</span> rebase <span class="token parameter variable">--abort</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1n450wz">📋 Divers <span id="divers"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Afficher les différences entre fichiers</span>
+<span class="token function">git</span> <span class="token function">diff</span>
+
+<span class="token comment"># Afficher les différences mises en stage</span>
+<span class="token function">git</span> <span class="token function">diff</span> <span class="token parameter variable">--cached</span>
+
+<span class="token comment"># Afficher les différences entre deux commits</span>
+<span class="token function">git</span> <span class="token function">diff</span> <span class="token operator">&lt;</span>commit<span class="token operator"><span class="token file-descriptor important">1</span>></span> <span class="token operator">&lt;</span>commit<span class="token operator"><span class="token file-descriptor important">2</span>></span>
+
+<span class="token comment"># Annuler les changements dans un fichier (avant commit)</span>
+<span class="token function">git</span> checkout -- <span class="token operator">&lt;</span>nom-de-fichier<span class="token operator">></span>
+
+<span class="token comment"># Réinitialiser la branche courante à un commit précédent</span>
+<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span>
+
+<span class="token comment"># Réinitialiser la branche courante en gardant les modifications locales</span>
+<span class="token function">git</span> reset <span class="token parameter variable">--soft</span> <span class="token operator">&lt;</span>commit<span class="token operator">></span>
+
+<span class="token comment"># Renvoyer un fichier au stage</span>
+<span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>nom-de-fichier<span class="token operator">></span>
+
+<span class="token comment"># Nettoyer le dépôt en supprimant les fichiers non suivis</span>
+<span class="token function">git</span> clean <span class="token parameter variable">-f</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1ht7hk6">🔒 Gestion des Tags <span id="gestion-des-tags"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Créer un tag</span>
+<span class="token function">git</span> tag <span class="token operator">&lt;</span>nom-du-tag<span class="token operator">></span>
+
+<span class="token comment"># Supprimer un tag</span>
+<span class="token function">git</span> tag <span class="token parameter variable">-d</span> <span class="token operator">&lt;</span>nom-du-tag<span class="token operator">></span>
+
+<span class="token comment"># Pousser un tag vers le remote</span>
+<span class="token function">git</span> push origin <span class="token operator">&lt;</span>nom-du-tag<span class="token operator">></span>
+
+<span class="token comment"># Lister les tags</span>
+<span class="token function">git</span> tag</code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-jajd09">🚑 Gestion des Conflits <span id="gestion-des-conflits"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Lister les conflits</span>
+<span class="token function">git</span> status
+
+<span class="token comment"># Résoudre les conflits et ajouter les fichiers résolus</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token operator">&lt;</span>nom-de-fichier-conflit<span class="token operator">></span>
+
+<span class="token comment"># Continuer après avoir résolu les conflits</span>
+<span class="token function">git</span> commit</code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-l23k78">⏳ Historique et Annulation <span id="historique-et-annulation"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Voir les logs avec graph</span>
+<span class="token function">git</span> log <span class="token parameter variable">--graph</span>
+
+<span class="token comment"># Voir les logs de manière compacte</span>
+<span class="token function">git</span> log <span class="token parameter variable">--oneline</span>
+
+<span class="token comment"># Retourner à un commit spécifique</span>
+<span class="token function">git</span> checkout <span class="token operator">&lt;</span>commit-id<span class="token operator">></span>
+
+<span class="token comment"># Créer une nouvelle branche à partir d'un commit spécifique</span>
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> <span class="token operator">&lt;</span>nouvelle-branche<span class="token operator">></span> <span class="token operator">&lt;</span>commit-id<span class="token operator">></span>
+
+<span class="token comment"># Annuler un commit (création d'un commit inverse)</span>
+<span class="token function">git</span> revert <span class="token operator">&lt;</span>commit-id<span class="token operator">></span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-8yub9x">🛠️ Dépannage <span id="depannage"></span></h2> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token comment"># Annuler le dernier commit mais garder les changements dans la staging area</span>
+<span class="token function">git</span> reset <span class="token parameter variable">--soft</span> HEAD^
+
+<span class="token comment"># Annuler les derniers changements sans les garder</span>
+<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> HEAD^
+
+<span class="token comment"># Sauvegarder les changements locaux sans les committer</span>
+<span class="token function">git</span> stash
+
+<span class="token comment"># Récupérer les changements sauvegardés</span>
+<span class="token function">git</span> stash pop</code><!-- HTML_TAG_END --></pre></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

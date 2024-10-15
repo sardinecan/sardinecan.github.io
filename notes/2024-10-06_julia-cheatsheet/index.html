@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">20 mars 2024</p> <h1 data-svelte-h="svelte-pptv0r">📝 Julia</h1> <h2 data-svelte-h="svelte-o0mry4">Syntaxe</h2> <h3 data-svelte-h="svelte-1rk9dcv">Variables et types</h3> <p data-svelte-h="svelte-175a76g">Une variable est un espace mémoire où une valeur est stockée. Julia est un langage dynamique : il n’est donc pas nécessaire de déclarer le type d’une variable lors de sa création, il est déduit automatiquement par Julia au moment de son affectation.</p> <p data-svelte-h="svelte-1v0g2ht">Les variables sont créées en leur affectant une valeur à l’aide de l’opérateur <code>=</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> x <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token number">1</span>
+
+julia<span class="token operator">></span> y <span class="token operator">=</span> <span class="token string">"Hello World!"</span>
+<span class="token string">"Hello World!"</span>
+
+julia<span class="token operator">></span> x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> y
+<span class="token string">"A"</span>
+
+julia<span class="token operator">></span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-oobgtm">Si Julia est en mesure de déduire le type de la variable, il est aussi possible de la spécifier :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a<span class="token punctuation">::</span>Float64 <span class="token operator">=</span> <span class="token number">3.0</span>
+<span class="token number">3.0</span>
+
+julia<span class="token operator">></span> typeof<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+Float64</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1v9g5n7">Les types de données “simples” (<em>chaînes</em>, <em>nombres</em>, <em>booléens</em>) sont <strong>immuables</strong> : leur contenu ne peut être modifié après leur création. Si on affecte une nouvelle valeur, on crée en réalité une nouvelle instance de cette variable :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> x <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token number">1</span>
+
+julia<span class="token operator">></span> x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment"># une nouvelle variable est créée avec la valeur 2 </span>
+<span class="token number">2</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-11i62h8">Les types de données plus complexes comme les <em>tableaux</em> ou les <em>dictionnaires</em> sont <strong>mutables</strong>, c’est-à-dire qu’il est possible de modifier leur contenu :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token number">10</span>
+
+julia<span class="token operator">></span> arr
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">10</span>
+  <span class="token number">2</span>
+  <span class="token number">3</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-b9uumc">Les variables définies à l’extérieur de toute fonction ou bloc dispose d’une <strong>portée globale</strong>. Les variables définies dans un bloc (boucle ou fonction par exemple) ont une <strong>portée locale</strong>.</p> <p data-svelte-h="svelte-1k6vin">Il est possible de définir des <strong>constantes</strong> avec le mot-clé <code>const</code>. Un foie définie, une constante ne peut plus être modifiée.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">const</span> <span class="token constant">π</span> <span class="token operator">=</span> <span class="token number">3.14</span>
+<span class="token number">3.14</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-1x3pgsv">Les types composites</h3> <p data-svelte-h="svelte-q6decy">Les <strong>types composites</strong> sont des collections champs nommés spécifiques, dont une instance peut être traitée comme une valeur unique. Ces objets sont utiles pour modéliser des structures de données complexes, que l’on souhaite hiérarchiser ou lier, plutôt que d’avoir plusieurs variables indépendantes par exemple.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">struct</span> Person
+           name 
+           age<span class="token punctuation">::</span>Int <span class="token comment"># comme pour les variables il est possible de préciser le type de chaque champ</span>
+       <span class="token keyword">end</span>
+
+julia<span class="token operator">></span> sara <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"Sara"</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">)</span>
+Person<span class="token punctuation">(</span><span class="token string">"Sara"</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> sara<span class="token punctuation">.</span>name
+<span class="token string">"Sara"</span>
+
+julia<span class="token operator">></span> fieldnames<span class="token punctuation">(</span>Person<span class="token punctuation">)</span> <span class="token comment"># pour connaitre les champs</span>
+<span class="token punctuation">(</span><span class="token punctuation">:</span>name<span class="token punctuation">,</span> <span class="token punctuation">:</span>age<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-13bho3f">Par défaut, une instance est immuable :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> sara<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Sarah"</span>
+ERROR<span class="token punctuation">:</span> setfield<span class="token operator">!</span><span class="token punctuation">:</span> <span class="token keyword">immutable</span> <span class="token keyword">struct</span> of <span class="token keyword">type</span> Person cannot be changed
+Stacktrace<span class="token punctuation">:</span>
+ <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> setproperty<span class="token operator">!</span><span class="token punctuation">(</span>x<span class="token punctuation">::</span>Person<span class="token punctuation">,</span> f<span class="token punctuation">::</span>Symbol<span class="token punctuation">,</span> v<span class="token punctuation">::</span>String<span class="token punctuation">)</span>
+   @ Base <span class="token punctuation">.</span><span class="token operator">/</span>Base<span class="token punctuation">.</span>jl<span class="token punctuation">:</span><span class="token number">41</span>
+ <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> top<span class="token operator">-</span>level scope
+   @ REPL<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token number">1</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-17r5fgf">Si l’on souhaite rendre un objet <strong>mutable</strong>, il faut le préciser avec le mot-clé <code>mutable</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> mutable <span class="token keyword">struct</span> Car
+           model<span class="token punctuation">::</span>String
+           brand<span class="token punctuation">::</span>String
+       <span class="token keyword">end</span>
+
+julia<span class="token operator">></span> dino <span class="token operator">=</span> Car<span class="token punctuation">(</span><span class="token string">"Dino"</span><span class="token punctuation">,</span> <span class="token string">"Ferrari"</span><span class="token punctuation">)</span>
+Car<span class="token punctuation">(</span><span class="token string">"Dino"</span><span class="token punctuation">,</span> <span class="token string">"Ferrari"</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> dino<span class="token punctuation">.</span>brand <span class="token operator">=</span> <span class="token string">"FIAT"</span>
+<span class="token string">"FIAT"</span>
+
+julia<span class="token operator">></span> dino
+Car<span class="token punctuation">(</span><span class="token string">"Dino"</span><span class="token punctuation">,</span> <span class="token string">"FIAT"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1smaxln">Une fois un type défini, il devient possible de lui associer des méthodes, ce qui permet de créer des fonctions spécifiques :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">struct</span> Rectangle
+           width<span class="token punctuation">::</span>Int
+           height<span class="token punctuation">::</span>Int
+       <span class="token keyword">end</span>
+
+julia<span class="token operator">></span> <span class="token keyword">function</span> area<span class="token punctuation">(</span>r<span class="token punctuation">::</span>Rectangle<span class="token punctuation">)</span>
+           <span class="token keyword">return</span> r<span class="token punctuation">.</span>width <span class="token operator">*</span> r<span class="token punctuation">.</span>height
+       <span class="token keyword">end</span>
+area <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> rect <span class="token operator">=</span> Rectangle<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+Rectangle<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> area<span class="token punctuation">(</span>rect<span class="token punctuation">)</span>
+<span class="token number">50</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-wza3wh">Pour aller plus loin voir aussi :</p> <ul data-svelte-h="svelte-bahwa3"><li><a href="https://docs.julialang.org/en/v1/manual/types/#Parametric-Types" rel="nofollow">Parametric Types</a></li></ul> <h3 data-svelte-h="svelte-cyw9qg">Opérateurs booléens et opérations mathématiques</h3> <p data-svelte-h="svelte-i30lum">Il existe 3 opérateurs booléens dans Julia</p> <ul data-svelte-h="svelte-h1lh9w"><li><code>!</code> : NOT</li> <li><code>||</code> : OR</li> <li><code>&amp;&amp;</code> : AND</li></ul> <p data-svelte-h="svelte-lyq69d">Les opérateurs arithmétiques permettent d’effectuer les opérations mathématiques de base sur les nombres :</p> <ul data-svelte-h="svelte-1ut3oqn"><li><code>+</code> : addition</li> <li><code>-</code> : soustraction</li> <li><code>^</code> : puissance</li> <li><code>*</code> : multiplication</li> <li><code>/</code> : division</li> <li><code>\</code> : division inverse (<code>1\2 == 2/1 # true</code>)</li> <li><code>%</code> : modulo</li></ul> <p data-svelte-h="svelte-qu81l5">Avec Julia, l’ordre d’évaluation des opérateurs suit les conventions mathématiques (<em>PEMDAS</em>).</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">2</span><span class="token operator">+</span><span class="token number">2</span><span class="token operator">^</span><span class="token number">3</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">/</span><span class="token number">2</span>
+<span class="token number">11.0</span>
+
+julia<span class="token operator">></span> <span class="token number">7</span><span class="token operator">%</span><span class="token number">3</span>
+<span class="token number">1</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1ujwart">Quant aux <em>Shorthand operators</em>, ils combinent une opération et une affectation.</p> <ul data-svelte-h="svelte-1x46wre"><li><code>+=</code> : addition</li> <li><code>-=</code> : soustraction</li> <li><code>^=</code> : puissance</li> <li><code>*=</code> : multiplication</li> <li><code>/=</code> : division</li> <li><code>\=</code> : division inverse</li> <li><code>%=</code> : modulo</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> x <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token number">1</span>
+
+julia<span class="token operator">></span> x <span class="token operator">+=</span> <span class="token number">2</span>  <span class="token comment"># correspond à x = x + 2</span>
+<span class="token number">3</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-18yi1i3">Julia permet enfin de comparer des valeurs. Ces opérations retournent toujours un booléen.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1hry4d4"><strong>Egalité</strong> :</p> <ul data-svelte-h="svelte-1lh8erp"><li><code>==</code> : égalité</li> <li><code>===</code> : égalité stricte</li> <li><code>!=</code> : inégalité</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token comment"># égalité</span>
+julia<span class="token operator">></span> x <span class="token operator">==</span> <span class="token number">1</span>
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> x <span class="token operator">==</span> <span class="token number">1.0</span>
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> isequal<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token boolean">true</span>
+
+<span class="token comment"># égalité stricte</span>
+julia<span class="token operator">></span> x <span class="token operator">===</span> <span class="token number">1</span>
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> x <span class="token operator">===</span> <span class="token number">1.0</span>
+<span class="token boolean">false</span>
+
+<span class="token comment"># inégalité</span>
+julia<span class="token operator">></span> x <span class="token operator">!=</span> y
+<span class="token boolean">true</span>
+
+<span class="token comment"># Not a number</span>
+julia<span class="token operator">></span> isnan<span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> isnan<span class="token punctuation">(</span><span class="token char">'A'</span><span class="token punctuation">)</span>
+ERROR<span class="token punctuation">:</span> MethodError<span class="token punctuation">:</span> no method matching isnan<span class="token punctuation">(</span><span class="token punctuation">::</span>Char<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-kjn4oc"><strong>Plus grand que</strong></p> <ul data-svelte-h="svelte-wndq0"><li><code>&gt;</code> : plus grand</li> <li><code>&gt;=</code>  : plus grand ou égal</li></ul> <p data-svelte-h="svelte-pln6am"><strong>Plus petit que</strong></p> <ul data-svelte-h="svelte-fn2b9s"><li><code>&lt;</code> : plus petit</li> <li><code>&lt;=</code> : plus petit ou égal</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> x <span class="token operator">&lt;=</span> y <span class="token operator">&lt;=</span> z
+<span class="token boolean">true</span>
+</code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-18raytb">Les fonctions</h3> <p data-svelte-h="svelte-r8yv1y">Une fonction associe la valeur d’un ou plusieurs arguments à une ou plusieurs valeurs de sortie. Une fonction Julia est déclarée ainsi :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">function</span> my_function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+           <span class="token keyword">return</span> <span class="token keyword">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span>
+       <span class="token keyword">end</span>
+my_function <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> my_function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+Hello World<span class="token operator">!</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-ovf74z">Il existe également une syntaxe compacte :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> greetings<span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">println</span><span class="token punctuation">(</span><span class="token string">"Greetings "</span><span class="token punctuation">,</span> name<span class="token punctuation">)</span>
+greetings <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> greetings<span class="token punctuation">(</span><span class="token string">"Space Captain"</span><span class="token punctuation">)</span>
+Greetings Space Captain</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-72bnkv">Bien évidemment, il est possible de préciser les types :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">function</span> multiply_numbers<span class="token punctuation">(</span>x<span class="token punctuation">::</span>Int64<span class="token punctuation">,</span> y<span class="token punctuation">::</span>Int64<span class="token punctuation">)</span>
+           <span class="token keyword">return</span> x<span class="token operator">*</span>y
+       <span class="token keyword">end</span>
+multiply_numbers <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> multiply_numbers<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+<span class="token number">8</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-11wg423">Les types permettent de définir différentes méthodes, et donc d’induire des comportements différents au regard de la nature des arguments :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">function</span> multiply_numbers<span class="token punctuation">(</span>x<span class="token punctuation">::</span>Float64<span class="token punctuation">,</span> y<span class="token punctuation">::</span>Float64<span class="token punctuation">)</span>
+           <span class="token keyword">return</span> x<span class="token operator">*</span>y
+       <span class="token keyword">end</span>
+multiply_numbers <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">2</span> methods<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1wld5az">Une fonction peut également retourner plusieurs valeurs. Dans ce cas, pour accéder aux différentes valeurs, plusieurs options s’offrent à nous, soit :</p> <ul data-svelte-h="svelte-154nm2s"><li>associer une variable à chaque valeur ;</li> <li>associer une unique variable au résultat de la fonction et accéder aux valeurs avec <code>[]</code>, <code>first()</code> et <code>last()</code> par exemple.</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">function</span> my_math<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+           add <span class="token operator">=</span> x <span class="token operator">+</span> y
+           sub <span class="token operator">=</span> x <span class="token operator">-</span> y
+           <span class="token keyword">return</span> add<span class="token punctuation">,</span> sub
+       <span class="token keyword">end</span>
+my_math <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> my_math<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> output1<span class="token punctuation">,</span> output2 <span class="token operator">=</span> my_math<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> output2
+<span class="token number">1</span>
+
+julia<span class="token operator">></span> output <span class="token operator">=</span> my_math<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> output<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token number">5</span>
+
+julia<span class="token operator">></span> last<span class="token punctuation">(</span>output<span class="token punctuation">)</span>
+<span class="token number">1</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-5gjpef">Les fonctions Julia acceptent également des mots-clés comme arguments, ils sont séparés des arguments par un point-virgule (<code>;</code>). Notons qu’arguments et mots-clés peuvent disposer de valeurs par défaut :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">function</span> logarithm<span class="token punctuation">(</span>x<span class="token punctuation">;</span> base<span class="token operator">=</span><span class="token number">2.718281828459045</span><span class="token punctuation">)</span>
+           <span class="token keyword">return</span> log<span class="token punctuation">(</span>base<span class="token punctuation">,</span> x<span class="token punctuation">)</span>
+       <span class="token keyword">end</span>
+logarithm <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> logarithm<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span class="token number">2.302585092994046</span>
+
+julia<span class="token operator">></span> logarithm<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> base<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token number">3.3219280948873626</span>
+
+julia<span class="token operator">></span></code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-zv965j">Les fonctions anonymes</h4> <p data-svelte-h="svelte-tmr61h">Pour des besoins plus spécifiques, il peut être nécessaire de créer rapidement des petites instructions, par exemple pour filtrer des résultats. On utilise alors généralement des <strong>fonctions anonymes</strong>. Ces fonctions s’utilisent alors comme arguments d’autres fonctions, comme <code>map()</code> par exemple. Elles reposent sur l’opérateur <code>-&gt;</code>. À la gauche de cet opérateur, on définit les paramètres, et à droite on définit les opérations que l’on souhaite effectuer.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> map<span class="token punctuation">(</span>x <span class="token operator">-</span><span class="token operator">></span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span> <span class="token comment"># on utilise la fonction map() pour associer la fonction au tableau</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+ <span class="token number">4</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1qzrojf">Plusieurs arguments peuvent être passés,, ils faut alors les placer entre parenthèses : <code>(x, y, z) -&gt; x + y + z</code>.</p> <h4 data-svelte-h="svelte-nv35tk">Les fonctions avec un opérateur bang <code>!</code></h4> <p data-svelte-h="svelte-tknuyw">L’opérateur bang <code>!</code> est une convention Julia pour indiquer qu’une fonction modifie un ou plusieurs de ses arguments (<em>side effect</em>).</p> <h4 data-svelte-h="svelte-aaofez">Chaînage</h4> <p data-svelte-h="svelte-esz160">L’opérateur <code>|&gt;</code> permet de chaîner des opérations :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">function</span> add_two<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+           <span class="token keyword">return</span> i <span class="token operator">+</span> <span class="token number">2</span>
+       <span class="token keyword">end</span>
+add_two <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> <span class="token keyword">function</span> div_by_two<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+           <span class="token keyword">return</span> i <span class="token operator">/</span> <span class="token number">2</span>
+       <span class="token keyword">end</span>
+div_by_two <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> <span class="token number">1</span> <span class="token operator">|></span> add_two <span class="token operator">|></span> div_by_two
+<span class="token number">1.5</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-e7akoy">Les conditions</h3> <p data-svelte-h="svelte-14u6ujy">Julia utilise les mots-clés <code>if</code>, <code>elseif</code> et <code>else</code> pour afin d’évaluer des expressions et exécuter une portion de code particulière.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> <span class="token keyword">if</span> a <span class="token operator">></span> b
+           <span class="token string">"a est plus grand que b"</span>
+       <span class="token keyword">elseif</span> a <span class="token operator">==</span> b
+           <span class="token string">"a est égal à b"</span>
+       <span class="token keyword">else</span>
+           <span class="token string">"a est plus petit que b"</span>
+       <span class="token keyword">end</span>
+<span class="token string">"a est plus petit que b"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-kq7uof">Il est aussi possible d’utiliser une syntaxe simplifiée pour les évaluations simples avec l’opérateur ternaire <code>?</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> x <span class="token operator">==</span> y <span class="token punctuation">?</span> <span class="token string">"x = y "</span> <span class="token punctuation">:</span> <span class="token string">"x ≠ y"</span>
+<span class="token string">"x ≠ y"</span>
+
+julia<span class="token operator">></span> x <span class="token operator">&lt;</span> y <span class="token punctuation">?</span> <span class="token string">"x &lt; y"</span> <span class="token punctuation">:</span> <span class="token string">"x > y"</span>
+<span class="token string">"x &lt; y"</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-1iep1dx">Les boucles</h3> <h4 data-svelte-h="svelte-xdvwt7">For</h4> <p data-svelte-h="svelte-1cq3g7q">Les boucles <code>for</code> permettent d’itérer des opérations pour chaque élément d’une séquence.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span>
+           <span class="token keyword">println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+       <span class="token keyword">end</span>
+<span class="token number">1</span>
+<span class="token number">2</span>
+<span class="token number">3</span></code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-1mq16kd">While</h4> <p data-svelte-h="svelte-1nir522">La boucle <code>while</code> est un peu à mi-chemin entre les conditions <code>if</code> et la boucle <code>for</code>. Tant qu’une condition n’est pas remplie, la boucle <code>while</code> continue ses itérations.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> x <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token number">0</span>
+
+julia<span class="token operator">></span> <span class="token keyword">while</span> x <span class="token operator">&lt;</span> <span class="token number">6</span>
+           <span class="token keyword">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment"># on imprime x</span>
+           <span class="token keyword">global</span> x <span class="token operator">+=</span> <span class="token number">2</span> <span class="token comment"># on rajoute + 2 à la variable globale x</span>
+       <span class="token keyword">end</span>
+<span class="token number">0</span>
+<span class="token number">2</span>
+<span class="token number">4</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-oeccqw">Les types simples</h2> <h3 data-svelte-h="svelte-1lr0syn">Les chaînes de caractères</h3> <p data-svelte-h="svelte-m0hjua">Les caractères sont placés entre guillemets simples et il est possible de coder un caractère sous la forme d’un entier</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> c <span class="token operator">=</span> <span class="token char">'a'</span>
+<span class="token char">'a'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0061</span> <span class="token punctuation">(</span>category Ll<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> lowercase<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> c <span class="token operator">=</span> Int<span class="token punctuation">(</span>c<span class="token punctuation">)</span> 
+<span class="token number">97</span>
+
+julia<span class="token operator">></span> Char<span class="token punctuation">(</span><span class="token number">97</span><span class="token punctuation">)</span> 
+<span class="token char">'a'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0061</span> <span class="token punctuation">(</span>category Ll<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> lowercase<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-dg54vw">Il est donc possible d’effectuer des comparaisons ou des opérations arithmétiques.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token char">'A'</span> <span class="token operator">&lt;</span> <span class="token char">'a'</span> 
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> <span class="token char">'A'</span> <span class="token operator">+</span> <span class="token number">1</span> 
+<span class="token char">'B'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0042</span> <span class="token punctuation">(</span>category Lu<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> uppercase<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-4vem3c">Les chaînes de caractères sont placées entre guillemets doubles, ou triple s’il y a des guillemets doubles dedans.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> str <span class="token operator">=</span> <span class="token string">"Hello World!"</span>
+<span class="token string">"Hello World!"</span>
+
+
+julia<span class="token operator">></span> str <span class="token operator">=</span> <span class="token string">"""Victore Hugo a prononcé la phrase "Ce gouvernement, je le caractérise d'un mot : la police partout, la justice nulle part" le 17 juillet 1851."""</span>
+<span class="token string">"Victore Hugo a prononcé la phrase "Ce gouvernement, je le caractérise d'un mot : la police partout, la justice nulle part" le 17 juillet 1851."</span>
+<span class="token operator">=</span><span class="token comment">#</span>
+
+julia<span class="token operator">></span> typeof<span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+String</code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-1qn08jh">Opérations sur les <code>Strings</code></h4> <p data-svelte-h="svelte-70t80p">Il est possible d’itérer sur une chaine de caractères.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">for</span> c <span class="token keyword">in</span> <span class="token string">"Hello"</span>
+           <span class="token keyword">println</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+       <span class="token keyword">end</span>
+H
+e
+l
+l
+o</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-139jhai">De la même manière, il est possible de mesurer la longueur d’une chaîne avec les fonctions <code>length()</code> et <code>lastindex()</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> str <span class="token operator">=</span> <span class="token string">"Bodø est une ville norvégienne située dans le comté de Nordland"</span>
+<span class="token string">"Bodø est une ville norvégienne située dans le comté de Nordland"</span>
+
+julia<span class="token operator">></span> length<span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+<span class="token number">63</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1cdt8o2">Attention cependant à l’encodage des caractères, <code>length()</code> et <code>lastindex()</code> ne retournent pas toujours le même résultat.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> lastindex<span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+<span class="token number">67</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1efpwyh">La concaténation s’effectue avec l’opérateur <code>*</code> ou la fonction <code>join()</code>, et l’interpolation avec <code>$</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token string">"Hello"</span><span class="token operator">*</span><span class="token string">" "</span><span class="token operator">*</span><span class="token string">"World"</span><span class="token operator">*</span><span class="token string">"!"</span>
+<span class="token string">"Hello World!"</span>
+
+julia<span class="token operator">></span> jours <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"lundi"</span><span class="token punctuation">,</span> <span class="token string">"mardi"</span><span class="token punctuation">,</span> <span class="token string">"mercredi"</span><span class="token punctuation">,</span> <span class="token string">"jeudi"</span><span class="token punctuation">,</span> <span class="token string">"vendredi"</span><span class="token punctuation">,</span> <span class="token string">"samedi"</span><span class="token punctuation">,</span> <span class="token string">"dimanche"</span><span class="token punctuation">]</span>
+<span class="token number">7</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"lundi"</span>
+ <span class="token string">"mardi"</span>
+ <span class="token string">"mercredi"</span>
+ <span class="token string">"jeudi"</span>
+ <span class="token string">"vendredi"</span>
+ <span class="token string">"samedi"</span>
+ <span class="token string">"dimanche"</span>
+
+julia<span class="token operator">></span> join<span class="token punctuation">(</span>jours<span class="token punctuation">,</span> <span class="token string">", "</span><span class="token punctuation">,</span> <span class="token string">" et "</span><span class="token punctuation">)</span>
+<span class="token string">"lundi, mardi, mercredi, jeudi, vendredi, samedi et dimanche"</span>
+
+
+julia<span class="token operator">></span> surname<span class="token punctuation">,</span> forename <span class="token operator">=</span> <span class="token string">"Hugo"</span><span class="token punctuation">,</span> <span class="token string">"Victor"</span>
+<span class="token punctuation">(</span><span class="token string">"Hugo"</span><span class="token punctuation">,</span> <span class="token string">"Victor"</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> fullname <span class="token operator">=</span> <span class="token string">"$forename $surname"</span>
+<span class="token string">"Victor Hugo"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-ws01mw">Les <strong>occurrences</strong> de caractères ou de chaîne de caractères peuvent être recherchées.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> findfirst<span class="token punctuation">(</span><span class="token char">'l'</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">)</span>
+<span class="token number">3</span>
+
+julia<span class="token operator">></span> findlast<span class="token punctuation">(</span><span class="token char">'l'</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">)</span>
+<span class="token number">10</span>
+
+julia<span class="token operator">></span> findprev<span class="token punctuation">(</span><span class="token char">'l'</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span> 
+<span class="token number">4</span>
+
+julia<span class="token operator">></span> findnext<span class="token punctuation">(</span><span class="token char">'l'</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token number">10</span>
+
+julia<span class="token operator">></span> findall<span class="token punctuation">(</span><span class="token char">'l'</span><span class="token punctuation">,</span> <span class="token string">"Hello World"</span><span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+  <span class="token number">3</span>
+  <span class="token number">4</span>
+ <span class="token number">10</span>
+
+julia<span class="token operator">></span> occursin<span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">,</span> <span class="token string">"Hello world!"</span><span class="token punctuation">)</span> 
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> occursin<span class="token punctuation">(</span><span class="token string">"Goodbye"</span><span class="token punctuation">,</span> <span class="token string">"Hello world!"</span><span class="token punctuation">)</span>
+<span class="token boolean">false</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1eq5p0x">Julia prend aussi en charge les <strong>expressions régulières</strong> (<em>RegEx</em>)</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> str <span class="token operator">=</span> <span class="token string">"Hello World!"</span>
+<span class="token string">"Hello World!"</span>
+
+julia<span class="token operator">></span> r <span class="token operator">=</span> <span class="token regex">r"l"</span>
+<span class="token regex">r"l"</span>
+
+julia<span class="token operator">></span> typeof<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+Regex
+
+julia<span class="token operator">></span> occursin<span class="token punctuation">(</span>r<span class="token punctuation">,</span> str<span class="token punctuation">)</span>
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> match<span class="token punctuation">(</span>r<span class="token punctuation">,</span> str<span class="token punctuation">)</span>
+RegexMatch<span class="token punctuation">(</span><span class="token string">"l"</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> m <span class="token operator">=</span> match<span class="token punctuation">(</span><span class="token regex">r"[0-9]"</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span> <span class="token comment"># si aucun match retour "nothing"</span>
+
+julia<span class="token operator">></span>  <span class="token keyword">if</span> m <span class="token operator">===</span> nothing
+            <span class="token keyword">return</span> <span class="token string">"no match"</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span> <span class="token string">"match"</span>
+        <span class="token keyword">end</span>
+<span class="token string">"no match"</span>
+
+julia<span class="token operator">></span> m <span class="token operator">=</span> match<span class="token punctuation">(</span><span class="token regex">r"(ll).*(l)"</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span>
+RegexMatch<span class="token punctuation">(</span><span class="token string">"llo Worl"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">=</span><span class="token string">"ll"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">=</span><span class="token string">"l"</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">.</span>match 
+<span class="token string">"llo Worl"</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">.</span>captures
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Union<span class="token punctuation">&#123;</span>Nothing<span class="token punctuation">,</span> SubString<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"ll"</span>
+ <span class="token string">"l"</span>
+
+julia<span class="token operator">></span> m <span class="token operator">=</span> match<span class="token punctuation">(</span><span class="token regex">r"(?d+):(?d+)"</span><span class="token punctuation">,</span><span class="token string">"12:45"</span><span class="token punctuation">)</span>
+RegexMatch<span class="token punctuation">(</span><span class="token string">"12:45"</span><span class="token punctuation">,</span> hour<span class="token operator">=</span><span class="token string">"12"</span><span class="token punctuation">,</span> minute<span class="token operator">=</span><span class="token string">"45"</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">[</span><span class="token punctuation">:</span>minute<span class="token punctuation">]</span>
+<span class="token string">"45"</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token string">"45"</span>
+
+julia<span class="token operator">></span> m <span class="token operator">=</span> eachmatch<span class="token punctuation">(</span>r<span class="token punctuation">,</span> str<span class="token punctuation">)</span>
+Base<span class="token punctuation">.</span>RegexMatchIterator<span class="token punctuation">(</span><span class="token regex">r"l"</span><span class="token punctuation">,</span> <span class="token string">"Hello World!"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> collect<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>RegexMatch<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ RegexMatch<span class="token punctuation">(</span><span class="token string">"l"</span><span class="token punctuation">)</span>
+ RegexMatch<span class="token punctuation">(</span><span class="token string">"l"</span><span class="token punctuation">)</span>
+ RegexMatch<span class="token punctuation">(</span><span class="token string">"l"</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> <span class="token punctuation">[</span>m<span class="token punctuation">.</span>match <span class="token keyword">for</span> m <span class="token operator">=</span> eachmatch<span class="token punctuation">(</span>r<span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>SubString<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"l"</span>
+ <span class="token string">"l"</span>
+ <span class="token string">"l"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-7t4ey4">Enfin, toutes les opérations classiques sur les <em>substrings</em> sont possibles.</p> <ul data-svelte-h="svelte-73ehrp"><li>pour les extraire</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> str <span class="token operator">=</span> <span class="token string">"Hello World!"</span>
+<span class="token string">"Hello World!"</span>
+
+julia<span class="token operator">></span> str<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token char">'e'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0065</span> <span class="token punctuation">(</span>category Ll<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> lowercase<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> str<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token string">"Hello"</span>
+
+julia<span class="token operator">></span> str<span class="token punctuation">[</span><span class="token keyword">begin</span><span class="token punctuation">:</span><span class="token keyword">end</span><span class="token operator">-</span><span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token string">"Hello "</span>
+
+julia<span class="token operator">></span> str<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token char">'H'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0048</span> <span class="token punctuation">(</span>category Lu<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> uppercase<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> str<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token string">"H"</span>
+
+julia<span class="token operator">></span> SubString<span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token string">"Hello"</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-1yta3hj"><li>pour savoir si une chaîne contient (<code>contains()</code>), commence (<code>startswith()</code>) ou se termine (<code>endswith()</code>) par telle expression.</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> str <span class="token operator">=</span> <span class="token string">"Hello World"</span>
+<span class="token string">"Hello World"</span>
+
+julia<span class="token operator">></span> contains<span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">)</span>
+<span class="token boolean">true</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-x5i2sg"><li>pour remplacer un segment</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> replace<span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token string">"Hello"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"Goodbye"</span><span class="token punctuation">)</span>
+<span class="token string">"Goodbye World!"</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-1azccmo"><li>pour les tokeniser (<code>split()</code>)</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> split<span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>SubString<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"Goodbye"</span>
+ <span class="token string">"World"</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-rw295r"><li><p>pour les transformer <code>lowercase()</code>, <code>uppercase()</code>, <code>titlecase()</code>, <code>lowercasefirst()</code>, etc.</p></li> <li><p>ou encore pour les convertir</p></li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> n <span class="token operator">=</span> <span class="token number">123</span>
+<span class="token number">123</span>
+
+julia<span class="token operator">></span> string<span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token comment"># de nombre vers string</span>
+<span class="token string">"123"</span>
+
+julia<span class="token operator">></span> parse<span class="token punctuation">(</span>Int64<span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span> <span class="token comment"># ou de string vers nombre</span>
+<span class="token number">123</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-1jlguch">Range</h3> <p data-svelte-h="svelte-15flp1r">Le type <code>UnitRange</code> correspond à un intervalle.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> r <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">10</span>
+<span class="token number">1</span><span class="token punctuation">:</span><span class="token number">10</span>
+
+julia<span class="token operator">></span> typeof<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+UnitRange<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1kvs2if">Pour récupérer les valeurs de cet intervalle on peut utiliser une boucle, ou la fonction <code>collect()</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> collect<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+<span class="token number">10</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+  <span class="token number">1</span>
+  <span class="token number">2</span>
+  <span class="token number">3</span>
+  <span class="token number">4</span>
+  <span class="token number">5</span>
+  <span class="token number">6</span>
+  <span class="token number">7</span>
+  <span class="token number">8</span>
+  <span class="token number">9</span>
+ <span class="token number">10</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-qx9tet">Il est aussi possible de modifier le pas d’un intervalle avec la syntaxe <code>start:step:stop</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">ulia<span class="token operator">></span> r <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0.5</span><span class="token punctuation">:</span><span class="token number">3</span>
+<span class="token number">1.0</span><span class="token punctuation">:</span><span class="token number">0.5</span><span class="token punctuation">:</span><span class="token number">3.0</span>
+
+julia<span class="token operator">></span> collect<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+<span class="token number">5</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1.0</span>
+ <span class="token number">1.5</span>
+ <span class="token number">2.0</span>
+ <span class="token number">2.5</span>
+ <span class="token number">3.0</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-tqktwd">Symbols</h3> <p data-svelte-h="svelte-kgkx94">@todo</p> <h2 data-svelte-h="svelte-1occgts">Data structures</h2> <h3 data-svelte-h="svelte-1rqr3z5">Paires et dictionnaires</h3> <p data-svelte-h="svelte-1nj5ho5"><a href="https://docs.julialang.org/en/v1/base/collections/#Dictionaries" rel="nofollow">Documentation Julia</a></p> <p data-svelte-h="svelte-yn9jvr">Une paire est constituée de deux objets : une clé sa une valeur.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> p <span class="token operator">=</span> <span class="token string">"key"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"value"</span> <span class="token comment"># ou symbole pour la clé  :key => "value"</span>
+<span class="token string">"key"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"value"</span>
+
+julia<span class="token operator">></span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token string">"key"</span>
+
+julia<span class="token operator">></span> p<span class="token punctuation">.</span>first
+<span class="token string">"key"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-qalfy4">Un dictionnaire est constitué d’une ou plusieurs paires, ils sont très commodes pour retrouver la valeur attachée à une clé.</p> <p data-svelte-h="svelte-1d488fb">Ils peuvent être déclaré soit à partir d’un vecteur <code>tuple</code>s  soit directement à partir de paires</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> Dict<span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>
+Dict<span class="token punctuation">&#123;</span>String<span class="token punctuation">,</span> Int64<span class="token punctuation">&#125;</span> with <span class="token number">2</span> entries<span class="token punctuation">:</span>
+  <span class="token string">"B"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">2</span>
+  <span class="token string">"A"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span>
+
+julia<span class="token operator">></span> Dict<span class="token punctuation">(</span> <span class="token string">"A"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"B"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">2</span><span class="token punctuation">)</span>
+Dict<span class="token punctuation">&#123;</span>String<span class="token punctuation">,</span> Int64<span class="token punctuation">&#125;</span> with <span class="token number">2</span> entries<span class="token punctuation">:</span>
+  <span class="token string">"B"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">2</span>
+  <span class="token string">"A"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span>
+
+<span class="token comment"># il est possible de typer les clés ou les valeurs</span>
+julia<span class="token operator">></span> d <span class="token operator">=</span> Dict<span class="token punctuation">&#123;</span>String<span class="token punctuation">,</span> Integer<span class="token punctuation">&#125;</span><span class="token punctuation">(</span> <span class="token string">"A"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"B"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"C"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"Hello World"</span><span class="token punctuation">)</span>
+ERROR<span class="token punctuation">:</span> MethodError<span class="token punctuation">:</span> Cannot <span class="token string">&#96;convert&#96;</span> an object of <span class="token keyword">type</span> String to an object of <span class="token keyword">type</span> Integer</code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-h96gno">Opérations sur les clés/valeurs</h4> <ul data-svelte-h="svelte-5qv0cb"><li>récupérer les clés ou les valeurs avec <code>keys()</code> et <code>values()</code>, ou tester la présence d’une clé avec <code>haskey()</code></li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> d <span class="token operator">=</span> Dict<span class="token punctuation">&#123;</span>Symbol<span class="token punctuation">,</span> Any<span class="token punctuation">&#125;</span><span class="token punctuation">(</span>
+         <span class="token punctuation">:</span>hello <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"world"</span><span class="token punctuation">,</span>
+         <span class="token punctuation">:</span>adios <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"Amigos"</span>
+       <span class="token punctuation">)</span>
+Dict<span class="token punctuation">&#123;</span>Symbol<span class="token punctuation">,</span> Any<span class="token punctuation">&#125;</span> with <span class="token number">2</span> entries<span class="token punctuation">:</span>
+  <span class="token punctuation">:</span>hello <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"world"</span>
+  <span class="token punctuation">:</span>adios <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"Amigos"</span>
+
+julia<span class="token operator">></span> keys<span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+KeySet <span class="token keyword">for</span> a Dict<span class="token punctuation">&#123;</span>Symbol<span class="token punctuation">,</span> Any<span class="token punctuation">&#125;</span> with <span class="token number">2</span> entries<span class="token punctuation">.</span> Keys<span class="token punctuation">:</span>
+  <span class="token punctuation">:</span>hello
+  <span class="token punctuation">:</span>adios
+
+julia<span class="token operator">></span> values<span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+ValueIterator <span class="token keyword">for</span> a Dict<span class="token punctuation">&#123;</span>Symbol<span class="token punctuation">,</span> Any<span class="token punctuation">&#125;</span> with <span class="token number">2</span> entries<span class="token punctuation">.</span> Values<span class="token punctuation">:</span>
+  <span class="token string">"world"</span>
+  <span class="token string">"Amigos"</span>
+
+julia<span class="token operator">></span> haskey<span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token string">"salut"</span><span class="token punctuation">)</span>
+<span class="token boolean">false</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-vx390v"><li>créer un tableau à partir de la liste des clés / valeurs avec <code>collect()</code></li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> collect<span class="token punctuation">(</span>values<span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Any<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"world"</span>
+ <span class="token string">"Amigos"</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-khk42h"><li>récupérer la valeur d’une clé avec <code>get</code> ou en appelant la <code>key</code> dans l’opérateur <code>[]</code>.</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> get<span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token punctuation">:</span>hello<span class="token punctuation">,</span> <span class="token string">"pas de clé :hello"</span><span class="token punctuation">)</span>
+<span class="token string">"world"</span>
+
+julia<span class="token operator">></span> get<span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token string">"hello"</span><span class="token punctuation">,</span> <span class="token string">"pas de clé 'hello'"</span><span class="token punctuation">)</span> <span class="token comment"># cherche une clé de type String</span>
+<span class="token string">"pas de clé 'hello'"</span>
+
+julia<span class="token operator">></span> d<span class="token punctuation">[</span><span class="token punctuation">:</span>hello<span class="token punctuation">]</span>
+<span class="token string">"world"</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-1du4dm2"><li>amender un dictionnaire avec <code>delete!()</code> ou <code>pop!()</code></li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> delete<span class="token operator">!</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token punctuation">:</span>adios<span class="token punctuation">)</span>
+Dict<span class="token punctuation">&#123;</span>Symbol<span class="token punctuation">,</span> Any<span class="token punctuation">&#125;</span> with <span class="token number">1</span> entry<span class="token punctuation">:</span>
+  <span class="token punctuation">:</span>hello <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"world"</span>
+<span class="token comment"># si la clé n'existe pas, le dictionnaire n'est pas modifié.</span>
+
+julia<span class="token operator">></span> pop<span class="token operator">!</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token punctuation">:</span>hello<span class="token punctuation">)</span>
+<span class="token string">"world"</span>
+
+<span class="token comment"># pop!() retourne une erreur si la clé n'est pas trouvée...</span>
+julia<span class="token operator">></span> pop<span class="token operator">!</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token punctuation">:</span>hello<span class="token punctuation">)</span> 
+ERROR<span class="token punctuation">:</span> KeyError<span class="token punctuation">:</span> key <span class="token punctuation">:</span>hello not found
+
+<span class="token comment"># … ou une valeur par défaut si elle est précisée</span>
+julia<span class="token operator">></span> pop<span class="token operator">!</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token punctuation">:</span>hola<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token number">0</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-1h6xgar"><li>fusionner des dictionnaires avec <code>merge()</code> (voir aussi <code>merge!()</code> et <code>mergewith()</code>.
+)</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a <span class="token operator">=</span> Dict<span class="token punctuation">(</span><span class="token string">"foo"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token string">"bar"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">42.0</span><span class="token punctuation">)</span>
+Dict<span class="token punctuation">&#123;</span>String<span class="token punctuation">,</span> Float64<span class="token punctuation">&#125;</span> with <span class="token number">2</span> entries<span class="token punctuation">:</span>
+  <span class="token string">"bar"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">42.0</span>
+  <span class="token string">"foo"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">0.0</span>
+
+julia<span class="token operator">></span> b <span class="token operator">=</span> Dict<span class="token punctuation">(</span><span class="token string">"baz"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token string">"bar"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">4711</span><span class="token punctuation">)</span>
+Dict<span class="token punctuation">&#123;</span>String<span class="token punctuation">,</span> Int64<span class="token punctuation">&#125;</span> with <span class="token number">2</span> entries<span class="token punctuation">:</span>
+  <span class="token string">"bar"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">4711</span>
+  <span class="token string">"baz"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">17</span>
+
+julia<span class="token operator">></span> merge<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+Dict<span class="token punctuation">&#123;</span>String<span class="token punctuation">,</span> Float64<span class="token punctuation">&#125;</span> with <span class="token number">3</span> entries<span class="token punctuation">:</span>
+  <span class="token string">"bar"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">4711.0</span> <span class="token comment"># la valeur du second remplace celle du premier</span>
+  <span class="token string">"baz"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">17.0</span>
+  <span class="token string">"foo"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">0.0</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1ij46dj">Avec <code>merge!()</code>,il faut parfois ajouter les types pour résoudre les problèmes de fusion (<code>merge()</code> (sans!) ne semble pas impactée).</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> d <span class="token operator">=</span> Dict<span class="token punctuation">(</span>
+  <span class="token punctuation">:</span>title <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"myTitle"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">:</span>date <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"2024-01-01"</span>
+<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> c <span class="token operator">=</span> Dict<span class="token punctuation">(</span>
+  <span class="token punctuation">:</span>files <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span>
+    <span class="token string">"file1.text"</span><span class="token punctuation">,</span>
+    <span class="token string">"file2.text"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> merge<span class="token operator">!</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+ERROR<span class="token punctuation">:</span> MethodError<span class="token punctuation">:</span> Cannot <span class="token string">&#96;convert&#96;</span> an object of <span class="token keyword">type</span> Vector<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span> to an object of <span class="token keyword">type</span> String
+
+julia<span class="token operator">></span> d <span class="token operator">=</span> Dict<span class="token punctuation">&#123;</span>Symbol<span class="token punctuation">,</span> Any<span class="token punctuation">&#125;</span><span class="token punctuation">(</span> 
+  <span class="token punctuation">:</span>title <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"myTitle"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">:</span>date <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"2024-01-01"</span>
+<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-zhp5rm">Les tableaux</h3> <p data-svelte-h="svelte-1ww7vog"><a href="https://docs.julialang.org/en/v1/manual/arrays/" rel="nofollow">Documentation Julia</a></p> <p data-svelte-h="svelte-62l9a0">Un tableau, ou <strong>array</strong>, est une séquence d’objets ou de valeurs. Généralement un <em>array</em> contient un type de données, mais ce n’est pas une obligation.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token char">'a'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token char">'α'</span><span class="token punctuation">,</span> <span class="token char">'β'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Any<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+  <span class="token char">'a'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0061</span> <span class="token punctuation">(</span>category Ll<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> lowercase<span class="token punctuation">)</span>
+  <span class="token punctuation">[</span><span class="token char">'α'</span><span class="token punctuation">,</span> <span class="token char">'β'</span><span class="token punctuation">]</span>
+
+julia<span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token comment"># une matrice</span>
+        <span class="token number">3</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token number">2</span>×<span class="token number">2</span> Matrix<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>  <span class="token number">2</span>
+ <span class="token number">3</span>  <span class="token number">4</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-z6gpd">Il existe deux types d’<em>array</em> :</p> <ul data-svelte-h="svelte-x4o7qh"><li>les vecteurs, <code>Vector{T}</code>, (une dimension) ;</li> <li>les matrices, <code>Matrix{T}</code> (deux dimensions).</li></ul> <p data-svelte-h="svelte-dh353b">Il existe plusieurs méthodes pour créer des tableaux. La première méthode est d’utiliser les constructeurs par défaut <code>Vector{T}(undef, n)</code> (construit un <code>Vector{T}</code> non initialisé de longueur <code>n</code>.) ou <code>Matrix{T}(undef, m, n)</code> (matrice non initialisée de taille <code>m</code> x <code>n</code>)</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a <span class="token operator">=</span> Vector<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">2.03e-322</span>
+ <span class="token number">6.5e-322</span>
+ <span class="token number">2.2062283473e-314</span>
+
+julia<span class="token operator">></span> a <span class="token operator">=</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token number">3</span>×<span class="token number">2</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">2.20472e-314</span>  <span class="token number">2.20472e-314</span>
+ <span class="token number">2.20472e-314</span>  <span class="token number">2.20472e-314</span>
+ <span class="token number">2.20472e-314</span>  <span class="token number">2.20472e-314</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-nicome">Julia dispose également d’alias syntaxiques pour les éléments les plus courants dans la construction de tableaux :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> v <span class="token operator">=</span> zeros<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token comment"># initialise avec des O on peut aussi passer un type zeros(Float64, 5)</span>
+<span class="token number">5</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">0.0</span>
+ <span class="token number">0.0</span>
+ <span class="token number">0.0</span>
+ <span class="token number">0.0</span>
+ <span class="token number">0.0</span>
+
+
+julia<span class="token operator">></span> m <span class="token operator">=</span> ones<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># initialise avec des 1</span>
+<span class="token number">5</span>×<span class="token number">3</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>  <span class="token number">1.0</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>  <span class="token number">1.0</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>  <span class="token number">1.0</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>  <span class="token number">1.0</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>  <span class="token number">1.0</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-19ov43c">Il est aussi possible d’instancier un <em>array</em> vide puis de la remplir avec <code>fill!()</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> m <span class="token operator">=</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">(</span>undef<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token number">2</span>×<span class="token number">2</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1.6e-322</span>    <span class="token number">2.20881e-314</span>
+ <span class="token number">2.351e-314</span>  <span class="token number">1.0e-323</span>
+
+julia<span class="token operator">></span> fill<span class="token operator">!</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token constant">π</span><span class="token punctuation">)</span>
+<span class="token number">2</span>×<span class="token number">2</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">3.14159</span>  <span class="token number">3.14159</span>
+ <span class="token number">3.14159</span>  <span class="token number">3.14159</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1af8nuc">Ou simplement en utilisant des crochets <code>[]</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> <span class="token punctuation">[</span>x<span class="token operator">*</span><span class="token number">2</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token number">4</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">2</span>
+ <span class="token number">4</span>
+ <span class="token number">6</span>
+ <span class="token number">8</span>
+
+julia<span class="token operator">></span> <span class="token punctuation">[</span>zeros<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> ones<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token number">3</span>×<span class="token number">2</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">0.0</span>  <span class="token number">1.0</span>
+ <span class="token number">0.0</span>  <span class="token number">1.0</span>
+ <span class="token number">0.0</span>  <span class="token number">1.0</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-14d2940">La concaténation peut aussi être utilisée pour créer un nouvel array (<code>cat()</code>).</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> cat<span class="token punctuation">(</span>ones<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ones<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dims<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># voir aussi hcat() (cat(…; dims=2)) et vcat() (cat(…; dims=1))</span>
+<span class="token number">3</span>×<span class="token number">2</span> Matrix<span class="token punctuation">&#123;</span>Float64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>
+ <span class="token number">1.0</span>  <span class="token number">1.0</span>
+
+julia<span class="token operator">></span> arrA <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+julia<span class="token operator">></span> arrB <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+
+julia<span class="token operator">></span> append<span class="token operator">!</span><span class="token punctuation">(</span>arrA<span class="token punctuation">,</span> arrB<span class="token punctuation">)</span> <span class="token comment"># concat arrB à la suite de arrA</span>
+<span class="token number">6</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+ <span class="token number">4</span>
+ <span class="token number">5</span>
+ <span class="token number">6</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-9vqa2y">Une fois la tableaux établit, il est possible de le parcourir. Mais préalablement, il est souvent nécessaire de connaître les caractéristiques du tableau : taille (<code>size()</code>), longueur (<code>length()</code>), dimensions (<code>ndims()</code>), type des éléments (<code>eltype()</code>)</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> v <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> m <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span>
+            <span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token number">2</span>×<span class="token number">3</span> Matrix<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>
+ <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>
+
+julia<span class="token operator">></span> size<span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> ndims<span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+<span class="token number">1</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-ta3mjc">Les valeurs dans un tableau sont indexées par des des entiers, il est donc très facile de récupérer une valeur ou un segment.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> v<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token number">2</span>
+
+julia<span class="token operator">></span> v<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token keyword">end</span><span class="token punctuation">]</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> m
+<span class="token number">2</span>×<span class="token number">3</span> Matrix<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>
+ <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token number">5</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">4</span>
+ <span class="token number">5</span>
+ <span class="token number">6</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">4</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1nci0zf">Les tableaux sont mutables, il est donc possible de réassigner une valeur ou un segment très simplement en utilisant le signe <code>=</code>, mais aussi d’ajouter des valeurs (<code>push!()</code>, <code>pushfirst!()</code>), d’en supprimer (<code>pop!()</code>, <code>popfirst!()</code> et <code>deleteat!()</code>), de le trier (<code>sort!()</code>).</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> m
+<span class="token number">2</span>×<span class="token number">3</span> Matrix<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>  <span class="token number">2</span>  <span class="token number">3</span>
+ <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>
+
+julia<span class="token operator">></span> m<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">50</span>
+<span class="token number">50</span>
+
+julia<span class="token operator">></span> m
+<span class="token number">2</span>×<span class="token number">3</span> Matrix<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>   <span class="token number">2</span>  <span class="token number">3</span>
+ <span class="token number">4</span>  <span class="token number">50</span>  <span class="token number">6</span>
+
+julia<span class="token operator">></span> arr <span class="token operator">=</span> Integer<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Integer<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> pop<span class="token operator">!</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment"># suppression d'un élément en fin de tableau</span>
+<span class="token number">3</span>
+
+julia<span class="token operator">></span> popfirst<span class="token operator">!</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token comment"># suppression d'un élément en debut tableau</span>
+<span class="token number">1</span>
+
+julia<span class="token operator">></span> arr
+<span class="token number">1</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Integer<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">2</span>
+
+julia<span class="token operator">></span> pushfirst<span class="token operator">!</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Integer<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+
+
+julia<span class="token operator">></span> push<span class="token operator">!</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Integer<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> deleteat<span class="token operator">!</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Integer<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">3</span>
+
+julia<span class="token operator">></span> sort<span class="token operator">!</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token char">'c'</span><span class="token punctuation">,</span> <span class="token char">'b'</span><span class="token punctuation">,</span> <span class="token char">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Char<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token char">'a'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0061</span> <span class="token punctuation">(</span>category Ll<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> lowercase<span class="token punctuation">)</span>
+ <span class="token char">'b'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0062</span> <span class="token punctuation">(</span>category Ll<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> lowercase<span class="token punctuation">)</span>
+ <span class="token char">'c'</span><span class="token punctuation">:</span> ASCII<span class="token operator">/</span>Unicode U<span class="token operator">+</span><span class="token number">0063</span> <span class="token punctuation">(</span>category Ll<span class="token punctuation">:</span> Letter<span class="token punctuation">,</span> lowercase<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1435j08">Il est également possible de modifier la forme d’un tableau, comme par exemple passer d’un vecteur à un matrice, à l’aide de la fonction <code>reshape()</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> v <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token number">4</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+ <span class="token number">4</span>
+
+julia<span class="token operator">></span> v2m <span class="token operator">=</span> reshape<span class="token punctuation">(</span>v<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># création d'une matrice 2x2</span>
+<span class="token number">2</span>×<span class="token number">2</span> Matrix<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>  <span class="token number">3</span>
+ <span class="token number">2</span>  <span class="token number">4</span>
+
+julia<span class="token operator">></span> m <span class="token operator">=</span> reshape<span class="token punctuation">(</span>v2m<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># création d'un vecteur à partir d'une matrice.</span>
+<span class="token number">4</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+ <span class="token number">4</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-bp3nc2">Des fonctions peuvent être appliquées à chaque élément d’un array. On utilise généralement l’opérateur <code>dot</code> (<em>broadcasting</em>).</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token operator">+</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span> <span class="token comment"># [1+4, 2+5, 3+6]  </span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">5</span>
+ <span class="token number">7</span>
+ <span class="token number">9</span>
+
+julia<span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">.</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">0</span>
+ <span class="token number">1</span>
+ <span class="token number">2</span>
+
+julia<span class="token operator">></span> extentions <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"jpg"</span><span class="token punctuation">,</span> <span class="token string">"JPG"</span><span class="token punctuation">,</span> <span class="token string">"jpeg"</span><span class="token punctuation">,</span> <span class="token string">"png"</span><span class="token punctuation">,</span> <span class="token string">"PNG"</span><span class="token punctuation">,</span> <span class="token string">"tif"</span><span class="token punctuation">,</span> <span class="token string">"tiff"</span><span class="token punctuation">]</span>
+julia<span class="token operator">></span> file <span class="token operator">=</span> <span class="token string">"picture.jpg"</span>
+julia<span class="token operator">></span> endswith<span class="token punctuation">.</span><span class="token punctuation">(</span>file<span class="token punctuation">,</span> extentions<span class="token punctuation">)</span> <span class="token comment"># retourne un vecteur de booléens</span>
+<span class="token number">7</span><span class="token operator">-</span>element BitVector<span class="token punctuation">:</span>
+ <span class="token number">1</span>
+ <span class="token number">0</span>
+ <span class="token number">0</span>
+ <span class="token number">0</span>
+ <span class="token number">0</span>
+ <span class="token number">0</span>
+ <span class="token number">0</span>
+<span class="token comment"># voir d'autres exemple dans les opérateurs de collection (in)   </span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1p7fxbc">Attention a la vectorisation avec l’opérateur <code>in</code>. Si les deux arguments sont des vecteurs de même longueur (retourne un erreur si les dimension ne correspondent pas), <code>in.(items, collection)</code> retourne un vecteur indiquant si chaque valeur de <code>items</code> est dans la valeur à la position correspondante dans <code>collection</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">in</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token operator">-</span>element BitVector<span class="token punctuation">:</span>
+ <span class="token number">0</span>
+ <span class="token number">0</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1yd1q5e">Pour obtenir un vecteur indiquant si chaque item est dans la collection, il faut envelopper la collection dans un <code>tuple</code> ou un <code>Ref()</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">in</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># ne pas oublier la virgule</span>
+<span class="token number">2</span><span class="token operator">-</span>element BitVector<span class="token punctuation">:</span>
+ <span class="token number">0</span>
+ <span class="token number">1</span>
+<span class="token comment"># ou in.([1,2], Ref([2,3]))</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-iupwz9">Produit scalaire</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+julia<span class="token operator">></span> b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+julia<span class="token operator">></span> sum<span class="token punctuation">(</span>a <span class="token punctuation">.</span><span class="token operator">*</span> b<span class="token punctuation">)</span> <span class="token comment"># (1*2 + 2*3 + 3*4)</span>
+<span class="token number">20</span>
+</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-bnuj3h">Une autre possibilité est d’utiliser la fonction <code>map()</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> map<span class="token punctuation">(</span>x <span class="token operator">-</span><span class="token operator">></span> x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token number">2</span>
+ <span class="token number">3</span>
+ <span class="token number">4</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-156x4qa">De nombreuses autres opérations sont applicables aux tableaux : jointure, appartenance, contient, sous-ensemble, etc.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+julia<span class="token operator">></span> join<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token string">","</span><span class="token punctuation">)</span>
+<span class="token string">"1,2,3"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-utmos2">Opérateurs :</p> <ul data-svelte-h="svelte-7bqbrg"><li><code>in</code> | <code>∈</code> : appartient</li> <li><code>∉</code> : n’appartient pas</li> <li><code>issubset</code> : sous-ensemble</li></ul> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">5</span>
+julia<span class="token operator">></span> <span class="token number">3</span> <span class="token keyword">in</span> a <span class="token comment"># autres notations : in(3, 1:5) ou 3 ∈ 1:5</span>
+<span class="token boolean">true</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1ekytwh">Attention avec la valeur missing…</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token number">1</span> <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> missing<span class="token punctuation">]</span>
+<span class="token boolean">true</span>
+
+julia<span class="token operator">></span> missing <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> missing<span class="token punctuation">]</span>
+missing</code><!-- HTML_TAG_END --></pre> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> issubset<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token boolean">true</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-p8fh7j">Tuples</h3> <p data-svelte-h="svelte-1shuzyt">Un <code>tuple</code> est assez proche d’un tableau, il correspond à une séquence de valeurs indexées par des entiers. Les valeurs sont séparées par une virgule et chacune peut disposer de son propre type. On les place généralement entre parenthèses mais ces dernières ne sont pas obligatoires. Ils se distinguent des tableaux par leur caractère <strong>immuable</strong>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> t <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> typeof<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+Tuple<span class="token punctuation">&#123;</span>Int64<span class="token punctuation">&#125;</span>
+
+julia<span class="token operator">></span> tuple<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># on peut également utiliser la fonction tuple()</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> t<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># comme pour les tableaux, les valeurs sont indexées.</span>
+<span class="token number">1</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-19d7617">Les tuples sont très utilisés pour l’affectation (ou réaffectation) de variables.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> str <span class="token operator">=</span> <span class="token string">"Hello World"</span>
+<span class="token string">"Hello World"</span>
+
+julia<span class="token operator">></span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=</span> split<span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>SubString<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"Hello"</span>
+ <span class="token string">"World"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-5c8tks">Certaines fonctions peuvent prendre un nombre variable d’arguments, reconnaissables par les <code>...</code> qui suivent le nom du paramètre. Dans ce cas, les différents arguments sont agrégés dans un tuple.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">function</span> add<span class="token punctuation">(</span>args<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+           sum<span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+       <span class="token keyword">end</span>
+add <span class="token punctuation">(</span>generic <span class="token keyword">function</span> with <span class="token number">1</span> method<span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> add<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token number">15</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-149bp22">On peut avoir recours au tuples lorsque l’on souhaite passer plusieurs arguments dans une fonction anonyme.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> map<span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> x<span class="token operator">*</span>y<span class="token operator">^</span>z<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token number">324</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-xb4fba">Un nom peut être associé a chaque valeur d’un tuple.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token char">'a'</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token char">'c'</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token char">'c'</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span>a <span class="token operator">=</span> <span class="token char">'a'</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token char">'c'</span><span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token char">'c'</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1bys8is">Une syntaxe existe également pour créer un tuple nommé à partir de variables préexistantes. Elle reprend le principe des arguments mots-clés avec les fonctions et l’emploi d’un point-virgule <code>;</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token char">'a'</span><span class="token punctuation">,</span> <span class="token char">'b'</span>
+<span class="token punctuation">(</span><span class="token char">'a'</span><span class="token punctuation">,</span> <span class="token char">'b'</span><span class="token punctuation">)</span>
+
+julia<span class="token operator">></span> t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">;</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">(</span>a <span class="token operator">=</span> <span class="token char">'a'</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token char">'b'</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1nuq3dm">Voir aussi les utilisations de <code>collect()</code> et <code>zip()</code> avec les tuples.</p> <h3 data-svelte-h="svelte-5161by">DataFrames</h3> <p data-svelte-h="svelte-1vw5yci"><a href="https://dataframes.juliadata.org/stable/" rel="nofollow">Documentation DataFrames.jl</a></p> <p data-svelte-h="svelte-1r8lodg">Il existe de nombreuses méthodes pour créer un <em>DataFrames</em>, à partir de vecteurs, de paires, de vecteurs de paires, de dictionnaires, avec des tuples de vecteurs nommés, colonne par colonne, ligne à ligne, etc.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">using</span> DataFrames
+julia<span class="token operator">></span>  DataFrame<span class="token punctuation">(</span>
+            a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span>
+            b<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"Yoda"</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">,</span> <span class="token string">"Luke"</span><span class="token punctuation">,</span> <span class="token string">"Dark Vador"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">)</span>
+<span class="token number">4</span>×<span class="token number">2</span> DataFrame
+ Row │ a      b          
+     │ Int64  String     
+─────┼───────────────────
+   <span class="token number">1</span> │     <span class="token number">1</span>  Yoda
+   <span class="token number">2</span> │     <span class="token number">2</span>  Han Solo
+   <span class="token number">3</span> │     <span class="token number">3</span>  Luke
+   <span class="token number">4</span> │     <span class="token number">4</span>  Dark Vador
+
+<span class="token comment"># avec des paires</span>
+julia<span class="token operator">></span> DataFrame<span class="token punctuation">(</span><span class="token string">"a"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"b"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">"Yoda"</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># avec un vecteur de paires</span>
+julia<span class="token operator">></span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"a"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"b"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">"Yoda"</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># avec un dictionnaire</span>
+julia<span class="token operator">></span> DataFrame<span class="token punctuation">(</span>Dict<span class="token punctuation">(</span>
+  <span class="token string">"a"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> 
+  <span class="token string">"b"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">"Yoda"</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># un tuple de vecteurs identifiés...</span>
+julia<span class="token operator">></span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"Yoda"</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># ... ou un vecteur de tuples</span>
+julia<span class="token operator">></span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token string">"Yoda"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token string">"Han Solo"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># construction colonne par colonne</span>
+julia<span class="token operator">></span> df <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">)</span>
+julia<span class="token operator">></span> df<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span> <span class="token comment"># ajout de la colonne a</span>
+julia<span class="token operator">></span> df<span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token punctuation">:</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Yoda"</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">]</span> <span class="token comment">#ajout de la colonne b (autre syntaxe)</span>
+
+<span class="token comment"># construction ligne à ligne</span>
+julia<span class="token operator">></span> df <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>a<span class="token operator">=</span>Int<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> b<span class="token operator">=</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+julia<span class="token operator">></span> push<span class="token operator">!</span><span class="token punctuation">(</span>df<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Yoda"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+julia<span class="token operator">></span> push<span class="token operator">!</span><span class="token punctuation">(</span>df<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># Il est possible d'utiliser pushfirst!() pour ajouter une ligne au début</span>
+<span class="token comment"># insert!() pour ajouter une ligne à un index donné</span>
+<span class="token comment"># append!() ou prepend!() pour ajouter des tables entières </span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1q1hi7d">Et même à partir de données tabulaires</p> <pre class="language-csv"><!-- HTML_TAG_START --><code class="language-csv"><span class="token value">#data.csv</span>
+<span class="token value">a</span><span class="token punctuation">,</span><span class="token value">b</span>
+<span class="token value">1</span><span class="token punctuation">,</span><span class="token value">"Yoda"</span>
+<span class="token value">2</span><span class="token punctuation">,</span><span class="token value">"Han Solo"</span></code><!-- HTML_TAG_END --></pre> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> <span class="token keyword">using</span> CSV
+julia<span class="token operator">></span> df <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span>CSV<span class="token punctuation">.</span>File<span class="token punctuation">(</span><span class="token string">"data.csv"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token number">2</span>×<span class="token number">2</span> DataFrame
+ Row │ a      b        
+     │ Int64  String   
+─────┼─────────────────
+   <span class="token number">1</span> │     <span class="token number">1</span>  Yoda
+   <span class="token number">2</span> │     <span class="token number">2</span>  Han Solo</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1uhip7u">Les noms des colonnes peuvent être récupérés sous la forme d’un vecteur avec la fonction <code>names()</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> names<span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"a"</span>
+ <span class="token string">"b"</span>
+
+julia<span class="token operator">></span> propertynames<span class="token punctuation">(</span>df<span class="token punctuation">)</span> <span class="token comment"># retourne les noms de colonne sous forme de symboles</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>Symbol<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token punctuation">:</span>a
+ <span class="token punctuation">:</span>b</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1v1jvrd">Cette même fonction permet de faire des recherches dans le noms de colonnes.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> names<span class="token punctuation">(</span>df<span class="token punctuation">,</span> <span class="token regex">r"a"</span><span class="token punctuation">)</span> <span class="token comment"># liste les colonnes avec RegEx</span>
+julia<span class="token operator">></span> names<span class="token punctuation">(</span>df<span class="token punctuation">,</span> Not<span class="token punctuation">(</span><span class="token punctuation">:</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># tous les noms de colonnes sauf :b</span>
+julia<span class="token operator">></span> names<span class="token punctuation">(</span>df<span class="token punctuation">,</span> Int<span class="token punctuation">)</span> <span class="token comment"># liste les colonnes en fonction du type de données</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1bvzwtt">On peut récupérer un vecteur des valeurs d’une colonne de différentes manières</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> df<span class="token punctuation">.</span>b
+julia<span class="token operator">></span> df<span class="token punctuation">.</span><span class="token string">"b"</span>
+julia<span class="token operator">></span> df<span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token punctuation">:</span>b<span class="token punctuation">]</span>
+julia<span class="token operator">></span> df<span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">]</span>
+julia<span class="token operator">></span> df<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span>b<span class="token punctuation">]</span>
+julia<span class="token operator">></span> df<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">]</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"Yoda"</span>
+ <span class="token string">"Han Solo"</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1bu7fkf">Il existe cependant une différente entre <code>df[!, :b]</code> et <code>df[:, :b]</code> : le <em>bang operator</em> <code>!</code> indique qu’une copie n’est pas réalisée. Si on change un élément du vecteur alors il sera propagé au Dataframe.</p> <blockquote data-svelte-h="svelte-1a7qy30"><p>Columns can be directly (i.e. without copying) accessed via df.col or df[!, :col]. […] Since df[!, :col] does not make a copy, changing the elements of the column vector returned by this syntax will affect the values stored in the original df. To get a copy of the column use df[:, :col]: changing the vector returned by this syntax does not change df.</p></blockquote> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">julia<span class="token operator">></span> df <span class="token operator">=</span> DataFrame<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"a"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"b"</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token string">"Yoda"</span><span class="token punctuation">,</span> <span class="token string">"Han Solo"</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+julia<span class="token operator">></span> v <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span>b<span class="token punctuation">]</span> <span class="token comment"># pas de bang, la valeur ne sera pas modifiée</span>
+<span class="token number">2</span><span class="token operator">-</span>element Vector<span class="token punctuation">&#123;</span>String<span class="token punctuation">&#125;</span><span class="token punctuation">:</span>
+ <span class="token string">"Yoda"</span>
+ <span class="token string">"Han Solo"</span>
+
+julia<span class="token operator">></span> v<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Dark Vador"</span>
+<span class="token string">"Dark Vador"</span>
+
+julia<span class="token operator">></span> df
+<span class="token number">2</span>×<span class="token number">2</span> DataFrame
+ Row │ a      b        
+     │ Int64  String   
+─────┼─────────────────
+   <span class="token number">1</span> │     <span class="token number">1</span>  Yoda
+   <span class="token number">2</span> │     <span class="token number">2</span>  Han Solo
+
+
+julia<span class="token operator">></span> v <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">,</span> <span class="token punctuation">:</span>b<span class="token punctuation">]</span> <span class="token comment"># bang opérateur</span>
+julia<span class="token operator">></span> v<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Dark Vador"</span>
+julia<span class="token operator">></span> df <span class="token comment"># utilisation de bang, la valeur est modifiée.</span>
+<span class="token number">2</span>×<span class="token number">2</span> DataFrame
+ Row │ a      b          
+     │ Int64  String     
+─────┼───────────────────
+   <span class="token number">1</span> │     <span class="token number">1</span>  Yoda
+   <span class="token number">2</span> │     <span class="token number">2</span>  Dark Vador</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-rty5g5">Voir la documentation pour travailler avec les <a href="https://dataframes.juliadata.org/stable/man/working_with_dataframes/" rel="nofollow"><em>subsets</em></a> et pour les nombreuses options de <a href="https://dataframes.juliadata.org/stable/man/sorting/" rel="nofollow">tri</a>.</p> <h1 data-svelte-h="svelte-10gv7zy">Copie</h1> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+b <span class="token operator">=</span> copy<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+c <span class="token operator">=</span> deepcopy<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">#recursif</span>
+a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">11</span>
+a
+<span class="token comment">#=
+2-element Vector&#123;Vector&#123;Int64&#125;&#125;:
+ [11, 2, 3]
+ [4, 5, 6]
+=#</span>
+
+b
+<span class="token comment">#=
+2-element Vector&#123;Vector&#123;Int64&#125;&#125;:
+ [11, 2, 3]
+ [4, 5, 6]
+=#</span>
+c
+<span class="token comment">#=
+2-element Vector&#123;Vector&#123;Int64&#125;&#125;:
+ [1, 2, 3]
+ [4, 5, 6]
+=#</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1s8pe0v">autre</h2> <p data-svelte-h="svelte-wfw5sx"><code>contains()</code> et <code>occursin()</code> sont les mêmes fonctions, mais les arguments sont inversés. <code>contains()</code> est alignée avec <code>startswith()</code> et <code>endswith()</code>.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">contains<span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">)</span> <span class="token comment"># true</span>
+occursin<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"Hello World!"</span><span class="token punctuation">)</span> <span class="token comment"># true</span>
+
+issubset<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># true</span>
+issubset<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"Hello World!"</span><span class="token punctuation">)</span> <span class="token comment"># true</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-wnve28">Les symboles LaTeX</h3> <h2 data-svelte-h="svelte-xbk9b4">Commentaires <a id="Commentaires" href=""></a></h2> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">v <span class="token operator">=</span> <span class="token number">12</span> <span class="token comment"># un commentaire de fin de ligne</span>
+<span class="token comment">#=
+    Un bloc de commentaire
+    qui peut s'etendre 
+    sur plusieurs
+    lignes
+=#</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-kh2qb0">Chainage <a id="Chainage" href=""></a></h2> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">x <span class="token operator">=</span> y <span class="token operator">=</span> z <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">#=
+  x = 1
+  y = 1
+  z = 1
+=#</span>
+
+<span class="token number">0</span><span class="token operator">&lt;</span>x<span class="token operator">&lt;</span><span class="token number">2</span> <span class="token comment"># true</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-x2z6by">Symboles LaTeX</h2> <p data-svelte-h="svelte-1594wbl">Il est possible d’utiliser les symboles LaTeX directement dans Julia.</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token comment"># \beta [+ tabulation]</span>
+β <span class="token operator">=</span> <span class="token number">10</span> </code><!-- HTML_TAG_END --></pre></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

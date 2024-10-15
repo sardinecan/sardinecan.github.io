@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">12 juin 2020</p> <h1 data-svelte-h="svelte-11wwte8">Combinaisons de paires uniques</h1> <p data-svelte-h="svelte-useign">Pour obtenir toutes les paires uniques à partir d’une séquence.</p> <pre class="language-shell"><!-- HTML_TAG_START --><code class="language-shell"><span class="token function">seq</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">"a"</span>, <span class="token string">"b"</span>, <span class="token string">"c"</span>, <span class="token string">"d"</span><span class="token punctuation">)</span>
+result <span class="token operator">=</span> 
+<span class="token builtin class-name">.</span>   a,b  a,c  a,d
+<span class="token builtin class-name">.</span>    <span class="token builtin class-name">.</span>   b,c  b,d
+<span class="token builtin class-name">.</span>    <span class="token builtin class-name">.</span>    <span class="token builtin class-name">.</span>   c,d
+<span class="token builtin class-name">.</span>    <span class="token builtin class-name">.</span>    <span class="token builtin class-name">.</span>    <span class="token builtin class-name">.</span></code><!-- HTML_TAG_END --></pre> <ul data-svelte-h="svelte-lznsoc"><li>voir aussi <a href="https://stackoverflow.com/questions/18859430/how-do-i-get-the-total-number-of-unique-pairs-of-a-set-in-the-database" rel="nofollow"><em>How do I get the total number of unique pairs of a set in the database?</em></a></li></ul> <h2 data-svelte-h="svelte-1q5msry">XQuery</h2> <pre class="language-xquery"><!-- HTML_TAG_START --><code class="language-xquery"><span class="token keyword">xquery</span> <span class="token keyword">version</span> <span class="token string">"3.1"</span> <span class="token punctuation">;</span>
+<span class="token xquery-comment comment">(:~
+ : Pairs combinations in a sequence
+ : Unique pairs in a sequence (where order is irrelevant)
+ :)</span>
+<span class="token keyword">let</span> <span class="token variable">$seq</span> <span class="token operator">:=</span> <span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token variable">$i</span> <span class="token keyword">at</span> <span class="token variable">$pos</span> <span class="token keyword">in</span> <span class="token variable">$seq</span>
+<span class="token keyword">for</span> <span class="token variable">$j</span> <span class="token keyword">in</span> <span class="token function">fn:subsequence</span><span class="token punctuation">(</span><span class="token variable">$seq</span><span class="token punctuation">,</span> <span class="token variable">$pos</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token function">fn:count</span><span class="token punctuation">(</span><span class="token variable">$seq</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span><span class="token variable">$i</span><span class="token punctuation">,</span> <span class="token variable">$j</span><span class="token punctuation">&#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>result</span><span class="token punctuation">></span></span>
+
+<span class="token xquery-comment comment">(: result :)</span>
+a<span class="token punctuation">,</span>b
+a<span class="token punctuation">,</span>c
+a<span class="token punctuation">,</span>d
+b<span class="token punctuation">,</span>c
+b<span class="token punctuation">,</span>d
+c<span class="token punctuation">,</span>d</code><!-- HTML_TAG_END --></pre></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

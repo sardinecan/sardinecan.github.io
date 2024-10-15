@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">6 octobre 2024</p> <h1 data-svelte-h="svelte-1jib942">Python</h1> <h2 data-svelte-h="svelte-o0mry4">Syntaxe</h2> <h3 data-svelte-h="svelte-13hnmtb">Variables et Types</h3> <p data-svelte-h="svelte-1bwedi6">Les variables sont créées en affectant une valeur à l’aide de l’opérateur <code>=</code>.
+Les noms de variables doivent commencer par une lettre ou un underscore (_), mais jamais par un chiffre.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">nom_variable <span class="token operator">=</span> valeur</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-bwh33o">Il n’est pas nécessaire de déclarer le type d’une variable lors de sa création. Il est détuit par Python au moment de l’affectation.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">entier <span class="token operator">=</span> <span class="token number">10</span>              <span class="token comment"># int</span>
+flottant <span class="token operator">=</span> <span class="token number">10.5</span>          <span class="token comment"># float</span>
+chaine_de_caracteres <span class="token operator">=</span> <span class="token string">"Bonjour"</span>  <span class="token comment"># str</span>
+booleen <span class="token operator">=</span> <span class="token boolean">True</span>           <span class="token comment"># bool</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-pxtsfq">On utilise la fonction <code>type(nom_variable)</code> pour connaître le type d’une variable.</p> <p data-svelte-h="svelte-1d8xbqo">Depuis <code>Python 3.XX</code>, on peut annoter les variables afin d’indiquer le type attendu, mais ces annotations n’ont aucune valeur obligatoire, elles servent juste à simplifier la lecture du code et ne sont aucunement interprétées.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">age<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">30</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-bw02p4">Opérateurs Booléens et Opérations Mathématiques</h3> <p data-svelte-h="svelte-1jaditp">Il existe 3 opérateurs booléens</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python"><span class="token keyword">not</span> a    <span class="token comment"># Négation</span>
+a <span class="token keyword">and</span> b  <span class="token comment"># ET logique</span>
+a <span class="token keyword">or</span> b   <span class="token comment"># OU logique</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-knu8uf">Les opérateurs arithmétiques en Python sont similaires à celles des autres langages, et permettent d’effectuer les opérations mathématiques de base.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">a <span class="token operator">+</span> b    <span class="token comment"># Addition</span>
+a <span class="token operator">-</span> b    <span class="token comment"># Soustraction</span>
+a <span class="token operator">*</span> b    <span class="token comment"># Multiplication</span>
+a <span class="token operator">/</span> b    <span class="token comment"># Division (résultat flottant)</span>
+a <span class="token operator">//</span> b   <span class="token comment"># Division entière</span>
+a <span class="token operator">%</span> b    <span class="token comment"># Modulo (reste de la division)</span>
+a <span class="token operator">**</span> b   <span class="token comment"># Exponentiation (puissance)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-cqdnbl">Les opérateurs de comparaison retournent toujours un booléen (<code>True</code> ou <code>False</code>).</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">a <span class="token operator">==</span> b   <span class="token comment"># Égal à</span>
+a <span class="token operator">!=</span> b   <span class="token comment"># Différent de</span>
+a <span class="token operator">></span> b    <span class="token comment"># Supérieur à</span>
+a <span class="token operator">&lt;</span> b    <span class="token comment"># Inférieur à</span>
+a <span class="token operator">>=</span> b   <span class="token comment"># Supérieur ou égal</span>
+a <span class="token operator">&lt;=</span> b   <span class="token comment"># Inférieur ou égal</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-zosau7">Les Fonctions</h3> <p data-svelte-h="svelte-1eh90tb">zLe mot-clé <code>def</code> permet de définir une fonction. Une fonction peut prendre zéro, une ou plusieurs variables en entrée et peut, ou non, retourner une valeur.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python"><span class="token keyword">def</span> <span class="token function">somme</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Commentaire expliquant la fonction
+    """</span>
+    result <span class="token operator">=</span> a <span class="token operator">+</span> b
+    <span class="token keyword">return</span> result
+
+somme<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token number">4</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-13iz7uf">Il est possible d’attribuer une valeur par défaut aux arguments d’une fonction.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python"><span class="token keyword">def</span> <span class="token function">grettings</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"world"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello "</span><span class="token punctuation">,</span> nom<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-rhhp9e">Les Conditions</h3> <p data-svelte-h="svelte-19xkwzs">Python utilise <code>if</code>, <code>elif</code> et <code>else</code> afin d’évaluer des expressions et exécuter une portion de code particulière si une conditions est vraie. Python utilise l’indentation pour définir les blocs de code (habituellement 4 espaces).</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">a <span class="token operator">=</span> <span class="token number">1</span>
+b <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token keyword">if</span> a<span class="token operator">&lt;</span>b<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"a est plus petit que b"</span><span class="token punctuation">)</span>
+<span class="token keyword">elif</span> a<span class="token operator">==</span>b<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"a est égale à b"</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"a est plus grand que b"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h3 data-svelte-h="svelte-1iep1dx">Les boucles</h3> <p data-svelte-h="svelte-1rrlukl">Les boucles permettent de répéter un bloc de code pour chaque élément d’une liste, ou jusqu’à ce qu’une condition soit remplie.</p> <h4 data-svelte-h="svelte-1mq16kd">While</h4> <p data-svelte-h="svelte-aehjqb">Répète tant que la condition est vraie</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">let i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+</code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-xdvwt7">For</h4> <p data-svelte-h="svelte-1de8pyx">Elle permet de parcourir un séquence (liste, tuple, chaîne de caractères, etc.)</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python"><span class="token keyword">for</span> element <span class="token keyword">in</span> sequence<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>let i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># Génère les entiers de 0 à 4</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-li7yci">Utiliser <code>break</code> pour sortir prématurément d’une boucle.</p> <p data-svelte-h="svelte-1nsjzfx">Utiliser <code>continue</code> pour passer à l’itération suivante sans exécuter le reste du code dans la boucle.</p> <h3 data-svelte-h="svelte-1dry62w">Les Types Simples</h3> <p data-svelte-h="svelte-14tcp4l">Les types simples incluent des types numériques (<code>int</code>, <code>float</code>), des chaînes de caractères (<code>str</code>) et des booléens (<code>bool</code>).</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">s <span class="token operator">=</span> <span class="token string">"Hello"</span>
+string <span class="token operator">=</span> <span class="token triple-quoted-string string">'''Texte
+sur
+plusieurs lignes'''</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-bee5fw">Les chaînes de caractères sont immuables, ce qui signifie qu’elles ne peuvent pas être modifiées après leur création.</p> <h3 data-svelte-h="svelte-qwztwo">Data Structures</h3> <h4 data-svelte-h="svelte-19ynzuy">Les Dictionnaires</h4> <p data-svelte-h="svelte-krm1o1">Un <code>dictionnaire</code> est une collection d’éléments sous forme de paires clé-valeur.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">mon_dictionnaire <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"cle1"</span><span class="token punctuation">:</span> <span class="token string">"valeur1"</span><span class="token punctuation">,</span>
+    <span class="token string">"cle2"</span><span class="token punctuation">:</span> <span class="token string">"valeur2"</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment"># Accéder à une valeur</span>
+valeur <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">[</span><span class="token string">"cle1"</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Ajouter ou modifier une clé-valeur</span>
+mon_dictionnaire<span class="token punctuation">[</span><span class="token string">"cle3"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"valeur3"</span>
+
+<span class="token comment"># Supprimer une clé</span>
+<span class="token keyword">del</span> mon_dictionnaire<span class="token punctuation">[</span><span class="token string">"cle2"</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Méthodes utiles</span>
+cles <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment"># Retourne toutes les clés</span>
+valeurs <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># Retourne toutes les valeurs</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1pu8bbt">La méthode <code>get()</code> renvoie une valeur par défaut si la clé  recherchée n’existe pas (évite une erreur) :</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">valeur <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"cle_inexistante"</span><span class="token punctuation">,</span> <span class="token string">"valeur_par_defaut"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-cihzf1">Les Tuples</h4> <p data-svelte-h="svelte-kpemne">Un <code>tuple</code> est une séquence ordonnée d’éléments, immuable (c’est-à-dire qu’on ne peut pas le modifier après sa création).</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">mon_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Accès aux éléments (comme une liste)</span>
+premier_element <span class="token operator">=</span> mon_tuple<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Tuple à un seul élément (attention à la virgule)</span>
+tuple_unique <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Assignation des tuples</span>
+a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> mon_tuple</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1mzbw0z">Les tuples peuvent être utilisés comme clés dans un dictionnaire (car ils sont immuables).</p> <h4 data-svelte-h="svelte-4etyd0">Les Arrays</h4> <p data-svelte-h="svelte-1vrq1hv">Les arrays sont des collections ordonnées et modifiables d’éléments. Elles sont très flexibles et peuvent contenir des éléments de différents types.</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Ajouter un élément</span>
+arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Supprimer un élément</span>
+arr<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Accéder à un élément</span>
+element <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Slicing (accès partiel)</span>
+sub_arr <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Méthodes utiles</span>
+arr<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment"># Trier la liste</span>
+arr<span class="token punctuation">.</span>reverse<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># Inverser la liste</span></code><!-- HTML_TAG_END --></pre></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

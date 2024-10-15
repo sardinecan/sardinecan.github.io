@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">25 juin 2024</p> <h1 data-svelte-h="svelte-158r17z"><em>Too many levels of symbolic links Error</em></h1> <p data-svelte-h="svelte-5ztfxa">Imaginons la structure suivante :</p> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">$ tree
+<span class="token builtin class-name">.</span>
+└──monDossier
+    ├──source
+    └──output</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-pj8pix">Ajoutons ensuite un lien symbolique du dossier <code>source</code> dans le dossier <code>output</code>.</p> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">$ <span class="token builtin class-name">cd</span> monDossier
+$ <span class="token function">ln</span> <span class="token parameter variable">-s</span> <span class="token builtin class-name">source</span> output
+$ tree
+<span class="token builtin class-name">.</span>
+├──source
+└──output
+    └──output/source -<span class="token operator">></span> <span class="token builtin class-name">source</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-vgo4lk">Malheureusement le lien symbolique est cassé :</p> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">find</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-xtype</span> l <span class="token comment"># pour identifier les symlinks cassés</span>
+find: ‘./output/source’: Too many levels of symbolic links</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1hppvhg">La raison de cette erreur est  simple : les liens symboliques réalisés avec des chemins relatifs sont toujours relatifs au répertoire du lien symbolique, et non au répertoire d’origine. Le lien symbolique <code>/monDossier/output/source</code> que nous venons de créer pointe donc vers <code>/monDossier/output/source</code> au lieu de <code>/monDossier/source</code>.</p> <p data-svelte-h="svelte-8cnzp2">Pour régler le problème, il suffit d’utiliser des chemins absolus !</p></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

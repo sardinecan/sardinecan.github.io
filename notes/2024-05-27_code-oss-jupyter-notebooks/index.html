@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../sunset.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CAQDkBbz.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.BOGFTtCW.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CICM5uSD.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Ypj1uHa4.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.Cdm_7PzX.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.SDAoWFXb.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">27 mai 2024</p> <h1 data-svelte-h="svelte-h0a26s">Code-OSS : configuration des Jupyter Notebooks</h1> <p data-svelte-h="svelte-oowvmc">Après l’installation de l’extension Jupyter une erreur peut se produire :</p> <blockquote data-svelte-h="svelte-1fs34w9"><p>extension activation failed Error: Extension ‘ms-toolsai.jupyter’ CANNOT use API proposal: notebookEditor. Its package.json#enabledApiProposals-property declares:  but NOT notebookEditor. The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: —enable-proposed-api ms-toolsai.jupyter</p></blockquote> <p data-svelte-h="svelte-1j1sb5x">Pour résoudre le problème, il faut lancer l’application depuis la ligne de commande avec l’argument <code>--enable-proposed-api ms-toolsai.jupyter</code>. Il est également possible de personnaliser le lanceur de bureau :</p> <p data-svelte-h="svelte-1r0gsr2">Premièrement, copier le lanceur de bureau dans le dossier d’applications :</p> <pre class="language-undefined"><!-- HTML_TAG_START --><code class="language-undefined">$ cp /usr/share/applications/code-oss.desktop ~/.local/share/applications/.&#96;</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1amp3ut">puis éditer ce fichier avec un éditeur de texte :</p> <pre class="language-undefined"><!-- HTML_TAG_START --><code class="language-undefined">&#96;$ vim ~/.local/share/applications/code-oss.desktop&#96;</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1fn2amb">Il suffit ensuite d’ajouter l’argument <code>--enable-proposed-api ms-toolsai.jupyter</code> aux deux lignes <code>Exec</code> :</p> <pre class="language-undefined"><!-- HTML_TAG_START --><code class="language-undefined">[Desktop Entry]
+Name=Code - OSS
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=/usr/bin/code-oss --enable-proposed-api ms-toolsai.jupyter --unity-launch %F
+Icon=com.visualstudio.code.oss
+Type=Application
+StartupNotify=false
+StartupWMClass=Code
+Categories=TextEditor;Development;IDE;
+MimeType=text/plain;application/x-code-oss-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Exec=/usr/bin/code-oss --enable-proposed-api ms-toolsai.jupyter --new-window %F
+Icon=com.visualstudio.code.oss</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-aneltv">Enfin, il suffit de redémarrer l’ordinateur !</p> <h2 data-svelte-h="svelte-1u3eosd">Lectures</h2> <ul data-svelte-h="svelte-dxexbb"><li><a href="https://wiki.archlinux.org/title/Visual_Studio_Code#Command_%22...%22_not_found" rel="nofollow">Visual Studio Code sur le wiki Arch Linux Wiki</a></li> <li><a href="https://stackoverflow.com/questions/71106136/jupyter-extension-for-vscode-on-linux-throws-error-when-doing-anything-jupyter-r" rel="nofollow"><em>Jupyter extension for VSCode on Linux throws error when doing anything Jupyter related</em></a></li></ul></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+			
+			<script>
+				{
+					__sveltekit_ds02wm = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CAQDkBbz.js"),
+						import("../../_app/immutable/entry/app.CICM5uSD.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
