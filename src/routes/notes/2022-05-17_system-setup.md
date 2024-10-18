@@ -184,6 +184,85 @@ Le changement de font s'effectue dans `Code/Réglages/ParamètresEditor: Font Fa
 
 Pour synchroniser les balises ouvrantes et fermantes (html/xml) : `⌘ + ⇧ + p`, puis choisir `settings.json` (user) et ajouter `"editor.linkedEditing": true`.
 
+Le fichier `settings.json` complet :
+```json
+{
+    "editor.fontFamily": "MonoLisa, 'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "editor.formatOnType": false,
+    "editor.indentSize": "tabSize",
+    "editor.formatOnPaste": true,
+    "editor.lineHeight": 1.6,
+    "editor.linkedEditing": true,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 4,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.openRepositoryInParentFolders": "never",
+    "[julia]": {
+        "editor.fontFamily": "JuliaMono, MonoLisa, 'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace"
+    },
+    "julia.enableTelemetry": false,
+    "julia.symbolCacheDownload": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "settingsSync.ignoredExtensions": [
+        "james-yu.latex-workshop"
+    ],
+    "svelte.enable-ts-plugin": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 24
+}
+```
+
+Les raccourcis clavier dans le fichier `keybindings.json`
+```json
+// Placer vos combinaisons de touches dans ce fichier pour remplacer les valeurs par défautauto[]
+[
+    {
+        "key": "alt+w",
+        "command": "editor.emmet.action.wrapWithAbbreviation",
+        "when": "editorHasSelection && editorTextFocus"
+    },{
+        "key": "cmd+enter",
+        "command": "editor.action.insertLineAfter",
+        "when": "editorTextFocus"
+    },{
+        "key": "cmd+shift+enter",
+        "command": "editor.action.insertLineBefore",
+        "when": "editorTextFocus"
+    },{
+        "key": "alt+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorTextFocus"
+    },{
+        "key": "shift+alt+f",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasSelection"
+    },{
+        "key": "ctrl+alt+c",
+        "command": "editor.action.transformToCamelcase",
+        "when": "editorHasSelection"
+    },{
+        "key": "ctrl+alt+l",
+        "command": "editor.action.transformToLowercase",
+        "when": "editorHasSelection"
+    },{
+        "key": "ctrl+alt+s",
+        "command": "editor.action.transformToSnakecase",
+        "when": "editorHasSelection"
+    },{
+        "key": "ctrl+alt+u",
+        "command": "editor.action.transformToUppercase",
+        "when": "editorHasSelection"
+    }
+]
+```
+
 Plugins :
 - [Julia](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia) | [https://www.julia-vscode.org/](https://www.julia-vscode.org/)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
