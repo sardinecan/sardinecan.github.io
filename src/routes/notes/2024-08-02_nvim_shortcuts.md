@@ -74,6 +74,13 @@ Here are the shortcuts I use with my [Neovim config](https://github.com/sardinec
 | Live Grep  | n | `&lt;leader&gt;fg`  | `builtin.live_grep` |
 | Autoindent | n | `=`  |   |
 | Show hidden files (neotree) | n | `H` |   | 
+| Split vertically  | n | `&lt;C-w&gt; v` | `:vsplit` |
+| Split horizontally | n  | `&lt;C-w&gt; s` | `:split` |
+| Increase/decrease width | n | `&lt;C-w&gt;` + `SHIFT + >/<` |  |
+| Increase height | n | `&lt;C-w&gt;` + `SHIFT + '+'` |  |
+| Decrease height | n | `&lt;C-w&gt;` + `-` |  |
+
+
 
 
 See also :
