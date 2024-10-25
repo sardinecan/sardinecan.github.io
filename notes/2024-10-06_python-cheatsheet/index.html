@@ -6,15 +6,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.DyaZmTW7.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.kosUDhtZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CTGc5-cu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.gFU2UZqC.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.ud2yafPf.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.D_xvElcQ.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.7Be-4-1-.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.CzNeTNJ7.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/6.BNm9XT3_.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Cfa-RJvf.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.BWn4y1G0.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.D8tt68Za.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
 	</head>
@@ -84,7 +84,7 @@ mon_dictionnaire<span class="token punctuation">[</span><span class="token strin
 
 <span class="token comment"># Méthodes utiles</span>
 cles <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment"># Retourne toutes les clés</span>
-valeurs <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># Retourne toutes les valeurs</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1pu8bbt">La méthode <code>get()</code> renvoie une valeur par défaut si la clé  recherchée n’existe pas (évite une erreur) :</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">valeur <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"cle_inexistante"</span><span class="token punctuation">,</span> <span class="token string">"valeur_par_defaut"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-cihzf1">Les Tuples</h4> <p data-svelte-h="svelte-kpemne">Un <code>tuple</code> est une séquence ordonnée d’éléments, immuable (c’est-à-dire qu’on ne peut pas le modifier après sa création).</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">mon_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+valeurs <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># Retourne toutes les valeurs</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-fkdluh">La méthode <code>get()</code> renvoie une valeur par défaut si la clé  recherchée n’existe pas (évite une erreur) :</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">valeur <span class="token operator">=</span> mon_dictionnaire<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"cle_inexistante"</span><span class="token punctuation">,</span> <span class="token string">"valeur_par_defaut"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <h4 data-svelte-h="svelte-cihzf1">Les Tuples</h4> <p data-svelte-h="svelte-kpemne">Un <code>tuple</code> est une séquence ordonnée d’éléments, immuable (c’est-à-dire qu’on ne peut pas le modifier après sa création).</p> <pre class="language-python"><!-- HTML_TAG_START --><code class="language-python">mon_tuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
 
 <span class="token comment"># Accès aux éléments (comme une liste)</span>
 premier_element <span class="token operator">=</span> mon_tuple<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
@@ -113,7 +113,7 @@ arr<span class="token punctuation">.</span>reverse<span class="token punctuation
 			
 			<script>
 				{
-					__sveltekit_1f54hxt = {
+					__sveltekit_1i2bjp1 = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
@@ -122,8 +122,8 @@ arr<span class="token punctuation">.</span>reverse<span class="token punctuation
 					const data = [null,null];
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.DyaZmTW7.js"),
-						import("../../_app/immutable/entry/app.ud2yafPf.js")
+						import("../../_app/immutable/entry/start.CTGc5-cu.js"),
+						import("../../_app/immutable/entry/app.D_xvElcQ.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],

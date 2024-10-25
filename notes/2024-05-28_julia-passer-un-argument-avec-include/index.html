@@ -6,22 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.DyaZmTW7.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.kosUDhtZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CTGc5-cu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.gFU2UZqC.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.ud2yafPf.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.D_xvElcQ.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.7Be-4-1-.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.CzNeTNJ7.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/6.BNm9XT3_.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Cfa-RJvf.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.BWn4y1G0.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.D8tt68Za.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">27 mai 2024</p> <h1 data-svelte-h="svelte-1x8830c">Julia : passer un argument avec include(‘file.jl’)</h1> <p data-svelte-h="svelte-gx0swn">Une méthode intéressante consiste à utiliser <code>isdefined</code> pour vérifier la présence d’une source différente de paramètres avant d’utiliser <code>ARGS</code> dans le fichier que l’on souhaite inclue. Par exemple :</p> <p data-svelte-h="svelte-98gsmq"><code>main.jl</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">newARGS <span class="token operator">=</span> String<span class="token punctuation">[</span><span class="token string">"adios"</span><span class="token punctuation">,</span><span class="token string">"amigos"</span><span class="token punctuation">]</span>
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">27 mai 2024</p> <h1 data-svelte-h="svelte-8dwnng">Julia : passer un argument avec include(‘file.jl’)</h1> <p data-svelte-h="svelte-id3ljr">Une méthode intéressante consiste à utiliser <code>isdefined</code> pour vérifier la présence d’une source différente de paramètres avant d’utiliser <code>ARGS</code> dans le fichier que l’on souhaite inclue. Par exemple :</p> <p data-svelte-h="svelte-98gsmq"><code>main.jl</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">newARGS <span class="token operator">=</span> String<span class="token punctuation">[</span><span class="token string">"adios"</span><span class="token punctuation">,</span><span class="token string">"amigos"</span><span class="token punctuation">]</span>
 include<span class="token punctuation">(</span><span class="token string">"file.jl"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-15qmxl7"><code>file.jl</code></p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia">localARGS <span class="token operator">=</span> isdefined<span class="token punctuation">(</span><span class="token punctuation">:</span>newARGS<span class="token punctuation">)</span> <span class="token punctuation">?</span> newARGS <span class="token punctuation">:</span> ARGS
-@show localARGS</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1vvslud">Ce qui donnerait :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token operator">></span> julia file<span class="token punctuation">.</span>jl hello world
+@show localARGS</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1itigb9">Ce qui donnerait :</p> <pre class="language-julia"><!-- HTML_TAG_START --><code class="language-julia"><span class="token operator">></span> julia file<span class="token punctuation">.</span>jl hello world
 localARGS <span class="token operator">=</span> String<span class="token punctuation">[</span><span class="token string">"hello"</span><span class="token punctuation">,</span><span class="token string">"world"</span><span class="token punctuation">]</span>
 
 <span class="token operator">></span> julia main<span class="token punctuation">.</span>jl 
@@ -30,7 +30,7 @@ This also allows communicating deeper through several levels of inclusion.</p></
 			
 			<script>
 				{
-					__sveltekit_1f54hxt = {
+					__sveltekit_1i2bjp1 = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
@@ -39,8 +39,8 @@ This also allows communicating deeper through several levels of inclusion.</p></
 					const data = [null,null];
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.DyaZmTW7.js"),
-						import("../../_app/immutable/entry/app.ud2yafPf.js")
+						import("../../_app/immutable/entry/start.CTGc5-cu.js"),
+						import("../../_app/immutable/entry/app.D_xvElcQ.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],

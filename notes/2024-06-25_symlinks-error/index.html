@@ -6,15 +6,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.DyaZmTW7.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.kosUDhtZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CTGc5-cu.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.gFU2UZqC.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.ud2yafPf.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.D_xvElcQ.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.7Be-4-1-.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.CzNeTNJ7.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/6.BNm9XT3_.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.Cfa-RJvf.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.BWn4y1G0.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/6.D8tt68Za.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
 		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
 	</head>
@@ -29,12 +29,12 @@ $ tree
 <span class="token builtin class-name">.</span>
 ├──source
 └──output
-    └──output/source -<span class="token operator">></span> <span class="token builtin class-name">source</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-vgo4lk">Malheureusement le lien symbolique est cassé :</p> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">find</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-xtype</span> l <span class="token comment"># pour identifier les symlinks cassés</span>
-find: ‘./output/source’: Too many levels of symbolic links</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1hppvhg">La raison de cette erreur est  simple : les liens symboliques réalisés avec des chemins relatifs sont toujours relatifs au répertoire du lien symbolique, et non au répertoire d’origine. Le lien symbolique <code>/monDossier/output/source</code> que nous venons de créer pointe donc vers <code>/monDossier/output/source</code> au lieu de <code>/monDossier/source</code>.</p> <p data-svelte-h="svelte-8cnzp2">Pour régler le problème, il suffit d’utiliser des chemins absolus !</p></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+    └──output/source -<span class="token operator">></span> <span class="token builtin class-name">source</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1q7mbs">Malheureusement le lien symbolique est cassé :</p> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">find</span> <span class="token parameter variable">-L</span> <span class="token parameter variable">-xtype</span> l <span class="token comment"># pour identifier les symlinks cassés</span>
+find: ‘./output/source’: Too many levels of symbolic links</code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-4wjjfo">La raison de cette erreur est  simple : les liens symboliques réalisés avec des chemins relatifs sont toujours relatifs au répertoire du lien symbolique, et non au répertoire d’origine. Le lien symbolique <code>/monDossier/output/source</code> que nous venons de créer pointe donc vers <code>/monDossier/output/source</code> au lieu de <code>/monDossier/source</code>.</p> <p data-svelte-h="svelte-8cnzp2">Pour régler le problème, il suffit d’utiliser des chemins absolus !</p></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
 			
 			<script>
 				{
-					__sveltekit_1f54hxt = {
+					__sveltekit_1i2bjp1 = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
@@ -43,8 +43,8 @@ find: ‘./output/source’: Too many levels of symbolic links</code><!-- HTML_T
 					const data = [null,null];
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.DyaZmTW7.js"),
-						import("../../_app/immutable/entry/app.ud2yafPf.js")
+						import("../../_app/immutable/entry/start.CTGc5-cu.js"),
+						import("../../_app/immutable/entry/app.D_xvElcQ.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 6],

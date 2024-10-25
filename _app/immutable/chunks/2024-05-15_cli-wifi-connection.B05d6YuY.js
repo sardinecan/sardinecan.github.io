@@ -1,0 +1,10 @@
+import{s as E,n as u}from"./scheduler.DaEglZbh.js";import{S as H,i as T,e as f,s as _,H as L,c as p,k as C,f as g,a as S,l as F,d as a,m as N,g as o}from"./index.B_-7WD2a.js";function B(I){let n,v="Se connecter au wifi en ligne de commande",c,i,h="La commande <code>nmcli dev wifi</code> permet de lister les points d’accès wifi :",d,l,r,x=`<code class="language-undefined">nmcli dev wifi                               
+IN-USE  BSSID              SSID                    MODE   CHAN  RATE&gt;
+        F2:8D:7E:03:34:94  HUAWEI-B528-0656        Infra  11    130 &gt;
+        BE:F3:D0:0E:17:EC  Redmi Note 11           Infra  7     117 &gt;
+*       04:F0:21:4C:55:9B  NormandieTrainConnecte  Infra  6     195 &gt;
+        06:F0:21:4C:55:9B  --                      Infra  6     195 &gt;
+        06:F0:21:4C:55:2C  --                      Infra  36    405 &gt;
+        04:F0:21:4C:55:2C  NormandieTrainConnecte  Infra  36    405 &gt;
+</code>`,m,s,w=`La commande <code>nmcli dev wifi connect NormandieTrainConnecte</code> permet de se connecter à l’un des points d’accès.
+Ajouter <code>password *monmdp*</code> à la fin de la commande si la connexion nécessite un mot de passe.`;return{c(){n=f("h1"),n.textContent=v,c=_(),i=f("p"),i.innerHTML=h,d=_(),l=f("pre"),r=new L(!1),m=_(),s=f("p"),s.innerHTML=w,this.h()},l(e){n=p(e,"H1",{"data-svelte-h":!0}),C(n)!=="svelte-1wj5wld"&&(n.textContent=v),c=g(e),i=p(e,"P",{"data-svelte-h":!0}),C(i)!=="svelte-ao00ol"&&(i.innerHTML=h),d=g(e),l=p(e,"PRE",{class:!0});var t=S(l);r=F(t,!1),t.forEach(a),m=g(e),s=p(e,"P",{"data-svelte-h":!0}),C(s)!=="svelte-1o8phg2"&&(s.innerHTML=w),this.h()},h(){r.a=null,N(l,"class","language-undefined")},m(e,t){o(e,n,t),o(e,c,t),o(e,i,t),o(e,d,t),o(e,l,t),r.m(x,l),o(e,m,t),o(e,s,t)},p:u,i:u,o:u,d(e){e&&(a(n),a(c),a(i),a(d),a(l),a(m),a(s))}}}const y={title:"CLI connexion Wifi",date:"2024-05-15T00:00:00.000Z",author:"jmorvan",category:"setup",keywords:"CLI ; wifi ; setup"};class A extends H{constructor(n){super(),T(this,n,null,B,E,{})}}export{A as default,y as metadata};
