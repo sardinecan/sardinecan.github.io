@@ -8,7 +8,7 @@ keywords: 'git'
 
 # Ignorer un fichier modifié (mais non commité) avec Git
 
-Pour ignorer les fichiers modifiés (mais non commités) avec git :
+Pour ignorer les fichiers modifiés (mais non commités) avec git :
 
 ```bash
 git update-index --assume-unchanged path/to/file

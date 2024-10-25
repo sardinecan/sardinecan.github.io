@@ -3,7 +3,7 @@ title: "Raccourcis Neovim"
 date: 2024-08-02
 author: "jmorvan"
 category: 'config'
-keywords: "editeur ; éditeur ; editor ; vim ; nvim ; neovim ; shortcuts"
+keywords: "editeur ; éditeur ; editor ; vim ; nvim ; neovim ; shortcuts"
 ---
 
 # Nvim shortcuts
@@ -11,7 +11,7 @@ keywords: "editeur ; éditeur ; editor ; vim ; nvim ; neovim ; shortcuts"
 Here are the shortcuts I use with my [Neovim config](https://github.com/sardinecan/dotfiles/tree/main/private_dot_config/nvim).
 
 | label					| mode  		| shortcut  | command   | 
-| :-------			| -------:	| -------:  | -------:  |
+| :-------			| -------:	| -------:  | -------:  |
 | Search    | n | `/`   |   |
 | Reach previous / next paragraph (or function/bloc)    | n | `{` / `}` |   |
 | Insert before cursor / line   | n | `ì` / `I` |   |

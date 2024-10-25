@@ -1,14 +1,14 @@
 ---
-title: "Bash : nommage séquentiel des fichiers"
+title: "Bash : nommage séquentiel des fichiers"
 date: 2024-05-27
 author: "jmorvan"
 category: 'CLI'
-keywords: "bash ; nommage ; linux ; osx ; macos"
+keywords: "bash ; nommage ; linux ; osx ; macos"
 ---
 
-# Bash : nommage séquentiel des fichiers
+# Bash : nommage séquentiel des fichiers
 
-Une simple ligne qui garde de l'extension de fichier d'origine et ajoute des zeros en tête (*leading zeros*) :
+Une simple ligne qui garde de l'extension de fichier d'origine et ajoute des zeros en tête (*leading zeros*) :
 
 ```bash
 num=0; for i in *; do mv "$i" "$(printf '%04d' $num).${i#*.}"; ((num++)); done

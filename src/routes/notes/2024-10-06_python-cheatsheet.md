@@ -3,7 +3,7 @@ title: 'Python - cheatsheet'
 date: '2024-10-06'
 category: 'Python'
 author: 'jmorvan'
-keywords: 'cheatsheet ; python'
+keywords: 'cheatsheet ; python'
 ---
 
 # Python
@@ -155,7 +155,7 @@ del mon_dictionnaire["cle2"]
 cles = mon_dictionnaire.keys()   # Retourne toutes les clés
 valeurs = mon_dictionnaire.values() # Retourne toutes les valeurs
 ```
-La méthode `get()` renvoie une valeur par défaut si la clé  recherchée n'existe pas (évite une erreur) :
+La méthode `get()` renvoie une valeur par défaut si la clé  recherchée n'existe pas (évite une erreur) :
 
 ```python
 valeur = mon_dictionnaire.get("cle_inexistante", "valeur_par_defaut")

@@ -3,7 +3,7 @@ title: 'Combinaisons de paires uniques'
 date: '2020-06-12'
 category: 'code'
 author: 'jmorvan'
-keywords: 'xquery ; code ; pair'
+keywords: 'xquery ; code ; pair'
 ---
 
 # Combinaisons de paires uniques
@@ -23,17 +23,17 @@ result =
 ## XQuery
 
 ```xquery
-xquery version "3.1" ;
+xquery version "3.1" ;
 (:~
- : Pairs combinations in a sequence
- : Unique pairs in a sequence (where order is irrelevant)
- :)
-let $seq := ("a", "b", "b", "d")
+ : Pairs combinations in a sequence
+ : Unique pairs in a sequence (where order is irrelevant)
+ :)
+let $seq := ("a", "b", "b", "d")
 for $i at $pos in $seq
 for $j in fn:subsequence($seq, $pos+1, fn:count($seq))
 return <result>{$i, $j}</result>
 
-(: result :)
+(: result :)
 a,b
 a,c
 a,d

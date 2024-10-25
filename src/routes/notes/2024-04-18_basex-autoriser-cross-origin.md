@@ -3,7 +3,7 @@ title: 'Autoriser cross-origin / cross-domain'
 date: '2024-04-18'
 category: 'basex'
 author: 'jmorvan'
-keywords: 'basex ; xml ; cross-origin'
+keywords: 'basex ; xml ; cross-origin'
 ---
 
 # Autoriser cross-origin / cross-domain dans BaseX

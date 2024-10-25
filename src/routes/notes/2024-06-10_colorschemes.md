@@ -3,7 +3,7 @@ title: 'Color schemes'
 date: '2024-06-10'
 category: 'Setup'
 author: 'jmorvan'
-keywords: 'shortcuts ; racourcis ; macos ; linux'
+keywords: 'shortcuts ; racourcis ; macos ; linux'
 ---
 
 # Color schemes

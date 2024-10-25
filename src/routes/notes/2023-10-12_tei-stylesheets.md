@@ -3,7 +3,7 @@ title: 'TEI Stylesheets'
 date: '2023-10-12'
 category: 'tei'
 author: 'jmorvan'
-keywords: 'tei ; xml ; xslt ; stylesheets'
+keywords: 'tei ; xml ; xslt ; stylesheets'
 ---
 
 # TEI Stylesheets
@@ -16,7 +16,7 @@ This is a family of XSLT 2.0 stylesheets to transform TEI XML documents to vario
 - download fork at [https://github.com/sardinecan/Stylesheets](https://github.com/sardinecan/Stylesheets)
 
 For your information, here are the changes made to the original makefile 
-  - variable PREFIX : `/usr` > `/tmp/tei`
+  - variable PREFIX : `/usr` > `/tmp/tei`
   	- NB `/tmp` directory is cleaned up by macOS every 3 days by default [see apple forum](https://forums.developer.apple.com/forums/thread/71382)
   - line `cp --preserve=timestamps bin/transformtei ${PREFIX}/bin` > `cp -p bin/transformtei ${PREFIX}/bin`
   - line `cp --preserve=timestamps source/p5subset.xml ${PREFIX}/source` > `cp -p source/p5subset.xml ${PREFIX}/source`
@@ -48,7 +48,7 @@ Complete sample:
 </xsl:stylesheet>
 ```
 
-Then you need to reinstall the tei stylesheets: `cd path/to/tei/Stylesheets ; make install`
+Then you need to reinstall the tei stylesheets: `cd path/to/tei/Stylesheets ; make install`
 
 ## Transform
 - to call a XSLT just: `docxtotei inputFile outputFile`.
@@ -58,7 +58,7 @@ Then you need to reinstall the tei stylesheets: `cd path/to/tei/Stylesheets ; ma
 
 - Note that if your $FORMAT is docx, this directory must contain a file template.docx which is used to create .docx files from. See the sample in the default profile.
 
-- [Converting from DOCX format](https://listserv.brown.edu/archives/cgi-bin/wa?A2=TEI-L;1123776a.1605) : "The TEI conversions from docx are better in many ways than the conversions from other the wordprocessing formats. There are also small tricks like having docx styles of 'tei_elementName' to get certain phrase-level elements converted."
+- [Converting from DOCX format](https://listserv.brown.edu/archives/cgi-bin/wa?A2=TEI-L;1123776a.1605) : "The TEI conversions from docx are better in many ways than the conversions from other the wordprocessing formats. There are also small tricks like having docx styles of 'tei_elementName' to get certain phrase-level elements converted."
 
 - [https://dixit.uni-koeln.de/wp-content/uploads/2015/04/Camp2-15-Sebastian_Rahtz_-_Working_with_TEI_Stylesheets__talk.pdf](https://dixit.uni-koeln.de/wp-content/uploads/2015/04/Camp2-15-Sebastian_Rahtz_-_Working_with_TEI_Stylesheets__talk.pdf)
 

@@ -3,7 +3,7 @@ title: 'Lister les drivers ODBC'
 date: '2024-04-28'
 category: 'setup'
 author: 'jmorvan'
-keywords: 'r ; shyny ; odbc'
+keywords: 'r ; shyny ; odbc'
 ---
 
 # Lister les drivers ODBC
@@ -14,7 +14,7 @@ voir [*how to check odbc version on linux or how to check is there odbc driver i
 
 Il existe deux gestionnaires de pilotes ODBC open source pour UNIX (unixODBC et iODBC). Le gestionnaire de pilotes unixODBC est celui qui est inclus dans la plupart des distributions Linux et dans certaines distributions UNIX.
 
-Dans unixODBC, les pilotes ODBC sont définis dans le fichier `odbcinst.ini`. Si unixODBC est déjà installé, On peut utiliser le programme `odbcinst` d'unixODBC pour localiser le fichier `odbcinst.ini` utilisé pour définir les pilotes :
+Dans unixODBC, les pilotes ODBC sont définis dans le fichier `odbcinst.ini`. Si unixODBC est déjà installé, On peut utiliser le programme `odbcinst` d'unixODBC pour localiser le fichier `odbcinst.ini` utilisé pour définir les pilotes :
 
 ```shell
 ❯ odbcinst -j
@@ -28,7 +28,7 @@ SQLLEN Size........: 8
 SQLSETPOSIROW Size.: 8
 ```
 
-Puis pour lister les drivers accessibles :
+Puis pour lister les drivers accessibles :
 
 ```shell
 ❯ cat /etc/odbcinst.ini 
@@ -69,4 +69,4 @@ sort(unique(odbcListDrivers()[[1]]))
 [4] "MySQL ODBC 8.3 ANSI Driver"    "MySQL ODBC 8.3 Unicode Driver" "PostgreSQL"                   
 ```
 
-NB : pour une utilisation avec MySQL — par exemple pour requêter une BDD avec R et Shiny —, utiliser de préférence les drivers `MySQL ODBC 8.X Unicode Driver`.
+NB : pour une utilisation avec MySQL — par exemple pour requêter une BDD avec R et Shiny —, utiliser de préférence les drivers `MySQL ODBC 8.X Unicode Driver`.

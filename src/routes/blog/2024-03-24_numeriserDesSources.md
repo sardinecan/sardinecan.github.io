@@ -1,12 +1,12 @@
 ---
-title: 'Numériser des sources : guide des bonnes pratiques'
+title: 'Numériser des sources : guide des bonnes pratiques'
 date: '2024-03-24'
 author: 'Josselin Morvan'
 status: 'unpublished'
 tags: 'dh'
 ---
 
-# Numériser des sources : guide des bonnes pratiques
+# Numériser des sources : guide des bonnes pratiques
 
 Les campagnes de numérisation massives menées par les institutions patrimoniales depuis plusieurs décennies et la mise à disposition des ressources sous des licences ouvertes, à travers des bibliothèques numériques proposant le protocole d'échange IIIF (_International Image Interoperability Framework_), ont grandemment facilité l'accès aux sources pour les équipes de recherche. Pour autant, si les chercheur peuvent parfois bénéficier du concours de ces institutions pour numériser leurs corpus d'étude, il arrive, pour diverses raisons, que cette tâche leur incombe directement. Cette étape de numérisation, parfois longue et ardue, est pourtant essentielle pour la bonne tenue de l'étude. Les clichés produits permettront aux équipes de travailler dans de bonnes conditions, d'échanger sur leurs travaux, tout en rendant ces sources accessibles au plus grand nombre, dans un contexte de sciences ouvertes et de « FAIRisation » des données. Il est donc important de penser cette numérisation en amont afin qu'elle réponde à toutes les attentes des chercheurs, ainsi qu'un potentiel public.
 
@@ -23,7 +23,7 @@ Les __scanners__ et __numériseurs__ proposés par les institutions patrimoniale
 ![Appareil photo reflex](https://upload.wikimedia.org/wikipedia/commons/3/31/Nikon_d3200.jpg)
 *Un appareil photo reflex [^2]*
 
-Compacts, bridges, hybrides, ou réflex, le choix est pléthorique. Si vous n'en possédez pas déjà un, le choix d'un __appareil photo__ constituera certainement votre premier poste de dépense, mais c'est aussi la solution qui vous offrira, à n'en pas douter, les meilleurs résultats. Les appareils avec objectifs interchangeables (hybride et réflex) sont a privilégier. Leur prix est généralement plus élévé que les compacts ou les bridges, mais avec un jeux de un ou deux objectifs, vous devriez être en mesure de répondre à tous les cas de figures : un objectif à focale variable type 24-70mm ou 18-105mm afin d'adapter le cadrage au mieux et éventuellement un objectif grand angle pour les grands documents ou lorsque vous ne disposez pas du recul nécessaire.
+Compacts, bridges, hybrides, ou réflex, le choix est pléthorique. Si vous n'en possédez pas déjà un, le choix d'un __appareil photo__ constituera certainement votre premier poste de dépense, mais c'est aussi la solution qui vous offrira, à n'en pas douter, les meilleurs résultats. Les appareils avec objectifs interchangeables (hybride et réflex) sont a privilégier. Leur prix est généralement plus élévé que les compacts ou les bridges, mais avec un jeux de un ou deux objectifs, vous devriez être en mesure de répondre à tous les cas de figures : un objectif à focale variable type 24-70mm ou 18-105mm afin d'adapter le cadrage au mieux et éventuellement un objectif grand angle pour les grands documents ou lorsque vous ne disposez pas du recul nécessaire.
 
 Dernière solution à ne pas négliger, les __smartphones__. Ils disposent aujourd'hui d'optiques de qualité, parfois réalisées sous licence en collaboration avec des spécialistes du domaines et tout-a-fait capables de s'acquiter de cette tâche. Certains proposent également une fonction grand-angle et permettent des réglages avancés pour la prise de vue. Avec leur démocratisation ces périphériques constituent une solution viable, simple et économique.
 

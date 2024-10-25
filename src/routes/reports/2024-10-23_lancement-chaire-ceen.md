@@ -2,17 +2,17 @@
 title: 'Lancement CEEN'
 date: '2024-10-23'
 place: 'Université de Rouen'
-speaker: 'Marcello Vitali-Rosati ; Tony Gheeraert ; Hélène Hote ; Anaïs Lebreton ; Anaïs Monchy ; Joann Elart ; Michaël Sinatra ; Sandra Provini ; Sylvain Ledda ; Florence Naugrette'
+speaker: 'Marcello Vitali-Rosati ; Tony Gheeraert ; Hélène Hote ; Anaïs Lebreton ; Anaïs Monchy ; Joann Elart ; Michaël Sinatra ; Sandra Provini ; Sylvain Ledda ; Florence Naugrette'
 category: 'conference'
-keywords: 'édition ; humanités ; XML ; TEI ; latex'
+keywords: 'édition ; humanités ; XML ; TEI ; latex'
 ---
 
 # Lancement de la Chaire d'excellence en édition numérique
 
-## « La collection “Arion” aux PURH : l’édition savante autrement »
+## « La collection “Arion” aux PURH : l’édition savante autrement »
 Hélène Hôte (CÉRÉdI), Anaïs Lebreton (PURH), Anaïs Monchy (PURH)
 
-## « Le moteur de recherche de la musicologie numérique : MusicaSearch »
+## « Le moteur de recherche de la musicologie numérique : MusicaSearch »
 Joann Elart
 
 Consortium Musica2, un des dix consortiums porté par Huma-Num. Travail sur l'interopérabilité des projets en musicologie. 
@@ -33,11 +33,11 @@ Les étudiants du master HN sont impliqués, et dynamique d'ouverture à des col
 ## « Site Musset »
 Sylvain Ledda (Université de Rouen Normandie et directeur du CÉRÉdI)
 
-Le site Flaubert était un modèle, une inspiration, tout comme le dictionnaire Montesquieu. Les objectifs était de :
-- diffuser et faire rayonner l'œuvre de Musset ;
-- établir une bibliographie exhaustive ; 
-- concevoir la visite d'un musée virtuel ; 
-- proposer un dictionnaire Musset bilingue ;
+Le site Flaubert était un modèle, une inspiration, tout comme le dictionnaire Montesquieu. Les objectifs était de :
+- diffuser et faire rayonner l'œuvre de Musset ;
+- établir une bibliographie exhaustive ; 
+- concevoir la visite d'un musée virtuel ; 
+- proposer un dictionnaire Musset bilingue ;
 - rendre accessible les manuscrits et dessins de Musset ;
 - conduire un thésaurus des mises en scène du théâtre de Musset. 
 
@@ -69,7 +69,7 @@ Dans les années 20 Otto Stern et Gerlach veulent tester l'hypothèse de Bore su
 
 
 Dans les sciences humaines, il y a une idéalisation du texte. 
-Pyramide de valeurs :
+Pyramide de valeurs :
     - en haut de la pyramide, **texte imperceptible** => immatérialité et donc forcément humain ()
     - en bas de la pyramide, c'est la matière, l'électricité, les logiciels, etc.
 
@@ -80,7 +80,7 @@ La théorie de l'édition es l'approche nécessaire pour comprendre de quelle ma
 
 Les concepts ne sont pas dans l'esprit du philologue, ils s'incarnent dans la matière. Chaque incarnation matérielle apporte un sens particulier. 
 
-La théorie du texte :
+La théorie du texte :
 - la matérialité du texte est son sens, il n'est pas possible d'imaginer une théorie du texte qui ferait abstraction de cette matérialité ; 
 - il n'est pas possible de trouver une modélisation du texte qui soit universelle. Il n'est pas possible de répondre à la question *What is text, really?* il n'y a autant d'incarnation qu'il y a de texte. 
 
@@ -89,13 +89,13 @@ La question de Jean-Guy Meunier
 - modèle formel ou fonctionnel ou mathématique, ou computationel ;
 - modèle matériel ou physique.
 
-Mais en fait ces trois étapes n'existent pas de manière distincte, les trois font partie d'une unité qu'on ne peut défaire : le cercle de modélisation.
+Mais en fait ces trois étapes n'existent pas de manière distincte, les trois font partie d'une unité qu'on ne peut défaire : le cercle de modélisation.
 
 Le modèle abstrait qui arrive avant, et émane donc du haut de la pyramide, est en fait un modèle pauvre, celui qui est riche est celui qui descend de la pyramide, qui subit donc des manipulations, chaque étape est un enrichissement.
 
 Voir Parcours numériques : Qu'est-ce qu'un "livre augmenté" ?
 Ils partent d'un texte brut, linéaire, puis ils se demandent ce qu'est un contenu additionnel, ils passent à un texte tabulaire (bdd), mais on ne peut pas tout faire par exemple indexer un terme, donc nécessite de créer une script bash, hors, en temps normal jamais un auteur n'a conscience de la complexité de ces étapes, mais ils peuvent donc définir ce qu'est un contenu additionnel. 
-Cela à trois conséquences :
+Cela à trois conséquences :
 - pluralité de modèles (XML et DeRose, permet de représenter le texte comme une hiérarchie, mais ce n'est qu'une approche, parmi d'autres) ;
 - les modèle théorique, formel et matériel ne font qu'un. Qui produit le sens ? Cela dépend du prisme par lequel on regarde ce peut être le chercheur, mais aussi ceux qui ont créé le format ou encore le format lui même ;
 - qu'est-ce qu'un être humain, car si les frontières tombent entre ce qui est en haut et en bas, alors elles tombent aussi entre l'humain et ce qui n'est pas humain, ou fonctionnel. 
@@ -104,7 +104,7 @@ C'est le *Post Huma Studies*. L'homme de vitruve est en fait un commentaire de t
 
 On comprend alors que le texte est incarné, et que c'est la matière qui pense. 
 
-Conclusion : 
+Conclusion : 
 - On peut abandonner les hiérarchies et les pyramides
 - on peut adopter des conjonctures, comme des relations entre les états. La valeur symbolique doit être redistribuée. ON peut peut être développer une théorie de l'édition qui nous permette de nous concentré sur la matérialité, qui produit du sens, et peut être abandonnée l'humain. C'est la matière qui pense, celui oblige à repenser le rôle du texte, des formats, des langages, etc. 
 

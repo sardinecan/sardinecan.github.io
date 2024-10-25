@@ -16,9 +16,9 @@ keywords: ''
 
 SpaCy est un librairie Python pour le TAL, developpée par Matthew Honnibal et Ines Montani. C'est une bibliothèque Python pour le traitement des TAL sous licence libre (MIT 2.0), bien que distribuer par une société privée. En revanche les modèles sont distribués sous divers licences ouvertes (liées aux documents qui ont permis leur élaboration).
 
-SpaCy est destiné à êter utilisé en production : donc traitement rapide, stable, qualité du code (test, documentation, etc.). Mais pas de chois dans le méthode ou l'algorithme utilisé. On sait ce qui est utilisé, c'est documenté, mais on ne peut pas modifier ces paramètres.
+SpaCy est destiné à êter utilisé en production : donc traitement rapide, stable, qualité du code (test, documentation, etc.). Mais pas de chois dans le méthode ou l'algorithme utilisé. On sait ce qui est utilisé, c'est documenté, mais on ne peut pas modifier ces paramètres.
 
-Peut faire : 
+Peut faire : 
 - tokenisation
 - étiquetage POS (verbe, nom, etc.)
 - analyse syntaxique
@@ -29,13 +29,13 @@ Peut faire :
 
 SpaCy utilise des modèles statistique (méthode neuronales).
 
-Intérêts : c'est dy Python (wrapper R également), simple à prendre en main, très bien documenté (doc, tuto, etc.), grosse communauté sur github, fournit les méthodes et les moyens d'adapter le traitement et ou le modèle à des besoins particuliers ! Mais ce n'est pas forcément l'outils qui sera le meilleurs pour le français dans toutes les tâches de TAL.
+Intérêts : c'est dy Python (wrapper R également), simple à prendre en main, très bien documenté (doc, tuto, etc.), grosse communauté sur github, fournit les méthodes et les moyens d'adapter le traitement et ou le modèle à des besoins particuliers ! Mais ce n'est pas forcément l'outils qui sera le meilleurs pour le français dans toutes les tâches de TAL.
 
 Il existe d'autre frameworks pour le TAL
-- NLKT : python, orienté pédagogie, chois des méthodes et algos à utiliser
-- CoreNLP : java, framework de Stanford, orienté recherche, chaîne de TAL la plus complète pour l'anglais
-- Stanza : python, framework de Stanford également, modèle neuronaux entraînés sur les données d'Universal Dependancies (il y a un module spacy-stanza pour utiliser les modèles de Stanza
-- Flair : python, framewok de Zalando (site de e-commerce), peut être le plus performant sur la reconnaissance d'entités nommées
+- NLKT : python, orienté pédagogie, chois des méthodes et algos à utiliser
+- CoreNLP : java, framework de Stanford, orienté recherche, chaîne de TAL la plus complète pour l'anglais
+- Stanza : python, framework de Stanford également, modèle neuronaux entraînés sur les données d'Universal Dependancies (il y a un module spacy-stanza pour utiliser les modèles de Stanza
+- Flair : python, framewok de Zalando (site de e-commerce), peut être le plus performant sur la reconnaissance d'entités nommées
 
 Les modèles de spaCy
 SpaCy utilise des modèles statistiques qui permettent de prédire des annotations linguistiques (identifier un verbe, un nom, le sentiment d'une phrase).
@@ -122,7 +122,7 @@ for token in doc:
 
 Il existe aussi une représentation graphique de la dépendance des tokens entre eux.
 
-Dans l'analyse en dépendance on peut aussi parcourir l'arbre de dépendance. Les attributs de token suivant peuvent être utilisés pour parcourir l'arbre de dépendance :
+Dans l'analyse en dépendance on peut aussi parcourir l'arbre de dépendance. Les attributs de token suivant peuvent être utilisés pour parcourir l'arbre de dépendance :
 
 - `children` les tokens dépendants du token
 - `subtree` tous les descendants du token
@@ -136,9 +136,9 @@ subjects = [tok for tok in root.lefts if "subj" in tok.dep_]
 subject = subjects[0]
 objs = [tok for tok in root.rights if tok.dep_ == "obj"]
 obj = objs[0]
-print(f"sujet : {subject}, prédicat : {root}, objet : {obj}")
+print(f"sujet : {subject}, prédicat : {root}, objet : {obj}")
 ```
-    > sujet : Il, prédicat : refile, objet : chanson
+    > sujet : Il, prédicat : refile, objet : chanson
 
 
 ## Extraction d'information
@@ -150,11 +150,11 @@ On peut aussi utiliser des catégories comme IS_ALPHA ou IS_NUM, voir la doc
 
 ```python
 from spacy.matcher import Matcher
-doc = nlp("Ce modèle est aussi disponible en taille XL ; je vous le conseille.")
+doc = nlp("Ce modèle est aussi disponible en taille XL ; je vous le conseille.")
 matcher = Matcher(nlp.vocab)
 
 pattern = [{"LOWER": "en"}, {"LOWER": "taille"}, {"IS_ALPHA": True, "IS_UPPER": True}]
-#pattern : 'en' + 'taille' + lettres en maj
+#pattern : 'en' + 'taille' + lettres en maj
 
 matcher.add("tailles", [pattern])
 matches = matcher(doc)

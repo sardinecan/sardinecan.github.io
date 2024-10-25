@@ -3,7 +3,7 @@ title: 'Les mécanismes de l’expertise et ses acteurs, XVIe – XIXe siècle'
 date: '2023-05-25'
 category: 'conference'
 place: 'Université Paris-Nanterre'
-speaker: "Robert Carvais ; Valérie Nègre ; Michela Barbot ; Emmanuel Château-Dutier ; Josselin Morvan ; Gilles Bienvenu ; Pierre Mounier-Khun ; Daniel Velinov ; Aurélien Roulet ; Antonio Iodice ; Jean-Louis Halpérin ; Antoine Ropion ; Corentin Gruffat ; Jean-François Chauvard ; Nicolas Moucheront ; Bastien Tourenc ; Rika Devos ; Sarah Blouin ; Sacha Tomic ; Maxime Bray ; Nicholas O'neill ; Dominique Massounie ; Yvon Plouzennec ; Gérard Meyer ; Luisa Brunori ; Joseph Gauthier ; Benoit Saint-Cast ; Vincent Demont ; Agnès Hirsh"
+speaker: "Robert Carvais ; Valérie Nègre ; Michela Barbot ; Emmanuel Château-Dutier ; Josselin Morvan ; Gilles Bienvenu ; Pierre Mounier-Khun ; Daniel Velinov ; Aurélien Roulet ; Antonio Iodice ; Jean-Louis Halpérin ; Antoine Ropion ; Corentin Gruffat ; Jean-François Chauvard ; Nicolas Moucheront ; Bastien Tourenc ; Rika Devos ; Sarah Blouin ; Sacha Tomic ; Maxime Bray ; Nicholas O'neill ; Dominique Massounie ; Yvon Plouzennec ; Gérard Meyer ; Luisa Brunori ; Joseph Gauthier ; Benoit Saint-Cast ; Vincent Demont ; Agnès Hirsh"
 keywords: ''
 ---
 
@@ -16,25 +16,25 @@ Lyon est gouverné par 12 échevins élus avec renouvellement tous les ans, par 
 Le status de l'expertise au XVIe sicèle sachant qu'il n'y a pas véritablement de sources constituées.
 Comme ces experts s'insère dans la prise de décision. 
 Lyon dans la 2e moitié du XVIe voit ses pouvoir de police augmentés de majnière importante (crise que le pouvoir royal a du mal à gérer et délègue aux municipaliés).
-Les échevins récupèrent donc beaucoup de pouvoir, notamment les droits de police. à Lyon il y a une tradition dans pour les pouvoir de police. Historiquement on a beaucoup de marchands, mais petit à petit, on voit rentrer dans le corps de ville des officiers royaux. Les pouvoir du corps de ville sont : 
+Les échevins récupèrent donc beaucoup de pouvoir, notamment les droits de police. à Lyon il y a une tradition dans pour les pouvoir de police. Historiquement on a beaucoup de marchands, mais petit à petit, on voit rentrer dans le corps de ville des officiers royaux. Les pouvoir du corps de ville sont : 
 - la voirie
 - hygiène publique
 - le problème des grains => expertises de marchands pour acheter et négocier du grains sur les marchés
-- police des métiers, organise la visite aux apothicaires, aux médecins, etc. Tous les ans les échevins nomment des experts : par exemple des maîtres maçons et maîtres charpentiers (police de la voirie), 
-- Compétence militaire (lyon est zone frontière) : recrutement de capitaine dédiés à la protection de la ville. 
+- police des métiers, organise la visite aux apothicaires, aux médecins, etc. Tous les ans les échevins nomment des experts : par exemple des maîtres maçons et maîtres charpentiers (police de la voirie), 
+- Compétence militaire (lyon est zone frontière) : recrutement de capitaine dédiés à la protection de la ville. 
 
-Le pouvoir se dote de nouveaux pouvoir : soit par la coutumen soit par l'octroi de nouveaux droits.  Il y a une grande circulation des compétences au sein de cette administration. Il y a une grande connexion sociale (mariage, parainnage, etc.). Il y a également une grande stabilité (officier perpétuelle, d'autres restent en moyenne 15 ans en place).
+Le pouvoir se dote de nouveaux pouvoir : soit par la coutumen soit par l'octroi de nouveaux droits.  Il y a une grande circulation des compétences au sein de cette administration. Il y a une grande connexion sociale (mariage, parainnage, etc.). Il y a également une grande stabilité (officier perpétuelle, d'autres restent en moyenne 15 ans en place).
 
 Peut-on parler d'un gouvernement d'experts ? en réalité système hybride, des personnes spécialisé s'intègre dans le pouvoir, mais il y a pas de mécanisme de validation des compétences par des pairs. 
 
-NB : Les maîtres des métiers sont nommés par les échevins, et à l'année N+1 ce sont eux qui nomme les échevins… forte cooptation donc. 
+NB : Les maîtres des métiers sont nommés par les échevins, et à l'année N+1 ce sont eux qui nomme les échevins… forte cooptation donc. 
 
 ## ‘Per schivar lunghezze, spese e liti’ Expertise and procedural adaptations in Genoese maritime Averages, XVI-XVIII centuries
 Antonio IODICE, University of Genoa/University of Exeter
 
 Expertise sur l'avarie commune à Gène, En droit maritime, l'avarie commune est une procédure de répartition des frais et dommages entraînés par des mesures de sauvetage décidées dans l’intérêt commun d'un navire et des marchandises qu'il transporte. 
 
-Q° des aspects à ne pas expertiser : à Gène par exemple à partir de 1639 le tonnage n'est plus déclaré, ton simplement parce qu'en 1638 il y a une taxe sur le tonnage du coup les tonnage n'apparaissent plus.
+Q° des aspects à ne pas expertiser : à Gène par exemple à partir de 1639 le tonnage n'est plus déclaré, ton simplement parce qu'en 1638 il y a une taxe sur le tonnage du coup les tonnage n'apparaissent plus.
 
 ## Les monopolistes du savoir faire
 Antoine Ropion
@@ -52,15 +52,15 @@ de la compétence individuelle à la compétence de classe
 idée de cooptation
 Finalement, le pouvoir central est pluôt enclin à laisser ce système, et qu'on retrouvera en 1806 avec la création du tribul des prudhommes.
 
-## Un expert agronome modèle au tournant du XIXe siècle : Peter Jordan
+## Un expert agronome modèle au tournant du XIXe siècle : Peter Jordan
 Corentin GRUFFAT
 
 Fils de berger tyrolien. Il fait ensuite des études, il devient même professeur d'histoire natuelle à l'université de Vienne. Vers 1800, il devient "expert" auprès de l'empereur ou de la chancellerie. Autre lecture du rôle de l'expert, qui n'est pas tant d'être expert par le haut (connaissance théorique parfois un peu éloigner de la réalité), mais au "milieu" 
 
 triple position d'expertise
-- conseiller d'état : on lui demande un rapport pour favoriser l'elevage. ce rapport est anonyme et du coup il en profite pour critiquer la politique économique d'autrice. Ce rapport plaît vraissemblablement puisqu'il est nommé conseiller d'état. 
-- intendant de domaine : en même temps il devient intendant d'une domaine privé de l'empereur. Il ne veut pas être un agronome de salon, il veut être sur le terrain. Il réussi à négocier de ne s'occuper que de la partie économique. il va l'utiliser pour créer une ferme modèle et comme un terrain d'expérimentation. Il fait donc le va-et-vient entre les parties très théoriques et les vérités de terrain.
-- commité de la société d'agriculture : dans ce comité il y a des liens très fort avec le pouvoir. L'activité d'évaluation va se poursuivre, mais de manière plus collégiale et publique.
+- conseiller d'état : on lui demande un rapport pour favoriser l'elevage. ce rapport est anonyme et du coup il en profite pour critiquer la politique économique d'autrice. Ce rapport plaît vraissemblablement puisqu'il est nommé conseiller d'état. 
+- intendant de domaine : en même temps il devient intendant d'une domaine privé de l'empereur. Il ne veut pas être un agronome de salon, il veut être sur le terrain. Il réussi à négocier de ne s'occuper que de la partie économique. il va l'utiliser pour créer une ferme modèle et comme un terrain d'expérimentation. Il fait donc le va-et-vient entre les parties très théoriques et les vérités de terrain.
+- commité de la société d'agriculture : dans ce comité il y a des liens très fort avec le pouvoir. L'activité d'évaluation va se poursuivre, mais de manière plus collégiale et publique.
 
 ## La pratique de l’expertise par les proti vénitiens Des entrepreneurs entre magistratures et corporations
 Nicolas MOUCHERONT
@@ -115,7 +115,7 @@ On pense formation compétence, sélection est-ce une profession, une activité,
 
 On prend le titre d'expert chimiste lorsqu'on est sollicité par la justice. La partie la plus visible de leur activité sont les empoisonnements, mais aussi la recherche de sang, de sperme, etc.
 À l'origine ce sont essentiellement les pharmaciens, apothicaires. Ce n'est pas non plus un médecin. On comprend la toxicologie, ou chimie légale.
-La chimie légale est une science hybride : pharmacien, toxicologue, médecin médico-légale, chimiste et juriste.
+La chimie légale est une science hybride : pharmacien, toxicologue, médecin médico-légale, chimiste et juriste.
 On peut être chimiste sans être expert, mais on ne peut être expert sans être chimiste. 
 
 Selon les experts il faut
@@ -148,23 +148,23 @@ Nicholas O'NEILL
 Dominique MASSOUNIE
 
 
-## Convaincre en s’affirmant. Jean-Baptiste Vincent Boulland (1739-1813) : expert, architecte et « homme de lettres » parisien du siècle des Lumières.
+## Convaincre en s’affirmant. Jean-Baptiste Vincent Boulland (1739-1813) : expert, architecte et « homme de lettres » parisien du siècle des Lumières.
 Yvon PLOUZENNEC
 
 
-## A propos du contentieux Durand-Poussardin : les dessous d’une expertise technicocomptable de l’Académie royale des sciences de Paris.
+## A propos du contentieux Durand-Poussardin : les dessous d’une expertise technicocomptable de l’Académie royale des sciences de Paris.
 Gérard MEYER
 
 ## Un essayeur incompétent. L’affaire Reyslander, Sainte-Marie-aux-Mines, 1571-1572
 Joseph GAUTHIER
 
-## L’institutionnalisation de l’expertise négociante : les parères et les Chambres de commerce en France (v. 1650-v. 1750)
+## L’institutionnalisation de l’expertise négociante : les parères et les Chambres de commerce en France (v. 1650-v. 1750)
 Benoit SAINT-CAST
 
 
-## Entre autorité sur le métier et justices "ordinaires" : la loge des tailleurs de pierre de Strasbourg au début du XVIIIe siècle ou le long héritage d'une prééminence médiévale
+## Entre autorité sur le métier et justices "ordinaires" : la loge des tailleurs de pierre de Strasbourg au début du XVIIIe siècle ou le long héritage d'une prééminence médiévale
 Vincent DEMONT
 
 
-## Négocier l’ « expertise » : Quand les Fédérations ouvrières se saisissent de la question des assurances relatives au travail en France (fin XIXe siècle – début XXe siècle)
+## Négocier l’ « expertise » : Quand les Fédérations ouvrières se saisissent de la question des assurances relatives au travail en France (fin XIXe siècle – début XXe siècle)
 Agnès HIRSH

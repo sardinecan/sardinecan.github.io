@@ -10,7 +10,7 @@ keywords: ''
 
 ## Liens utiles 
 
-Présentation de sa thèse : <https://reticular.hypotheses.org/1879>
+Présentation de sa thèse : <https://reticular.hypotheses.org/1879>
 
 Mathieu Jacomy, *Hidden structures in hairballs, and how to see them* <https://reticular.hypotheses.org/1809>
 
@@ -26,7 +26,7 @@ Tommaso Venturini, Mathieu Jacomy, Pablo Jensen, *What do we see when we look at
 
 Les images qui se donnent à nous ne sont pas si évidentes que ça et ne refletent pas nécessairement la réalité. 
 
-**Situer** est une référence à Haraway : la seule façon de trouver une vision plus large des choses est d'être quelque part en particulier. Haraway  ajoute “**only** a **partial perspective promises** objective vision”
+**Situer** est une référence à Haraway : la seule façon de trouver une vision plus large des choses est d'être quelque part en particulier. Haraway  ajoute “**only** a **partial perspective promises** objective vision”
 
 Si on transpose aux réseaux, il faut faire attention aux effets d'evidence qui se présentent à nous. Il faut penser à tout ce qui a permis la construction de cette représentation (données, algorithmes utilisés, etc.). 
 
@@ -36,7 +36,7 @@ Nous nous attacherons ici à analyse visuelle, nœuds et relations, avec des alg
 
 L'analyse visuelle de réseaux est d'abord une pratique exploratoire, qui prolonge une analyse des réseaux sociaux. On visualise pour nous même. C'est différent de l'analyse confirmatoire, dans laquelle on a une hypothèse qu'on cherche à valider. On a aussi l'analyse explicative. Tout ça pour dire qu'on peut utiliser les mêmes outils pour des propos ou des objectifs différents. 
 
-## Storyletting : laisser parler les images
+## Storyletting : laisser parler les images
 
 Les visualisations de réseaux sont souvent illisibles, même si ça semble parlant dans un premier temps. 
 
@@ -72,13 +72,13 @@ L'algo de détection de communauté peut donc voir des groupes qui ne sont pour 
 
 ## Quels groupes voit-on avec une spatialisation simulant des forces
 
-Voir papier de Peixoto sur les Stochastic block models : le groupe comme quelque chose de *cohésif* est une notion qu'on a d'un groupe, mais il y en a d'autre qui ne sont pas nécessairement « cohésives ».
+Voir papier de Peixoto sur les Stochastic block models : le groupe comme quelque chose de *cohésif* est une notion qu'on a d'un groupe, mais il y en a d'autre qui ne sont pas nécessairement « cohésives ».
 
 Dire qu'il y a des communautés est une chose, montrer des communautés en est une autre, et identifier correctement chaque membre d'une communauté en est une autre, notamment losqu'il y a des recouvrements (nœuds qui appartient à plusieurs groupes).
 
 Les algo de détection de communautés ne sont pas stables, car il n'y a pas de communautés préexistentes dans un réseau. 
 
-Pour voir les groupes dans des structures il faut avoir des liens longs, Il est parfois nécessaire pour ça de sacrifier certains liens : si on n'est pas capable de sacrifier certains liens pour permettre cette élongation, on ne peut plus distinguer ces groupes. C'est pour ça que certains militent pour ne pas utiliser de longueur de liens non extensible.
+Pour voir les groupes dans des structures il faut avoir des liens longs, Il est parfois nécessaire pour ça de sacrifier certains liens : si on n'est pas capable de sacrifier certains liens pour permettre cette élongation, on ne peut plus distinguer ces groupes. C'est pour ça que certains militent pour ne pas utiliser de longueur de liens non extensible.
 
 ## Connected-closeness
 

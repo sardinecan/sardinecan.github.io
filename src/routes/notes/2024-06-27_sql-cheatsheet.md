@@ -3,7 +3,7 @@ title: 'SQL - Cheatsheet'
 date: '2024-06-27'
 author: 'Josselin Morvan'
 category: 'sql'
-keywords: 'cheatsheet ; sql'
+keywords: 'cheatsheet ; sql'
 ---
 
 # 📄 **Cheatsheet SQL**

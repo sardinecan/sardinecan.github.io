@@ -3,7 +3,7 @@ title: 'Ressources numériques'
 date: '2024-10-16'
 category: 'dev'
 author: 'jmorvan'
-keywords: 'programmation ; dev ; html ; xml ; xquery ; xslt ; tei ; css ; editors'
+keywords: 'programmation ; dev ; html ; xml ; xquery ; xslt ; tei ; css ; editors'
 ---
 # Resources
 Just a list of resources, projects, tools, etc. interesting for dev. and/or the Digital Humanities
@@ -139,7 +139,7 @@ An XForms-ish lib.
 - FAIR Data Guidelines: [https://www.rd-alliance.org/group/fair-data-maturity-model-wg/outcomes/fair-data-maturity-model-specification-and-guidelines](https://www.rd-alliance.org/group/fair-data-maturity-model-wg/outcomes/fair-data-maturity-model-specification-and-guidelines)
 - The FAIR Guiding Principles for scientific data management and stewardship: [https://www.nature.com/articles/sdata201618](https://www.nature.com/articles/sdata201618)
 - Les principes FAIR: [https://doranum.fr/enjeux-benefices/principes-fair_10_13143_z7s6-ed26/](https://doranum.fr/enjeux-benefices/principes-fair_10_13143_z7s6-ed26/)
-- Bien décrire ses données pour les valoriser : un modèle de README à votre disposition: [https://recherche.data.gouv.fr/fr/actualite/bien-decrire-ses-donnees-pour-les-valoriser-un-modele-de-readme-a-votre-disposition](https://recherche.data.gouv.fr/fr/actualite/bien-decrire-ses-donnees-pour-les-valoriser-un-modele-de-readme-a-votre-disposition)
+- Bien décrire ses données pour les valoriser : un modèle de README à votre disposition: [https://recherche.data.gouv.fr/fr/actualite/bien-decrire-ses-donnees-pour-les-valoriser-un-modele-de-readme-a-votre-disposition](https://recherche.data.gouv.fr/fr/actualite/bien-decrire-ses-donnees-pour-les-valoriser-un-modele-de-readme-a-votre-disposition)
 
 ### Web design
 #### icons

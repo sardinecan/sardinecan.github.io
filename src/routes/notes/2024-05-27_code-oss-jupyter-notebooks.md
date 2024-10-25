@@ -1,30 +1,30 @@
 ---
-title: "Code-OSS : configuration des Jupyter Notebooks"
+title: "Code-OSS : configuration des Jupyter Notebooks"
 date: 2024-05-27
 author: "jmorvan"
 category: 'setup'
-keywords: "arch ; linux ; setup ; jupyter ; notebook ; visual studio code ; vscode ; code ; code-oss"
+keywords: "arch ; linux ; setup ; jupyter ; notebook ; visual studio code ; vscode ; code ; code-oss"
 ---
 
-# Code-OSS : configuration des Jupyter Notebooks
+# Code-OSS : configuration des Jupyter Notebooks
 
-Après l'installation de l'extension Jupyter une erreur peut se produire :
+Après l'installation de l'extension Jupyter une erreur peut se produire :
 
 > extension activation failed Error: Extension 'ms-toolsai.jupyter' CANNOT use API proposal: notebookEditor. Its package.json#enabledApiProposals-property declares:  but NOT notebookEditor. The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ms-toolsai.jupyter
 
-Pour résoudre le problème, il faut lancer l'application depuis la ligne de commande avec l'argument `--enable-proposed-api ms-toolsai.jupyter`. Il est également possible de personnaliser le lanceur de bureau :
+Pour résoudre le problème, il faut lancer l'application depuis la ligne de commande avec l'argument `--enable-proposed-api ms-toolsai.jupyter`. Il est également possible de personnaliser le lanceur de bureau :
 
-Premièrement, copier le lanceur de bureau dans le dossier d'applications :
+Premièrement, copier le lanceur de bureau dans le dossier d'applications :
 ```
 $ cp /usr/share/applications/code-oss.desktop ~/.local/share/applications/.`
 ```
 
-puis éditer ce fichier avec un éditeur de texte :
+puis éditer ce fichier avec un éditeur de texte :
 ```
 `$ vim ~/.local/share/applications/code-oss.desktop`
 ```
 
-Il suffit ensuite d'ajouter l'argument `--enable-proposed-api ms-toolsai.jupyter` aux deux lignes `Exec` :
+Il suffit ensuite d'ajouter l'argument `--enable-proposed-api ms-toolsai.jupyter` aux deux lignes `Exec` :
 
 ```
 [Desktop Entry]

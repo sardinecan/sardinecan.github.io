@@ -3,7 +3,7 @@ title: 'R - Cheatsheet'
 date: '2024-06-25'
 author: 'Josselin Morvan'
 category: 'r'
-keywords: 'cheatsheet ; r'
+keywords: 'cheatsheet ; r'
 ---
 
 # 📝 Les fondamentaux du langage R

@@ -3,7 +3,7 @@ title: 'Vim - Cheatsheet'
 date: '2024-06-27'
 author: 'Josselin Morvan'
 category: 'vim'
-keywords: 'cheatsheet ; vim'
+keywords: 'cheatsheet ; vim'
 ---
 
 # 📄 Vim

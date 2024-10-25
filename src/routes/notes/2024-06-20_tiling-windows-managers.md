@@ -3,7 +3,7 @@ title: 'Tiling Windows Managers'
 date: '2024-06-20'
 category: 'Setup'
 author: 'jmorvan'
-keywords: 'windows manager ; setup ; system ; interface'
+keywords: 'windows manager ; setup ; system ; interface'
 ---
 
 # Tiling Windows Managers

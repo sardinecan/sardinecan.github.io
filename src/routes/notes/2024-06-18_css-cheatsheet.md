@@ -3,7 +3,7 @@ title: 'CSS - Cheatsheet'
 date: '2024-06-18'
 author: 'Josselin Morvan'
 category: 'css'
-keywords: 'cheatsheet ; css'
+keywords: 'cheatsheet ; css'
 ---
 
 # 📝 Les fondamentaux de CSS
@@ -334,7 +334,7 @@ body {
 }
 ```
 
-Les variables CSS peuvent également être utilisées dans les Media Queries pour des styles responsifs :
+Les variables CSS peuvent également être utilisées dans les Media Queries pour des styles responsifs :
 ```css
 @media screen and (max-width: 768px) {
     .header {

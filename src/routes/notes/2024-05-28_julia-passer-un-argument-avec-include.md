@@ -1,14 +1,14 @@
 ---
-title: "Julia : passer un argument avec include('file.jl')"
+title: "Julia : passer un argument avec include('file.jl')"
 date: 2024-05-27
 author: "jmorvan"
 category: 'julia'
-keywords: "julia ; argument ; include ; variable"
+keywords: "julia ; argument ; include ; variable"
 ---
 
-# Julia : passer un argument avec include('file.jl')
+# Julia : passer un argument avec include('file.jl')
 
-Une méthode intéressante consiste à utiliser `isdefined` pour vérifier la présence d'une source différente de paramètres avant d'utiliser `ARGS` dans le fichier que l'on souhaite inclue. Par exemple :
+Une méthode intéressante consiste à utiliser `isdefined` pour vérifier la présence d'une source différente de paramètres avant d'utiliser `ARGS` dans le fichier que l'on souhaite inclue. Par exemple :
 
 `main.jl`
 ```julia
@@ -18,11 +18,11 @@ include("file.jl")
 
 `file.jl`
 ```julia
-localARGS = isdefined(:newARGS) ? newARGS : ARGS
+localARGS = isdefined(:newARGS) ? newARGS : ARGS
 @show localARGS
 ```
 
-Ce qui donnerait : 
+Ce qui donnerait : 
 ```julia
 > julia file.jl hello world
 localARGS = String["hello","world"]

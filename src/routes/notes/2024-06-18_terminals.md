@@ -3,7 +3,7 @@ title: 'Émulateurs et multiplexeurs de terminaux'
 date: '2024-06-18'
 category: 'Setup'
 author: 'jmorvan'
-keywords: 'dev ; terminal ; émulateur : emulator ; multiplexeur : multiplexer'
+keywords: 'dev ; terminal ; émulateur : emulator ; multiplexeur : multiplexer'
 ---
 
 # Émulateurs et multiplexeurs de terminaux

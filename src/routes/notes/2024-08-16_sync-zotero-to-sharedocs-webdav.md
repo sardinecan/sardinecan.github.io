@@ -3,7 +3,7 @@ title: "Synchroniser les fichiers Zotero sur le webdav de Sharedocs"
 date: 2024-08-16
 author: "jmorvan"
 category: 'config'
-keywords: "zotero ; bibliography ; bibliographie ; synchronisation ; webdav ; data ; storage"
+keywords: "zotero ; bibliography ; bibliographie ; synchronisation ; webdav ; data ; storage"
 ---
 
 # Synchroniser les fichiers Zotero sur le webdav de Sharedocs

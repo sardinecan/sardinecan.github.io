@@ -3,14 +3,14 @@ title: 'Édition critique de formules mathématiques'
 date: '2023-12-31'
 category: 'tei'
 author: 'jmorvan'
-keywords: 'xml ; tei ; mathml ; latex'
+keywords: 'xml ; tei ; mathml ; latex'
 ---
 
 # Édition critique de formules mathématiques
 
 Message [LaTeX/XML-TEI & texte mathématique](https://groupes.renater.fr/sympa/msg/dh/2024-01/anfNKVPnC4nitTaP6UpYyQ) sur la liste DH.
 
-Question posée par EMAN, ERC Philiumm et ANR BANANA pour l'édition critique et génétique des formules : comment encoder correctement en XML-TEI les corrections, ajouts, versions, etc. dans les formules mêmes. S'intéressent aux possibilités offertes par l'utilisation conjointe de LateX et [MathJax](https://www.mathjax.org/). Proposition formulée par EMAN
+Question posée par EMAN, ERC Philiumm et ANR BANANA pour l'édition critique et génétique des formules : comment encoder correctement en XML-TEI les corrections, ajouts, versions, etc. dans les formules mêmes. S'intéressent aux possibilités offertes par l'utilisation conjointe de LateX et [MathJax](https://www.mathjax.org/). Proposition formulée par EMAN
 
 ```xml
 <formula rend="LaTeX">

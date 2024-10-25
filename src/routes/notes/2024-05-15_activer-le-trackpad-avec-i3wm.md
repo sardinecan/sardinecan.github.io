@@ -3,12 +3,12 @@ title: "Toucher pour cliquer avec i3wm"
 date: 2024-05-15
 author: "jmorvan"
 category: 'setup'
-keywords: "setup ; i3 ; linux ; mac"
+keywords: "setup ; i3 ; linux ; mac"
 ---
 
 # Toucher pour cliquer avec i3wm
 
-Utiliser la commande `xinput` pour lister les devices :
+Utiliser la commande `xinput` pour lister les devices :
 ```shell
 xinput           
 ⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
@@ -71,6 +71,6 @@ Device 'bcm5974':
 
 ```
 
-La propriété qui nous intéresse est indiquer à la ligne `libinput Tapping Enabled (315): 0`. Pour activer "toucher pour cliquer", il suffit simplement de changer la valeur `0` par `1` avec la commande :
+La propriété qui nous intéresse est indiquer à la ligne `libinput Tapping Enabled (315): 0`. Pour activer "toucher pour cliquer", il suffit simplement de changer la valeur `0` par `1` avec la commande :
 `xinput set-prop 12 315 1`. Et voilà !
 

@@ -1,23 +1,23 @@
 ---
-title: "Détection automatique d’éléments iconographiques dans les images : principes et mise en œuvre"
+title: "Détection automatique d’éléments iconographiques dans les images : principes et mise en œuvre"
 date: '2024-05-15'
-speaker: 'Christopher Kermorvant ; Marion Charpier'
+speaker: 'Christopher Kermorvant ; Marion Charpier'
 category: 'workshop'
-keyworkds: 'IA ; annotation ; modèle ; détection'
+keyworkds: 'IA ; annotation ; modèle ; détection'
 ---
 
-# Détection automatique d’éléments iconographiques dans les images : principes et mise en œuvre
+# Détection automatique d’éléments iconographiques dans les images : principes et mise en œuvre
 
 3 types de modèle
 - détection, c'est le moins fin, il n'est pas nécessaire de créer une ontologie, on cherche des objets, sans avoir besoin de les classifier
-- classification : on attribut une étiquette ou une classe à une image ou à une région spécifique de l'image
-- segmentation : encore plus fin, on divise une image en segment ou en région en fonction de certaine propriété
+- classification : on attribut une étiquette ou une classe à une image ou à une région spécifique de l'image
+- segmentation : encore plus fin, on divise une image en segment ou en région en fonction de certaine propriété
 
 En utilisant SAM on peut segmenter une image, récupérer les coordonées et s'en servir pour les classifier.
-La robustesse d'un modèle est calculer avec un metric l'*intersection over union* (IOU). Il s'agit du taux de chevauchement entre la boite d'annotation et la vérité de terrain. En dessous de 0.5 (50% de superposition des deux boites) on considère que la prédiction est fausse. Mais attention : 
-- vrai positif (TP) : un objet dont la classe et la detection sont bonnes 
-- faux positif (FP) : détection d'une classe correcte mais mal positionné 
-- faux négatif (FN) : rien n'est bon dans la détection
+La robustesse d'un modèle est calculer avec un metric l'*intersection over union* (IOU). Il s'agit du taux de chevauchement entre la boite d'annotation et la vérité de terrain. En dessous de 0.5 (50% de superposition des deux boites) on considère que la prédiction est fausse. Mais attention : 
+- vrai positif (TP) : un objet dont la classe et la detection sont bonnes 
+- faux positif (FP) : détection d'une classe correcte mais mal positionné 
+- faux négatif (FN) : rien n'est bon dans la détection
 
 ces trois indicateurs permettent de calculer le rappel, la précision et le score F1
 Un modèle parfait à une score F1 = 1. 
@@ -31,30 +31,30 @@ Prendre en compte précision et performance, complexité et taille du modèle (d
 
 ### Principe de l'apprentissage automatique (Machine learning)
 Comment faire exécuter une tâche à un ordinateur
-La première solution c'est d'écrire un programme : un expert explique à un développeur la tâche à réaliser. 
+La première solution c'est d'écrire un programme : un expert explique à un développeur la tâche à réaliser. 
 
-La seconde solution c'est de faire apprendre la machine : avec le ML on a toujours un expert qui prend des exemples annotés, un ingénieur ML va nourrir un apprentissage à partir des exemples annotés pour créer un modèle, qui sera capable de rédiger un programme. 
+La seconde solution c'est de faire apprendre la machine : avec le ML on a toujours un expert qui prend des exemples annotés, un ingénieur ML va nourrir un apprentissage à partir des exemples annotés pour créer un modèle, qui sera capable de rédiger un programme. 
 
 avec la programmation 
 le programme est écrit par un dev, l'expert doit pouvoir explicité les règles, il faut un programme par tâche, en cas d'erreur il faut modifier le programme
 Avec l'apprentissage automatique, le programme est écrit par la machine, l'expert doit annoter des exemple, un seul programme d'apprentissage pour plusieurs tâche et si on a des erreurs, il suffit de donner de nouveaux exemples.
-le pipeline est le suivant :
+le pipeline est le suivant :
 ```
 Exemples annotés ->     apprentissage ->     modèle
                                                 ↓
                    Exemples à traiter ->     programme ->     exécution ->     prédiction
 ```
-Les exemples définissent le programme : l'annotation est la phse la plus importante.
-Comment bien choisir les exemple : il faut constituer un échantillonage aléatoire et représentatif. Il faut également annoter come ce que l'on souhaite obtenir en prédiction. 
+Les exemples définissent le programme : l'annotation est la phse la plus importante.
+Comment bien choisir les exemple : il faut constituer un échantillonage aléatoire et représentatif. Il faut également annoter come ce que l'on souhaite obtenir en prédiction. 
 
-L'objectif est d'apprendre à généraliser pour prédire sur des exemples nons vus pendant l'apprentissage. : il faut 3 éléments
+L'objectif est d'apprendre à généraliser pour prédire sur des exemples nons vus pendant l'apprentissage. : il faut 3 éléments
 - un échantillon pour apprendre (train test)
 - un echantillon pour vérifier le modèle généralisé (validation set)
 - un échantillon pour évaluer le modèle (test set)
 Ces 3 ensembles doivent être repésentatifs, aléatoires et disjoints.
 
-NB : avec YOLO assez peu de données sont nécessaires pour obtenir de bon résultat. 
-+NB 2 : possibilité d'augmenter artificiellement les données avec les changements de perspectives par exemple, ou modification des images. mais plus efficace lorsque c'est intégrer dans un script d'apprentissage.
+NB : avec YOLO assez peu de données sont nécessaires pour obtenir de bon résultat. 
++NB 2 : possibilité d'augmenter artificiellement les données avec les changements de perspectives par exemple, ou modification des images. mais plus efficace lorsque c'est intégrer dans un script d'apprentissage.
 
 ## Entrainement d'un modèle de détection avec Arkindex
 - [Documentation Arkindex](https://doc.arkindex.org/tutorial/segmentation-training/)
@@ -71,7 +71,7 @@ NB : avec YOLO assez peu de données sont nécessaires pour obtenir de bon résu
 
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/caf6c560-0e42-4867-ae8b-f811a3b0c083.png)
 
-#### En vidéo :
+#### En vidéo :
 youtube S_7N3jYALtc
 
 
@@ -90,7 +90,7 @@ youtube S_7N3jYALtc
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/a2e9731c-8aac-40fd-bb58-73bd32ad2af8.png)
 
 
-#### En vidéo :
+#### En vidéo :
 youtube XOP27j-4ee4
 
 ### 3. Créer un dataset avec des sous-ensembles Train/Val/Test
@@ -100,7 +100,7 @@ youtube XOP27j-4ee4
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/06924b36-4c38-4cf1-a6d3-ccc116b8beea.png)
 
 
-#### En vidéo :
+#### En vidéo :
 youtube wkxgt9NSMXc
 
 #### 4. Générer l'export complet du projet
@@ -114,7 +114,7 @@ Arkindex permet l’entrainement distribué (cloud, cluster)
 L’export et la génération de l’archive d’entrainement permettent la distribution des données
 :::
 
-#### En vidéo :
+#### En vidéo :
 youtube w082mRvSqEI
 
 ### 5. Générer l'archive d'entrainement à partir du projet
@@ -132,7 +132,7 @@ youtube w082mRvSqEI
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/50b131b8-9bed-46a0-884f-504505173939.png)
 
 
-#### En vidéo :
+#### En vidéo :
 youtube GLOY-Q9ekpc
 
 ### 6. Créer un modèle
@@ -146,7 +146,7 @@ youtube GLOY-Q9ekpc
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/98471c27-be6c-406c-a396-2c1b0ae067cf.png)
 
 
-#### En vidéo :
+#### En vidéo :
 youtube _0B2ARsnbqo
 
 ### 7. Lancer l'entrainement du modèle YOLO
@@ -161,11 +161,11 @@ youtube _0B2ARsnbqo
 
 7.3 Créer une configuration d'entrainement
 
-- Name : votre_nom YOLO illustration
-- Class names to predict : illustration
-- Model that will receive the new trained version :  nom du modèle créé en 6.
-- Number of epochs to train the model : 3
-- Type of object to detect using the segmenter : bbox
+- Name : votre_nom YOLO illustration
+- Class names to predict : illustration
+- Model that will receive the new trained version :  nom du modèle créé en 6.
+- Number of epochs to train the model : 3
+- Type of object to detect using the segmenter : bbox
 
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/35a7e5b6-efc6-4a1a-8c93-ac1f68b2dbdd.png)
 
@@ -177,5 +177,5 @@ youtube _0B2ARsnbqo
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/e0b0c9ef-2ed6-476e-8256-83c8c26f5b26.png)
 
 
-#### En vidéo :
+#### En vidéo :
 youtube 9XiL9FxD31M

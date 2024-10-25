@@ -3,7 +3,7 @@ title: 'Éditeurs de texte'
 date: '2024-06-10'
 category: 'logiciels'
 author: 'jmorvan'
-keywords: 'editeur de texte ; logiciel ; terminal ; gui'
+keywords: 'editeur de texte ; logiciel ; terminal ; gui'
 ---
 
 # Éditeurs de texte
@@ -54,7 +54,7 @@ keywords: 'editeur de texte ; logiciel ; terminal ; gui'
 
 ### Visualisation / publication Markdown
 | Nom       | type      | Licence       |
-| :------   | -------:  | -------:      |
+| :------   | -------:  | -------:      |
 | [Glow](https://github.com/charmbracelet/glow)  | Render markdown on the CLI, with pizzazz! | MIT   |
 | [Quartz 4](https://quartz.jzhao.xyz/) | Static-site generator     | MIT      |
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)  | Plugin to improve viewing Markdown files in Neovim    | MIT   |

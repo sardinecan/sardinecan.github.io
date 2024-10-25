@@ -3,12 +3,12 @@ title: 'System Setup'
 date: '2022-05-17'
 category: 'setup'
 author: 'jmorvan'
-keywords: 'config ; dev ; installation'
+keywords: 'config ; dev ; installation'
 ---
 
 # System Setup
 
-Prérequis :
+Prérequis :
     - [**Homebrew**](https://brew.sh/index_fr) (macOS et Linux).
     - [**Git**](https://git-scm.com/)
 ```bash
@@ -48,7 +48,7 @@ Voir [fonts](/notes/2024-02-13_fonts)
 
 
 ## Terminal/shell
-Ajouter le thème [**Hyper snazzy**](https://github.com/sindresorhus/hyper-snazzy) et l'activer par défaut. Autres thèmes :
+Ajouter le thème [**Hyper snazzy**](https://github.com/sindresorhus/hyper-snazzy) et l'activer par défaut. Autres thèmes :
     - [**Pure**](https://github.com/sindresorhus/pure) 
     - [**Molokai color scheme for Vim**](https://github.com/tomasr/molokai)
 
@@ -60,7 +60,7 @@ Pour la configuration du shell j'utilise [`Oh-my-zsh`](https://github.com/ohmyzs
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 
-Pour une configuration manuelle du `.zshrc` (sans `chezmoi`), suivre les étapes suivantes : 
+Pour une configuration manuelle du `.zshrc` (sans `chezmoi`), suivre les étapes suivantes : 
 - plugins
 ```bash
 plugins=(git web-search aliases)
@@ -82,7 +82,7 @@ TYPEWRITTEN_ARROW_SYMBOL="|"
 TYPEWRITTEN_COLOR_MAPPINGS="primary:red"
 ```
 
-<!--Bat [https://github.com/sharkdp/bat/](https://github.com/sharkdp/bat/): A cat cmd clone with syntax highlighting and Git integration. release : [https://github.com/sharkdp/bat/releases](https://github.com/sharkdp/bat/releases)-->
+<!--Bat [https://github.com/sharkdp/bat/](https://github.com/sharkdp/bat/): A cat cmd clone with syntax highlighting and Git integration. release : [https://github.com/sharkdp/bat/releases](https://github.com/sharkdp/bat/releases)-->
 
 ## Navigateurs
 - [**Firefox**](https://www.mozilla.org/fr/firefox/new/)
@@ -98,7 +98,7 @@ Pour plus d'informations sur Homebrew et Python : [https://docs.brew.sh/Homebre
 ## Librairies
 - [**NodeJS**](https://nodejs.org/en/)
 
-J'utilise le package [`n`](https://github.com/tj/n) pour la gestion des versions de NodeJS. Pour l'installer : `brew install n`
+J'utilise le package [`n`](https://github.com/tj/n) pour la gestion des versions de NodeJS. Pour l'installer : `brew install n`
 
 Pour définir le dossier d'installation de NodeJS, il faut configurer [la variable d'environnement `N_PREFIX`](https://github.com/tj/n?tab=readme-ov-file#optional-environment-variables) (déjà configurée dans mes `dotefiles`).
 ```bash
@@ -107,13 +107,13 @@ export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$PATH
 ```
 
-Il est ensuite possible d'installer différentes versions de node :
+Il est ensuite possible d'installer différentes versions de node :
 - `n stable` pour installer la version stable
 - `n <version>` pour installer une version spécifique, par exemple `n 16.15.0`
 - `n lts` pour installer la version de support à long terme
 - `n latest` pour installer la dernière version.
 
-Pour vérifier la version de node : `node -v`.
+Pour vérifier la version de node : `node -v`.
 
 Pour passer d'une version de Node à l'autre il suffit de taper `n` dans le terminal, de sélectionner la version désirée avec les `flèches` et d'appuyer sur `enter`.
 
@@ -123,13 +123,13 @@ Penser à ajouter `Ant` dans le `$Path`
 
 - [**TEI Stylesheets**](https://github.com/TEIC/Stylesheets)
 
-Pour une installation avec macOS, voir : [tei Stylesheets](/notes/2023-10-12_tei-stylesheets)
+Pour une installation avec macOS, voir : [tei Stylesheets](/notes/2023-10-12_tei-stylesheets)
 
 ### Éditeurs de texte
 - [**Vim**](https://www.vim.org/)
 Vim est installé par défaut sur macOs mais pas sur toutes les distributions Linux. Pour l'installer s'il est manquant `brew install vim`. Un fichier [`.vimrc`](https://github.com/sardinecan/dotfiles/blob/main/dot_vimrc) est présent dans mes `dotefiles`.
 
-- [**Neovim**](https://neovim.io/) : 
+- [**Neovim**](https://neovim.io/) : 
 ```bash
 # macos
 brew install neovim
@@ -142,14 +142,14 @@ Les fichiers de configuration se trouvent dans mes `dotefiles` ([.config/nvim](h
 La configuration de [JuliaLS](https://github.com/williamboman/mason-lspconfig.nvim/blob/main/lua/mason-lspconfig/server_configurations/julials/README.md) nécessite une étape manuelle pour la création d'un environnement julia `nvim-lspconfig` ([voir ce post pour plus de détails](https://discourse.julialang.org/t/neovim-languageserver-jl/37286/83), une copie est présente dans mon zotero pour la procédure complète. Voir aussi le repos [fredrikekre/.dotfiles](https://github.com/fredrikekre/.dotfiles/tree/master/.julia/environments/nvim-lspconfig)). 
 
 - lancer la commande `julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'` pour créer l'environnement ;
-- changer de répertoire : `cd ~.julia/environment/nvim-lspconfig` ;
+- changer de répertoire : `cd ~.julia/environment/nvim-lspconfig` ;
 - lancer la commande `make`.
 
-NB : le fichier `makefile` et le dossier `.julia/environments/nvim-lspconfig` sont aussi dans mes `dotefiles`.
+NB : le fichier `makefile` et le dossier `.julia/environments/nvim-lspconfig` sont aussi dans mes `dotefiles`.
 
-NB2 : Pour une raison que j'ignore, sous macos Sonoma 14.5, le fichier `languageserver.dylib` créé avec la commande `make` cause une erreur à l'ouverture d'un fichier julia avec neovim. Le supprimer règle toutefois le problème (julia 1.10+). Le problème n'a cependant pas été constatée sous macos Catalina et Archlinux. 
+NB2 : Pour une raison que j'ignore, sous macos Sonoma 14.5, le fichier `languageserver.dylib` créé avec la commande `make` cause une erreur à l'ouverture d'un fichier julia avec neovim. Le supprimer règle toutefois le problème (julia 1.10+). Le problème n'a cependant pas été constatée sous macos Catalina et Archlinux. 
 
-Commandes utiles pour le deboggage : 
+Commandes utiles pour le deboggage : 
 ```vim
 :TSUpdate ---mise à jour des parsers
 :LspInfo --- statuts et serveurs de langages actifs et configurés
@@ -162,13 +162,13 @@ Commandes utiles pour le deboggage :
 ```
 
 - [**Webstorm**](https://www.jetbrains.com/fr-fr/webstorm/)
-Webstorm permet la synchronisation de paramètres depuis un compte Jetbrains. Pour activer la synchronisation : `Webstorm/Settings/Settings Sync/Enable Settings Sync`, puis dans la popup `Get Settings from Account`. Le changement de font s'effectue dans `Webstorm/settings/Editor/Font`.
+Webstorm permet la synchronisation de paramètres depuis un compte Jetbrains. Pour activer la synchronisation : `Webstorm/Settings/Settings Sync/Enable Settings Sync`, puis dans la popup `Get Settings from Account`. Le changement de font s'effectue dans `Webstorm/settings/Editor/Font`.
 
-Plugins :
+Plugins :
 - [Svelte](https://plugins.jetbrains.com/plugin/12375-svelte)
 - [Xquery and XSLT](https://plugins.jetbrains.com/plugin/8612-xquery-and-xslt)
 
-Intégration de BaseX : voir la [documentation BaseX](https://docs.basex.org/wiki/Integrating_IntelliJ_IDEA).
+Intégration de BaseX : voir la [documentation BaseX](https://docs.basex.org/wiki/Integrating_IntelliJ_IDEA).
 
 - [**Visual Studio Code** / **Code OSS**](https://code.visualstudio.com/)
 VS Code permet également la synchronisation des paramètres depuis un compte Github. Voir la documentation pour l'activer : [https://code.visualstudio.com/docs/editor/settings-sync](https://code.visualstudio.com/docs/editor/settings-sync). Code OSS ne le permet vraisemblablement pas et nécessite une configuration manuelle.
@@ -184,7 +184,7 @@ Le changement de font s'effectue dans `Code/Réglages/ParamètresEditor: Font Fa
 
 Pour synchroniser les balises ouvrantes et fermantes (html/xml) : `⌘ + ⇧ + p`, puis choisir `settings.json` (user) et ajouter `"editor.linkedEditing": true`.
 
-Le fichier `settings.json` complet :
+Le fichier `settings.json` complet :
 ```json
 {
     "editor.fontFamily": "MonoLisa, 'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace",
@@ -263,7 +263,7 @@ Les raccourcis clavier dans le fichier `keybindings.json`
 ]
 ```
 
-Plugins :
+Plugins :
 - [Julia](https://marketplace.visualstudio.com/items?itemName=julialang.language-julia) | [https://www.julia-vscode.org/](https://www.julia-vscode.org/)
 - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 - [Jupyter Cell Tags](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.vscode-jupyter-cell-tags)
@@ -283,16 +283,16 @@ Plugins :
 
 Mes paramètres personnalisés sont stockés dans le fichier `globalSettings.xml` et les scénarios de transformation dans `transformation.scenarios` (repo [oxygenxml-config](https://github.com/sardinecan/oxygenxml-config)).
 
-Pour importer les paramètres et les scénarios : `options/(importer les options globales | importer les scénarios de transformation)` 
+Pour importer les paramètres et les scénarios : `options/(importer les options globales | importer les scénarios de transformation)` 
 
-Pour une configuration manuelle :
-- Formatage : 
-    - `Préférences/Éditeur/Formatage` : 
-	    - cocher seulement : `détecter l'indentation à l'ouverture` ; `indenter avec Entrée` ; `activer Smart Enter`
-	    - changer les valeurs pour : `largeur d'indentation` : `3` et `Longueur de ligne` : `10000`
-    - `Préférences/Éditeur/Formatage/XML` :
-	    - cocher : `Conserver les lignes vides` ; `Conserver les sauts de ligne dans les attributs` ; `Indenter les éléments en ligne`
-	    - ajouter `//p/*` ; `//head//*` ; `//dateline//*` ; `//signed//*` ; `//choice` à `Espacement des éléments/Conserver les espaces`
+Pour une configuration manuelle :
+- Formatage : 
+    - `Préférences/Éditeur/Formatage` : 
+	    - cocher seulement : `détecter l'indentation à l'ouverture` ; `indenter avec Entrée` ; `activer Smart Enter`
+	    - changer les valeurs pour : `largeur d'indentation` : `3` et `Longueur de ligne` : `10000`
+    - `Préférences/Éditeur/Formatage/XML` :
+	    - cocher : `Conserver les lignes vides` ; `Conserver les sauts de ligne dans les attributs` ; `Indenter les éléments en ligne`
+	    - ajouter `//p/*` ; `//head//*` ; `//dateline//*` ; `//signed//*` ; `//choice` à `Espacement des éléments/Conserver les espaces`
 - Saxon 
     - `Préférences/XML/XSLT/FO/XQuery/XSLT/Saxon/Saxon HE/PE/EE`
 	    - désélectionner `Étendre les attributs par défaut ("-expand")`

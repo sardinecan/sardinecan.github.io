@@ -3,18 +3,18 @@ title: 'JavaScript - cheatsheet'
 date: '2024-10-06'
 category: 'cheatsheet'
 author: 'jmorvan'
-keywords: 'cheatsheet ; javascript ; js'
+keywords: 'cheatsheet ; javascript ; js'
 ---
 
 # JavaScript
 JavaScript est un langage de programmation utilisé pour créer des interactions dynamiques sur les pages web.
 ## Syntaxe JavaScript
 ### Variables et Types
-JavaScript propose différentes manières de déclarer des variables :
+JavaScript propose différentes manières de déclarer des variables :
 
-- `var` : déclare une variable avec un portée fonctionnelle (avant ES6).
-- `let` : déclare une variable avec une portée bloc (ES6+).
-- `const` : déclare une constante avec une portée bloc, sa valeur ne peut pas être réassignée.
+- `var` : déclare une variable avec un portée fonctionnelle (avant ES6).
+- `let` : déclare une variable avec une portée bloc (ES6+).
+- `const` : déclare une constante avec une portée bloc, sa valeur ne peut pas être réassignée.
 
 ```javascript
 var x = 10;
@@ -25,7 +25,7 @@ Le point-virgule (`;`) en JavaScript est un caractère de syntaxe essentiel qui 
 
 Il délimite les instructions. Chaque fois qu'on termine une instruction (comme une déclaration de variable ou un appel de fonction), il faut utiliser le point virgule.
 
-Dans certaines situations, JavaScript insère automatiquement des points-virgules :
+Dans certaines situations, JavaScript insère automatiquement des points-virgules :
 ```javascript
 let x = 10
 let y = 20
@@ -41,7 +41,7 @@ return
 }
 ```
 
-Ici, JavaScript interprète la ligne `return` comme une instruction complète et insère un point-virgule après celle-ci. Le bloc suivant n'est donc pas associé au `return`, ce qui renvoie `undefined`. Il faudrait écrire le code comme suit :
+Ici, JavaScript interprète la ligne `return` comme une instruction complète et insère un point-virgule après celle-ci. Le bloc suivant n'est donc pas associé au `return`, ce qui renvoie `undefined`. Il faudrait écrire le code comme suit :
 ```javascript
 return {
     message: "Hello"
@@ -72,46 +72,46 @@ function hello() {
 
 Une bonne pratique est de l'utiliser systématiquement et d'être cohérent si on ne l'utilise pas partout.
 
-Types de données JavaScript :
-- `Number` : entiers ou nombres à virgule flottante (`42`, `3.14`)
-- `String` : chaîne de caractères (`"Hello World"`)
-- `Boolean` : `true` ou `false`
-- `Array` : tableau (`[1, 2, 3]`)
-- `Object` : objet clé-valeur (`{name: "John", age: 30}`)
-- `Undefined` : valeur d'une variable non définie
-- `Null` : valeur nulle explicitement assignée
-- `Symbol` : unique et immuable (ES6)
-- `BigInt` : entiers plus grands que `Number.MAX_SAFE_INTEGER` (ES2020)
+Types de données JavaScript :
+- `Number` : entiers ou nombres à virgule flottante (`42`, `3.14`)
+- `String` : chaîne de caractères (`"Hello World"`)
+- `Boolean` : `true` ou `false`
+- `Array` : tableau (`[1, 2, 3]`)
+- `Object` : objet clé-valeur (`{name: "John", age: 30}`)
+- `Undefined` : valeur d'une variable non définie
+- `Null` : valeur nulle explicitement assignée
+- `Symbol` : unique et immuable (ES6)
+- `BigInt` : entiers plus grands que `Number.MAX_SAFE_INTEGER` (ES2020)
 
 ### Opérateurs Booléens et Opérations Mathématiques
 Opérateurs arithmétiques permettent d'effectuer les opérations mathématiques de base.
-- `+` : addition
-- `-` : soustraction
-- `*` : multiplication
-- `/` : division
-- `%` : modulo
+- `+` : addition
+- `-` : soustraction
+- `*` : multiplication
+- `/` : division
+- `%` : modulo
 ```javascript
 let a = 5 + 2; // 7
 let b = 5 % 2; // 1
 ```
 
-Opérateurs de comparaison :
-- `==` : Égalité en valeur
-- `===` : Égalité stricte (en valeur et en type)
-- `!=` : Différent en valeur
-- `!==` : Différent strict (en valeur et en type)
-- `>` , `<` : Supérieur, inférieur
-- `>=` , `<=` : Supérieur ou égal, inférieur ou égal
+Opérateurs de comparaison :
+- `==` : Égalité en valeur
+- `===` : Égalité stricte (en valeur et en type)
+- `!=` : Différent en valeur
+- `!==` : Différent strict (en valeur et en type)
+- `>` , `<` : Supérieur, inférieur
+- `>=` , `<=` : Supérieur ou égal, inférieur ou égal
 
 ```javascript
 console.log(5 == "5");  // true (égalité en valeur)
 console.log(5 === "5"); // false (égalité stricte)
 ```
 
-Opérateurs logiques :
-- `&&` : ET logique
-- `||` : OU logique
-- `!` : Négation
+Opérateurs logiques :
+- `&&` : ET logique
+- `||` : OU logique
+- `!` : Négation
 ```javascript
 let result = (5 > 3) && (10 < 20); // true
 ```
@@ -119,7 +119,7 @@ let result = (5 > 3) && (10 < 20); // true
 ### Fonctions
 Les fonctions sont des blocs de code réutilisables. Ils associent généralement 0, une ou plusieurs valeurs d'entrée à une valeur de sortie.
 
-Pour déclarer une fonction on utilise le mot-clé `function` :
+Pour déclarer une fonction on utilise le mot-clé `function` :
 ```javascript
 function somme(a, b) {
     return a + b;
@@ -154,7 +154,7 @@ if (age >= 18) {
 ```
 Pour les évaluations simple JavaScript dispose d'une autre syntaxe reposant sur l'utilisation de l'opérateur ternaire `?`
 ```javascript
-let message = (age >= 18) ? "Majeur" : "Mineur";
+let message = (age >= 18) ? "Majeur" : "Mineur";
 ```
 
 ### Boucles
@@ -188,18 +188,18 @@ for (let fruit of fruits) {
 
 ### Types Simples
 
-`String` : Les chaînes sont des séquences de caractères. Elles peuvent être entourées de guillemets simples ou doubles.
+`String` : Les chaînes sont des séquences de caractères. Elles peuvent être entourées de guillemets simples ou doubles.
 ```javascript
 let str = "Hello, World!";
 ```
 
-`Number` : JavaScript ne fait pas de distinction entre les entiers et les nombres à virgule flottante, tout est traité comme `Number`.
+`Number` : JavaScript ne fait pas de distinction entre les entiers et les nombres à virgule flottante, tout est traité comme `Number`.
 ```javascript
 let num = 42;
 let pi = 3.1415;
 ```
 
-`Boolean` : Les valeurs booléennes sont soit `true` soit `false`.
+`Boolean` : Les valeurs booléennes sont soit `true` soit `false`.
 ```javascript
 let isTrue = true;
 let isFalse = false;
@@ -228,7 +228,7 @@ Les tableaux sont des listes ordonnées d'éléments. Les éléments sont access
 let nombres = [1, 2, 3, 4, 5];
 console.log(nombres[0]); // 1
 ```
-On peut ajouter des éléments à un tableau avec `push()` :
+On peut ajouter des éléments à un tableau avec `push()` :
 ```javascript
 nombres.push(6); // Ajoute un élément à la fin du tableau
 ```
@@ -244,18 +244,18 @@ const tuple = [1, "apple", true];
 Le `DOM` (*Document Object Model*) représente la structure HTML de la page. JavaScript peut interagir avec le DOM pour modifier dynamiquement l'apparence et le contenu d'une page.
 
 #### Sélectionner des Éléments
-3 fonctions permettent de sélectionner des éléments :
-- `document.getElementById()` : sélectionne un élément par son `@id`.
+3 fonctions permettent de sélectionner des éléments :
+- `document.getElementById()` : sélectionne un élément par son `@id`.
 ```javascript
 let element = document.getElementById("monID");
 ```
 
-- `document.querySelector()` : sélectionne le **premier élément** correspondant à un sélecteur CSS.
+- `document.querySelector()` : sélectionne le **premier élément** correspondant à un sélecteur CSS.
 ```javascript
 let element = document.querySelector(".maClasse");
 ```
 
-- `document.querySelectorAll()` : Sélectionne **tous les éléments** correspondant à un sélecteur CSS.
+- `document.querySelectorAll()` : Sélectionne **tous les éléments** correspondant à un sélecteur CSS.
 ```javascript
 let elements = document.querySelectorAll("p"); // Tous les paragraphes
 ```
@@ -305,14 +305,14 @@ L'emplacement d'un script dans une page HTML et la manière dont on configure so
 le code JavaScript est généralement inclus dans une balise `<script/>` que l'on place soit dans le `<head/>` (exécute immédiatement le code, avant le chargement de la page) soit à la toute fin du `<body/>` (le code est exécuté après que tout le code HTML soit chargé). L'emplacement des éléments `<script/>` a donc une importante, surtout lorsque l'on souhaite intéragir avec le `DOM`.
 
 Lorsque placé dans le `<head>`, et sous réserve d'utiliser l'attribut `@src`, deux attributs peuvent être utilisés pour contrôler quand et comment le script doit s'exécuter. 
-- `async` : charge en parallele et exécute le script de façon asynchrone, dés qu'il est disponible, sans suivre d'ordre particulier si plusieurs `<script/>` sont présents ;
-- `defer` : diffère l'exécution à la fin du chargement du document, juste avant `DOMContentLoaded`, mais l'ordre d'exécution entre les scripts est maintenu.
+- `async` : charge en parallele et exécute le script de façon asynchrone, dés qu'il est disponible, sans suivre d'ordre particulier si plusieurs `<script/>` sont présents ;
+- `defer` : diffère l'exécution à la fin du chargement du document, juste avant `DOMContentLoaded`, mais l'ordre d'exécution entre les scripts est maintenu.
 
 L'idée derrière ces deux attributs était d'assouplir la pratique de placer les `<script/>` à la fin du `<body/>`.
 
 Deux évènements permettent également de gérer le chargement et l'exécution des scripts
-- `window.onload` : se déclenche après que tout le contenu de la page a été entièrement chargé (ressources externes comprises (images, scripts, CSS)).
-- `DOMContentLoaded` : se déclenche dès que le DOM est complètement chargé, mais avant les ressources externes. À utiliser plutôt que `window.onload`.
+- `window.onload` : se déclenche après que tout le contenu de la page a été entièrement chargé (ressources externes comprises (images, scripts, CSS)).
+- `DOMContentLoaded` : se déclenche dès que le DOM est complètement chargé, mais avant les ressources externes. À utiliser plutôt que `window.onload`.
 
 ```html
 <html lang="fr">

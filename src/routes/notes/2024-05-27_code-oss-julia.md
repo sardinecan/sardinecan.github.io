@@ -1,22 +1,22 @@
 ---
-title: "Code-OSS : Julia"
+title: "Code-OSS : Julia"
 date: 2024-05-27
 author: "jmorvan"
 category: 'setup'
-keywords: "arch ; linux ; setup ; visual studio code ; vscode ; code ; code-oss ; julia"
+keywords: "arch ; linux ; setup ; visual studio code ; vscode ; code ; code-oss ; julia"
 ---
 
-# Code-OSS : configuration de Julia
+# Code-OSS : configuration de Julia
 
 si Julia se trouve dans le `PATH`, l'extension Julia devrait automatiquement trouver le *binary*, sans nécessité de configuration particulière. 
 
-Toutefois, si l'extension ne trouve pas Julia automatiquement, un erreur peut survenir :
+Toutefois, si l'extension ne trouve pas Julia automatiquement, un erreur peut survenir :
 
 > Could not start the Julia language server. Make sure the configuration setting julia.executablePath points to the Julia binary.
 
-Pour la résoudre, il faut faire pointer le paramètre `julia.executablePath` vers l'exécutable Julia que l'extension doit utiliser. Pour modifier ce paramètre de configuration, deux possibilités :
+Pour la résoudre, il faut faire pointer le paramètre `julia.executablePath` vers l'exécutable Julia que l'extension doit utiliser. Pour modifier ce paramètre de configuration, deux possibilités :
 
-- exécuter la commande `Preferences : Ouvrir les paramètres utilisateur` (`ctrl`+`maj`+`p` ou `Affichage`->`Palette de commandes`)
+- exécuter la commande `Preferences : Ouvrir les paramètres utilisateur` (`ctrl`+`maj`+`p` ou `Affichage`->`Palette de commandes`)
 
 ```JSON
   "terminal.integrated.commandsToSkipShell": [

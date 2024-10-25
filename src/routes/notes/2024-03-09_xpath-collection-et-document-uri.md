@@ -3,7 +3,7 @@ title: 'Les fonctions collection() et document-uri()'
 date: '2022-03-09'
 category: 'xpath'
 author: 'jmorvan'
-keywords: 'xpath ; xml'
+keywords: 'xpath ; xml'
 ---
 
 # Les fonctions XPath collection() et document-uri()
@@ -14,7 +14,7 @@ Renvoie une séquence d'éléments identifiés par une URI, ou une collection pa
 collection('.?select=*.xml') <!-- retourne une collection de document xml -->
 ```
 
-Pour récupérer le nom de chaque fichier, deux fonctions peuvent être utilisées : `document-uri()` et `base-uri()`.
+Pour récupérer le nom de chaque fichier, deux fonctions peuvent être utilisées : `document-uri()` et `base-uri()`.
 voir [document-uri() is not working when using collection()](https://stackoverflow.com/questions/77325893/document-uri-is-not-working-when-using-collection).
 
 ### [`document-uri()`](https://www.saxonica.com/documentation12/index.html#!functions/fn/document-uri)

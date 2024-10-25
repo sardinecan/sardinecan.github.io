@@ -3,12 +3,12 @@ title: "CLI connexion Wifi"
 date: 2024-05-15
 author: "jmorvan"
 category: 'setup'
-keywords: "CLI ; wifi ; setup"
+keywords: "CLI ; wifi ; setup"
 ---
 
 # Se connecter au wifi en ligne de commande
 
-La commande `nmcli dev wifi` permet de lister les points d'accès wifi :
+La commande `nmcli dev wifi` permet de lister les points d'accès wifi :
 
 ```
 nmcli dev wifi                               

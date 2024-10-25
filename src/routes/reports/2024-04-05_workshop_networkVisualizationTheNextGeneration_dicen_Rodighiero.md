@@ -3,7 +3,7 @@ title: 'Network Visualization: The Next Generation'
 date: '2024-04-05'
 speaker: 'Dario Rodighiero'
 category: 'workshop'
-keyworkds: 'design ; dh ; dataviz ; networks ; python'
+keyworkds: 'design ; dh ; dataviz ; networks ; python'
 ---
 
 # Network Visualization: The Next Generation
@@ -37,7 +37,7 @@ On obtient ensuite une distribution des pages par similarité.
 
 Il effectue ensuite une identification des clusters.
 
-Il utilise ensuite un Word cloud : il prend les clusters pour les décrires avec des mots.
+Il utilise ensuite un Word cloud : il prend les clusters pour les décrires avec des mots.
 
 Le fichier `index.js`
 

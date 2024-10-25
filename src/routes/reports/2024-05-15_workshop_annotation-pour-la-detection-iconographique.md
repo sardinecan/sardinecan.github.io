@@ -1,9 +1,9 @@
 ---
 title: "Annotation d'images pour la détection iconographique"
 date: '2024-05-15'
-speaker: 'Pauline Laurent, Christopher Kermorvant ; Marion Charpier'
+speaker: 'Pauline Laurent, Christopher Kermorvant ; Marion Charpier'
 category: 'workshop'
-keyworkds: 'IA ; annotation ; modèle'
+keyworkds: 'IA ; annotation ; modèle'
 ---
 
 # Annotation d'images pour la détection d'annotation
@@ -51,15 +51,15 @@ Facilité d'utilisation, interface claire, mais API peu déployée. Peu de docum
 L'objectif de cet atelier est l'annotation d'un corpus de documents numérisés en utilisant les plateformes open-source Arkindex et Callico.
 
 
-### 1. Choix d'un corpus :
+### 1. Choix d'un corpus :
 
-#### Ouvrage : Les animaux vivants du monde
+#### Ouvrage : Les animaux vivants du monde
 
 https://cloud.teklia.com/index.php/s/58k5m5HG4rezGsm
 
-Ce corpus est consitué d'un échantillon de pages de l'ouvrage [Les animaux vivants du monde : histoire naturelle illustrée d'après la photographie directe] (https://gallica.bnf.fr/ark:/12148/bpt6k64383119) dispinible sur Gallica. Il est disponible sous forme d'un manifest IIIF.
+Ce corpus est consitué d'un échantillon de pages de l'ouvrage [Les animaux vivants du monde : histoire naturelle illustrée d'après la photographie directe] (https://gallica.bnf.fr/ark:/12148/bpt6k64383119) dispinible sur Gallica. Il est disponible sous forme d'un manifest IIIF.
 
-Les tâches d'annotation possibles sur ce corpus sont :
+Les tâches d'annotation possibles sur ce corpus sont :
 - délimiter les illustrations
 
 
@@ -69,37 +69,37 @@ https://cloud.teklia.com/index.php/s/peA9aakzGezHLP8
 
 Ce corpus est consituté d'un échantillon de pages issues de livres d'heures médiévaux. L'archive ZIP contient des images jpeg téléchargées à partir des sites web IIIF des différentes institutions.
 
-Les tâches d'annotation possibles sur ce corpus sont :
+Les tâches d'annotation possibles sur ce corpus sont :
 - délimiter la page du manuscrit en excluant la fond (suport de numérisation)
 - délimiter les zones de texte en excluant les zones blanches, décorées ou les illustrations
 - délimiter les minitatures ou les initiales
 
-#### Presse : Le Petit Dauphinois illustré
+#### Presse : Le Petit Dauphinois illustré
 
 https://cloud.teklia.com/index.php/s/gTK77sEAiwJPSwg
 
 Ce corpus est consituté de 10 numéros du Petit Dauphinois illustré en PDF téléchargés à partir de Gallica.
 
-Les tâches d'annotation possibles sur ce corpus sont :
+Les tâches d'annotation possibles sur ce corpus sont :
 - délimiter les illustrations
 
 
 ### Documentation
- Pour plus de renseignements, veuillez consulter les documentations accessibles en ligne ici :
-- Arkindex : https://doc.arkindex.org/
-- Callico : https://doc.callico.eu/
+ Pour plus de renseignements, veuillez consulter les documentations accessibles en ligne ici :
+- Arkindex : https://doc.arkindex.org/
+- Callico : https://doc.callico.eu/
 
 
 ### 2. Création d'un compte sur https://demo.arkindex.org/ et import des images.
 
-Le lien pour créer un compte ici : https://demo.arkindex.org/user/register?next=/user/login. La création de ce compte entrainera la réception d'un mail, afin de valider son compte.
+Le lien pour créer un compte ici : https://demo.arkindex.org/user/register?next=/user/login. La création de ce compte entrainera la réception d'un mail, afin de valider son compte.
 Création d'un nouveau projet (bouton new project en haut à droite de l'écran)
 Le nommage du projet permet de le retrouver facilement, la description n'est pas facultative, on peut cependant mettre la même dénomination que dans le titre.
 Pour ajouter des images, il faut aller chercher le bouton action dans le coin en haut à droite, et choisir *import files*
 
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/9059c3b9-4e06-4cfb-bb4d-4a24aea6d28d.png)
 
-#### Les modes d'import d'images :
+#### Les modes d'import d'images :
 Ici, nous allons essayer trois méthodes différentes d'imports, en fonction du corpus choisi:
 - L'import d'images
 - L'import de pdf
@@ -151,7 +151,7 @@ Il faut alors se connecter à callico, et ajouter un nouveau projet (le bouton e
 
 Ici le nom du projet est obligatoire. Afin d'être sûrs de ne pas se mélanger avec les process, nous pouvons nommer le projet Initiales - Demo PictorIA
 
-Les deux derniers champs sont importants : ils permettent de lier les projets arkindex et callico et de créer un pont d'interopérabilité.
+Les deux derniers champs sont importants : ils permettent de lier les projets arkindex et callico et de créer un pont d'interopérabilité.
 Pour le fournisseur, il s'agit de la version démo d'Arkindex. Pour trouver l'identifiant de l'objet, il convient de revenir sur Arkindex.
 
 ### Trouver l'identifiant de l'objet sur Arkindex
@@ -215,7 +215,7 @@ On va ensuite sélectionner "Eléments".
 
 La description est facultative.
 
-De nouveaux champs apparaissent par la suite :
+De nouveaux champs apparaissent par la suite :
 * Le nombre de tâches à assigner par volontaires permet de donner un nombre de tâches déterminé à chaque annotateur. Il est par défaut à 50 tâches par annotateur. Il peut être utile de fragmenter les corpus dans le cas de grosses campagnes d'annotation. Il peut aussi être utile de fragmenter pour que des personnes ne prennent pas de grands nombres d'annotations si ils ne terminent pas leurs tâches assignées.  Néanmoins, si l'on indique 0 (zéro) tâches attribuées, les tâches ne sont pas automatiquement attribuées. Ici, on veut annoter quelques images, donc dans ce champs, on renseignera 20 images à assigner par annotateurs.
 
 ![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/672ee92f-8de2-4898-8db3-0d5770408a4c.png)
@@ -256,7 +256,7 @@ Les zones à délimiter peuvent se superposer.
 Sur cette image,on retrouve deux zones d'illustrations
 
 
-En ce qui concerne l’outil de délimitation, il existe sur Callico deux outils :
+En ce qui concerne l’outil de délimitation, il existe sur Callico deux outils :
 - Si la page est bien numérisée à plat, il est possible d’utiliser l’outil de sélection rectangle.
 - Si la page n’est pas droite, si les illustrations ne sont pas rectangulaires ou si les formes sont légèrement de biais ou si le texte s'enroule autour de l'illustration, il est possible de prendre l’outil polygone.
 - Pour détourer l’élément avec le polygone, il suffit de cliquer aux quatre coins du « rectangle », et revenir au point de départ pour fermer la sélection. La fermeture d’un rectangle entraine la création d’une nouvelle zone du même type.

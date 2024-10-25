@@ -3,13 +3,13 @@ title: 'Julia - Cheatsheet'
 date: '2024-03-20'
 author: 'Josselin Morvan'
 category: 'julia'
-keywords: 'cheatsheet ; julia'
+keywords: 'cheatsheet ; julia'
 ---
 
 # 📝 Julia
 ## Syntaxe
 ### Variables et types
-Une variable est un espace mémoire où une valeur est stockée. Julia est un langage dynamique : il n'est donc pas nécessaire de déclarer le type d'une variable lors de sa création, il est déduit automatiquement par Julia au moment de son affectation.
+Une variable est un espace mémoire où une valeur est stockée. Julia est un langage dynamique : il n'est donc pas nécessaire de déclarer le type d'une variable lors de sa création, il est déduit automatiquement par Julia au moment de son affectation.
 
 Les variables sont créées en leur affectant une valeur à l'aide de l'opérateur `=`.
 ```julia
@@ -28,7 +28,7 @@ julia> y
 julia>
 ```
 
-Si Julia est en mesure de déduire le type de la variable, il est aussi possible de la spécifier :
+Si Julia est en mesure de déduire le type de la variable, il est aussi possible de la spécifier :
 ```julia
 julia> a::Float64 = 3.0
 3.0
@@ -37,7 +37,7 @@ julia> typeof(a)
 Float64
 ```
 
-Les types de données "simples" (*chaînes*, *nombres*, *booléens*) sont **immuables** : leur contenu ne peut être modifié après leur création. Si on affecte une nouvelle valeur, on crée en réalité une nouvelle instance de cette variable :
+Les types de données "simples" (*chaînes*, *nombres*, *booléens*) sont **immuables** : leur contenu ne peut être modifié après leur création. Si on affecte une nouvelle valeur, on crée en réalité une nouvelle instance de cette variable :
 ```julia
 julia> x = 1
 1
@@ -46,7 +46,7 @@ julia> x = x + 1 # une nouvelle variable est créée avec la valeur 2
 2
 ```
 
-Les types de données plus complexes comme les *tableaux* ou les *dictionnaires* sont **mutables**, c'est-à-dire qu'il est possible de modifier leur contenu :
+Les types de données plus complexes comme les *tableaux* ou les *dictionnaires* sont **mutables**, c'est-à-dire qu'il est possible de modifier leur contenu :
 ```julia
 julia> arr = [1, 2, 3]
 3-element Vector{Int64}:
@@ -87,10 +87,10 @@ julia> sara.name
 "Sara"
 
 julia> fieldnames(Person) # pour connaitre les champs
-(:name, :age)
+(:name, :age)
 ```
 
-Par défaut, une instance est immuable :
+Par défaut, une instance est immuable :
 ```julia
 julia> sara.name = "Sarah"
 ERROR: setfield!: immutable struct of type Person cannot be changed
@@ -119,7 +119,7 @@ julia> dino
 Car("Dino", "FIAT")
 ```
 
-Une fois un type défini, il devient possible de lui associer des méthodes, ce qui permet de créer des fonctions spécifiques :
+Une fois un type défini, il devient possible de lui associer des méthodes, ce qui permet de créer des fonctions spécifiques :
 ```julia
 julia> struct Rectangle
            width::Int
@@ -138,16 +138,16 @@ julia> area(rect)
 50
 ```
 
-Pour aller plus loin voir aussi : 
+Pour aller plus loin voir aussi : 
 - [Parametric Types](https://docs.julialang.org/en/v1/manual/types/#Parametric-Types)
 
 ### Opérateurs booléens et opérations mathématiques 
 Il existe 3 opérateurs booléens dans Julia
-- `!` : NOT
-- `||` : OR
-- `&&` : AND
+- `!` : NOT
+- `||` : OR
+- `&&` : AND
 
-Les opérateurs arithmétiques permettent d'effectuer les opérations mathématiques de base sur les nombres :
+Les opérateurs arithmétiques permettent d'effectuer les opérations mathématiques de base sur les nombres :
 - `+` : addition
 - `-` : soustraction
 - `^` : puissance
@@ -189,7 +189,7 @@ julia>x, y, z = 1, 2, 3
 (1, 2, 3)
 ```
 
-**Egalité** : 
+**Egalité** : 
 - `==` : égalité
 - `===` : égalité stricte
 - `!=` : inégalité
@@ -237,7 +237,7 @@ true
 ```
 
 ### Les fonctions
-Une fonction associe la valeur d'un ou plusieurs arguments à une ou plusieurs valeurs de sortie. Une fonction Julia est déclarée ainsi :
+Une fonction associe la valeur d'un ou plusieurs arguments à une ou plusieurs valeurs de sortie. Une fonction Julia est déclarée ainsi :
 ```julia
 julia> function my_function()
            return println("Hello World!")
@@ -248,7 +248,7 @@ julia> my_function()
 Hello World!
 ```
 
-Il existe également une syntaxe compacte : 
+Il existe également une syntaxe compacte : 
 ```julia
 julia> greetings(name) = println("Greetings ", name)
 greetings (generic function with 1 method)
@@ -257,7 +257,7 @@ julia> greetings("Space Captain")
 Greetings Space Captain
 ```
 
-Bien évidemment, il est possible de préciser les types :
+Bien évidemment, il est possible de préciser les types :
 ```julia
 julia> function multiply_numbers(x::Int64, y::Int64)
            return x*y
@@ -268,7 +268,7 @@ julia> multiply_numbers(2, 4)
 8
 ```
 
-Les types permettent de définir différentes méthodes, et donc d'induire des comportements différents au regard de la nature des arguments :
+Les types permettent de définir différentes méthodes, et donc d'induire des comportements différents au regard de la nature des arguments :
 ```julia
 julia> function multiply_numbers(x::Float64, y::Float64)
            return x*y
@@ -276,8 +276,8 @@ julia> function multiply_numbers(x::Float64, y::Float64)
 multiply_numbers (generic function with 2 methods)
 ```
 
-Une fonction peut également retourner plusieurs valeurs. Dans ce cas, pour accéder aux différentes valeurs, plusieurs options s'offrent à nous, soit :
-- associer une variable à chaque valeur ;
+Une fonction peut également retourner plusieurs valeurs. Dans ce cas, pour accéder aux différentes valeurs, plusieurs options s'offrent à nous, soit :
+- associer une variable à chaque valeur ;
 - associer une unique variable au résultat de la fonction et accéder aux valeurs avec `[]`, `first()` et `last()` par exemple.
 ```julia
 julia> function my_math(x, y)
@@ -306,7 +306,7 @@ julia> last(output)
 1
 ```
 
-Les fonctions Julia acceptent également des mots-clés comme arguments, ils sont séparés des arguments par un point-virgule (`;`). Notons qu'arguments et mots-clés peuvent disposer de valeurs par défaut :
+Les fonctions Julia acceptent également des mots-clés comme arguments, ils sont séparés des arguments par un point-virgule (`;`). Notons qu'arguments et mots-clés peuvent disposer de valeurs par défaut :
 ```julia
 julia> function logarithm(x; base=2.718281828459045)
            return log(base, x)
@@ -338,13 +338,13 @@ julia> map(x -> x + 1, arr) # on utilise la fonction map() pour associer la fonc
  4
 ```
 
-Plusieurs arguments peuvent être passés,, ils faut alors les placer entre parenthèses : `(x, y, z) -> x + y + z`.
+Plusieurs arguments peuvent être passés,, ils faut alors les placer entre parenthèses : `(x, y, z) -> x + y + z`.
 
 #### Les fonctions avec un opérateur bang `!`
 L'opérateur bang `!` est une convention Julia pour indiquer qu'une fonction modifie un ou plusieurs de ses arguments (*side effect*).
 
 #### Chaînage
-L'opérateur `|>` permet de chaîner des opérations :
+L'opérateur `|>` permet de chaîner des opérations :
 ```julia
 julia> function add_two(i)
            return i + 2
@@ -381,10 +381,10 @@ Il est aussi possible d'utiliser une syntaxe simplifiée pour les évaluations s
 julia> x, y = 1, 2
 (1, 2)
 
-julia> x == y ? "x = y " : "x ≠ y"
+julia> x == y ? "x = y " : "x ≠ y"
 "x ≠ y"
 
-julia> x < y ? "x < y" : "x > y"
+julia> x < y ? "x < y" : "x > y"
 "x < y"
 ```
 
@@ -444,8 +444,8 @@ julia> str = "Hello World!"
 "Hello World!"
 
 
-julia> str = """Victore Hugo a prononcé la phrase "Ce gouvernement, je le caractérise d'un mot : la police partout, la justice nulle part" le 17 juillet 1851."""
-"Victore Hugo a prononcé la phrase \"Ce gouvernement, je le caractérise d'un mot : la police partout, la justice nulle part\" le 17 juillet 1851."
+julia> str = """Victore Hugo a prononcé la phrase "Ce gouvernement, je le caractérise d'un mot : la police partout, la justice nulle part" le 17 juillet 1851."""
+"Victore Hugo a prononcé la phrase \"Ce gouvernement, je le caractérise d'un mot : la police partout, la justice nulle part\" le 17 juillet 1851."
 =#
 
 julia> typeof(str)
@@ -705,9 +705,9 @@ julia> collect(r)
 ### Paires et dictionnaires
 [Documentation Julia](https://docs.julialang.org/en/v1/base/collections/#Dictionaries)
 
-Une paire est constituée de deux objets : une clé sa une valeur.
+Une paire est constituée de deux objets : une clé sa une valeur.
 ```julia
-julia> p = "key" => "value" # ou symbole pour la clé  :key => "value"
+julia> p = "key" => "value" # ou symbole pour la clé  :key => "value"
 "key" => "value"
 
 julia> p[1]
@@ -740,17 +740,17 @@ ERROR: MethodError: Cannot `convert` an object of type String to an object of ty
 - récupérer les clés ou les valeurs avec `keys()` et `values()`, ou tester la présence d'une clé avec `haskey()`
 ```julia
 julia> d = Dict{Symbol, Any}(
-         :hello => "world",
-         :adios => "Amigos"
+         :hello => "world",
+         :adios => "Amigos"
        )
 Dict{Symbol, Any} with 2 entries:
-  :hello => "world"
-  :adios => "Amigos"
+  :hello => "world"
+  :adios => "Amigos"
 
 julia> keys(d)
 KeySet for a Dict{Symbol, Any} with 2 entries. Keys:
-  :hello
-  :adios
+  :hello
+  :adios
 
 julia> values(d)
 ValueIterator for a Dict{Symbol, Any} with 2 entries. Values:
@@ -771,7 +771,7 @@ julia> collect(values(d))
 
 - récupérer la valeur d'une clé avec `get` ou en appelant la `key` dans l'opérateur `[]`.
 ```julia
-julia> get(d, :hello, "pas de clé :hello")
+julia> get(d, :hello, "pas de clé :hello")
 "world"
 
 julia> get(d, "hello", "pas de clé 'hello'") # cherche une clé de type String
@@ -783,20 +783,20 @@ julia> d[:hello]
 
 - amender un dictionnaire avec `delete!()` ou `pop!()`
 ```julia
-julia> delete!(d, :adios)
+julia> delete!(d, :adios)
 Dict{Symbol, Any} with 1 entry:
-  :hello => "world"
+  :hello => "world"
 # si la clé n'existe pas, le dictionnaire n'est pas modifié.
 
-julia> pop!(d, :hello)
+julia> pop!(d, :hello)
 "world"
 
 # pop!() retourne une erreur si la clé n'est pas trouvée...
-julia> pop!(d, :hello) 
-ERROR: KeyError: key :hello not found
+julia> pop!(d, :hello) 
+ERROR: KeyError: key :hello not found
 
 # … ou une valeur par défaut si elle est précisée
-julia> pop!(d, :hola, 0)
+julia> pop!(d, :hola, 0)
 0
 ```
 
@@ -824,12 +824,12 @@ Avec `merge!()`,il faut parfois ajouter les types pour résoudre les problèmes 
 
 ```julia
 julia> d = Dict(
-  :title => "myTitle",
-  :date => "2024-01-01"
+  :title => "myTitle",
+  :date => "2024-01-01"
 )
 
 julia> c = Dict(
-  :files => [
+  :files => [
     "file1.text",
     "file2.text"
   ]
@@ -839,8 +839,8 @@ julia> merge!(d, c)
 ERROR: MethodError: Cannot `convert` an object of type Vector{String} to an object of type String
 
 julia> d = Dict{Symbol, Any}( 
-  :title => "myTitle",
-  :date => "2024-01-01"
+  :title => "myTitle",
+  :date => "2024-01-01"
 )
 ```
 
@@ -868,8 +868,8 @@ julia> [1 2 # une matrice
  3  4
 ```
 
-Il existe deux types d'*array* :
-- les vecteurs, `Vector{T}`, (une dimension) ;
+Il existe deux types d'*array* :
+- les vecteurs, `Vector{T}`, (une dimension) ;
 - les matrices, `Matrix{T}` (deux dimensions).
 
 Il existe plusieurs méthodes pour créer des tableaux. La première méthode est d'utiliser les constructeurs par défaut `Vector{T}(undef, n)` (construit un `Vector{T}` non initialisé de longueur `n`.) ou `Matrix{T}(undef, m, n)` (matrice non initialisée de taille `m` x `n`)  
@@ -887,7 +887,7 @@ julia> a = Matrix{Float64}(undef, 3, 2)
  2.20472e-314  2.20472e-314
 ```
 
-Julia dispose également d'alias syntaxiques pour les éléments les plus courants dans la construction de tableaux :
+Julia dispose également d'alias syntaxiques pour les éléments les plus courants dans la construction de tableaux :
 ```julia
 julia> v = zeros(5) # initialise avec des O on peut aussi passer un type zeros(Float64, 5)
 5-element Vector{Float64}:
@@ -963,7 +963,7 @@ julia> append!(arrA, arrB) # concat arrB à la suite de arrA
  6
 ```
 
-Une fois la tableaux établit, il est possible de le parcourir. Mais préalablement, il est souvent nécessaire de connaître les caractéristiques du tableau : taille (`size()`), longueur (`length()`), dimensions (`ndims()`), type des éléments (`eltype()`)
+Une fois la tableaux établit, il est possible de le parcourir. Mais préalablement, il est souvent nécessaire de connaître les caractéristiques du tableau : taille (`size()`), longueur (`length()`), dimensions (`ndims()`), type des éléments (`eltype()`)
 ```julia
 julia> v = [1, 2, 3]
 3-element Vector{Int64}:
@@ -1002,7 +1002,7 @@ julia> m
 julia> m[2, 2]
 5
 
-julia> m[2, :]
+julia> m[2, :]
 3-element Vector{Int64}:
  4
  5
@@ -1157,20 +1157,20 @@ julia> map(x -> x+1, [1, 2, 3])
  4
 ```
 
-De nombreuses autres opérations sont applicables aux tableaux : jointure, appartenance, contient, sous-ensemble, etc.
+De nombreuses autres opérations sont applicables aux tableaux : jointure, appartenance, contient, sous-ensemble, etc.
 ```julia
 julia> arr = [1, 2, 3]
 julia> join(arr, ",")
 "1,2,3"
 ```
-Opérateurs :
+Opérateurs :
 - `in` | `∈` : appartient
 - `∉` : n'appartient pas
 - `issubset` : sous-ensemble
 
 ```julia
 julia> a = 1:5
-julia> 3 in a # autres notations : in(3, 1:5) ou 3 ∈ 1:5
+julia> 3 in a # autres notations : in(3, 1:5) ou 3 ∈ 1:5
 true
 ```
 
@@ -1299,7 +1299,7 @@ julia> DataFrame([(a=1, b="Yoda"), (a=2, b="Han Solo")])
 # construction colonne par colonne
 julia> df = DataFrame()
 julia> df.a = 1:2 # ajout de la colonne a
-julia> df[!, :b] = ["Yoda", "Han Solo"] #ajout de la colonne b (autre syntaxe)
+julia> df[!, :b] = ["Yoda", "Han Solo"] #ajout de la colonne b (autre syntaxe)
 
 # construction ligne à ligne
 julia> df = DataFrame(a=Int[], b=String[])
@@ -1337,14 +1337,14 @@ julia> names(df)
 
 julia> propertynames(df) # retourne les noms de colonne sous forme de symboles
 2-element Vector{Symbol}:
- :a
- :b
+ :a
+ :b
 ```
 
 Cette même fonction permet de faire des recherches dans le noms de colonnes.
 ```julia
 julia> names(df, r"a") # liste les colonnes avec RegEx
-julia> names(df, Not(:b)) # tous les noms de colonnes sauf :b
+julia> names(df, Not(:b)) # tous les noms de colonnes sauf :b
 julia> names(df, Int) # liste les colonnes en fonction du type de données
 ```
 
@@ -1352,22 +1352,22 @@ On peut récupérer un vecteur des valeurs d'une colonne de différentes manièr
 ```julia
 julia> df.b
 julia> df."b"
-julia> df[!, :b]
+julia> df[!, :b]
 julia> df[!, "b"]
-julia> df[:, :b]
+julia> df[:, :b]
 julia> df[:, "b"]
 2-element Vector{String}:
  "Yoda"
  "Han Solo"
 ```
 
-Il existe cependant une différente entre `df[!, :b]` et `df[:, :b]` : le *bang operator* `!` indique qu'une copie n'est pas réalisée. Si on change un élément du vecteur alors il sera propagé au Dataframe.
+Il existe cependant une différente entre `df[!, :b]` et `df[:, :b]` : le *bang operator* `!` indique qu'une copie n'est pas réalisée. Si on change un élément du vecteur alors il sera propagé au Dataframe.
 
- > Columns can be directly (i.e. without copying) accessed via df.col or df[!, :col]. [...] Since df[!, :col] does not make a copy, changing the elements of the column vector returned by this syntax will affect the values stored in the original df. To get a copy of the column use df[:, :col]: changing the vector returned by this syntax does not change df.
+ > Columns can be directly (i.e. without copying) accessed via df.col or df[!, :col]. [...] Since df[!, :col] does not make a copy, changing the elements of the column vector returned by this syntax will affect the values stored in the original df. To get a copy of the column use df[:, :col]: changing the vector returned by this syntax does not change df.
 
 ```julia 
 julia> df = DataFrame(["a" => 1:2, "b" => ["Yoda", "Han Solo"]])
-julia> v = df[:, :b] # pas de bang, la valeur ne sera pas modifiée
+julia> v = df[:, :b] # pas de bang, la valeur ne sera pas modifiée
 2-element Vector{String}:
  "Yoda"
  "Han Solo"
@@ -1384,7 +1384,7 @@ julia> df
    2 │     2  Han Solo
 
 
-julia> v = df[!, :b] # bang opérateur
+julia> v = df[!, :b] # bang opérateur
 julia> v[2] = "Dark Vador"
 julia> df # utilisation de bang, la valeur est modifiée.
 2×2 DataFrame

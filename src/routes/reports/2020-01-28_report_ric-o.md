@@ -2,7 +2,7 @@
 title: 'Les métadonnées archivistiques en transition : le nouveau cadre normatif, les enjeux et les premières réalisations'
 date: '2020-01-28'
 place: 'Archives nationales'
-speaker: 'Florence Clavaud ; Thomas Francart ; Pauline Charbonnier ; Nicolas Orsini ; Camille Monnier ; Manonmani Restif ; Tiphaine-Cécile Foucher ; Anila Angjeli'
+speaker: 'Florence Clavaud ; Thomas Francart ; Pauline Charbonnier ; Nicolas Orsini ; Camille Monnier ; Manonmani Restif ; Tiphaine-Cécile Foucher ; Anila Angjeli'
 category: 'conference'
 keywords: ''
 ---
@@ -13,13 +13,13 @@ keywords: ''
 
 Anthea Seles
 
-**L'ICA** : promouvoir la préservation et l'accès aux Archives dans le monde entier.
+**L'ICA** : promouvoir la préservation et l'accès aux Archives dans le monde entier.
 
 **RIC** a été crée par un groupe d'experts de la description archivistique et son objectif est de faire des liens **entre** les collections.
 
 
 
-## *Records In Contexts* : le nouveau standard international pour la description archivistique
+## *Records In Contexts* : le nouveau standard international pour la description archivistique
 
 Florence Clavaud
 
@@ -37,15 +37,15 @@ RIC est développé par le groupe **EGAD**, sous la présidence de Daniel Pitti 
 
 RIC est un stnadard en 3 parties 
 
-- un **modèle conceptuel abstrait** (indépendant de toute implémentation) : **RIC-CM**
-- une **ontologie**, c'est à dire une représentation formelle et technique du modèle conceptuel, écrite dans les langages OWL/RDFS/RDF : **RIC-O**
-  - Le principal objectif de RIC-O : définir un vocabulaire et les règles applicables aux métadonnées archivistiques ayant la forme de jeux de données RDF (des triplets)
+- un **modèle conceptuel abstrait** (indépendant de toute implémentation) : **RIC-CM**
+- une **ontologie**, c'est à dire une représentation formelle et technique du modèle conceptuel, écrite dans les langages OWL/RDFS/RDF : **RIC-O**
+  - Le principal objectif de RIC-O : définir un vocabulaire et les règles applicables aux métadonnées archivistiques ayant la forme de jeux de données RDF (des triplets)
 - Un manuel de mise en œuvre (**RIC-Application Guidelines**)
   - non encore commencé, mais sa forme pourrait prendre la forme inhabituelle de tutoriels. 
 
 Première version V0.1 en 2016 complètement remaniée en décembre 2019 avec la V0.2 (**la première version est à 100% obsolète**). En mars le modèle conceptuel complet de la V0.2 devrait être publié, et en novembre la V1.
 
-RIC-CM définit **22 entités** dont **4** sont **essentielles** dans le modèle : 
+RIC-CM définit **22 entités** dont **4** sont **essentielles** dans le modèle : 
 
 - Record resource (contenu informationnel)
 - Instantiation (réalisation de ce contenu informationnel sur un support)
@@ -72,7 +72,7 @@ Le choix de l'ontologie s'est imposé car il n'y avait aucune ontologie de réf�
 
 RIC-O est immédiatement utilisable => expert RDF
 
-RIC-O doit être utile : faire des recherches sur le graphe produit (il gère les relations)
+RIC-O doit être utile : faire des recherches sur le graphe produit (il gère les relations)
 
 [La documentation de RIC-O 0.1](https://www.ica.org/standards/RiC/RiC-O_v0-1.rdf) est disponible en version HTML sur le web, pour être lisible par tous.
 
@@ -82,7 +82,7 @@ RIC-O doit être utile : faire des recherches sur le graphe produit (il gère le
 
 Des ateliers de présentation plus détaillés et d'échanges seront organisés avec le SIAF (26 et 31 mars après midi) et un premier workshop de 2 à 3 jours consécutifs sera également organisé pour les personnes maitrisant EAD et EAC-CPF
 
-## RIC aux AN : enjeux et premières réalisations
+## RIC aux AN : enjeux et premières réalisations
 
 Florence Clavaud / Paulie Charbonnier
 
@@ -131,11 +131,11 @@ En ce moment environ 15 référentiels sont utilisés et un modèle XML "maison"
 
 Décision politique début en 2018. Il s'appuiera sur l'EAC-CPF, mais il faut le faire évoluer pour la description des relations. Il a également été décidé d'agréger à ce futur référentuel des notices issues des bdd documentaires des AN. La première bdd traitée sera LEONORE.
 
-L'objectif derrière tout ce travail sur les référentiels est d'augmenter et de favoriser l'utilisation et l'enrichissement des référentiels : si on n'indexe pas les documents et les informations qu'ils contiennent, il n'y a aucune chance de mettre au jour toutes ces relations.
+L'objectif derrière tout ce travail sur les référentiels est d'augmenter et de favoriser l'utilisation et l'enrichissement des référentiels : si on n'indexe pas les documents et les informations qu'ils contiennent, il n'y a aucune chance de mettre au jour toutes ces relations.
 
 ### ALEGORIA
 
-Projet mené par l'IGN : produire une plateforme permettant la recherche multimodale (dans les métadonnées mais aussi dans des images). Utilise des données des AN et de l'IGN, avec le choix de RDF et RIC-O pour l'ensemble des données. 
+Projet mené par l'IGN : produire une plateforme permettant la recherche multimodale (dans les métadonnées mais aussi dans des images). Utilise des données des AN et de l'IGN, avec le choix de RDF et RIC-O pour l'ensemble des données. 
 
 ### Conclusion
 
@@ -143,7 +143,7 @@ Aujourd'hui il reste à introduire ces solutions dans une stratégie institution
 
 En attendant une application web sémantique aux AN, la publication des jeux de données RDF produits devrait être réalisée dans l'année sur http://data.culture.gouv.fr sous la forme de .zip récupérables par tous.
 
-## RIC-O Converter : conversion de métadonnées archivistiques (EAC, EAC-CPF) en jeux de données conformes RIC-O
+## RIC-O Converter : conversion de métadonnées archivistiques (EAC, EAC-CPF) en jeux de données conformes RIC-O
 
 Outils de conversion des notices EAC-CPF et EAD vers des données RDF exprimées suivant RIC-O.
 
@@ -155,7 +155,7 @@ Le chantier a été mené par la société **Sparma**. Le développement a été
 
 Il s'exécute en ligne de commande.
 
-Problèmes rencontrés :
+Problèmes rencontrés :
 
 - Générer des logs d'erreur dans les cas imprévus
 - Génération d'URIs
@@ -163,12 +163,12 @@ Problèmes rencontrés :
   - comment assigner des URIs aux entités qui n'en ont pas ?
 - Dédoublonnage des relations entre entités qui apparaissent dans les 2 sens (manque de précisions dans les relations)
 - Faire émerger des entités conceptuelles qui sont implicites dans les fichiers
-  - EAD : les recordResource
-  - EAC : faire émerger un type de relation : person/person
+  - EAD : les recordResource
+  - EAC : faire émerger un type de relation : person/person
 
 Concernant les URIs, provisoirement, les ressources sont inscrites dans le domaine fictif des AN. Lorque c'est possible on s'appuie ensuite sur leur classe et l'identifant de la notice EAC.
 
-ex pour les agents et leur notice d'autorité : 
+ex pour les agents et leur notice d'autorité : 
 
 - data.archives-nationales.culture.gouv.fr/**agent**/51126
 - data.archives-nationales.culture.gouv.fr/**record**/51126
@@ -187,7 +187,7 @@ Les limites pour le moment sont que le convertisseur ne prend pas encore en comp
 
 Nicolas Orsini
 
-Le **Département de l'Innovation Numérique** (DIN) soutien l'innovation numérique selon 3 axes :
+Le **Département de l'Innovation Numérique** (DIN) soutien l'innovation numérique selon 3 axes :
 
 - programme national de numérisation et de valorisation des contenus culturels
 - stratégie de diffusion des données culturelles (open data, web sem, Europeana)
@@ -197,11 +197,11 @@ En 2014, le MCC a mis en place un feuille de route pour inscrire les données cu
 
 Il y a aussi un volonté de mettre en place un programme de R&D, avec l'INRIA notamment.
 
-Le ministère de la Culture a publié des ouvrages en ligne pour les producteurs de données, (par ex. : *Quels modèles pour la provenance des données numérique ? État de l'art*).
+Le ministère de la Culture a publié des ouvrages en ligne pour les producteurs de données, (par ex. : *Quels modèles pour la provenance des données numérique ? État de l'art*).
 
 En plus d'une logique d'accompagnement des équipes et d'actualisation de la feuille de route, il y a une volonté de sortir d'une logique de silos pour les différents secteurs culturels.
 
-Pour l'avenir, les principaux chantiers sont : 
+Pour l'avenir, les principaux chantiers sont : 
 
 - Interfaces et visualisation de données liées
 
@@ -227,24 +227,24 @@ FranceArchives lance un groupe de travail de description/indexation (publication
 
 ## La transition bibliographique à la BnF et au-delà
 
-### Panorama global des enjeux et des travaux en cours : vers un graphe d'entités
+### Panorama global des enjeux et des travaux en cours : vers un graphe d'entités
 
 Typhaine-Cécile Foucher
 
 La transition bibliographique, ça fait longtemps qu'on en parle : le modèle FRBR date de 1997. C'est un changement mais pas une révolution, on n'abandonne pas les données => changement des normes, changement des codes de catalogage, changement des données et habitudes de travail.
 
-Il y a deux points importants : les **URI** et les **liens**.
+Il y a deux points importants : les **URI** et les **liens**.
 
 À la BnF, il y a le format intermark, qui évolue constamment et permettait déjà de gérer énormément de liens (à la différence d'autres format mark). Mais ce qui doit être implémenté c'est FRBR.
 
-Exemple de graphe FRBR : l'idée qu'une oeuvre est une **Expression** (l'idée de l'auteur), qui peut se traduire par une **Manifestation** (si on schématise, il s'agit des différentes éditions de cette œuvre), qui peuvent elles-mêmes se traduire par un **Item** (qui est l'objet que l'on tient dans les mains).
+Exemple de graphe FRBR : l'idée qu'une oeuvre est une **Expression** (l'idée de l'auteur), qui peut se traduire par une **Manifestation** (si on schématise, il s'agit des différentes éditions de cette œuvre), qui peuvent elles-mêmes se traduire par un **Item** (qui est l'objet que l'on tient dans les mains).
 
-Cette transition bibliographique devient une nécessité : importance du web sem, importance des liens, changement des pratiques professionnelles, mutualisation, coproduction…
+Cette transition bibliographique devient une nécessité : importance du web sem, importance des liens, changement des pratiques professionnelles, mutualisation, coproduction…
 
-Les outils de transition sont : 
+Les outils de transition sont : 
 
-- data.bnf.fr : date de 2011, il n'est pas parfait, mais il évolue et il permet à la Bnf de présenter ses données. L'interface de data.bnf a été modifié récemment (pas encore une refonte graphique) mais l'idée était de simplifier ce qui était présenter (/!\ pas ce qui est publié en RDF !). Il y a également le chantier RobotDonnées : ce qui est présenter c'est le niveau *expression*, mais pas encore la *manifestation*. RobotDonnées permettra de compléter les données à partir des notices bibliographiques (donc de présenter le niveau *manifestation*).
-- changement des outils de catalogage (NOEMI) : permettra d'exposer tout le graphe FRBR. À l'horizon 2022, mais ne sera accessible que par la Bnf. Il y a 4 groupes de travail : 
+- data.bnf.fr : date de 2011, il n'est pas parfait, mais il évolue et il permet à la Bnf de présenter ses données. L'interface de data.bnf a été modifié récemment (pas encore une refonte graphique) mais l'idée était de simplifier ce qui était présenter (/!\ pas ce qui est publié en RDF !). Il y a également le chantier RobotDonnées : ce qui est présenter c'est le niveau *expression*, mais pas encore la *manifestation*. RobotDonnées permettra de compléter les données à partir des notices bibliographiques (donc de présenter le niveau *manifestation*).
+- changement des outils de catalogage (NOEMI) : permettra d'exposer tout le graphe FRBR. À l'horizon 2022, mais ne sera accessible que par la Bnf. Il y a 4 groupes de travail : 
   - Outils de production
   - Format et migration
   - Intégration SI
@@ -258,9 +258,9 @@ Anila Angjeli
 
 L'objectif est de créer une plateforme centralisée nationale pour la coproduction des données relatives aux entités de référence (agents, œuvres, concepts, évènements, etc.) utiles aux organismes dépositaires de collections documentaires en France.
 
-Le principe : **l'unique et les multiples** : une même entité identifiée et décrite une seule fois et gérée de manière centralisée dans le FNE.
+Le principe : **l'unique et les multiples** : une même entité identifiée et décrite une seule fois et gérée de manière centralisée dans le FNE.
 
-Intérets : 
+Intérets : 
 
 - Mutualisation (coût, compétence, expertise humaine)
 
@@ -272,14 +272,14 @@ Intérets :
 
 Les données des deux acteurs du projet (ABES et Bnf) sont sous licence ouverte de l'État. L'environnement est également propice (standards métier fondés sur la notion de graphes d'entités, transition bibliographique, etc.)
 
-Le FNE est placé sous le programme de transition bibliographique (mêmes entités, mêmes acteurs pilotes : ABES et bnf). Il s'inscrit donc dans la continuité des efforts et comme aboutissement de la transition bibliographique. Son périmètre documentaire est potentiellement toutes les entités.
+Le FNE est placé sous le programme de transition bibliographique (mêmes entités, mêmes acteurs pilotes : ABES et bnf). Il s'inscrit donc dans la continuité des efforts et comme aboutissement de la transition bibliographique. Son périmètre documentaire est potentiellement toutes les entités.
 
-Une approche de construction progressive a été adoptée : 
+Une approche de construction progressive a été adoptée : 
 
 - Premier cercle de producteurs (catalogueurs et experts de la Bnf, SUDOC, etc.)
 - extention à d'autres acteurs
 
-Les fonctions attendues sont : 
+Les fonctions attendues sont : 
 
 - Disponibilité 24/7
 - Modèle de données (provenance et historisation des données, etc.)
@@ -287,7 +287,7 @@ Les fonctions attendues sont :
 
 Il reposera sur Wikibase (métamodèle neutre, conçu pour le travail collaboratif, outils web et open source, permettra aux bibliothèques de publier leurs informations dans le web de données, déjà utilisé par nombre de chercheurs, etc.).
 
-Des faiblesses ont toutefois déjà été identifiées : 
+Des faiblesses ont toutefois déjà été identifiées : 
 
 - Nombreuses fonctionnalités de recherches professionnelles à développer
 - Problème des contrôles sur gestion de certaines informations difficiles à implémenter.

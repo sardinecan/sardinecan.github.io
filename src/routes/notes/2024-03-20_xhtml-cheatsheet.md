@@ -3,7 +3,7 @@ title: 'XHTML - Cheatsheet'
 date: '2024-03-20'
 author: 'Josselin Morvan'
 category: 'html'
-keywords: 'cheatsheet ; html ; xhtml'
+keywords: 'cheatsheet ; html ; xhtml'
 ---
 
 # 📝 Les fondamentaux HTML

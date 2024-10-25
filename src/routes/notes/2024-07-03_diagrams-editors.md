@@ -3,7 +3,7 @@ title: "Éditeurs de diagrammes"
 date: 2024-07-03
 author: "jmorvan"
 category: 'software'
-keywords: "diagramme ; editeur ; éditeur ; editor"
+keywords: "diagramme ; editeur ; éditeur ; editor"
 ---
 
 # Éditeurs de diagrammes

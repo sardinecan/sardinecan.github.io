@@ -3,7 +3,7 @@ title: 'Basculer des URL de dépôts distants de HTTPS vers SSH'
 date: '2022-05-17'
 category: 'github'
 author: 'jmorvan'
-keywords: 'nodejs ; version'
+keywords: 'nodejs ; version'
 ---
 
 # Basculer des URL de dépôts distants Github de HTTPS vers SSH
@@ -14,7 +14,7 @@ Si la commande `git push` est  requiert les identifiants.
 ```shell
 cd /mon/projet/sur/github
 ```
-Pour lister les dépôts distants :
+Pour lister les dépôts distants :
 ```shell
 git remote -v
 # origin  https://github.com/OWNER/REPOSITORY.git (fetch)
