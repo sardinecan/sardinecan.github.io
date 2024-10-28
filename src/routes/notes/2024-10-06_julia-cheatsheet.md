@@ -1397,7 +1397,128 @@ julia> df # utilisation de bang, la valeur est modifiée.
 
 Voir la documentation pour travailler avec les [*subsets*](https://dataframes.juliadata.org/stable/man/working_with_dataframes/) et pour les nombreuses options de [tri](https://dataframes.juliadata.org/stable/man/sorting/).
 
-# Copie
+Pour récupérer une ligne ou un groupe de lignes et/ou des colonnes spécifiques, on utilise la notation suivante : 
+```julia
+julia> names = ["Yoda", "Dark Vador", "Luke Skywalker", "Mace Windu"]
+4-element Vector{String}:
+ "Yoda"
+ "Dark Vador"
+ "Luke Skywalker"
+ "Mace Windu"
+
+julia> side = ["light", "dark", "light", "light"]
+4-element Vector{String}:
+ "light"
+ "dark"
+ "light"
+ "light"
+
+julia> df = DataFrame(; name=names, side=side)
+4×2 DataFrame
+ Row │ name            side   
+     │ String          String 
+─────┼────────────────────────
+   1 │ Yoda            light
+   2 │ Dark Vador      dark
+   3 │ Luke Skywalker  light
+   4 │ Mace Windu      light
+
+julia> df[1:2, :]
+2×2 DataFrame
+ Row │ name        side   
+     │ String      String 
+─────┼────────────────────
+   1 │ Yoda        light
+   2 │ Dark Vador  dark
+
+julia> df[3, :]
+DataFrameRow
+ Row │ name            side   
+     │ String          String 
+─────┼────────────────────────
+   3 │ Luke Skywalker  light
+
+julia> df[[1, 3], :side] # lignes 1 et 3 uniquement la colonne side
+2-element Vector{String}:
+ "light"
+ "light"
+
+julia> df[[1, 3], [:side, :name]] # uniquement lignes 1 et 3 et colonne side et name
+2×2 DataFrame
+ Row │ side    name           
+     │ String  String         
+─────┼────────────────────────
+   1 │ light   Yoda
+   2 │ light   Luke Skywalker
+```
+
+On peut également filtrer les résultats en fonction de la valeur d'une ou de plusieurs cellules :
+
+```julia
+julia> df[df.side .== "light", :]
+3×2 DataFrame
+ Row │ name            side   
+     │ String          String 
+─────┼────────────────────────
+   1 │ Yoda            light
+   2 │ Luke Skywalker  light
+   3 │ Mace Windu      light
+
+julia> df[(df.name .== "Yoda") .|| (df.side .== "dark"), :]
+2×2 DataFrame
+ Row │ name        side   
+     │ String      String 
+─────┼────────────────────
+   1 │ Yoda        light
+   2 │ Dark Vador  dark
+```
+
+La fonction `subset()` peut aussi être utilisée :
+```julia
+julia> subset(df, :name => n -> n .== "Yoda")
+1×2 DataFrame
+ Row │ name    side   
+     │ String  String 
+─────┼────────────────
+   1 │ Yoda    light
+
+julia> subset(df, :name => n -> n .== "Yoda", :side => s -> s .== "dark")
+0×2 DataFrame
+ Row │ name    side   
+     │ String  String 
+─────┴────────────────
+# retourne un df vide car aucune ligne ne répond au x deux conditions
+```
+
+Des colonnes peuvent être ajoutées à un DataFrame existant :
+```julia
+julia> df.midichlorians = [17000, 27000, 14000, 12000]
+4-element Vector{Int64}:
+ 17000
+ 27000
+ 14000
+ 12000
+
+julia> df.lighsaber = missings(String, nrow(df))
+4-element Vector{Union{Missing, String}}:
+ missing
+ missing
+ missing
+ missing
+
+julia> df
+4×4 DataFrame
+ Row │ name            side    midichlorians  lighsaber 
+     │ String          String  Int64          String?   
+─────┼──────────────────────────────────────────────────
+   1 │ Yoda            light           17000  missing   
+   2 │ Dark Vador      dark            27000  missing   
+   3 │ Luke Skywalker  light           14000  missing   
+   4 │ Mace Windu      light           12000  missing   
+
+```
+
+## Copie
 ```julia
 a = [[1,2,3], [4,5,6]]
 b = copy(a)

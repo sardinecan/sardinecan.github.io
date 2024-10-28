@@ -191,6 +191,7 @@ Le fichier `settings.json` complet :
     "editor.fontSize": 16,
     "editor.formatOnType": false,
     "editor.indentSize": "tabSize",
+    "editor.fontLigatures": true,
     "editor.formatOnPaste": true,
     "editor.lineHeight": 1.6,
     "editor.linkedEditing": true,
