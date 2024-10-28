@@ -44,6 +44,7 @@ VS Code permet également la synchronisation des paramètres depuis un compte Gi
     <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
     <span class="token property">"editor.formatOnType"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
     <span class="token property">"editor.indentSize"</span><span class="token operator">:</span> <span class="token string">"tabSize"</span><span class="token punctuation">,</span>
+    <span class="token property">"editor.fontLigatures"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token property">"editor.formatOnPaste"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token property">"editor.lineHeight"</span><span class="token operator">:</span> <span class="token number">1.6</span><span class="token punctuation">,</span>
     <span class="token property">"editor.linkedEditing"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
