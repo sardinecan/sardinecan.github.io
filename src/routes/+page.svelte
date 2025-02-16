@@ -67,7 +67,6 @@
 <ul class="desc">
   <li><img alt="report" class="report" src="{ reportIcon }"/>c.r.</li>
   <li><img alt="note" class="note" src="{ noteIcon }"/>note</li>
-  <li><img alt="post" class="post" src="{ postIcon }"/>billet</li>
 </ul>
 <ul>
   {#each recent as report, i}
