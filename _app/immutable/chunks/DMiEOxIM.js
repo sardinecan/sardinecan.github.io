@@ -1,0 +1,10 @@
+import{s as E,n as u}from"./CXCHmQ-B.js";import{S as H,i as T,d as a,a as o,k as L,c as f,l as _,g as C,e as S,m as y,h as p,j as g,H as F}from"./DuaWf0Pd.js";function N(I){let n,h="Se connecter au wifi en ligne de commande",c,i,v="La commande <code>nmcli dev wifi</code> permet de lister les points d’accès wifi :",d,l,r,x=`<code class="language-undefined">nmcli dev wifi                               
+IN-USE  BSSID              SSID                    MODE   CHAN  RATE&gt;
+        F2:8D:7E:03:34:94  HUAWEI-B528-0656        Infra  11    130 &gt;
+        BE:F3:D0:0E:17:EC  Redmi Note 11           Infra  7     117 &gt;
+*       04:F0:21:4C:55:9B  NormandieTrainConnecte  Infra  6     195 &gt;
+        06:F0:21:4C:55:9B  --                      Infra  6     195 &gt;
+        06:F0:21:4C:55:2C  --                      Infra  36    405 &gt;
+        04:F0:21:4C:55:2C  NormandieTrainConnecte  Infra  36    405 &gt;
+</code>`,m,s,w=`La commande <code>nmcli dev wifi connect NormandieTrainConnecte</code> permet de se connecter à l’un des points d’accès.
+Ajouter <code>password *monmdp*</code> à la fin de la commande si la connexion nécessite un mot de passe.`;return{c(){n=p("h1"),n.textContent=h,c=g(),i=p("p"),i.innerHTML=v,d=g(),l=p("pre"),r=new F(!1),m=g(),s=p("p"),s.innerHTML=w,this.h()},l(e){n=f(e,"H1",{"data-svelte-h":!0}),_(n)!=="svelte-1wj5wld"&&(n.textContent=h),c=C(e),i=f(e,"P",{"data-svelte-h":!0}),_(i)!=="svelte-ao00ol"&&(i.innerHTML=v),d=C(e),l=f(e,"PRE",{class:!0});var t=S(l);r=y(t,!1),t.forEach(a),m=C(e),s=f(e,"P",{"data-svelte-h":!0}),_(s)!=="svelte-1o8phg2"&&(s.innerHTML=w),this.h()},h(){r.a=null,L(l,"class","language-undefined")},m(e,t){o(e,n,t),o(e,c,t),o(e,i,t),o(e,d,t),o(e,l,t),r.m(x,l),o(e,m,t),o(e,s,t)},p:u,i:u,o:u,d(e){e&&(a(n),a(c),a(i),a(d),a(l),a(m),a(s))}}}const B={title:"CLI connexion Wifi",date:"2024-05-15T00:00:00.000Z",author:"jmorvan",category:"setup",keywords:"CLI ; wifi ; setup"},{title:j,date:A,author:k,category:P,keywords:R}=B;class U extends H{constructor(n){super(),T(this,n,null,N,E,{})}}export{U as default,B as metadata};

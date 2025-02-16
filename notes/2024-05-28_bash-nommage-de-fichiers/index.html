@@ -5,39 +5,37 @@
 		<link rel="icon" href="../../sunset.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.EEBTI53n.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.B37EGc9b.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.CvUMos7m.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.ZYAVufb_.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.CWR8nYef.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/6.C2USjIni.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+		<link href="../../_app/immutable/assets/0.D0TAEvq0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.DkMwbYQ7.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D-FGJHsZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CXCHmQ-B.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.DGln3RUe.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DuaWf0Pd.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.BPmGZcOY.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/hLqZeU-6.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/4.BFtRo3cN.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">27 mai 2024</p> <h1 data-svelte-h="svelte-15ffetu">Bash : nommage séquentiel des fichiers</h1> <p data-svelte-h="svelte-qw5bei">Une simple ligne qui garde de l’extension de fichier d’origine et ajoute des zeros en tête (<em>leading zeros</em>) :</p> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token assign-left variable">num</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> *<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token function">mv</span> <span class="token string">"<span class="token variable">$i</span>"</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span> <span class="token string">'%04d'</span> $num<span class="token variable">)</span></span>.<span class="token variable">$&#123;i<span class="token operator">#</span>*.&#125;</span>"</span><span class="token punctuation">;</span> <span class="token variable"><span class="token punctuation">((</span>num<span class="token operator">++</span><span class="token punctuation">))</span></span><span class="token punctuation">;</span> <span class="token keyword">done</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1u3eosd">Lectures</h2> <ul data-svelte-h="svelte-olz9z2"><li><a href="https://stackoverflow.com/questions/3211595/renaming-files-in-a-folder-to-sequential-numbers" rel="nofollow"><em>Renaming files in a folder to sequential numbers</em></a></li> <li><a href="https://ubuntuforums.org/showthread.php?t=1355021" rel="nofollow"><em>Bash script to rename files to a pattern of consecutive numbers</em></a></li></ul></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li> <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">27 mai 2024</p> <h1 data-svelte-h="svelte-15ffetu">Bash : nommage séquentiel des fichiers</h1> <p data-svelte-h="svelte-qw5bei">Une simple ligne qui garde de l’extension de fichier d’origine et ajoute des zeros en tête (<em>leading zeros</em>) :</p> <pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token assign-left variable">num</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> *<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token function">mv</span> <span class="token string">"<span class="token variable">$i</span>"</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span> <span class="token string">'%04d'</span> $num<span class="token variable">)</span></span>.<span class="token variable">$&#123;i<span class="token operator">#</span>*.&#125;</span>"</span><span class="token punctuation">;</span> <span class="token variable"><span class="token punctuation">((</span>num<span class="token operator">++</span><span class="token punctuation">))</span></span><span class="token punctuation">;</span> <span class="token keyword">done</span></code><!-- HTML_TAG_END --></pre> <h2 data-svelte-h="svelte-1u3eosd">Lectures</h2> <ul data-svelte-h="svelte-olz9z2"><li><a href="https://stackoverflow.com/questions/3211595/renaming-files-in-a-folder-to-sequential-numbers" rel="nofollow"><em>Renaming files in a folder to sequential numbers</em></a></li> <li><a href="https://ubuntuforums.org/showthread.php?t=1355021" rel="nofollow"><em>Bash script to rename files to a pattern of consecutive numbers</em></a></li></ul></article></main>   <footer class="svelte-1capoi1" data-svelte-h="svelte-1h3xx8c"><nav><ul class="svelte-1capoi1"><li><a href="https://github.com/sardinecan/log" class="svelte-1capoi1">Github</a></li> </ul></nav></footer> </div> 
 			
 			<script>
 				{
-					__sveltekit_9myqm2 = {
+					__sveltekit_tndzjx = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
-					const data = [null,null];
-
 					Promise.all([
-						import("../../_app/immutable/entry/start.EEBTI53n.js"),
-						import("../../_app/immutable/entry/app.CvUMos7m.js")
+						import("../../_app/immutable/entry/start.DkMwbYQ7.js"),
+						import("../../_app/immutable/entry/app.DGln3RUe.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 6],
-							data,
+							node_ids: [0, 4],
+							data: [null,null],
 							form: null,
 							error: null
 						});

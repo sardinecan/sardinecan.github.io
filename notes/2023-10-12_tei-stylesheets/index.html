@@ -5,21 +5,21 @@
 		<link rel="icon" href="../../sunset.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="../../_app/immutable/assets/0.DWVgpjB2.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../_app/immutable/entry/start.EEBTI53n.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/entry.B37EGc9b.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.DaEglZbh.js">
-		<link rel="modulepreload" href="../../_app/immutable/entry/app.CvUMos7m.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/index.B_-7WD2a.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/0.ZYAVufb_.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/stores.CWR8nYef.js">
-		<link rel="modulepreload" href="../../_app/immutable/nodes/6.C2USjIni.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/dynamic-import-helper.BheWnx7M.js">
-		<link rel="modulepreload" href="../../_app/immutable/chunks/dates.D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
+		<link href="../../_app/immutable/assets/0.D0TAEvq0.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.DkMwbYQ7.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D-FGJHsZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CXCHmQ-B.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.DGln3RUe.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/C1FmrZbK.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DuaWf0Pd.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.BPmGZcOY.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/hLqZeU-6.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/4.BFtRo3cN.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BheWnx7M.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/D2-NGLRx.js"><!-- HEAD_svelte-1i32evn_START --><!-- HEAD_svelte-1i32evn_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/blog" class="svelte-epptjw" data-svelte-h="svelte-1jcr7w4">Blog</a></li> <li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li>  <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">12 octobre 2023</p> <h1 data-svelte-h="svelte-1mzg92z">TEI Stylesheets</h1> <p data-svelte-h="svelte-14fbsll">[works also with Linux]</p> <p data-svelte-h="svelte-1tru1uq">This is a family of XSLT 2.0 stylesheets to transform TEI XML documents to various formats, including XHTML, LaTeX, XSL Formatting Objects, ePub, plain text, RDF, JSON; and to/from Word OOXML (docx) and OpenOffice (odt). They concentrate on the core TEI modules which are used for simple transcription and “born digital” writing.</p> <h2 data-svelte-h="svelte-1twmrx0">MacOs Install</h2> <ul data-svelte-h="svelte-14mf671"><li>download fork at <a href="https://github.com/sardinecan/Stylesheets" rel="nofollow">https://github.com/sardinecan/Stylesheets</a></li></ul> <p data-svelte-h="svelte-tzylpm">For your information, here are the changes made to the original makefile</p> <ul data-svelte-h="svelte-1mfg3yi"><li><p>variable PREFIX : <code>/usr</code> &gt; <code>/tmp/tei</code></p> <ul><li>NB <code>/tmp</code> directory is cleaned up by macOS every 3 days by default <a href="https://forums.developer.apple.com/forums/thread/71382" rel="nofollow">see apple forum</a></li></ul></li> <li><p>line <code>cp --preserve=timestamps bin/transformtei ${PREFIX}/bin</code> &gt; <code>cp -p bin/transformtei ${PREFIX}/bin</code></p></li> <li><p>line <code>cp --preserve=timestamps source/p5subset.xml ${PREFIX}/source</code> &gt; <code>cp -p source/p5subset.xml ${PREFIX}/source</code></p></li> <li><p>line <code>perl -p -i -e &#39;s+^APPHOME=.*+APPHOME=/usr/share/xml/tei/stylesheet+&#39; ${PREFIX}/bin/transformtei</code> &gt; <code>perl -p -i -e &#39;s+^APPHOME=.*+APPHOME=${PREFIX}/share/xml/tei/stylesheet+&#39; ${PREFIX}/bin/transformtei</code></p></li> <li><p>Go to stylesheets folder: <code>cd path/to/local/Stylesheets</code> and install: <code>make install</code></p> <ul><li>if the Make command doesn’t run, it’s likely that the Xcode command line is missing, to install it: <code>xcode-select --install</code></li> <li>if needed you chan change a variable for the installation: <code>make PREFIX=destination/path/for/installation install</code></li></ul></li> <li><p>add binaries to the <code>$PATH</code> in your <code>~/.zshrc</code>: <code>export PATH=$PATH:/tmp/tei/bin/</code></p></li></ul> <h2 data-svelte-h="svelte-1kt1gh5">Add custom profile</h2> <p data-svelte-h="svelte-158iita">Create a profile in the <code>Stylesheets/profile</code> subdirectory with the following pattern: <code>profiles/$PROFILENAME/$FORMAT/(from.xsl or to.xsl)</code> for example: <code>profiles/local/docx/from.xsl</code></p> <p data-svelte-h="svelte-1eegz6o">to import the default transformation, add an <code>xsl:import</code> rule to the custom xslt stylesheet, for example: <code>&lt;xsl:import href=&quot;../../default/docx/from.xsl&quot; /&gt;</code>.</p> <p data-svelte-h="svelte-e9oghx">Complete sample:</p> <pre class="language-xml"><!-- HTML_TAG_START --><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>stylesheet</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/XSL/Transform<span class="token punctuation">"</span></span> 
+		<div style="display: contents">     <div class="content">  <nav class="svelte-epptjw"> <a href="/" class="svelte-epptjw" data-svelte-h="svelte-4ebbsj"><h1 class="svelte-epptjw">/log</h1></a> <ul class="svelte-epptjw"><li><a href="/reports" class="svelte-epptjw" data-svelte-h="svelte-12wekpw">Comptes rendus</a></li> <li><a href="/notes" class="svelte-epptjw active" data-svelte-h="svelte-eu7epz">Notes</a></li> <li><a href="/projets" class="svelte-epptjw" data-svelte-h="svelte-4lv15p">Projets</a></li>  <li><button class="switch svelte-epptjw" role="switch" aria-checked="true"></button></li></ul></nav>   <main>  <article><p class="date">12 octobre 2023</p> <h1 data-svelte-h="svelte-1mzg92z">TEI Stylesheets</h1> <p data-svelte-h="svelte-14fbsll">[works also with Linux]</p> <p data-svelte-h="svelte-1tru1uq">This is a family of XSLT 2.0 stylesheets to transform TEI XML documents to various formats, including XHTML, LaTeX, XSL Formatting Objects, ePub, plain text, RDF, JSON; and to/from Word OOXML (docx) and OpenOffice (odt). They concentrate on the core TEI modules which are used for simple transcription and “born digital” writing.</p> <h2 data-svelte-h="svelte-1twmrx0">MacOs Install</h2> <ul data-svelte-h="svelte-14mf671"><li>download fork at <a href="https://github.com/sardinecan/Stylesheets" rel="nofollow">https://github.com/sardinecan/Stylesheets</a></li></ul> <p data-svelte-h="svelte-tzylpm">For your information, here are the changes made to the original makefile</p> <ul data-svelte-h="svelte-1mfg3yi"><li><p>variable PREFIX : <code>/usr</code> &gt; <code>/tmp/tei</code></p> <ul><li>NB <code>/tmp</code> directory is cleaned up by macOS every 3 days by default <a href="https://forums.developer.apple.com/forums/thread/71382" rel="nofollow">see apple forum</a></li></ul></li> <li><p>line <code>cp --preserve=timestamps bin/transformtei ${PREFIX}/bin</code> &gt; <code>cp -p bin/transformtei ${PREFIX}/bin</code></p></li> <li><p>line <code>cp --preserve=timestamps source/p5subset.xml ${PREFIX}/source</code> &gt; <code>cp -p source/p5subset.xml ${PREFIX}/source</code></p></li> <li><p>line <code>perl -p -i -e &#39;s+^APPHOME=.*+APPHOME=/usr/share/xml/tei/stylesheet+&#39; ${PREFIX}/bin/transformtei</code> &gt; <code>perl -p -i -e &#39;s+^APPHOME=.*+APPHOME=${PREFIX}/share/xml/tei/stylesheet+&#39; ${PREFIX}/bin/transformtei</code></p></li> <li><p>Go to stylesheets folder: <code>cd path/to/local/Stylesheets</code> and install: <code>make install</code></p> <ul><li>if the Make command doesn’t run, it’s likely that the Xcode command line is missing, to install it: <code>xcode-select --install</code></li> <li>if needed you chan change a variable for the installation: <code>make PREFIX=destination/path/for/installation install</code></li></ul></li> <li><p>add binaries to the <code>$PATH</code> in your <code>~/.zshrc</code>: <code>export PATH=$PATH:/tmp/tei/bin/</code></p></li></ul> <h2 data-svelte-h="svelte-1kt1gh5">Add custom profile</h2> <p data-svelte-h="svelte-158iita">Create a profile in the <code>Stylesheets/profile</code> subdirectory with the following pattern: <code>profiles/$PROFILENAME/$FORMAT/(from.xsl or to.xsl)</code> for example: <code>profiles/local/docx/from.xsl</code></p> <p data-svelte-h="svelte-1eegz6o">to import the default transformation, add an <code>xsl:import</code> rule to the custom xslt stylesheet, for example: <code>&lt;xsl:import href=&quot;../../default/docx/from.xsl&quot; /&gt;</code>.</p> <p data-svelte-h="svelte-e9oghx">Complete sample:</p> <pre class="language-xml"><!-- HTML_TAG_START --><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>stylesheet</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsl</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/XSL/Transform<span class="token punctuation">"</span></span> 
   <span class="token attr-name"><span class="token namespace">xmlns:</span>xs</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema<span class="token punctuation">"</span></span>
   <span class="token attr-name"><span class="token namespace">xmlns:</span>w</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.openxmlformats.org/wordprocessingml/2006/main<span class="token punctuation">"</span></span>
   <span class="token attr-name"><span class="token namespace">xmlns:</span>wne</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://schemas.microsoft.com/office/word/2006/wordml<span class="token punctuation">"</span></span>
@@ -34,21 +34,19 @@
 			
 			<script>
 				{
-					__sveltekit_9myqm2 = {
+					__sveltekit_tndzjx = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
-					const data = [null,null];
-
 					Promise.all([
-						import("../../_app/immutable/entry/start.EEBTI53n.js"),
-						import("../../_app/immutable/entry/app.CvUMos7m.js")
+						import("../../_app/immutable/entry/start.DkMwbYQ7.js"),
+						import("../../_app/immutable/entry/app.DGln3RUe.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 6],
-							data,
+							node_ids: [0, 4],
+							data: [null,null],
 							form: null,
 							error: null
 						});
