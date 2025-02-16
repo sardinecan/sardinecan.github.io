@@ -10,11 +10,10 @@
 
 	/* https://svelte.dev/repl/0429bd69748e44cdaeb8074c982f967d?version=3.41.0 */
   const notes = data.notes.slice(0, 3)
-  const blog = data.blog.slice(0, 3)
   const reports = data.reports.slice(0, 3)
 
-  /* concat notes-blog-report => note used for now */
-	let content = data.notes.concat(data.blog).concat(data.reports)
+  /* concat notes-report => note used for now */
+	let content = data.notes.concat(data.reports)
   const sortedContent = content.sort((a, b) => {
 		return new Date(b.meta.date) - new Date(a.meta.date);
 	});
@@ -25,7 +24,6 @@
     let src;
     if(path.startsWith('/notes')) { src = ["note", noteIcon]; }
     else if(path.startsWith('/reports')) { src = ["report", reportIcon]; }
-    else { src = ["post", postIcon]; }
     return src
   };
 
