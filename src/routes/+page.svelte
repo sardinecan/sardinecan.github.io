@@ -18,7 +18,7 @@
 		return new Date(b.meta.date) - new Date(a.meta.date);
 	});
 
-  var recent = sortedContent.slice(0, 10)
+  var recent = sortedContent.slice(0, 5)
 
   function getDocumentType(path) {
     let src;

@@ -60,7 +60,7 @@ NB : avec YOLO assez peu de données sont nécessaires pour obtenir de bon rés
 - [Documentation Arkindex](https://doc.arkindex.org/tutorial/segmentation-training/)
 - [notes Teklia](https://notes.teklia.com/s/P6wnIUYqQ#)
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/4832afb3-38d8-4ee0-8554-1a00f1b619fd.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/4832afb3-38d8-4ee0-8554-1a00f1b619fd.png)
 
 
 ### 1. Créer des répertoires (folders) dans votre projet
@@ -69,7 +69,7 @@ NB : avec YOLO assez peu de données sont nécessaires pour obtenir de bon rés
 - Créer 3 répertoires (folders) avec les noms Train, Dev et Test
 - Menu Actions->Add folder
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/caf6c560-0e42-4867-ae8b-f811a3b0c083.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/caf6c560-0e42-4867-ae8b-f811a3b0c083.png)
 
 #### En vidéo :
 youtube S_7N3jYALtc
@@ -79,15 +79,15 @@ youtube S_7N3jYALtc
 
 2.1 Utiliser la présentation Random
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/21161b4f-8ae3-4fd4-a2ad-27d91b0e3d01.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/21161b4f-8ae3-4fd4-a2ad-27d91b0e3d01.png)
 
 2.2 Utiliser la pagination à 100
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/c4600678-8f4d-45ea-add1-c0eb84c35bf2.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/c4600678-8f4d-45ea-add1-c0eb84c35bf2.png)
 
 2.3 Utiliser la sélection
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/a2e9731c-8aac-40fd-bb58-73bd32ad2af8.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/a2e9731c-8aac-40fd-bb58-73bd32ad2af8.png)
 
 
 #### En vidéo :
@@ -97,7 +97,7 @@ youtube XOP27j-4ee4
 
 - Menu Actions -> Project Information -> Dataset
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/06924b36-4c38-4cf1-a6d3-ccc116b8beea.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/06924b36-4c38-4cf1-a6d3-ccc116b8beea.png)
 
 
 #### En vidéo :
@@ -106,7 +106,7 @@ youtube wkxgt9NSMXc
 #### 4. Générer l'export complet du projet
 
 - Menu Actions -> Manage Export -> Start Export
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/adf1b4cf-527e-4a3e-8f83-6076d429adbd.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/adf1b4cf-527e-4a3e-8f83-6076d429adbd.png)
 
 :::info
 Pourquoi cette étape ?
@@ -121,15 +121,15 @@ youtube w082mRvSqEI
 
 - Menu Actions -> Create Dataset process
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/a2ad2b26-7226-45f1-a05f-97cd95166fc2.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/a2ad2b26-7226-45f1-a05f-97cd95166fc2.png)
 
 - Select « Generic  Training Dataset Extractor »
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/24cd7a48-3d19-48a2-9df4-9b9818ecd8f4.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/24cd7a48-3d19-48a2-9df4-9b9818ecd8f4.png)
 
 - Run Process
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/50b131b8-9bed-46a0-884f-504505173939.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/50b131b8-9bed-46a0-884f-504505173939.png)
 
 
 #### En vidéo :
@@ -139,11 +139,11 @@ youtube GLOY-Q9ekpc
 
 - Menu Personnel -> Models
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/bce1c379-75e1-44c0-abae-5c5d3540b971.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/bce1c379-75e1-44c0-abae-5c5d3540b971.png)
 
 - CREATE MODEL puis renseigner les informations
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/98471c27-be6c-406c-a396-2c1b0ae067cf.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/98471c27-be6c-406c-a396-2c1b0ae067cf.png)
 
 
 #### En vidéo :
@@ -153,11 +153,11 @@ youtube _0B2ARsnbqo
 
 7.1 Menu Actions -> Create Dataset process
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/3b52d35e-166c-41e3-8515-a00802688e2b.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/3b52d35e-166c-41e3-8515-a00802688e2b.png)
 
 7.2. Find the YOLO Training | Detect/Segment worker
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/f7cf0df5-655f-424f-b7b6-4c1a18c32b55.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/f7cf0df5-655f-424f-b7b6-4c1a18c32b55.png)
 
 7.3 Créer une configuration d'entrainement
 
@@ -167,14 +167,14 @@ youtube _0B2ARsnbqo
 - Number of epochs to train the model : 3
 - Type of object to detect using the segmenter : bbox
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/35a7e5b6-efc6-4a1a-8c93-ac1f68b2dbdd.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/35a7e5b6-efc6-4a1a-8c93-ac1f68b2dbdd.png)
 
 7.4 Lancer l’entrainement
 
 - Sélectionner GPU
 - RUN PROCESS
 
-![](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/e0b0c9ef-2ed6-476e-8256-83c8c26f5b26.png)
+![img](https://storage.teklia.com/tools-hedgedoc-uploads/uploads/e0b0c9ef-2ed6-476e-8256-83c8c26f5b26.png)
 
 
 #### En vidéo :
